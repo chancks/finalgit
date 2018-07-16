@@ -15,20 +15,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 </head>
 <body>
 	<table border="" align="center">
-		<form alction="?">
-			<tr>
-				<td colspan="5" align="center">
-					<select name="schCol">
-						<option value="title">제목</option>
-						<option value="pname">작성자</option>
-						<option value="content">내용</option>
-						<option value="cnt">조횟수</option>
-					</select>
-					<input type="text" name="title" value="${param.title}">
-					<input type="submit" value="검색">
-				</td>
-			</tr>
-		</form>
 		<tr> 
 			<td align="center">번호</td>
 			<td align="center">제목</td>
@@ -36,16 +22,22 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<td align="center">작성일</td>
 			<td align="center">조회수</td>
 		</tr>	
-
-		<c:forEach items="${notice}" var="noticeRow" varStatus="noticeNo">
-			<tr>
-				<td align="center">${noticeNo.index+1}</td>
-				<td><a href="noticeDetail?id=${noticeRow.id }">${noticeRow.title}</a></td>
-				<td>관리자</td>
-				<td>${noticeRow.reg_date}</td>
-				<td align="center">${noticeRow.cnt}</td>
-			</tr>
-		</c:forEach>
+		<c:choose>
+			<c:when test="${notice.size()==0 }">
+				<tr><td colspan="5" align="center">내용이 없습니다.</td></tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach items="${notice}" var="noticeRow" varStatus="noticeNo">
+					<tr>
+						<td align="center">${noticeNo.index+1}</td>
+						<td><a href="noticeDetail?id=${noticeRow.id }">${noticeRow.title}</a></td>
+						<td>관리자</td>
+						<td>${noticeRow.reg_date}</td>
+						<td align="center">${noticeRow.cnt}</td>
+					</tr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 	   	<tr>
 			<tr>
 				<td colspan="5" align="center">
@@ -71,6 +63,20 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				</td>
 			</tr>
 		</tr>
+		<form alction="?">
+			<tr>
+				<td colspan="5" align="center">
+					<select name="schCol">
+						<option value="title">제목</option>
+						<option value="pname">작성자</option>
+						<option value="content">내용</option>
+						<option value="cnt">조횟수</option>
+					</select>
+					<input type="text" name="title" value="${param.title}">
+					<input type="submit" value="검색">
+				</td>
+			</tr>
+		</form>
 		<tr>
 			<td align="left">
 				<a href="boardList">뒤로</a>

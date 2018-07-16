@@ -15,7 +15,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 </head>
 <body>
 	<table border="" align="center">
-		
 		<tr> 
 			<td align="center">번호</td>
 			<td align="center">제목</td>
@@ -23,17 +22,22 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<td align="center">작성일</td>
 			<td align="center">조회수</td>
 		</tr>	
-
- 		<c:forEach items="${qna}" var="qnaRow" varStatus="qnaNo">
-			<tr>
-				<td align="center">${qnaNo.index+1}</td>
-				<td><a href="qnaDetail?id=${qnaRow.id }">${qnaRow.title}</a></td>
-				<td>${qnaRow.pname}</td>
-				<td>${qnaRow.reg_date}</td>
-				<td align="center">${qnaRow.cnt}</td>
-			</tr>
-		</c:forEach>
-			 
+		<c:choose>
+			<c:when test="${qna.size()==0 }">
+				<tr><td colspan="5" align="center">내용이 없습니다.</td></tr>
+			</c:when>
+			<c:otherwise>
+		 		<c:forEach items="${qna}" var="qnaRow" varStatus="qnaNo">
+					<tr>
+						<td align="center">${qnaNo.index+1}</td>
+						<td><a href="qnaDetail?id=${qnaRow.id }">${qnaRow.title}</a></td>
+						<td>${qnaRow.pname}</td>
+						<td>${qnaRow.reg_date}</td>
+						<td align="center">${qnaRow.cnt}</td>
+					</tr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 	   	<tr>
 			<tr>
 				<td colspan="5" align="center">
@@ -59,7 +63,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				</td>
 			</tr>
 		</tr>
-		
 		<form alction="?">
 			<tr>
 				<td colspan="5" align="center">
@@ -74,7 +77,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				</td>
 			</tr>
 		</form>
-	
 		<tr>	
 			<td align="left">
 				<a href="boardList">뒤로</a>
@@ -82,9 +84,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<td colspan="5" align="right">
 				<a href="qnaInsertForm">글쓰기</a>
 			</td>
-			
 		</tr>
-
 	</table>
 </body>
 </html>

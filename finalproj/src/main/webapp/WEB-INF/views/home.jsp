@@ -100,15 +100,23 @@ bottom:0px;
 		<div id="top_menu">
 			<a href="/mvc/Bs/academyinfo">학원소개</a>
 			
+<<<<<<< HEAD
 			<a href="">강사소개</a>
 <!-- <<<<<<< HEAD -->
+=======
+			<a href="/mvc/manager/teacherinfo">강사소개</a>
+<<<<<<< HEAD
+			<a href="">과목소개</a>
+			<a href="">고객센터</a>
+=======
+>>>>>>> branch 'master' of https://github.com/chancks/finalgit.git
 			<a href="/mvc/jun_List/course_List">과목소개</a>
 			<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
 <!-- >>>>>>> branch 'master' of https://github.com/chancks/finalgit.git -->
 		</div>
 
 		<div id="sub_menu">
-			<c:if 	test="${param.mypage!=null }">
+			<c:if 	test="${param.mypage!=null || mypage!=null }">
 				<jsp:include page="menu/menu.jsp"/>
 			</c:if>
 		</div>
