@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-@Component
+
 public class LoginChk extends HandlerInterceptorAdapter {
 
 	@Override
@@ -19,18 +19,20 @@ public class LoginChk extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		Object obj = session.getAttribute("id");
 		
-		/*if(obj == null) {
-			response.sendRedirect("/mvc/");
-			return false;
-		}*/
+		String url = request.getRequestURI();
+		
+		System.out.println("url:"+url);
+		System.out.println("ServletPath:"+request.getServletPath()+"길이:"+request.getServletPath().length());
+		
+		if(request.getServletPath().length()>1) {
+			
+			if(obj == null && url.contains(request.getServletPath())) {
+				response.sendRedirect("/mvc");
+				return false;
+			}
+		}
 		
 		return true;
 	}
 	
-	@Override
-	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception {
-		// TODO Auto-generated method stub
-		super.postHandle(request, response, handler, modelAndView);
-	}
 }

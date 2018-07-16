@@ -27,13 +27,21 @@
     	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
     />
     
-  
+    <beans:bean id="LoginChk" class="com.jhta.fproj.logic.LoginChk"/>
     <!-- Interceptor 설정 -->
     <interceptors>
-        
-  <!--  <exclue-mapping path="예외url" /> -->
-        <beans:ref bean="loginChk"/>
-       
+        <interceptor>
+            <mapping path="/**"/>
+            <exclude-mapping path="/board/noticeDetail"/>
+            <exclude-mapping path="/board/noticeList"/>
+            <exclude-mapping path="/board/qnaDetail"/>
+            <exclude-mapping path="/board/qnaList"/>
+            <exclude-mapping path="/manager/join"/>
+            <exclude-mapping path="/manager/loginf"/>
+            <exclude-mapping path="/Bs/academyinfo"/>
+           
+            <beans:ref bean="LoginChk"/>
+        </interceptor>
     </interceptors>
 
 
