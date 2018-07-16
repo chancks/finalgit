@@ -9,7 +9,7 @@
 		<tr>
 			<td>
 			등급
-			<input type=file id='file' name="up1" style="display: none;" accept=".jpg, .jpeg, .png">
+			<input type=file id='file' name="up1" style="display: none;" accept=".jpg, .jpeg, .png" onchange="b(this)">
 			<input type="hidden" name="aid" value="${user.aid }">
 			
 			</td>
@@ -88,34 +88,31 @@
 </form>
 
 </article>
+
 <script>
 
-var upload = document.getElementsByTagName('input')[0],
-holder = document.getElementById('picture');
-
- upload.onchange = function (e) {
-	  e.preventDefault(); //이벤트 취소
-
-	  var file = upload.files[0],
-	      reader = new FileReader();
-	  
-	  reader.onload = function (event) {
-	    var img = new Image();
-	    img.src = event.target.result;
-	  
-		img.width=150;
-		img.height=200;
-	    holder.innerHTML = '';
-	    holder.appendChild(img);
-	  };
-	  
-	  reader.readAsDataURL(file);
-
-	  return false;
-	}; 
+function b(obj){
+	var file = obj.files[0];
+	var reader = new FileReader();
+	var pp = document.getElementById('picture');
+	
+	reader.onload = function(event){
+		var img = new Image();
+		img.src = event.target.result;
+		
+		img.width = 150;
+		img.height = 200;
+		
+		pp.innerHTML='';
+		pp.appendChild(img);
+	}
+	
+	reader.readAsDataURL(file);
+	
+	
+}
 
 function a() {
-	
 	location.href='filedelete';
 }
 </script>
