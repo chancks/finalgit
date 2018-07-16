@@ -92,7 +92,7 @@ public class RfcController {
 					model.addAttribute("msg", "이미 신청한 수업과 시간이 겹칩니다");
 					
 				} else {//false일때-안겹침
-					arr.get(0).setRid("aaa");
+					arr.get(0).setRid((String)session.getAttribute("id"));
 					
 					if(arr.get(0).getCtotal()-arr.get(0).getTot()==0) {
 						model.addAttribute("msg", "인원이 가득찼습니다");
@@ -123,8 +123,7 @@ public class RfcController {
 			case "totpay"://결제인원
 				
 				res = dao.rlist();
-				vo.setTot((Integer)dao.tot());
-				System.out.println(vo);
+				model.addAttribute("tot", dao.tot());
 				break;
 		}
 	
