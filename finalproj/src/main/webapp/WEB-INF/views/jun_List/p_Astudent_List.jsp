@@ -51,7 +51,14 @@
 					<div>
 						<h2>학생ID</h2>
 					</div>
-					<div>${row.rid}</div>
+					<div>${row.aid}</div>
+				</div>
+
+				<div id="a">
+					<div>
+						<h2>학생이름</h2>
+					</div>
+					<div>${row.aname}</div>
 				</div>
 
 				<div id="a">
