@@ -12,8 +12,13 @@ public class Paging {
 		
 		if(page == null || page == 0) {
 			page = 1;
-			vo.setPage(1);
+			
 		}
+		
+		vo.setPage(page);
+		
+		System.out.println("total:"+total);
+		System.out.println("page:"+page);
 		
 		Integer limit = 4, pageLimit = 4;
 		
@@ -29,7 +34,7 @@ public class Paging {
 			vo.setTotalPage(vo.getTotalPage()+1);
 			
 		if(vo.getEndPage()>vo.getTotalPage())
-			vo.setTotalPage(vo.getEndPage());
+			vo.setEndPage(vo.getTotalPage());
 		
 		return vo;
 	}
