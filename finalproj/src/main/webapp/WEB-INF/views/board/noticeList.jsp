@@ -46,7 +46,31 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				<td align="center">${noticeRow.cnt}</td>
 			</tr>
 		</c:forEach>
-	 
+	   	<tr>
+			<tr>
+				<td colspan="5" align="center">
+					<c:if test="${startPage>1}">
+						<a href="noticeList?page=1">[처음]</a>
+						<a href="noticeList?page=${startPage-1}"><</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage }" end="${endPage }">
+						<c:choose>
+							<c:when test="${i==page }">
+								[${i}]
+							</c:when>
+							<c:otherwise>
+								<a href="noticeList?page=${i }">${i}</a>
+							</c:otherwise>
+						</c:choose>
+						
+					</c:forEach>
+					<c:if test="${endPage<totalPage }">
+						<a href="noticeList?page=${endPage+1}">></a>
+						<a href="noticeList?page=${totalPage }">[마지막]</a>
+					</c:if>
+				</td>
+			</tr>
+		</tr>
 		<tr>
 			<c:if test="${grade eq '관리자' }">
 				<td colspan="5" align="right">
