@@ -17,9 +17,6 @@ public class Paging {
 		
 		vo.setPage(page);
 		
-		System.out.println("total:"+total);
-		System.out.println("page:"+page);
-		
 		Integer limit = 4, pageLimit = 4;
 		
 		vo.setStart((page-1)*limit+1);
