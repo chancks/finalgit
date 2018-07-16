@@ -49,13 +49,13 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 	   	<tr>
 			<tr>
 				<td colspan="5" align="center">
-					<c:if test="${startPage>1}">
+					<c:if test="${data3.startPage>1}">
 						<a href="noticeList?page=1">[처음]</a>
-						<a href="noticeList?page=${startPage-1}"><</a>
+						<a href="noticeList?page=${data3.startPage-1}"><</a>
 					</c:if>
-					<c:forEach var="i" begin="${startPage }" end="${endPage }">
+					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
 						<c:choose>
-							<c:when test="${i==page }">
+							<c:when test="${i==data3.page }">
 								[${i}]
 							</c:when>
 							<c:otherwise>
@@ -64,9 +64,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						</c:choose>
 						
 					</c:forEach>
-					<c:if test="${endPage<totalPage }">
-						<a href="noticeList?page=${endPage+1}">></a>
-						<a href="noticeList?page=${totalPage }">[마지막]</a>
+					<c:if test="${data3.endPage<totalPage }">
+						<a href="noticeList?page=${data3.endPage+1}">></a>
+						<a href="noticeList?page=${data3.totalPage }">[마지막]</a>
 					</c:if>
 				</td>
 			</tr>
