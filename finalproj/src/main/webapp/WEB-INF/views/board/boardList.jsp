@@ -55,7 +55,7 @@
 		</div>
 		
 		<div class="tab-pane fade" id="review">
-			<a href="review">REVIEW</a>
+			<a href="reviewList">REVIEW</a>
 		</div>
 	</div>
 

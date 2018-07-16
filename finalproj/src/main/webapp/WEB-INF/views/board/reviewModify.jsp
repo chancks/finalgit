@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta name="viewport"content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport"content="width=device-width, initial-scale=1.0"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
@@ -12,24 +12,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="noticeInsertReg" method="post" enctype="multipart/form-data">
-	<table border="">
+<form action="reviewModifyReg?id=${review.id }" method="post" enctype="multipart/form-data">
+
+	<table border="" align="center">
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="title" /></td>
+			<td><input type="text" name="title" value="${review.title}" /></td>
+		</tr>
+		<tr>
+			<td>작성자</td>
+			<td>${review.pname}</td>
 		</tr>
 		<tr>
 			<td>암호</td>
-			<td><input type="text" name="pw" /></td>
+			<td><input type="text" name="pw"/></td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea name="content" rows="5" cols="20">내용을 작성하세요</textarea></td>
+			<td><textarea name="content" rows="5" cols="20">${review.content }</textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="작성" />
-				<a href="noticeList">뒤로</a>
+				<input type="submit" value="수정" />
+				<a href="reviewDetail?id=${review.id}">뒤로</a>
 			</td>
 		</tr>
 	</table>

@@ -20,7 +20,7 @@
 		</tr><tr>		
 		<td>제목</td><td>${notice.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>${notice.pname}</td>
+		<td>작성자</td><td>관리자</td>
 		</tr><tr>
 		<td>작성일</td><td>${notice.reg_date}</td>
 		</tr><tr>

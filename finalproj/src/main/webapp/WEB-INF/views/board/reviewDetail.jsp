@@ -13,29 +13,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="hidden" value="${qna.seq}" name="seq">
+<input type="hidden" value="${review.seq}" name="seq">
 <table border="" align="center">
 	<tr>
-		<td>id</td><td>${qna.id}</td>
+		<td>id</td><td>${review.id}</td>
 		</tr><tr>		
-		<td>제목</td><td>${qna.title}</td>
+		<td>제목</td><td>${review.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>${qna.pname}</td>
+		<td>작성자</td><td>${review.pname}</td>
 		</tr><tr>
-		<td>작성일</td><td>${qna.reg_date}</td>
+		<td>작성일</td><td>${review.reg_date}</td>
 		</tr><tr>
-		<td>조회수</td><td>${qna.cnt}</td>
+		<td>조회수</td><td>${review.cnt}</td>
 		</tr><tr>
-		<td>내용</td><td>${qna.content}</td>
+		<td>내용</td><td>${review.content}</td>
 		</tr><tr>
 		
 		<td colspan="2" align="right">
-			<a href="qnaList">목록</a>
-			<a href="qnaDelete?id=${qna.id}">삭제</a>
-			<a href="qnaModify?id=${qna.id}">수정</a>
-			<c:if test="${grade eq '관리자'}">
-				<a href="qnaReply?id=${qna.id}">답변</a>
-			</c:if>
+			<a href="reviewList">목록</a>
+			<a href="reviewDelete?id=${review.id}">삭제</a>
+			<a href="reviewModify?id=${review.id}">수정</a>
 		</td>
 		
 	</tr>

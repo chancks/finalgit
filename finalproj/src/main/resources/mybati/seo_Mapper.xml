@@ -79,7 +79,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = 'student'
+		select * from astudent where agrade  = '학생'
 
 	</select>
 	
@@ -91,7 +91,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="professor_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = 'professor'
+		select * from astudent where agrade  = '강사'
 
 	</select>
 
@@ -104,29 +104,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="p_course_list1" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'eee' and  <![CDATA[ cstart>sysdate ]]>
+		select * from course where cid = 'p1' and  <![CDATA[ cstart>sysdate ]]>
 		<include refid="date"/>
 	</select>
 	
 	<select id="p_course_list2" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'eee' and <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
+		select * from course where cid = 'p1' and <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
 		<include refid="date"/>
 	</select>
 	
 	<select id="p_course_list3" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'eee' and <![CDATA[ cfinish<sysdate ]]>
+		select * from course where cid = 'p1' and <![CDATA[ cfinish<sysdate ]]>
 		<include refid="date"/>
 	</select>
 
 
 	<select id="p_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'a5'
+		select * from course where cid = 'p1'
 		<include refid="whereSch"/>
 	</select>
 	
 
 	<select id="p_astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from regist where rcode = #{rcode}
+		 select * from astudent, (select * from regist where rcode = #{rcode})tt
+		 where aid = tt.rid
+		
+	<!-- 	select * from regist where rcode = #{rcode} -->
 
 	</select>
 
