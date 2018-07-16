@@ -49,7 +49,8 @@ public class MngController {
 			
 			model.addAttribute("idchk",chk);
 			model.addAttribute("user", user);
-		
+			model.addAttribute("mypage", true);
+			
 			main="join";
 			/*res = "manager/join";*/
 			
@@ -164,14 +165,16 @@ public class MngController {
 			
 			return "redirect:/manager/myinfo";
 			
-	
+		case "teacherinfo":
 		case "memberlist":
 			
 			model.addAttribute("data", dao.list());
+			break;
 			
 		}
 		
 		
+			
 		model.addAttribute("main", main);
 		return "home";
 	}

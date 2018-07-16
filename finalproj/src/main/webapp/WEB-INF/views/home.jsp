@@ -156,7 +156,7 @@ bottom:0px;
 		<div id="top_menu">
 			<a href="/mvc/Bs/academyinfo">학원소개</a>
 			
-			<a href="">강사소개</a>
+			<a href="/mvc/manager/teacherinfo">강사소개</a>
 <<<<<<< HEAD
 			<a href="">과목소개</a>
 			<a href="">고객센터</a>
@@ -167,7 +167,7 @@ bottom:0px;
 		</div>
 
 		<div id="sub_menu">
-			<c:if 	test="${param.mypage!=null }">
+			<c:if 	test="${param.mypage!=null || mypage!=null }">
 				<jsp:include page="menu/menu.jsp"/>
 			</c:if>
 		</div>
