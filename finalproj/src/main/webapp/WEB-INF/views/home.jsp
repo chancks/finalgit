@@ -127,7 +127,8 @@ bottom:0px;
 						</c:when>
 						<c:when test="${grade eq '강사' }">
 							<input type="button"
-								onclick="location.href='/mvc/jun_List/p_Course_List?mypage=true'"
+								onclick="location.href='/mvc/jun_List/p_Course_List?cid=${id}&mypage=true'"
+										
 								value="마이페이지">
 						</c:when>
 						<c:when test="${grade eq '행정' }">
@@ -154,9 +155,10 @@ bottom:0px;
 
 		<div id="top_menu">
 			<a href="/mvc/Bs/academyinfo">학원소개</a>
+			
 			<a href="">강사소개</a>
-			<a href="">과목소개</a>
-			<a onclick="location.href='/mvc/board/boardList'"s>고객센터</a>
+			<a href="/mvc/jun_List/course_List">과목소개</a>
+			<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
 		</div>
 
 		<div id="sub_menu">
