@@ -16,7 +16,7 @@
 			return;
 		} 
 		
-		frm.action="idchk";
+		frm.action="/mvc/manager/idchk";
 		frm.submit();
 	}
 	

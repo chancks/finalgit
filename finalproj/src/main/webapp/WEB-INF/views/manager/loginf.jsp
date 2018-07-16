@@ -10,7 +10,7 @@
 	</c:when>
 	
 	<c:otherwise>
-		<form action="manager/login" method="post">
+		<form action="/mvc/manager/login" method="post">
 			<table border="">
 				<tr>
 					<td>아이디 </td>

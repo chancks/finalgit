@@ -73,7 +73,7 @@
 
 	<div
 		style="width: 100%; height: 700px; border-bottom: 1px inset gray; background-color: yellow;">
-	<div style="background-color: gray;">${list }
+	<div style="background-color: gray;"><a href="/mvc/jun_List/course_register">등록등록</a>
 	</div>
 	
 		<jsp:include page="${list }"></jsp:include>

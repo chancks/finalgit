@@ -29,16 +29,15 @@ public class MngController {
 			HttpSession session,HttpServletRequest request) {
 		
 		Joinlogic jl = new Joinlogic(dao);
+		model.addAttribute("service", "manager");
 		
 		String res = "manager/"+main;
 		
 		switch(main) {
 		
-		case "join" :
+/*		case "join" :
 
-			res = "manager/join";
-			
-			break;
+			break;*/
 			
 		case "idchk" :
 			
@@ -51,7 +50,8 @@ public class MngController {
 			model.addAttribute("idchk",chk);
 			model.addAttribute("user", user);
 			
-			res = "manager/join";
+			main="join";
+			/*res = "manager/join";*/
 			
 			/*"redirect:/manager/join";*/
 			break;
@@ -65,11 +65,12 @@ public class MngController {
 			
 			if(!jl.joinreg(user)) {
 				
-				System.out.println("slkdfjsdlkfjsdkljlk");
 				System.out.println(user);
 				model.addAttribute("user",user);
 				
-				return "manager/join";
+				main="join";
+				break;
+				/*return "manager/join";*/
 			}
 			
 			model.addAttribute("msg", msg);
@@ -118,7 +119,7 @@ public class MngController {
 			
 			System.out.println(model.toString());
 			
-			res="manager/"+main;
+			/*res="manager/"+main;*/
 			
 			break;
 			
@@ -131,9 +132,10 @@ public class MngController {
 			
 			dao.modify(user);
 			
-			res = "redirect:/manager/myinfo";
-			
+			main="myinfo";
+			/*return "redirect:/manager/myinfo";*/
 			break;
+		
 	
 		case "filedelete" :
 			
@@ -143,19 +145,23 @@ public class MngController {
 			
 			MngUserVO vo = (MngUserVO) dao.chkid(user);
 			
+			System.out.println(request);
 			jl.fdelete(user, request);
 			dao.fdelete(user);
 			
-			res = "redirect:/manager/myinfo";
+			main="myinfo";
 			break;
+			/*return "redirect:/manager/myinfo";*/
+			
 	
-			case "memberlist":
-				
-				model.addAttribute("data", dao.list());
+		case "memberlist":
+			
+			model.addAttribute("data", dao.list());
 			
 		}
-		model.addAttribute("service", "manager");
 		
+		
+		model.addAttribute("main", main);
 		return "home";
 	}
 	

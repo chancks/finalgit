@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.model.BoardDAO;
 import com.jhta.fproj.model.BoardVO;
 
@@ -47,7 +47,7 @@ public class BoardController {
 
 				System.out.println("qna �����Դϴ�~~~~~~~~~~~~~:"+main);
 				
-				
+		Paging pagelogic = new Paging();		
 		
 		switch (main) {
 			case "qnaList":

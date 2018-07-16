@@ -58,7 +58,7 @@ public class Joinlogic {
         
         try {
             String filePath = 
-                    "C:\\Users\\user\\Desktop\\final\\finalproj2\\src\\main\\webapp\\resources\\picture\\";
+            		"C:\\Users\\user\\Desktop\\finalproj\\src\\main\\webapp\\resources\\picture\\";
             
             /*filePath = request.getRealPath("resources/fff")+"/"+up.getOriginalFilename();*/
             
@@ -97,7 +97,7 @@ public class Joinlogic {
 		
 		if(!vo.getAupfile().equals("")) {
 			String path = request.getRealPath("up")+"\\";
-			path = "C:\\Users\\user\\Desktop\\final\\finalproj2\\src\\main\\webapp\\resources\\picture\\";
+			path = "C:\\Users\\user\\Desktop\\finalproj\\src\\main\\webapp\\resources\\picture\\";
 	
 			new File(path+vo.getAupfile()).delete();
 		}

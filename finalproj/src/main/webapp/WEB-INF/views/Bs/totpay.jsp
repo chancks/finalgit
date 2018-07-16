@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>결제 확인</title>
+<title>정산</title>
 </head>
 <body>
 <c:forEach var="pay" items="${data }">

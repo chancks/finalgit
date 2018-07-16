@@ -29,7 +29,7 @@ public class Paging {
 			vo.setTotalPage(vo.getTotalPage()+1);
 			
 		if(vo.getEndPage()>vo.getTotalPage())
-			vo.setEndPage(vo.getTotalPage());
+			vo.setTotalPage(vo.getEndPage());
 		
 		return vo;
 	}

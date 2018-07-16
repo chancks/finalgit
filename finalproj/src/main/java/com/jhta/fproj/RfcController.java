@@ -123,7 +123,8 @@ public class RfcController {
 			case "totpay"://결제인원
 				
 				res = dao.rlist();
-				model.addAttribute("tot",dao.tot());
+				vo.setTot((Integer)dao.tot());
+				System.out.println(vo);
 				break;
 		}
 	

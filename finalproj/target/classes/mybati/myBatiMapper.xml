@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 수강신청 수 -->
 	<select id="bsRegistList" resultType="bsVo">
-		select * from regist order by rpay desc
+		select * from regist 
 	</select>
 
 	<!-- 수강신청 인원 -->

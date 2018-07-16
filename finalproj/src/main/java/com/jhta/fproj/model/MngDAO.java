@@ -20,7 +20,7 @@ public class MngDAO {
 	
 	public Object chkid(MngUserVO vo) {
 				
-		return sessionTemplate.selectList("pcmp.chkid",vo);
+		return sessionTemplate.selectOne("pcmp.chkid",vo);
 	}
 	
 	public MngUserVO login(MngUserVO vo) {
