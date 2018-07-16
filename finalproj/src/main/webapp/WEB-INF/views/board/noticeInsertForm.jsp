@@ -19,6 +19,10 @@
 			<td><input type="text" name="title" /></td>
 		</tr>
 		<tr>
+			<td>작성자</td>
+			<td><input type="text" name="pname" value="관리자" />관리자</td>
+		</tr>
+		<tr>
 			<td>암호</td>
 			<td><input type="text" name="pw" /></td>
 		</tr>

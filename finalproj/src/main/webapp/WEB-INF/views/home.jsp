@@ -102,9 +102,6 @@ bottom:0px;
 			
 			<a href="">강사소개</a>
 <!-- <<<<<<< HEAD -->
-			<a href="">과목소개</a>
-			<a href="">고객센터</a>
-<!-- ======= -->
 			<a href="/mvc/jun_List/course_List">과목소개</a>
 			<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
 <!-- >>>>>>> branch 'master' of https://github.com/chancks/finalgit.git -->

@@ -77,7 +77,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				<a href="boardList">뒤로</a>
 			</td>
 			<td colspan="5" align="right">
-				<a href="reInsertForm">글쓰기</a>
+				<a href="reviewInsertForm">글쓰기</a>
 			</td>
 			
 		</tr>

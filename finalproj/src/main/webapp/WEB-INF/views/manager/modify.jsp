@@ -9,7 +9,7 @@
 		<tr>
 			<td>
 			등급
-			<input type=file id='file' name="up1" style="display: none;">
+			<input type=file id='file' name="up1" style="display: none;" accept=".jpg, .jpeg, .png" onchange="b(this)">
 			<input type="hidden" name="aid" value="${user.aid }">
 			
 			</td>
@@ -18,11 +18,12 @@
 			<c:choose>
 				<c:when test="${user.aupfile!=null }">
 					<td colspan="2" rowspan="3">
-					<div id="picture">
-					<img src="../resources/picture/${user.aupfile }" width="150" height="200">
-					</div>
+						<div id="picture">
+						<img src="../resources/picture/${user.aupfile }" width="150" height="200">
+						</div>
 					
 					<br>
+					<input type="hidden" name="aupfile" value="${user.aupfile }">
 					<input type="button" value="사진변경" onclick="document.all.file.click()">
 					<input type="button" value="사진삭제" onclick="a()">
 					</td>
@@ -87,35 +88,35 @@
 </form>
 
 </article>
+
 <script>
 
-var upload = document.getElementsByTagName('input')[0],
-holder = document.getElementById('picture');
-
- upload.onchange = function (e) {
-	  e.preventDefault(); //이벤트 취소
-
-	  var file = upload.files[0],
-	      reader = new FileReader();
-	  
-	  reader.onload = function (event) {
-	    var img = new Image();
-	    img.src = event.target.result;
-	  
-		img.width=150;
-		img.height=200;
-	    holder.innerHTML = '';
-	    holder.appendChild(img);
-	  };
-	  
-	  reader.readAsDataURL(file);
-
-	  return false;
-	}; 
+function b(obj){
+	var file = obj.files[0];
+	var reader = new FileReader();
+	var pp = document.getElementById('picture');
+	
+	reader.onload = function(event){
+		var img = new Image();
+		img.src = event.target.result;
+		
+		img.width = 150;
+		img.height = 200;
+		
+		pp.innerHTML='';
+		pp.appendChild(img);
+	}
+	
+	reader.readAsDataURL(file);
+	
+	
+}
 
 function a() {
-	
 	location.href='filedelete';
 }
 </script>
 
+
+
+ 

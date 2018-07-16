@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="modify" parameterType="uservo">
 	
 		update astudent set aname = #{aname} ,aemail = #{aemail},aphone = #{aphone},
-		abirth= #{abirth},ainfo = #{ainfo},aupfile = #{aupfile}
+		abirth= #{abirth},ainfo = #{ainfo},aupfile = #{aupfile,jdbcType=VARCHAR}
 		
 		where aid = #{aid}
 		

@@ -19,9 +19,14 @@
 		<a href="/mvc/jun_List/p_Course_List?cid=${id}&mypage=true">내 강의</a>
 	</c:when>
 	<c:otherwise><!-- 관리자,행정 -->
-		<c:if test="${grade eq '행정' }">
+		<c:if test="${id eq 'admin' }">
+			<a href="/mvc/manager/join?jgrade=행정&mypage=true">행적직등록</a>
+		</c:if>
+		<c:if test="${grade eq '행정' || id ne 'admin' }">
 			<a href="/mvc/manager/myinfo?mypage=true">내 정보</a>
 		</c:if>
+		
+			<a href="/mvc/manager/join?jgrade=강사&mypage=true">강사 등록</a>
 			<a href="/mvc/jun_List/course_register?mypage=true">과목 등록</a>
 			<a href="/mvc/jun_List/course_List?mypage=true">등록 과목 리스트</a>
 			<a href="/mvc/jun_List/astudent_List?mypage=true">학생 리스트</a>

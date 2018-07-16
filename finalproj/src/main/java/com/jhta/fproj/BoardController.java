@@ -86,6 +86,10 @@ public class BoardController {
 				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜2222222222222"+vo);
 				model.addAttribute("msg", "작성되었습니다.");
 				model.addAttribute("url", "qnaDetail?id="+vo.getId());
+		/*		if(dao.qnaInsert(vo)==null) {
+					model.addAttribute("msg", "빈칸을 작성해 주세요");
+					model.addAttribute("url","qnaInsertForm");
+				}*/
 				break;
 			case "qnaReply":
 				res = dao.qnaReply(vo);
@@ -106,6 +110,9 @@ public class BoardController {
 	                res = dao.qnaModifyReg(vo);
 	                model.addAttribute("msg", "수정되었습니다.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
+	            }else if(dao.qnaPwChk(vo)==null){
+	            	model.addAttribute("msg", "비밀번호를 작성해 주세요");
+	                model.addAttribute("url", "qnaModify?id="+vo.getId());
 	            }else {
 	            	model.addAttribute("msg", "비밀번호를 확인해 주세요");
 	                model.addAttribute("url", "qnaModify?id="+vo.getId());
@@ -177,6 +184,9 @@ public class BoardController {
 	                res = dao.noticeModifyReg(vo);
 	                model.addAttribute("msg", "수정되었습니다.");
 	                model.addAttribute("url", "noticeDetail?id="+vo.getId());
+	            }else if(dao.noticePwChk(vo)==null){
+	            	model.addAttribute("msg", "비밀번호를 작성해 주세요");
+	                model.addAttribute("url", "noticeModify?id="+vo.getId());
 	            }else {
 	            	model.addAttribute("msg", "비밀번호를 확인해 주세요");
 	                model.addAttribute("url", "noticeModify?id="+vo.getId());
@@ -219,7 +229,7 @@ public class BoardController {
 				vo.setEnd2(pvo.getEnd());
 				System.out.println("占쎌넞占쎄섯"+vo);
 				res = dao.reviewList(vo);
-				System.out.println("page占쎄문占쎄쉐占쎌뜎=pvo.getPage : "+pvo.getPage()+" :: vo.getTot() : "+vo.getTot());
+		//		System.out.println("page占쎄문占쎄쉐占쎌뜎=pvo.getPage : "+pvo.getPage()+" :: vo.getTot() : "+vo.getTot());
 	
 				model.addAttribute("data3", pvo);
 				break;
@@ -229,9 +239,9 @@ public class BoardController {
 				
 				break;
 			case "reviewInsertReg":
-				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜"+vo);
+		//		System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜"+vo);
 				res = dao.reviewInsert(vo);
-				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜2222222222222"+vo);
+		//		System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜2222222222222"+vo);
 				model.addAttribute("msg", "작성되었습니다.");
 				model.addAttribute("url", "reviewDetail?id="+vo.getId());
 				break;
@@ -244,6 +254,9 @@ public class BoardController {
 	                res = dao.reviewModifyReg(vo);
 	                model.addAttribute("msg", "수정되었습니다.");
 	                model.addAttribute("url", "reviewDetail?id="+vo.getId());
+	            }else if(dao.reviewPwChk(vo)==null){
+	            	model.addAttribute("msg", "비밀번호를 작성해주세요");
+	                model.addAttribute("url", "reviewModify?id="+vo.getId());
 	            }else {
 	            	model.addAttribute("msg", "비밀번호를 확인해주세요");
 	                model.addAttribute("url", "reviewModify?id="+vo.getId());
