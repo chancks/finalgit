@@ -33,7 +33,6 @@
 			<a href="reviewList">목록</a>
 			<a href="reviewDelete?id=${review.id}">삭제</a>
 			<a href="reviewModify?id=${review.id}">수정</a>
-			<a href="reviewReply?id=${review.id}">답변</a>
 		</td>
 		
 	</tr>

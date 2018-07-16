@@ -48,9 +48,11 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</c:forEach>
 	 
 		<tr>
-			<td colspan="5" align="right">
-			<a href="noticeInsertForm">글쓰기</a>
-			</td>
+			<c:if test="${grade eq '관리자' }">
+				<td colspan="5" align="right">
+				<a href="noticeInsertForm">글쓰기</a>
+				</td>
+			</c:if>
 		</tr>	
 				
 	</table>
