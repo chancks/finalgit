@@ -49,7 +49,7 @@ public class MngController {
 			
 			model.addAttribute("idchk",chk);
 			model.addAttribute("user", user);
-			
+		
 			main="join";
 			/*res = "manager/join";*/
 			
