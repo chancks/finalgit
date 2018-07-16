@@ -11,9 +11,15 @@ public class BsDAO {
 	@Resource
 	SqlSessionTemplate sessionTemplate;
 	
-	public Object list(BsVO vo) {//시간표
+	public Object list(BsVO vo) {//학생 시간표
 		
 		return sessionTemplate.selectList("bsm.bsList",vo);
+		
+	}
+	
+	public Object plist(BsVO vo) {//강사 시간표
+		
+		return sessionTemplate.selectList("bsm.bsPList",vo);
 		
 	}
 	
@@ -23,7 +29,7 @@ public class BsDAO {
 	}
 	
 	public Object reglistpaging(PageVO vo) {//수강신청가능(페이징)
-		System.out.println("DAO:"+vo);
+		
 		return sessionTemplate.selectList("bsm.bsRegListPaging",vo);
 	}
 	

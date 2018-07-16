@@ -47,10 +47,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 update regist set rpay = '결제' where rid = #{rid}
 	</update>
 	
-	<!-- 시간표 -->
+	<!-- 학생 시간표 -->
 	<select id="bsList" resultType="bsVo">
 		select * from course,(select * from regist where rid = #{rid})tt 
 		where ctitle = tt.rtitle and cname = tt.rname
+	</select>
+	
+	<!-- 강사 시간표 -->
+	<select id="bsPList" resultType="bsVo">
+		select * from course where cid = #{rid}
 	</select>
 	
 	<!-- 내 수강신청 목록 -->

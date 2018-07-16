@@ -42,6 +42,7 @@ public class RfcController {
 	
 		model.addAttribute("service", "Bs");
 		vo.setRid((String)session.getAttribute("id"));
+		String grade = (String)session.getAttribute("grade");
 	
 		System.out.println(vo);
 		
@@ -56,7 +57,14 @@ public class RfcController {
 		switch(main) {
 			case "timetable"://시간표
 				
-				res = dao.list(vo);
+				if(grade.equals("학생")) {
+				
+					res = dao.list(vo);
+				
+				} else {
+					
+					res = dao.plist(vo);
+				}
 				
 				break;
 				
@@ -64,12 +72,11 @@ public class RfcController {
 				
 				res = dao.mylist(vo);//내 수강신청 목록
 				model.addAttribute("data2", res);
-				System.out.println("계속 널이냐"+pvo.getPage());
 				//수강신청이 가능한 과목 목록
 				vo.setTot((Integer)dao.reglisttot());
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
 				model.addAttribute("data3", pvo);
-				
+				System.out.println("pvo"+pvo);
 				arr = (ArrayList<BsVO>)dao.reglistpaging(pvo);
 				for(BsVO vv : arr) {
 					vv.setTot((Integer)dao.tot(vv));
