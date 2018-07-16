@@ -13,30 +13,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="">
-
+<input type="hidden" value="${review.seq}" name="seq">
+<table border="" align="center">
 	<tr>
-		<td>id</td><td>${notice.id}</td>
+		<td>id</td><td>${review.id}</td>
 		</tr><tr>		
-		<td>제목</td><td>${notice.title}</td>
+		<td>제목</td><td>${review.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>관리자</td>
+		<td>작성자</td><td>${review.pname}</td>
 		</tr><tr>
-		<td>작성일</td><td>${notice.reg_date}</td>
+		<td>작성일</td><td>${review.reg_date}</td>
 		</tr><tr>
-		<td>조회수</td><td>${notice.cnt}</td>
+		<td>조회수</td><td>${review.cnt}</td>
 		</tr><tr>
-		<td>내용</td><td>${notice.content}</td>
+		<td>내용</td><td>${review.content}</td>
 		</tr><tr>
 		
 		<td colspan="2" align="right">
-			<a href="noticeList">목록</a>
-			<a href="noticeDelete?id=${notice.id}">삭제</a>
-			<a href="noticeModify?id=${notice.id}">수정</a>
+			<a href="reviewList">목록</a>
+			<a href="reviewDelete?id=${review.id}">삭제</a>
+			<a href="reviewModify?id=${review.id}">수정</a>
+			<a href="reviewReply?id=${review.id}">답변</a>
 		</td>
 		
 	</tr>
-
 </table>
 </body>
 </html>

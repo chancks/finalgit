@@ -37,22 +37,16 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<td align="center">조회수</td>
 		</tr>	
 
-		<c:forEach items="${notice}" var="noticeRow" varStatus="noticeNo">
+		<c:forEach items="${review}" var="reviewRow" varStatus="reviewNo">
 			<tr>
-				<td align="center">${noticeNo.index+1}</td>
-				<td><a href="noticeDetail?id=${noticeRow.id }">${noticeRow.title}</a></td>
-				<td>관리자</td>
-				<td>${noticeRow.reg_date}</td>
-				<td align="center">${noticeRow.cnt}</td>
+				<td align="center">${reviewNo.index+1}</td>
+				<td><a href="reviewDetail?id=${reviewRow.id }">${reviewRow.title}</a></td>
+				<td>${reviewRow.pname}</td>
+				<td>${reviewRow.reg_date}</td>
+				<td align="center">${reviewRow.cnt}</td>
 			</tr>
 		</c:forEach>
-	 
-		<tr>
-			<td colspan="5" align="right">
-			<a href="noticeInsertForm">글쓰기</a>
-			</td>
-		</tr>	
-				
+
 	</table>
 </body>
 </html>

@@ -12,11 +12,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="noticeInsertReg" method="post" enctype="multipart/form-data">
-	<table border="">
+<form action="reviewInsertReg" method="post" enctype="multipart/form-data">
+	<table border="" align="center">
 		<tr>
 			<td>제목</td>
 			<td><input type="text" name="title" /></td>
+		</tr>
+		<tr>
+			<td>작성자</td>
+			<td><input type="text" name="pname" /></td>
 		</tr>
 		<tr>
 			<td>암호</td>
@@ -29,7 +33,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<input type="submit" value="작성" />
-				<a href="noticeList">뒤로</a>
+				<a href="reviewList">뒤로</a>
 			</td>
 		</tr>
 	</table>
