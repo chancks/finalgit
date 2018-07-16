@@ -1,60 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<div style="border: red 1px solid; width: 1000px">
-	<c:choose>
-		<c:when test="${id!=null }">
-			${id } 님 반갑습니다.
-			
-			<input type="button" onclick="location.href='/mvc/manager/logout'" value="로그아웃">
-			<c:choose>
-				<c:when test="${grade eq '학생' }">
-					<input type="button" onclick="location.href='/mvc/Bs/timetable?mypage=true'" value="마이페이지" >
-				</c:when>
-				<c:when test="${grade eq '강사' }">
-					<input type="button" onclick="location.href='/mvc/jun_List/p_Course_List?mypage=true'" value="마이페이지" >
-				</c:when>
-				<c:when test="${grade eq '행정' }">
-					<input type="button" onclick="location.href='/mvc/Bs/timetable?mypage=true'" value="마이페이지" >
-				</c:when>
-				<c:otherwise>
-					<input type="button" onclick="location.href='/mvc/manager/memberlist?mypage=true'" value="마이페이지" >
-				</c:otherwise>
-			</c:choose>
-		</c:when>
-		<c:otherwise>
-			<input type="button" onclick="location='/mvc/manager/loginf'" value="로그인">
-			<input type="button" onclick="location='/mvc/manager/join'" value="회원가입">
-		</c:otherwise>
-	</c:choose>
-</div>
-<div>
-<a href="/mvc/Bs/academyinfo">학원소개</a>
-<a href="">강사소개</a>
-<a href="">과목소개</a>
-<a href="">고객센터</a>
-</div>
-<div>
-<div>
-<c:if test="${param.mypage!=null }">
-<jsp:include page="menu/menu.jsp"/>
-</c:if>
-</div>
-<div>
-<jsp:include page="${service }/${main }.jsp"/>
-</div>
-</div>
-
-</body>
-</html>
-
-  --%>
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -106,7 +50,7 @@ bottom:0px;
 </style>
 
 <head>
-	<title>Home</title>
+	<title>YAHAJA</title>
 </head>
 <body>
 <div id="background">
@@ -127,7 +71,8 @@ bottom:0px;
 						</c:when>
 						<c:when test="${grade eq '강사' }">
 							<input type="button"
-								onclick="location.href='/mvc/jun_List/p_Course_List?mypage=true'"
+								onclick="location.href='/mvc/jun_List/p_Course_List?cid=${id}&mypage=true'"
+										
 								value="마이페이지">
 						</c:when>
 						<c:when test="${grade eq '행정' }">
@@ -154,9 +99,15 @@ bottom:0px;
 
 		<div id="top_menu">
 			<a href="/mvc/Bs/academyinfo">학원소개</a>
+			
 			<a href="">강사소개</a>
+<!-- <<<<<<< HEAD -->
 			<a href="">과목소개</a>
-			<a onclick="location.href='/mvc/board/boardList'"s>고객센터</a>
+			<a href="">고객센터</a>
+<!-- ======= -->
+			<a href="/mvc/jun_List/course_List">과목소개</a>
+			<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
+<!-- >>>>>>> branch 'master' of https://github.com/chancks/finalgit.git -->
 		</div>
 
 		<div id="sub_menu">

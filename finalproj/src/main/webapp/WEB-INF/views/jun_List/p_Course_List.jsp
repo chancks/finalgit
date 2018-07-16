@@ -52,28 +52,33 @@
 	<div>
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List'">전체 강의 목록</div>
+			onclick="location.href='p_Course_List?cid=${id}'">전체 강의 목록</div>
 
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List1'">진행중인 강의 목록</div>
+			onclick="location.href='p_Course_List1?cid=${id}'">진행중인 강의 목록</div>
 
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List2'">종료된 강의 목록</div>
+			onclick="location.href='p_Course_List2?cid=${id}'">종료된 강의 목록</div>
 
 		<div style="background-color: gray; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List3'">개설예정인 강의 목록</div>
+			onclick="location.href='p_Course_List3?cid=${id}'">개설예정인 강의 목록</div>
 
+	</div>
+
+	<div>
+	아이디아이디아이디아이디 @@@@@@ ${id }
 	</div>
 
 
 	<div
 		style="width: 100%; height: 700px; border-bottom: 1px inset gray; background-color: yellow;">
-<div style="background-color: silver;">${list }</div>	
+			<div style="background-color: silver;">${list }</div>	
 		<jsp:include page="${list }"></jsp:include>
 		
 	</div>
+
 
 </body>
 </html>
