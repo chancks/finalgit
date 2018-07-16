@@ -46,7 +46,38 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				<td align="center">${reviewRow.cnt}</td>
 			</tr>
 		</c:forEach>
-
+	  	<tr>
+			<tr>
+				<td colspan="5" align="center">
+					<c:if test="${data3.startPage>1}">
+						<a href="reviewList?page=1">[처음]</a>
+						<a href="reviewList?page=${data3.startPage-1}"><</a>
+					</c:if>
+					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
+						<c:choose>
+							<c:when test="${i==data3.page }">
+								[${i}]
+							</c:when>
+							<c:otherwise>
+								<a href="reviewList?page=${i }">${i}</a>
+							</c:otherwise>
+						</c:choose>
+						
+					</c:forEach>
+					<c:if test="${data3.endPage<data3.totalPage }">
+						<a href="reviewList?page=${data3.endPage+1}">></a>
+						<a href="reviewList?page=${data3.totalPage }">[마지막]</a>
+					</c:if>
+				</td>
+			</tr>
+		</tr>
+				
+		<tr>	
+			<td colspan="5" align="right">
+				<a href="reInsertForm">글쓰기</a>
+			</td>
+			
+		</tr>
 	</table>
 </body>
 </html>

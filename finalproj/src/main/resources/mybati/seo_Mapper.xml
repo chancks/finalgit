@@ -104,23 +104,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="p_course_list1" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'p1' and  <![CDATA[ cstart>sysdate ]]>
+		select * from course where cid = #{cid} and  <![CDATA[ cstart>sysdate ]]>
 		<include refid="date"/>
 	</select>
 	
 	<select id="p_course_list2" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'p1' and <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
+		select * from course where cid = #{cid} and <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
 		<include refid="date"/>
 	</select>
 	
 	<select id="p_course_list3" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'p1' and <![CDATA[ cfinish<sysdate ]]>
+		select * from course where cid = #{cid} and <![CDATA[ cfinish<sysdate ]]>
 		<include refid="date"/>
 	</select>
 
 
 	<select id="p_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where cid = 'p1'
+		select * from course where cid = #{cid}
 		<include refid="whereSch"/>
 	</select>
 	
