@@ -119,22 +119,33 @@ public class MngController {
 			
 			System.out.println(model.toString());
 			
-			/*res="manager/"+main;*/
-			
 			break;
 			
 		case "modifyreg" :
 		 	
 			System.out.println("수정수정");
 
-			String filename = jl.fileUP(user.getUp1(), request);
-			user.setAupfile(filename);
 			
+			if(user.getAupfile()==null) {
+				user.setAupfile("");
+
+			}
+			
+			if(user.getUp1().getOriginalFilename()!="") {
+				if(user.getAupfile()!="") {
+					jl.fdelete(user, request);
+				}
+				
+				String filename = jl.fileUP(user.getUp1(), request);
+				user.setAupfile(filename);
+			}
+			
+
 			dao.modify(user);
 			
-			main="myinfo";
-			/*return "redirect:/manager/myinfo";*/
-			break;
+			return "redirect:/manager/myinfo";
+			
+	
 		
 	
 		case "filedelete" :
@@ -145,13 +156,13 @@ public class MngController {
 			
 			MngUserVO vo = (MngUserVO) dao.chkid(user);
 			
+			System.out.println(vo.getAupfile());
 			System.out.println(request);
-			jl.fdelete(user, request);
+			
+			jl.fdelete(vo, request);
 			dao.fdelete(user);
 			
-			main="myinfo";
-			break;
-			/*return "redirect:/manager/myinfo";*/
+			return "redirect:/manager/myinfo";
 			
 	
 		case "memberlist":

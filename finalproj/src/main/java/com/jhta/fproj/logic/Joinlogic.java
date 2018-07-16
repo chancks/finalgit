@@ -58,11 +58,11 @@ public class Joinlogic {
         
         try {
             String filePath = 
-            		"C:\\Users\\user\\Desktop\\finalproj\\src\\main\\webapp\\resources\\picture\\";
+            		"C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";
             
-            /*filePath = request.getRealPath("resources/fff")+"/"+up.getOriginalFilename();*/
+       /*     filePath = request.getRealPath("resources/fff")+"/"+up.getOriginalFilename();
             
-            /*filePath = request.getRealPath("resources/fff")+"/";*/
+            filePath = request.getRealPath("resources/fff")+"/";*/
             
             String filename = up.getOriginalFilename();
             String fileDo = filename.substring(0,filename.lastIndexOf("."));
@@ -94,11 +94,11 @@ public class Joinlogic {
 
 	
 	public void fdelete(MngUserVO vo, HttpServletRequest request) {
-		
-		if(!vo.getAupfile().equals("")) {
+		System.out.println(vo.getAupfile()+"askdljaskldjaskldjalk");
+		if(!(vo.getAupfile()==null)) {
 			String path = request.getRealPath("up")+"\\";
-			path = "C:\\Users\\user\\Desktop\\finalproj\\src\\main\\webapp\\resources\\picture\\";
-	
+			path = "C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";
+			System.out.println("sdkjaflksdjflksajfklasdjfklasjdklfjlk");
 			new File(path+vo.getAupfile()).delete();
 		}
 	}

@@ -9,7 +9,7 @@
 		<tr>
 			<td>
 			등급
-			<input type=file id='file' name="up1" style="display: none;">
+			<input type=file id='file' name="up1" style="display: none;" accept=".jpg, .jpeg, .png">
 			<input type="hidden" name="aid" value="${user.aid }">
 			
 			</td>
@@ -18,11 +18,12 @@
 			<c:choose>
 				<c:when test="${user.aupfile!=null }">
 					<td colspan="2" rowspan="3">
-					<div id="picture">
-					<img src="../resources/picture/${user.aupfile }" width="150" height="200">
-					</div>
+						<div id="picture">
+						<img src="../resources/picture/${user.aupfile }" width="150" height="200">
+						</div>
 					
 					<br>
+					<input type="hidden" name="aupfile" value="${user.aupfile }">
 					<input type="button" value="사진변경" onclick="document.all.file.click()">
 					<input type="button" value="사진삭제" onclick="a()">
 					</td>
@@ -119,3 +120,6 @@ function a() {
 }
 </script>
 
+
+
+ 
