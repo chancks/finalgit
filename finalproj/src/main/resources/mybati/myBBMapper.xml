@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="pcmp">
+
+	<insert id = "joinInsert" parameterType="uservo">
+		insert into astudent
+		(aid,apw,aname,aemail,aphone,abirth,ainfo,aupfile,agrade)
+		values
+		(#{aid},#{apw},#{aname},#{aemail},#{aphone},#{abirth},#{ainfo},#{aupfile,jdbcType=VARCHAR},#{agrade})
+	</insert>
+	
+	
+	<select id="chkid" resultType="uservo" parameterType="uservo">
+		select * from astudent where aid = #{aid}
+	</select>
+	
+	
+	<select id="login" resultType="uservo" parameterType="uservo">
+		select * from astudent where aid = #{aid} and apw = #{apw}
+	</select>
+	
+	<update id="modify" parameterType="uservo">
+	
+		update astudent set aname = #{aname} ,aemail = #{aemail},aphone = #{aphone},
+		abirth= #{abirth},ainfo = #{ainfo},aupfile = #{aupfile}
+		
+		where aid = #{aid}
+		
+	</update>
+	
+	<update id="filedelete" parameterType="uservo">
+		update astudent set aupfile = null where aid = #{aid}
+	</update>
+	
+	
+	<select id="list" resultType="uservo" >
+		select * from astudent
+	</select>
+	
+</mapper>

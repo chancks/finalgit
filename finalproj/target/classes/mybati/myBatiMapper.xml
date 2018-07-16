@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="bsm">
+
+	<!-- 수강료 미지급 인원 -->
+	<select id="bsTotNoPay" resultType="java.lang.Integer">
+		select count(*) as tot from regist where rpay is null
+	</select>
+	
+	<!-- 수강신청 수 -->
+	<select id="bsRegistList" resultType="bsVo">
+		select * from regist order by rpay desc
+	</select>
+
+	<!-- 수강신청 인원 -->
+	<select id="bsTotRegist" resultType="java.lang.Integer">
+		select count(rcode) as tot from regist where rcode = #{ccode}
+	</select>
+
+	<!-- 지금 선택한것 -->
+	<select id="bsInfoSub"  resultType="bsVo">
+		select * from course where ccode = #{ccode}
+	</select>
+	
+	<!-- 내 수강신청목록에 추가 -->
+	<insert id="bsInsertRegist">
+		insert into regist (rid,rtitle,rname,rcode) 
+		values(#{rid},#{ctitle},#{cname},#{ccode})
+	</insert>
+	
+	<!-- 내 수강신청목록에서 삭제 -->
+	<delete id="bsDeleteRegist">
+		delete from regist where rid = #{rid} and rcode = #{rcode} 
+	</delete>
+	
+	<!-- 카드결제목록 추가 -->
+	<insert id="bsInsertPayment">
+	  insert into cardpay (cpid,cpprice,cpnum,cpdate)
+	  values(#{rid},#{cpprice},#{cpnum},sysdate)
+	</insert>
+	
+	<!-- 결제완료 -->
+	<update id="bsChkPayment">
+	 update regist set rpay = '결제' where rid = #{rid}
+	</update>
+	
+	<!-- 시간표 -->
+	<select id="bsList" resultType="bsVo">
+		select * from course,(select * from regist where rid = #{rid})tt 
+		where ctitle = tt.rtitle and cname = tt.rname
+	</select>
+	
+	<!-- 내 수강신청 목록 -->
+	<select id="bsMyList" resultType="bsVo"> 
+		select distinct ccode,ctitle,cname,ctotal from course,
+		(select * from regist where rid = #{rid} and rpay is null)tt
+		where ccode = tt.rcode and <![CDATA[ cstart>sysdate	]]>
+	</select>
+	
+	<!-- 수강신청가능 갯수 -->
+	<select id="bsRegListTot" resultType="java.lang.Integer"> 
+		select count(*) as tot from
+		(select DISTINCT ccode  from course 
+		where <![CDATA[ cstart>sysdate and sysdate >(cstart-7)	]]>)tt
+	</select>
+	
+	<!-- 수강신청(페이징) -->
+	<select id="bsRegListPaging" resultType="bsVo">
+		select * from 
+		(select rownum rnum, tt.* from 
+		(select DISTINCT ccode,ctitle,cname,ctotal from course
+			where <![CDATA[ cstart>sysdate and sysdate >(cstart-7)	]]>)tt)
+		where <![CDATA[ #{start}<=rnum and rnum<=#{end} ]]>
+	</select>
+	
+</mapper>

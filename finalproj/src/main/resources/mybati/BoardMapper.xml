@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="kdh">
+
+	<sql id="whereSch">
+		<where> <!-- 내용이 없으면 where절이 작동 x -->
+			<if test="title != null and title !=''">
+				<choose>
+					<when test="schCol == 'cnt'">
+						<![CDATA[cnt <= #{title}]]>
+					</when>
+					<otherwise>
+						${schCol} like '%'||#{title}||'%'
+					</otherwise>
+				</choose>
+			</if> 
+		</where>
+	</sql>
+
+  	<sql id="whereSeq">
+		<if test="seq != 0 ">
+			<![CDATA[ seq >= #{seq}]]>
+		</if> 
+	</sql> 
+	 
+	 
+	<!-- qna -->
+	
+	<select id="qnaListSch" resultType="boardVo" parameterType="boardVo">
+		select * from qna 
+			<include refid="whereSch"/>
+			order by gid desc , id asc
+			<!-- <![CDATA[ rnum >= #{start} and rnum <= #{end}]]> -->
+	</select>
+	
+	<update id="qnaReadCnt" parameterType="boardVo">
+		update qna set cnt = cnt+1 where id = #{id}
+	</update>
+		
+	<select id="qnaDetail" resultType="boardVo" parameterType="boardVo">
+		select * from qna where id = #{id}
+	</select>
+	
+	
+	<sql id="maxId">
+		(select max(Id)+1 from qna)
+	</sql>
+	
+	<insert id="qnaInsert" parameterType="boardVo">
+		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+			<include refid="maxId"/>
+		</selectKey>
+		insert into qna 
+		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content)
+		values
+		(#{id}, #{id}, 0, 0, -1, sysdate, #{pname}, #{pw}, #{title}, #{content})
+	</insert>
+	
+	<select id="qnaDelete" resultType="boardVo" parameterType="boardVo">
+		select * from qna where id = #{id}
+	</select>
+	
+	<delete id="qnaDeleteReg"  parameterType="boardVo">
+      delete from qna where gid = #{gid} and <include refid="whereSeq"/>
+    </delete>
+    
+    <select id="qnaPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+        select * from qna where id = #{id} and pw = #{pw}
+    </select>
+    
+	<select id="qnaModify" resultType="boardVo" parameterType="boardVo">
+		select * from qna where id = #{id}
+	</select>
+	
+	<update id="qnaModifyReg" parameterType="boardVo">
+		update qna set 
+		pw = #{pw}, title = #{title}, content = #{content}
+		where id = #{id}
+	</update>
+	
+	<select id="qnaReply" resultType="boardVo" parameterType="boardVo">
+		select * from qna where id = #{id}
+	</select>
+	
+	<update id="qnaReplyReg" parameterType="boardVo">
+		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+			<include refid="maxId"/>
+		</selectKey>
+		insert into qna 
+		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content)
+		values
+		(#{id}+1, #{gid}, ${seq}+1, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content})
+	</update>
+	
+	<select id="qnaTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(*) as count from qna
+	</select>
+	
+	
+	<!-- notice -->
+	
+	<select id="noticeListSch" resultType="boardVo" parameterType="boardVo">
+		select * from notice 
+		<include refid="whereSch"/>
+		order by gid desc , id asc
+	</select>
+	
+	<update id="noticeReadCnt" parameterType="boardVo">
+		update notice set cnt = cnt+1 where id = #{id}
+	</update>
+		
+	<select id="noticeDetail" resultType="boardVo" parameterType="boardVo">
+		select * from notice where id = #{id}
+	</select>
+	
+	
+	<sql id="noticeMaxId">
+		(select max(Id)+1 from notice)
+	</sql>
+	
+	<insert id="noticeInsert" parameterType="boardVo">
+		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+			<include refid="noticeMaxId"/>
+		</selectKey>
+		insert into notice 
+		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content)
+		values
+		(#{id}, #{id}, 0, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content})
+	</insert>
+	
+	
+	<select id="noticeDelete" resultType="boardVo" parameterType="boardVo">
+		select * from notice where id = #{id}
+	</select>
+	
+	<delete id="noticeDeleteReg"  parameterType="boardVo">
+        delete from notice where gid = #{gid} and <include refid="whereSeq"/>
+    </delete>
+    
+    <select id="noticePwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+        select * from notice where id = #{id} and pw = #{pw}
+    </select>
+    
+	<select id="noticeModify" resultType="boardVo" parameterType="boardVo">
+		select * from notice where id = #{id}
+	</select>
+	
+	<update id="noticeModifyReg" parameterType="boardVo">
+		update notice set 
+		pw = #{pw}, title = #{title}, content = #{content}
+		where id = #{id}
+	</update>
+	
+	<select id="noticeTotalCount" resultType="boardVo" parameterType="boardVo">
+		select count(*) from notice
+	</select>
+	
+</mapper>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="seo_mm">
+
+	<sql id="whereSch">
+		<where> 
+			<if test="ctitle!=null and ctitle!=''">
+				${schCol} like '%'||#{ctitle}||'%'
+			</if>
+		</where>
+	</sql>
+
+
+ 	<sql id="date">
+		<if test="ctitle!=null and ctitle!=''">
+			and ${schCol} like '%'||#{ctitle}||'%'
+		</if>
+	</sql>
+	 
+
+	<insert id="course_Insert" parameterType="jun_Vo">
+		insert into course
+		(ctitle, cname, ccontent, cday, ctime, cstart, cfinish, ccode, ctotal,
+		cid)
+		values
+		(#{ctitle}, #{schCol}, #{ccontent}, #{cday}, #{ctime} , #{cstart},
+		#{cfinish}, #{ccode}, #{ctotal}, #{col})
+	</insert>
+<!-- #{cname} -->
+	<select id="course_list1" resultType="jun_Vo"
+		parameterType="jun_Vo">
+		select * from course where <![CDATA[ cstart>sysdate ]]>
+		<include refid="date"/>
+		<!-- <include refid="whereSch" /> -->
+	</select>
+
+
+	<select id="course_list2" resultType="jun_Vo"
+		parameterType="jun_Vo">
+		select * from course where <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
+		<include refid="date"/>
+	<!-- 	<include refid="whereSch" /> -->
+	</select>
+
+
+	<select id="course_list3" resultType="jun_Vo"
+		parameterType="jun_Vo">
+		select * from course where <![CDATA[ cfinish<sysdate ]]>
+		<include refid="date"/>
+	<!-- 	<include refid="whereSch" /> -->
+	</select>
+	
+	<select id="course_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course
+		<include refid="whereSch"/>
+	</select>
+	
+	
+	<select id="course_detail" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where ccode = #{ccode}
+	</select>
+	
+		<select id="course_modify" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where ccode = #{ccode}
+	</select>
+	
+	<update id="course_modifyReg"  parameterType="jun_Vo">
+		update course set ctitle=#{ctitle}, ccontent=#{ccontent}, cday=#{cday}, ctime=#{ctime},  cstart=#{cstart},  cfinish=#{cfinish}, ctotal=#{ctotal}, cid=#{cid} where ccode=#{ccode}
+
+	</update>
+	
+	<delete id="course_deleteReg" parameterType="jun_Vo">
+		 delete from course where ccode = #{ccode}
+
+	</delete>
+	
+	
+	<select id="astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from astudent where agrade  = 'student'
+
+	</select>
+	
+	
+	<select id="astudent_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from regist where rid = #{rid}
+
+	</select>
+
+
+	<select id="professor_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from astudent where agrade  = 'professor'
+
+	</select>
+
+
+
+	<select id="professor_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = #{cid}
+		<include refid="whereSch"/>
+
+	</select>
+	
+	<select id="p_course_list1" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = 'eee' and  <![CDATA[ cstart>sysdate ]]>
+		<include refid="date"/>
+	</select>
+	
+	<select id="p_course_list2" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = 'eee' and <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
+		<include refid="date"/>
+	</select>
+	
+	<select id="p_course_list3" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = 'eee' and <![CDATA[ cfinish<sysdate ]]>
+		<include refid="date"/>
+	</select>
+
+
+	<select id="p_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = 'a5'
+		<include refid="whereSch"/>
+	</select>
+	
+
+	<select id="p_astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from regist where rcode = #{rcode}
+
+	</select>
+
+
+
+
+
+</mapper>
