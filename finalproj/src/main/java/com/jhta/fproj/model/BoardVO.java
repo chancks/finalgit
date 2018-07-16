@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
 
-@Alias("boardVo") // 蹂꾩묶�쓣 留뚮뱺�떎.
+@Alias("boardVo") // 癰귢쑴臾띰옙�뱽 筌띾슢諭븝옙�뼄.
 public class BoardVO {
-	 Integer id, gid, seq , lev ,cnt, count, start, end, page;
+	 Integer id, gid, seq , lev ,cnt, count, start2, end2, tot;
 	 Date reg_date;
 	 String   pname, pw, title, content, schCol;
 	
@@ -114,41 +114,43 @@ public class BoardVO {
 	}
 
 
-	public Integer getStart() {
-		return start;
+	public Integer getStart2() {
+		return start2;
 	}
 
 
-	public void setStart(Integer start) {
-		this.start = start;
+	public void setStart2(Integer start2) {
+		this.start2 = start2;
 	}
 
 
-	public Integer getEnd() {
-		return end;
+	public Integer getEnd2() {
+		return end2;
 	}
 
 
-	public void setEnd(Integer end) {
-		this.end = end;
+	public void setEnd2(Integer end2) {
+		this.end2 = end2;
 	}
 
 
-	public Integer getPage() {
-		return page;
+
+	public Integer getTot() {
+		return tot;
 	}
 
 
-	public void setPage(Integer page) {
-		this.page = page;
+	public void setTot(Integer tot) {
+		this.tot = tot;
 	}
 
 
 	@Override
 	public String toString() {
 		return "BoardVO [id=" + id + ", gid=" + gid + ", seq=" + seq + ", lev=" + lev + ", cnt=" + cnt + ", count="
-				+ count + ", reg_date=" + reg_date + ", pname=" + pname + ", pw=" + pw + ", title=" + title
-				+ ", content=" + content + ", schCol=" + schCol + ", sdf=" + sdf + ", arr=" + arr + "]";
+				+ count + ", start2=" + start2 + ", end2=" + end2 + ", tot=" + tot + ", reg_date=" + reg_date
+				+ ", pname=" + pname + ", pw=" + pw + ", title=" + title + ", content=" + content + ", schCol=" + schCol
+				+ ", sdf=" + sdf + ", arr=" + arr + "]";
 	}
 }
 	 

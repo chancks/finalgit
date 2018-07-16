@@ -1,7 +1,5 @@
 package com.jhta.fproj.model;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -16,6 +14,7 @@ public class BoardDAO {
 	//qna
 	
 	public Object qnaList(BoardVO vo) {
+		System.out.println(vo);
 		return sessionTemplate.selectList("kdh.qnaListSch", vo);
 	}
 	
@@ -65,14 +64,7 @@ public class BoardDAO {
 		System.out.println(vo);
 		return sessionTemplate.update("kdh.qnaReplyReg", vo);
 	}
-	
 
-	public Object qnaList(int start, int end) {
-		// TODO Auto-generated method stub
-		System.out.println("1111111111111111111111111");
-		return sessionTemplate.selectList("kdh.qnaListSch");
-	}
-	
 	public Object qnaTotalCount() {
 		// TODO Auto-generated method stub
 		System.out.println("...............................");
@@ -122,10 +114,58 @@ public class BoardDAO {
 		return sessionTemplate.selectOne("kdh.noticeDeleteReg", vo);
 	}
 
-
-/*	public int noticeTotalCount() {
+	public Object noticeTotalCount() {
 		// TODO Auto-generated method stub
+		System.out.println("...............................");
 		return sessionTemplate.selectOne("kdh.noticeTotalCount");
 	}
-*/
+
+	//review
+	
+	public Object reviewList(BoardVO vo) {
+		return sessionTemplate.selectList("kdh.reviewListSch", vo);
+	}
+	
+	public Object reviewDetail(BoardVO vo) {
+		// TODO Auto-generated method stub
+			   sessionTemplate.update("kdh.reviewReadCnt", vo);
+		return sessionTemplate.selectOne("kdh.reviewDetail", vo);
+	}
+	
+	public Object reviewInsert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.insert("kdh.reviewInsert", vo);
+	}
+
+	public Object reviewPwChk(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.selectOne("kdh.reviewPwChk", vo);
+	}
+	
+	public Object reviewModify(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.selectOne("kdh.reviewModify", vo);
+	}
+
+	public Object reviewModifyReg(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.update("kdh.reviewModifyReg", vo);
+	}
+	
+	public Object reviewDelete(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.selectOne("kdh.reviewDelete", vo);
+	}
+
+	public Object reviewDeleteReg(BoardVO vo) {
+		// TODO Auto-generated method stub
+		return sessionTemplate.selectOne("kdh.reviewDeleteReg", vo);
+	}
+
+	public Object reviewTotalCount() {
+		// TODO Auto-generated method stub
+		System.out.println("...............................");
+		return sessionTemplate.selectOne("kdh.reviewTotalCount");
+	}
+
 }
