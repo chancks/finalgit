@@ -156,7 +156,7 @@ bottom:0px;
 			<a href="/mvc/Bs/academyinfo">학원소개</a>
 			<a href="">강사소개</a>
 			<a href="">과목소개</a>
-			<a href="">고객센터</a>
+			<a onclick="location.href='/mvc/board/boardList'"s>고객센터</a>
 		</div>
 
 		<div id="sub_menu">
