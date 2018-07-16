@@ -14,7 +14,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<table border="">
+	<table border="" align="center">
 		<form alction="?">
 			<tr>
 				<td colspan="5" align="center">
@@ -64,7 +64,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						</c:choose>
 						
 					</c:forEach>
-					<c:if test="${data3.endPage<totalPage }">
+					<c:if test="${data3.endPage<data3.totalPage }">
 						<a href="noticeList?page=${data3.endPage+1}">></a>
 						<a href="noticeList?page=${data3.totalPage }">[마지막]</a>
 					</c:if>
@@ -72,6 +72,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			</tr>
 		</tr>
 		<tr>
+			<td align="left">
+				<a href="boardList">뒤로</a>
+			</td>	
 			<c:if test="${grade eq '관리자' }">
 				<td colspan="5" align="right">
 				<a href="noticeInsertForm">글쓰기</a>

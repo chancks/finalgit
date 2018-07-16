@@ -14,7 +14,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<table border="">
+	<table border="" align="center">
 		<form alction="?">
 			<tr>
 				<td colspan="5" align="center">
@@ -41,7 +41,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<tr>
 				<td align="center">${reviewNo.index+1}</td>
 				<td><a href="reviewDetail?id=${reviewRow.id }">${reviewRow.title}</a></td>
-				<td>${reviewRow.pname}</td>
+				<td>익명</td>
 				<td>${reviewRow.reg_date}</td>
 				<td align="center">${reviewRow.cnt}</td>
 			</tr>
@@ -55,7 +55,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 					</c:if>
 					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
 						<c:choose>
-							<c:when test="${i==data3.page }">
+							<c:when test="${i==page }">
 								[${i}]
 							</c:when>
 							<c:otherwise>
@@ -73,6 +73,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</tr>
 				
 		<tr>	
+			<td align="left">
+				<a href="boardList">뒤로</a>
+			</td>
 			<td colspan="5" align="right">
 				<a href="reInsertForm">글쓰기</a>
 			</td>

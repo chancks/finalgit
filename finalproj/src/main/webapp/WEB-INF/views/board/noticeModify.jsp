@@ -14,7 +14,7 @@
 <body>
 <form action="noticeModifyReg?id=${notice.id }" method="post" enctype="multipart/form-data">
 
-	<table border="">
+	<table border="" align="center">
 		<tr>
 			<td>제목</td>
 			<td><input type="text" name="title" value="${notice.title}" /></td>

@@ -17,7 +17,7 @@ public class Paging {
 		
 		vo.setPage(page);
 		
-		Integer limit = 4, pageLimit = 4;
+		Integer limit = 15, pageLimit = 10;
 		
 		vo.setStart((page-1)*limit+1);
 		vo.setEnd(page*limit);

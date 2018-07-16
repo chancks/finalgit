@@ -20,7 +20,7 @@
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td><input type="text" name="pname" /></td>
+			<td><input type="text" value="익명" /></td>
 		</tr>
 		<tr>
 			<td>암호</td>

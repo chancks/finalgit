@@ -76,6 +76,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</form>
 	
 		<tr>	
+			<td align="left">
+				<a href="boardList">뒤로</a>
+			</td>
 			<td colspan="5" align="right">
 				<a href="qnaInsertForm">글쓰기</a>
 			</td>

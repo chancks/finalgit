@@ -20,7 +20,7 @@
 		</tr><tr>		
 		<td>제목</td><td>${review.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>${review.pname}</td>
+		<td>작성자</td><td>익명</td>
 		</tr><tr>
 		<td>작성일</td><td>${review.reg_date}</td>
 		</tr><tr>

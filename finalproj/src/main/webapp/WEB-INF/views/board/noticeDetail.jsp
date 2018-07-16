@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="">
+<table border="" align="center">
 
 	<tr>
 		<td>id</td><td>${notice.id}</td>
