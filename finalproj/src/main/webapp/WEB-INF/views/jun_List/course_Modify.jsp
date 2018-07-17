@@ -31,12 +31,6 @@
 		background-color: #00ff00;
 	}
 }
-
-#a {
-	float: left;
-	background-color: gray;
-	margin: 5px;
-}
 </style>
 
 
@@ -44,50 +38,144 @@
 </head>
 <body>
 
-<form action="course_ModifyReg?=${data.ccode}" method="post" enctype="multipart/form-data">
+	<form action="course_ModifyReg?=${data.ccode}" method="post"
+		enctype="multipart/form-data">
 
-	<div><h2>과정명</h2></div>
-	${data.ctitle }
-	<div><input type="text" name="ctitle" value="${data.ctitle }"/></div>
-	
-	<div><h2>강사명</h2></div>
-	${data.cname}
-	<div><input type="text" name="cname" value="${data.cname}"/></div>
-
-	<div><h2>강사ID</h2></div>
-	<div><input type="text" name="cid" value="${data.cid}"/></div>
-
-
-	<div><h2>과정내용</h2></div>
-	<div><textarea name="ccontent" rows="5" cols="20" >${data.ccontent}</textarea></div>
+		<div id="rap" style="border: 1px #ddd solid; width: 605px">
+		
+		
+			<div style="margin-bottom: 2px;" >
+				<div style="float: left; width: 90px; text-align:center" >과정 명</div>
+				<div style="margin-top: 2px">
+					<input type="text" name="ctitle" style="width:500px;height:21px" value="${ data.ctitle}" />
+				</div>
+			</div>
+			
+<hr size=1px color="#ddd">	
 	
 	
- 	<div><h2>과정 기간</h2></div>
-	<div>시작일</div>
-		<div><input type="date" name="cstart" value= "${data.cstart}"/></div> <!-- onchange="submit()" -->
-	<!-- <div><input type="text" name="cstart" /></div> -->
-	<div>종료일</div>
-		<div><input type="date" name="cfinish" value="${data.cfinish}"/></div>
-	<!-- <div><input type="text" name="cfinish" /></div> -->
-	 
-	<div><h2>수업 시간</h2></div>
-	<div>요일</div>
-	<div><input type="number" name="cday" min="1" max="8" value="${data.cday}" /></div>
-	<div>파트</div>
-	<div><input type="text" name="ctime" value="${data.ctime}" /></div>
-	
+		<div style="" >		
+			
+			<div style="float: left; width: 90px; margin-top: 2px; text-align:center">강사 선택</div>
+			
+			<div style="float: left; margin-top: 4px;">
+				<select name="schCol" style="width:80px; height:21px">
+					<c:forEach items="${teacher }" var="row" varStatus="no">
+						<option value="${row.aname}">${row.aname}</option>
+					</c:forEach>
+				</select>
+			</div>
 
-	<div><h2>과목 코드</h2></div>
-	<div><input type="text" name="ccode" value="${data.ccode}" /></div>
-	
+			<div style="float: left; width: 90px;  margin-top: 2px; text-align:center">강사 id
+			</div>
 
-	<div><h2>총 원</h2></div>
-	<div><input type="text" name="ctotal"  value="${data.ctotal}"/></div>
-	
-	<div><input type="submit" value="작성" /></div>
-	<div><input type="reset" value="초기화" /></div>
-	<div><a href="course_Detail?ccode=${row.ccode }">뒤로가기</a></div>
 
-</form>
+			<div style="float:left;  margin-top: 4px;">
+				<select name="col" style="width:120px; height:21px">
+					<c:forEach items="${teacher }" var="row" varStatus="no">
+						<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			
+			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">과목 코드
+			</div>
+			
+			<div>
+				<input type="text" name="ccode" style="width:110px;height:21px; margin-top: 4px; margin-left: 10px"value="${ data.ccode}"/>
+			</div>
+			
+		</div>
+
+
+		<div style="margin-top: 2px; ">
+			<div  style="float: left; width: 90px; text-align:center; margin-top: 2px">
+				요 일
+			</div>
+			
+			
+			
+			<div style="float: left; margin-top: 4px;">
+				<select name="cday" style="width:80px; height:21px">
+						<option value="월">월</option>
+						<option value="화">화</option>
+						<option value="수">수</option>
+						<option value="목">목</option>
+						<option value="금">금</option>
+						<option value="토">토</option>
+						<option value="일">일</option>
+				</select>
+			</div>
+			
+		
+			<div  style="float: left; width: 90px;  margin-top: 2px; text-align:center">시 간</div>
+			<div>
+				<input type="text" name="ctime"  value="${ data.ctime}" style="margin-top: 4px; width:120px;height:21px; float: left;" />
+			</div>
+			
+			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">
+				정 원
+			</div>
+			<div>
+				<input type="number" name="ctotal" style="margin-top: 4px; width:110px; height:21px;margin-left: 10px" value="${ data.ctotal}" />
+			</div>
+		</div>
+
+
+<hr size=1px color="#ddd">	
+
+
+		<div style="margin-top: 5px; height: 20px">
+			
+			<div style="float:left;  width: 90px; text-align:center; ">
+				시작일
+			</div>
+			
+			
+			<div  style="float:left;">
+				<input type="date" name="cstart" value="${ data.cstart}" style="width:205px; height:21px"/>
+			</div>
+			
+			<div style="float:left;  width: 90px; text-align:center">
+				종료일
+			</div>
+			<div style="float:left;">
+				<input type="date" name="cfinish" value="${ data.cfinish}" style="width:205px; height:21px" />
+			</div>
+			
+		</div>
+
+
+
+<hr size=1px color="#ddd">	
+
+
+
+		<div style="margin-top: 4px;">
+			<div style="float: left; width: 90px; margin-top: 2px; ">과정 내용</div>
+			<div>
+				<textarea name="ccontent" rows="10" cols="68.8px" style="margin-top: 4px; resize: none;">
+				${data.ccontent}
+				</textarea>
+			</div>
+		</div>
+
+			
+<hr size=1px color="#ddd">	
+		
+
+
+			<div>
+				<input type="submit" value="작성" />
+			</div>
+			<div>
+				<input type="reset" value="초기화" />
+			</div>
+			<div>
+				<a href="course_Detail?ccode=${row.ccode }&mypage=true">뒤로가기</a>
+			</div>
+		</div>
+	</form>
 </body>
 </html>

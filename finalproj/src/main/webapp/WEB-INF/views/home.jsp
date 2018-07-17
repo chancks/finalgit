@@ -25,7 +25,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 }
 
 #logo {
-	width: 180px;
+	width: 190px;
+	height: 60px;
 	margin-top: 20px;
 	margin-left: 20px;
 	background-color: fuchsia;
@@ -122,9 +123,9 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-			<div >
-				<img id="logo" src="/mvc/resources/picture/logo.png"
-				onclick="location.href='/mvc/'">
+			<div id="logo">
+				로고 왜 안들어와
+				<!-- <img src="resources/img/logo.png"> -->
 			</div>
 
 
@@ -162,12 +163,8 @@ border: pink 1px solid;
 					<c:otherwise>
 						<input type="button" onclick="location='/mvc/manager/loginf'"
 							value="로그인">
-						<input type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
+						<input type="button" onclick="location='/mvc/manager/join'"
 							value="회원가입">
-						<input type="button" onclick="location='/mvc/manager/schid'"
-							value="id 찾기">	
-						<input type="button" onclick="location='/mvc/manager/schpw'"
-						value="pw 찾기">	
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -178,16 +175,15 @@ border: pink 1px solid;
 		<div id="top_menu">
 
 			<div id="menu_rap" class="btn-group">
-				
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/academyinfo'" value="학원소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/manager/teacherinfo'" value="강사소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/courseinfo'" value="과목소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/board/boardList'" value="고객센터">
-			<!-- 	<button class ="btn">고객 센터</btn> -->
+				<!-- 	
+				<button class ="btn">학원 소개</btn>
+				<button class ="btn">강사 소개</btn>
+				<button class ="btn">과목 소개</btn>
+				<button class ="btn">고객 센터</btn>
+  -->
 
-				
 
-								<!-- <div id="menu1" class="menu">
+				<div id="menu1" class="menu">
 					<a href="/mvc/Bs/academyinfo">학원소개</a>
 				</div>
 
@@ -202,7 +198,7 @@ border: pink 1px solid;
 
 				<div id="menu4" class="menu">
 					<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
-				</div> -->
+				</div>
 			</div>
 
 		</div>
@@ -212,7 +208,7 @@ border: pink 1px solid;
 
 		<div id="main_rap">
 			<div id="sub_menu">
-				<c:if test="${param.mypage!=null ||mypage!=null }">
+				<c:if test="${param.mypage!=null }">
 					<jsp:include page="menu/menu.jsp" />
 				</c:if>
 			</div>

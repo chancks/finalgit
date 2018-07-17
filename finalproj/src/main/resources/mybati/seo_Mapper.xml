@@ -6,9 +6,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="seo_mm">
 
 	<sql id="whereSch">
-		<where> 
+		<where>
 			<if test="ctitle!=null and ctitle!=''">
-				${schCol} like '%'||#{ctitle}||'%'
+				and ${schCol} like '%'||#{ctitle}||'%'
 			</if>
 		</where>
 	</sql>
@@ -63,8 +63,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from course where ccode = #{ccode}
 	</select>
 	
-		<select id="course_modify" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where ccode = #{ccode}
+	<select id="course_modify" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where ccode =  #{ccode} 
+	</select>
+	
+	<select id="course_modify1" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from astudent where agrade = '강사'
 	</select>
 	
 	<update id="course_modifyReg"  parameterType="jun_Vo">
@@ -99,7 +103,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="professor_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
 		select * from course where cid = #{cid}
-		<include refid="whereSch"/>
+		<include refid="date"/>
 
 	</select>
 	

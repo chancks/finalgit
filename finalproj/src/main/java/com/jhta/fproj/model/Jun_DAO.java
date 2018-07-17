@@ -43,6 +43,12 @@ public class Jun_DAO {
 		return sessionTemplate.selectOne("seo_mm.course_modify", vo);
 	}
 	
+	public Object course_modify1(Jun_VO vo) {
+		
+		System.out.println("DAO course_modify1 들어옴:  "+vo);
+
+		return sessionTemplate.selectList("seo_mm.course_modify1", vo);
+	}
 	
 	public Object course_modifyReg(Jun_VO vo) {
 		

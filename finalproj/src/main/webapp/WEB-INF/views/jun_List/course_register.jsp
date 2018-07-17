@@ -9,6 +9,17 @@
 <meta name="viewport"content="width=device-width, initial-scale=1.0 , user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+
+<link rel="stylesheet"
+	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+
+<script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"
+	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+
+
 <style>
 @media screen and (min-width:600px){
 	table{
@@ -31,64 +42,136 @@
 
 <form action="course_insertReg?=" method="post" enctype="multipart/form-data">
 
-	
-	<div><h2>과정명</h2></div>
-	<div><input type="text" name="ctitle" /></div>
-	
-	<div><h2>강사명</h2></div>
 
-<div>
+		<div id="rap" style="border: 1px #ddd solid; width: 605px">
 		
-			<select name="schCol">
-			<c:forEach items="${data }" var="row" varStatus="no">
-				<option value="${row.aname}">${row.aname}</option>
-				</c:forEach>
-			</select>
-</div>
-<!-- 
+		
+			<div style="margin-bottom: 2px;" >
+				<div style="float: left; width: 90px; text-align:center" >과정 명</div>
+				<div style="margin-top: 2px">
+					<input type="text" name="ctitle" style="width:500px;height:21px" />
+				</div>
+			</div>
+			
+<hr size=1px color="#ddd">	
+	
+	
+		<div style="" >		
+			
+			<div style="float: left; width: 90px; margin-top: 2px; text-align:center">강사 선택</div>
+			
+			<div style="float: left; margin-top: 4px;">
+				<select name="schCol" style="width:80px; height:21px">
+					<c:forEach items="${data }" var="row" varStatus="no">
+						<option value="${row.aname}">${row.aname}</option>
+					</c:forEach>
+				</select>
+			</div>
 
-		<div><input type="text" name="cname" /></div>
- -->
-	<div><h2>강사ID</h2></div>
-	<div><input type="text" name="cid" /></div>
-	<div>
+			<div style="float: left; width: 90px;  margin-top: 2px; text-align:center">강사 id
+			</div>
+
+
+			<div style="float:left;  margin-top: 4px;">
+				<select name="col" style="width:120px; height:21px">
+					<c:forEach items="${data }" var="row" varStatus="no">
+						<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
+					</c:forEach>
+				</select>
+			</div>
+
+			
+			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">과목 코드
+			</div>
+			
+			<div>
+				<input type="text" name="ccode" style="width:110px;height:21px; margin-top: 4px; margin-left: 10px"/>
+			</div>
+			
+		</div>
+
+
+		<div style="margin-top: 2px; ">
+			<div  style="float: left; width: 90px; text-align:center; margin-top: 2px">
+				요 일
+			</div>
+			
+			
+			
+			<div style="float: left; margin-top: 4px;">
+				<select name="cday" style="width:80px; height:21px">
+						<option value="월">월</option>
+						<option value="화">화</option>
+						<option value="수">수</option>
+						<option value="목">목</option>
+						<option value="금">금</option>
+						<option value="토">토</option>
+						<option value="일">일</option>
+				</select>
+			</div>
+			
 		
-			<select name="col">
-			<c:forEach items="${data }" var="row" varStatus="no">
-				<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
-				</c:forEach>
-			</select>
+			<div  style="float: left; width: 90px;  margin-top: 2px; text-align:center">시 간</div>
+			<div>
+				<input type="text" name="ctime" style="margin-top: 4px; width:120px;height:21px; float: left;" />
+			</div>
+			
+			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">
+				정 원
+			</div>
+			<div>
+				<input type="number" name="ctotal" style="margin-top: 4px; width:110px; height:21px;margin-left: 10px" />
+			</div>
+		</div>
+
+
+<hr size=1px color="#ddd">	
+
+
+		<div style="margin-top: 5px; height: 20px">
+			
+			<div style="float:left;  width: 90px; text-align:center; ">
+				시작일
+			</div>
+			
+			
+			<div  style="float:left;">
+				<input type="date" name="cstart" value="2018-07-20" style="width:205px; height:21px"/>
+			</div>
+			
+			<div style="float:left;  width: 90px; text-align:center">
+				종료일
+			</div>
+			<div style="float:left;">
+				<input type="date" name="cfinish" value="2018-08-30" style="width:205px; height:21px" />
+			</div>
+			
+		</div>
+
+
+
+<hr size=1px color="#ddd">	
+
+
+
+		<div style="margin-top: 4px;">
+			<div style="float: left; width: 90px; margin-top: 2px; text-align:center;">과정 내용</div>
+			<div>
+				<textarea name="ccontent" rows="10" cols="68.8px" style="margin-top: 4px; resize: none;">
+		
+				</textarea>
+			</div>
+		</div>
+
+			
+<hr size=1px color="#ddd">	
+		
+
+			<div>
+				<input type="submit" value="작성" /><a href="../">뒤로 가기</a>
+			</div>
+
 	</div>
-
-	<div><h2>과정내용</h2></div>
-	<div><textarea name="ccontent" rows="5" cols="20">과정 내용 적자</textarea></div>
-	
-	
- 	<div><h2>과정 기간</h2></div>
-	<div>시작일</div>
-		<div><input type="date" name="cstart" value="2017-10-10"/></div> <!-- onchange="submit()" -->
-	<!-- <div><input type="text" name="cstart" /></div> -->
-	<div>종료일</div>
-		<div><input type="date" name="cfinish" value="2018-10-10"/></div>
-	<!-- <div><input type="text" name="cfinish" /></div> -->
-	 
-	<div><h2>수업 시간</h2></div>
-	<div>요일</div>
-	<div><input type="number" name="cday" min="1" max="8"/></div>
-	<div>파트</div>
-	<div><input type="text" name="ctime"/></div>
-	
-
-	<div><h2>과목 코드</h2></div>
-	<div><input type="text" name="ccode" /></div>
-	
-
-	<div><h2>총 원</h2></div>
-	<div><input type="number" name="ctotal" /></div>
-	
-	<div><input type="submit" value="작성" /><a href="../">뒤로 가기</a></div>
-	
-
-</form>
+	</form>
 </body>
 </html>
