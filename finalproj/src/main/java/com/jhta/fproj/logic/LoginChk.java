@@ -23,7 +23,10 @@ public class LoginChk extends HandlerInterceptorAdapter {
 		String url = request.getRequestURI();
 		String servletpath = request.getServletPath();
 		
-		System.out.println("url:"+url);
+		boolean chk = true;
+		
+		System.out.println("id:"+(String)session.getAttribute("id"));
+		System.out.println("등급:"+grade);
 		System.out.println("ServletPath:"+servletpath+"길이:"+servletpath.length());
 		
 		if(request.getServletPath().length()>1) {
@@ -36,6 +39,10 @@ public class LoginChk extends HandlerInterceptorAdapter {
 			if(grade.equals("강사")&& 
 					((servletpath.contains("jun_List") && !servletpath.contains("p_"))
 					||(servletpath.contains("Bs") && !servletpath.contains("timetable")))) {
+				chk=grade.equals("강사")&& 
+						((servletpath.contains("jun_List") && !servletpath.contains("p_"))
+								||(servletpath.contains("Bs") && !servletpath.contains("timetable")));
+				System.out.println("강사인터셉터:"+chk);
 				
 				response.sendRedirect("/mvc");
 				return false;
@@ -46,19 +53,33 @@ public class LoginChk extends HandlerInterceptorAdapter {
 					||servletpath.contains("jun_List")
 					||servletpath.contains("memberlist"))) {
 				
+				chk=grade.equals("학생")&& 
+						(servletpath.contains("notice")
+								||servletpath.contains("jun_List")
+								||servletpath.contains("memberlist"));
+				System.out.println("학생인터셉터:"+chk);
+				
 				response.sendRedirect("/mvc");
 				return false;
 			}
 			
 			if((grade.equals("관리자")||grade.equals("행정"))&& 
-					servletpath.contains("p_")
-					||(servletpath.contains("Bs")&&!servletpath.contains("totpay"))) {
+					(servletpath.contains("p_")
+					||(servletpath.contains("Bs")&&!servletpath.contains("totpay")))) {
+				
+				chk=(grade.equals("관리자")||grade.equals("행정"))&& 
+						(servletpath.contains("p_")
+						||(servletpath.contains("Bs")&&!servletpath.contains("totpay")));
+				System.out.println("관리자및행정인터셉터:"+chk);
 				
 				response.sendRedirect("/mvc");
 				return false;
 			}
 			
 			if(grade.equals("관리자")&& servletpath.contains("myinfo")) {
+				
+				chk=grade.equals("관리자")&& servletpath.contains("myinfo");
+				System.out.println("관리자인터셉터:"+chk);
 				
 				response.sendRedirect("/mvc");
 				return false;
