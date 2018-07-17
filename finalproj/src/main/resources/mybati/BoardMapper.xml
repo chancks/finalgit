@@ -22,7 +22,7 @@
 
   	<sql id="whereSeq">
 		<if test="seq != 0 ">
-			<![CDATA[ seq >= #{seq}]]>
+			and <![CDATA[ seq >= #{seq}]]>
 		</if> 
 	</sql> 
 	 
@@ -65,7 +65,7 @@
 	</select>
 	
 	<delete id="qnaDeleteReg"  parameterType="boardVo">
-      delete from qna where gid = #{gid} and <include refid="whereSeq"/>
+      delete from qna where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
     <select id="qnaPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
@@ -140,7 +140,7 @@
 	</select>
 	
 	<delete id="noticeDeleteReg"  parameterType="boardVo">
-        delete from notice where gid = #{gid} and <include refid="whereSeq"/>
+        delete from notice where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
     <select id="noticePwChk" resultType="java.lang.Integer"  parameterType="boardVo">
@@ -202,7 +202,7 @@
 	</select>
 	
 	<delete id="reviewDeleteReg"  parameterType="boardVo">
-        delete from review where gid = #{gid} and <include refid="whereSeq"/>
+        delete from review where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
     <select id="reviewPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
