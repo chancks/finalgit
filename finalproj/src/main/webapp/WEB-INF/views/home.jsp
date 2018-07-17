@@ -30,7 +30,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 	margin-left: 20px;
 	background-color: fuchsia;
 	float: left;
-	cursor: pointer;
 }
 
 #login {
@@ -124,8 +123,8 @@ border: pink 1px solid;
 		<div id="hight_top">
 
 			<div >
-				로고 왜 안들어와
-				<img id="logo" src="..\resources\picture\logo.png">
+				<img id="logo" src="/mvc/resources/picture/logo.png"
+				onclick="location.href='/mvc/'">
 			</div>
 
 
@@ -177,8 +176,8 @@ border: pink 1px solid;
 			<div id="menu_rap" class="btn-group">
 				
 				<input type="button" class="btn" onclick="location.href='/mvc/Bs/academyinfo'" value="학원소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/jun_List/professor_List'" value="강사소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/jun_List/course_List'" value="과목소개">
+				<input type="button" class="btn" onclick="location.href='/mvc/manager/teacherinfo'" value="강사소개">
+				<input type="button" class="btn" onclick="location.href='/mvc/Bs/courseinfo'" value="과목소개">
 				<input type="button" class="btn" onclick="location.href='/mvc/board/boardList'" value="고객센터">
 			<!-- 	<button class ="btn">고객 센터</btn> -->
 
