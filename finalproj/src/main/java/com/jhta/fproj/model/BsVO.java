@@ -8,8 +8,8 @@ import org.apache.ibatis.type.Alias;
 @Alias("bsVo")
 public class BsVO {
 
-	String ccode,ctitle, cname, ccontent, ctime,cpid,rid, rtitle, rname,rcode,rpay;
-	Integer cday,ctotal,cpnum,cpprice,tot;
+	String ccode,ctitle,cname,ccontent,cday,ctime,cpid,rid,rtitle,rname,rcode,rpay;
+	Integer ctotal,cpnum,cpprice,tot;
 	Date cstart, cfinish,cpdate;
     
     String [] dayarr = {"월","화","수","목","금","토","일"};
@@ -87,10 +87,10 @@ public class BsVO {
 	public void setCcontent(String ccontent) {
 		this.ccontent = ccontent;
 	}
-	public Integer getCday() {
+	public String getCday() {
 		return cday;
 	}
-	public void setCday(Integer cday) {
+	public void setCday(String cday) {
 		this.cday = cday;
 	}
 	public String getCtime() {

@@ -44,7 +44,7 @@
 					<c:if test="${j==0 && i!=0 && no.index==1}">
 						${dd.dayarr[i-1] }
 					</c:if>
-					<c:if test="${i==dd.cday}">
+					<c:if test="${dd.dayarr[i-1] eq dd.cday}">
 						<c:forEach var="tt" items="${dd.timearr }">
 							<c:if test="${j==tt }">
 								${dd.ctitle }<br>${dd.cname }
