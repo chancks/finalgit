@@ -78,7 +78,7 @@ public class BsDAO {
 		return sessionTemplate.selectList("bsm.bsRegistList");
 	}
 	
-	public Object clist() {//수강신청목록
+	public Object clist() {//수강신청목록 
 		
 		return sessionTemplate.selectList("bsm.bsCourseList");
 	}
