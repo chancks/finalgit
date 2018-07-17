@@ -40,7 +40,8 @@
             <exclude-mapping path="/board/reviewList"/>
             <exclude-mapping path="/board/reviewList"/>
             <exclude-mapping path="/board/reviewDetail"/>
-            <exclude-mapping path="/board/first"/>   
+            <exclude-mapping path="/board/boardList"/>
+            <exclude-mapping path="/board/first"/>
             <exclude-mapping path="/manager/teacherinfo"/>
             <exclude-mapping path="/manager/join"/>
             <exclude-mapping path="/manager/joinreg"/>
@@ -49,10 +50,9 @@
             <exclude-mapping path="/manager/idchk"/>
             <exclude-mapping path="/manager/schid"/>
             <exclude-mapping path="/manager/schpw"/>
-            <exclude-mapping path="/manager/schidreg"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
-                
+            
            
             <beans:ref bean="LoginChk"/>
         </interceptor>

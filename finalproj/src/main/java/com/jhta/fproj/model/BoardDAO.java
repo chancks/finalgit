@@ -11,6 +11,18 @@ public class BoardDAO {
 	@Resource
 	SqlSessionTemplate sessionTemplate;
 	
+	public Object qnaList() {
+		return sessionTemplate.selectList("kdh.qnalist");
+	}
+	
+	public Object noticeList() {
+		return sessionTemplate.selectList("kdh.noticelist");
+	}
+	
+	public Object reviewList() {
+		return sessionTemplate.selectList("kdh.reviewlist");
+	}
+	
 	//qna
 	
 	public Object qnaList(BoardVO vo) {
