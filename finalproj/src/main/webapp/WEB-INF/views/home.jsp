@@ -25,8 +25,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 }
 
 #logo {
-	width: 190px;
-	height: 60px;
+	width: 180px;
 	margin-top: 20px;
 	margin-left: 20px;
 	background-color: fuchsia;
@@ -123,9 +122,9 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-			<div id="logo">
+			<div >
 				로고 왜 안들어와
-				<!-- <img src="resources/img/logo.png"> -->
+				<img id="logo" src="..\resources\picture\logo.png">
 			</div>
 
 
