@@ -30,6 +30,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 	margin-left: 20px;
 	background-color: fuchsia;
 	float: left;
+	cursor: pointer;
 }
 
 #login {
