@@ -50,6 +50,7 @@
             <exclude-mapping path="/manager/schpw"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
+            <exclude-mapping path="/Bs/first"/>       
            
             <beans:ref bean="LoginChk"/>
         </interceptor>

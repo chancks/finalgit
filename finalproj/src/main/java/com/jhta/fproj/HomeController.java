@@ -36,7 +36,7 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		model.addAttribute("service", "Bs");
-		model.addAttribute("main", "academyinfo");
+		model.addAttribute("main", "first");
 		
 		return "home";
 	}

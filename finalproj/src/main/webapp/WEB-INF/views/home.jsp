@@ -125,7 +125,8 @@ border: pink 1px solid;
 
 			<div id="logo">
 				로고 왜 안들어와
-				<!-- <img src="resources/img/logo.png"> -->
+				<img src="resources/img/logo.png"
+				onclick="location.href='/mvc/'">
 			</div>
 
 
