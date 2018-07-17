@@ -40,6 +40,7 @@
             <exclude-mapping path="/board/reviewList"/>
             <exclude-mapping path="/board/reviewList"/>
             <exclude-mapping path="/board/reviewDetail"/>
+            <exclude-mapping path="/manager/teacherinfo"/>
             <exclude-mapping path="/manager/join"/>
             <exclude-mapping path="/manager/joinreg"/>
             <exclude-mapping path="/manager/login"/>
