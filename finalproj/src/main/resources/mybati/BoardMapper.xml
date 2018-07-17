@@ -34,7 +34,7 @@
 
   	<sql id="whereSeq">
 		<if test="seq != 0 ">
-			<![CDATA[ seq >= #{seq}]]>
+			and <![CDATA[ seq >= #{seq}]]>
 		</if> 
 	</sql> 
 	 
@@ -42,12 +42,13 @@
 	<!-- qna -->
 	
 	<select id="qnaListSch" resultType="boardVo" parameterType="boardVo">
-		select * from qna 
+		select ff.* from (select * from (select rownum rnum, tt.* from 
+		(select * from qna)tt)
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
 			<include refid="whereSch"/>
-			order by gid desc , id asc
-			<!-- <![CDATA[ rnum >= #{start} and rnum <= #{end}]]> -->
+			order by ff.gid desc , ff.id asc
 	</select>
-	
+
 	<update id="qnaReadCnt" parameterType="boardVo">
 		update qna set cnt = cnt+1 where id = #{id}
 	</update>
@@ -76,7 +77,7 @@
 	</select>
 	
 	<delete id="qnaDeleteReg"  parameterType="boardVo">
-      delete from qna where gid = #{gid} and <include refid="whereSeq"/>
+      delete from qna where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
     <select id="qnaPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
@@ -115,9 +116,11 @@
 	<!-- notice -->
 	
 	<select id="noticeListSch" resultType="boardVo" parameterType="boardVo">
-		select * from notice 
-		<include refid="whereSch"/>
-		order by gid desc , id asc
+		select ff.* from (select * from (select rownum rnum, tt.* from 
+		(select * from notice)tt)
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
+			<include refid="whereSch"/>
+			order by ff.gid desc , ff.id asc
 	</select>
 	
 	<update id="noticeReadCnt" parameterType="boardVo">
@@ -149,7 +152,7 @@
 	</select>
 	
 	<delete id="noticeDeleteReg"  parameterType="boardVo">
-        delete from notice where gid = #{gid} and <include refid="whereSeq"/>
+        delete from notice where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
     <select id="noticePwChk" resultType="java.lang.Integer"  parameterType="boardVo">
@@ -166,8 +169,69 @@
 		where id = #{id}
 	</update>
 	
-	<select id="noticeTotalCount" resultType="boardVo" parameterType="boardVo">
+	<select id="noticeTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
 		select count(*) from notice
 	</select>
 	
+	
+	
+	<!-- review -->
+	
+	<select id="reviewListSch" resultType="boardVo" parameterType="boardVo">
+		select ff.* from (select * from (select rownum rnum, tt.* from 
+		(select * from review)tt)
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
+			<include refid="whereSch"/>
+			order by ff.gid desc , ff.id asc
+	</select>
+	
+	<update id="reviewReadCnt" parameterType="boardVo">
+		update review set cnt = cnt+1 where id = #{id}
+	</update>
+		
+	<select id="reviewDetail" resultType="boardVo" parameterType="boardVo">
+		select * from review where id = #{id}
+	</select>
+	
+	
+	<sql id="reviewMaxId">
+		(select max(Id)+1 from review)
+	</sql>
+	
+	<insert id="reviewInsert" parameterType="boardVo">
+		<selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+			<include refid="reviewMaxId"/>
+		</selectKey>
+		insert into review 
+		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content)
+		values
+		(#{id}, #{id}, 0, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content})
+	</insert>
+	
+	
+	<select id="reviewDelete" resultType="boardVo" parameterType="boardVo">
+		select * from review where id = #{id}
+	</select>
+	
+	<delete id="reviewDeleteReg"  parameterType="boardVo">
+        delete from review where gid = #{gid} <include refid="whereSeq"/>
+    </delete>
+    
+    <select id="reviewPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+        select * from review where id = #{id} and pw = #{pw}
+    </select>
+    
+	<select id="reviewModify" resultType="boardVo" parameterType="boardVo">
+		select * from review where id = #{id}
+	</select>
+	
+	<update id="reviewModifyReg" parameterType="boardVo">
+		update review set 
+		pw = #{pw}, title = #{title}, content = #{content}
+		where id = #{id}
+	</update>
+	
+	<select id="reviewTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select count(*) from review
+	</select>
 </mapper>
