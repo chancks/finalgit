@@ -132,6 +132,11 @@ public class RfcController {
 				res = dao.rlist();
 				model.addAttribute("tot", dao.tot());
 				break;
+				
+			case "courseinfo"://과목소개
+				
+				res = dao.clist();
+				break;
 		}
 	
 		return res;

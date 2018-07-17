@@ -81,4 +81,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where <![CDATA[ #{start}<=rnum and rnum<=#{end} ]]>
 	</select>
 	
+	<!-- 개설 과목 -->
+	<select id="bsCourseList" resultType="bsVo">
+		select DISTINCT ccode,ctitle,ccontent,cname,ctotal,cstart,cfinish from course
+			where <![CDATA[ cstart > sysdate or sysdate < cfinish	]]>
+            order by ctitle
+	</select>
+	
 </mapper>
