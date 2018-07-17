@@ -17,6 +17,7 @@
 	<c:when test="${grade eq '강사' }"><!-- 강사 -->
 		<a href="/mvc/manager/myinfo?mypage=true">내 정보</a>
 		<a href="/mvc/jun_List/p_Course_List?cid=${id}&mypage=true">내 강의</a>
+		<a href="/mvc/Bs/timetable?mypage=true">시간표</a>
 	</c:when>
 	<c:otherwise><!-- 관리자,행정 -->
 		<c:if test="${id eq 'admin' }">
