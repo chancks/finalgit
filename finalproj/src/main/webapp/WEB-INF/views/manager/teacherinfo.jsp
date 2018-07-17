@@ -14,7 +14,15 @@
 					</div>
 					
 					<div style="float: left; background: gray; width:30%; height: 70%; position: relative;" >
-						<img src="../resources/picture/${dd.aupfile }" width="250px" height="170px">
+						<c:choose>
+							<c:when test="${dd.aupfile eq null }">
+								사진없음
+							</c:when>
+							<c:otherwise>
+								<img src="../resources/picture/${dd.aupfile }" width="250px" height="170px">
+							</c:otherwise>
+						</c:choose>
+						
 					</div>
 					<div style="width: 70%; height:70%; background: green;float : right; position: relative; vertical-align:middle; text-align: center;">
 						${dd.ainfo }
@@ -22,8 +30,10 @@
 				</div>
 			</center>
 		</c:if>
-		${a }
 	</c:forEach>
+	<c:if test="${!a }">
+			강사없음
+	</c:if>
 </div>
 
 

@@ -208,7 +208,7 @@ border: pink 1px solid;
 
 		<div id="main_rap">
 			<div id="sub_menu">
-				<c:if test="${param.mypage!=null }">
+				<c:if test="${param.mypage!=null ||mypage!=null }">
 					<jsp:include page="menu/menu.jsp" />
 				</c:if>
 			</div>
