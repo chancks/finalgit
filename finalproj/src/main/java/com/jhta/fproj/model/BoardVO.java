@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
 
-@Alias("boardVo") // 癰귢쑴臾띰옙�뱽 筌띾슢諭븝옙�뼄.
+@Alias("boardVo") // �솻洹��뫒�눧�씛�삕占쎈굵 嶺뚮씭�뒧獄�釉앹삕占쎈펲.
 public class BoardVO {
 	 Integer id, gid, seq , lev ,cnt, count, start2, end2, tot;
 	 Date reg_date;
@@ -101,7 +101,7 @@ public class BoardVO {
 		this.title = title;
 	}
 	public String getContent() {
-		return content;
+		return content.replaceAll("\n", "<br>");
 	}
 	public void setContent(String content) {
 		this.content = content;
