@@ -45,6 +45,8 @@
             <exclude-mapping path="/manager/login"/>
             <exclude-mapping path="/manager/loginf"/>
             <exclude-mapping path="/manager/idchk"/>
+            <exclude-mapping path="/manager/schid"/>
+            <exclude-mapping path="/manager/schpw"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
            

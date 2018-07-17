@@ -8,11 +8,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jhta.fproj.logic.Joinlogic;
+import com.jhta.fproj.logic.Schval;
 import com.jhta.fproj.model.MngDAO;
 import com.jhta.fproj.model.MngUserVO;
 
@@ -26,7 +28,7 @@ public class MngController {
 	@RequestMapping()
 	String view(@PathVariable("main") String main,
 			MngUserVO user,Model model,
-			HttpSession session,HttpServletRequest request) {
+			HttpSession session,HttpServletRequest request,BindingResult errors) {
 		
 		Joinlogic jl = new Joinlogic(dao);
 		model.addAttribute("service", "manager");
@@ -170,7 +172,20 @@ public class MngController {
 			
 			model.addAttribute("data", dao.list());
 			break;
+		
+		case "schidreg" :
+
+			new Schval().validate(user, errors);
 			
+			main = "schid";
+			if(!errors.hasErrors()) {
+				
+			}
+			
+			break;
+		case "schpw" :
+			System.out.println("dkjfskldjfkl");
+			break;
 		}
 		
 		
