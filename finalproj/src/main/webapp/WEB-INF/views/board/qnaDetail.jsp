@@ -16,8 +16,6 @@
 <input type="hidden" value="${qna.seq}" name="seq">
 <table border="" align="center">
 	<tr>
-		<td>id</td><td>${qna.id}</td>
-		</tr><tr>		
 		<td>제목</td><td>${qna.title}</td>
 		</tr><tr>
 		<td>작성자</td><td>${qna.pname}</td>

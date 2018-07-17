@@ -81,10 +81,11 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<td align="left">
 				<a href="boardList">뒤로</a>
 			</td>
-			<td colspan="5" align="right">
-				<a href="reviewInsertForm">글쓰기</a>
-			</td>
-			
+			<c:if test="${grade eq '학생' }">
+				<td colspan="5" align="right">
+					<a href="reviewInsertForm">글쓰기</a>
+				</td>
+			</c:if>
 		</tr>
 	</table>
 </body>

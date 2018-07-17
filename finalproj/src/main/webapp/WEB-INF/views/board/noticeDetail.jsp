@@ -16,8 +16,6 @@
 <table border="" align="center">
 
 	<tr>
-		<td>id</td><td>${notice.id}</td>
-		</tr><tr>		
 		<td>제목</td><td>${notice.title}</td>
 		</tr><tr>
 		<td>작성자</td><td>관리자</td>

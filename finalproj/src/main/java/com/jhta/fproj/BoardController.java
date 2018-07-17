@@ -40,7 +40,8 @@ public class BoardController {
 		if(main.equals("qnaInsertReg") || main.equals("qnaModifyReg")
 			|| main.equals("qnaDeleteReg") || main.equals("qnaReplyReg")
 			|| main.equals("noticeInsertReg") || main.equals("noticeModifyReg")
-			|| main.equals("noticeDeleteReg") || main.equals("noticeReplyReg")
+			|| main.equals("noticeDeleteReg") || main.equals("reviewInsertReg")
+			|| main.equals("reviewModifyReg") || main.equals("reviewDeleteReg") 
 			){
 			System.out.println("boardView:boardView if占쎈쐻占쎈짗占쎌굲~~~~~~~~~~~~~~~~~~~");
 			return "board/alert";

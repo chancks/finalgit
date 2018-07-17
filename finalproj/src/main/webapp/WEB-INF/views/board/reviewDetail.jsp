@@ -15,9 +15,7 @@
 <body>
 <input type="hidden" value="${review.seq}" name="seq">
 <table border="" align="center">
-	<tr>
-		<td>id</td><td>${review.id}</td>
-		</tr><tr>		
+	<tr>	
 		<td>제목</td><td>${review.title}</td>
 		</tr><tr>
 		<td>작성자</td><td>익명</td>

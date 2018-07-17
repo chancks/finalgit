@@ -36,8 +36,13 @@
             <exclude-mapping path="/board/noticeList"/>
             <exclude-mapping path="/board/qnaDetail"/>
             <exclude-mapping path="/board/qnaList"/>
+<<<<<<< HEAD
             <exclude-mapping path="/board/reviewDetail"/>
             <exclude-mapping path="/board/reviewList"/>
+=======
+            <exclude-mapping path="/board/reviewList"/>
+            <exclude-mapping path="/board/reviewDetail"/>
+>>>>>>> branch 'master' of https://github.com/chancks/finalgit.git
             <exclude-mapping path="/manager/join"/>
             <exclude-mapping path="/manager/login"/>
             <exclude-mapping path="/manager/loginf"/>
