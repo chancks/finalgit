@@ -8,6 +8,7 @@
 <title>회원리스트</title>
 </head>
 <body>
+<c:if test="${data.agrade ne '관리자' }">
 	<c:forEach var="mem" items="${data }">
 		<div>${mem.aid }</div>
 		<div>${mem.aname }</div>
@@ -22,5 +23,6 @@
 			</c:otherwise>
 		</c:choose>
 	</c:forEach>
+	</c:if>
 </body>
 </html>

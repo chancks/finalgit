@@ -34,7 +34,31 @@ public class LoginChk extends HandlerInterceptorAdapter {
 			}
 			
 			if(grade.equals("강사")&& 
-					servletpath.contains("jun_List") && !servletpath.contains("p_")) {
+					((servletpath.contains("jun_List") && !servletpath.contains("p_"))
+					||(servletpath.contains("Bs") && !servletpath.contains("timetable")))) {
+				
+				response.sendRedirect("/mvc");
+				return false;
+			}
+			
+			if(grade.equals("학생")&& 
+					(servletpath.contains("notice")
+					||servletpath.contains("jun_List")
+					||servletpath.contains("memberlist"))) {
+				
+				response.sendRedirect("/mvc");
+				return false;
+			}
+			
+			if((grade.equals("관리자")||grade.equals("행정"))&& 
+					servletpath.contains("p_")
+					||(servletpath.contains("Bs")&&!servletpath.contains("totpay"))) {
+				
+				response.sendRedirect("/mvc");
+				return false;
+			}
+			
+			if(grade.equals("관리자")&& servletpath.contains("myinfo")) {
 				
 				response.sendRedirect("/mvc");
 				return false;
