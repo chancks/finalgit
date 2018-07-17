@@ -165,7 +165,7 @@ border: pink 1px solid;
 					<c:otherwise>
 						<input type="button" onclick="location='/mvc/manager/loginf'"
 							value="로그인">
-						<input type="button" onclick="location='/mvc/manager/join'"
+						<input type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
 							value="회원가입">
 					</c:otherwise>
 				</c:choose>
@@ -210,7 +210,7 @@ border: pink 1px solid;
 
 		<div id="main_rap">
 			<div id="sub_menu">
-				<c:if test="${param.mypage!=null }">
+				<c:if test="${param.mypage!=null || mypage!=null}">
 					<jsp:include page="menu/menu.jsp" />
 				</c:if>
 			</div>

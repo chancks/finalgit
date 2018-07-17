@@ -51,7 +51,10 @@ public class MngController {
 			
 			model.addAttribute("idchk",chk);
 			model.addAttribute("user", user);
-			model.addAttribute("mypage", true);
+			
+			if(!(user.getAgrade().equals("학생"))) {
+				model.addAttribute("mypage", true);
+			}
 			
 			main="join";
 			/*res = "manager/join";*/
