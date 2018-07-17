@@ -123,9 +123,9 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-			<div id="logo">
-				로고 왜 안들어와
-				<!-- <img src="resources/img/logo.png"> -->
+			<div >
+				<img id="logo" src="/mvc/resources/picture/logo.png"
+				onclick="location.href='/mvc/'">
 			</div>
 
 
