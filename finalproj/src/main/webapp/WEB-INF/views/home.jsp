@@ -123,17 +123,13 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-<<<<<<< HEAD
+
 			<div id="logo">
 				로고 왜 안들어와
 				<img src="resources/img/logo.png"
-=======
-			<div >
-				<img id="logo" src="/mvc/resources/picture/logo.png"
->>>>>>> branch 'master' of https://github.com/chancks/finalgit.git
 				onclick="location.href='/mvc/'">
 			</div>
-
+			
 
 
 			<div id="login">
