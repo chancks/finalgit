@@ -3,15 +3,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<div style="width: 100%; height: 100%; background: yellow">
-	<div style="width: 100%; height : 30%; background: blue">
-
-	</div>
-	<div style="height: 30%; background: red">
-	
-	</div>
+<div style="width: 100%; height: 100%; background: yellow; overflow: scroll; ">
+	<c:forEach items="${data }" var="dd">
+		<c:if test="${dd.agrade eq '강사' }">
+			<c:set var="a" value="true"></c:set>
+			<center>
+				<div style="width: 95%; height : 30%; background: blue; margin: 3px; border: 3px solid red;">
+					<div style="height:30%; width: 100%; background: red; position: relative;" >
+						${dd.aname }
+					</div>
+					
+					<div style="float: left; background: gray; width:30%; height: 70%; position: relative;" >
+						<img src="../resources/picture/${dd.aupfile }" width="250px" height="170px">
+					</div>
+					<div style="width: 70%; height:70%; background: green;float : right; position: relative; vertical-align:middle; text-align: center;">
+						${dd.ainfo }
+					</div>
+				</div>
+			</center>
+		</c:if>
+		${a }
+	</c:forEach>
 </div>
-<c:forEach items="${data }" var="dd">
-s
-	${dd.aname }<br>
-</c:forEach>
+
+

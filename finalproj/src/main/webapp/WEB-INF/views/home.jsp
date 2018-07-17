@@ -162,7 +162,7 @@ border: pink 1px solid;
 					<c:otherwise>
 						<input type="button" onclick="location='/mvc/manager/loginf'"
 							value="로그인">
-						<input type="button" onclick="location='/mvc/manager/join'"
+						<input type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
 							value="회원가입">
 					</c:otherwise>
 				</c:choose>

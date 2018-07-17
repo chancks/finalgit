@@ -41,8 +41,10 @@
             <exclude-mapping path="/board/reviewList"/>
             <exclude-mapping path="/board/reviewDetail"/>
             <exclude-mapping path="/manager/join"/>
+            <exclude-mapping path="/manager/joinreg"/>
             <exclude-mapping path="/manager/login"/>
             <exclude-mapping path="/manager/loginf"/>
+            <exclude-mapping path="/manager/idchk"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
            

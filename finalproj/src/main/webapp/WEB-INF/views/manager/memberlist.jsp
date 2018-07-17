@@ -8,8 +8,8 @@
 <title>회원리스트</title>
 </head>
 <body>
-<c:if test="${data.agrade ne '관리자' }">
 	<c:forEach var="mem" items="${data }">
+	<c:if test="${mem.agrade ne '관리자' }">
 		<div>${mem.aid }</div>
 		<div>${mem.aname }</div>
 		<div>${mem.aemail }</div>
@@ -22,7 +22,7 @@
 				<div><a href="?aid=${mem.aid }">삭제</a></div>
 			</c:otherwise>
 		</c:choose>
-	</c:forEach>
 	</c:if>
+	</c:forEach>
 </body>
 </html>
