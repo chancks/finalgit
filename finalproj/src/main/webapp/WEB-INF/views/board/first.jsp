@@ -8,33 +8,39 @@
 <title>Insert title here</title>
 </head>
 <body>
-data가 안넘어온다
+
 	<div>
+	QnA
+	<a href="/mvc/board/qnaList">전체보기</a>
 		<c:forEach var="qq" items="${data }" varStatus="no">
 			<c:if test="${no.index<3}">
-				<div>qna:${qq.title }</div>
+				<div>${qq.title }</div>
 				<div>
-					qna:${qq.reg_date }
+					${qq.reg_date }
 				</div>
 			</c:if>
 		</c:forEach>
 	</div>
 	<div>
+	공지
+	<a href="/mvc/board/noticeList">전체보기</a>
 		<c:forEach var="nn" items="${data2 }" varStatus="no">
 			<c:if test="${no.index<3 }">
-				<div>공지:${nn.title }</div>
+				<div>${nn.title }</div>
 				<div>
-					공지:${nn.reg_date }
+					${nn.reg_date }
 				</div>
 			</c:if>
 		</c:forEach>
 	</div>
 	<div>
+	후기
+	<a href="/mvc/board/reviewList">전체보기</a>
 		<c:forEach var="rr" items="${data3 }" varStatus="no">
 			<c:if test="${no.index<3 }">
-				<div>후기:${rr.title }</div>
+				<div>${rr.title }</div>
 				<div>
-					후기:${rr.reg_date }
+					${rr.reg_date }
 				</div>
 			</c:if>
 		</c:forEach>
