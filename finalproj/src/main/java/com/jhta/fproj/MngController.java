@@ -178,14 +178,19 @@ public class MngController {
 		
 		case "schidreg" :
 
-			new Schval().validate(user, errors);
+			System.out.println(user);
 			
+			new Schval().validate(user, errors);
+
 			main = "schid";
+			
 			if(!errors.hasErrors()) {
-				
+				return "redirect:/board/fist";
 			}
 			
+			errors.rejectValue("aname", "invalid.aname","sakjdakljdl ㄱ머");
 			break;
+			
 		case "schpw" :
 			System.out.println("dkjfskldjfkl");
 			break;

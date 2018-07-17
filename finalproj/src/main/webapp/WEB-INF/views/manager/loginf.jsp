@@ -15,14 +15,15 @@
 				<tr>
 					<td>아이디 </td>
 					<td><input type="text" name="aid"></td>
-					<td colspan="2" rowspan="2">
-					
-						<input type="submit" value="로그인">
+					<td colspan="2">
+						<input type="submit" value="로그인" style="width: 100%;">
 					</td>
 				</tr>
 				<tr>
 					<td>패스워드</td>
 					<td><input type="password" name="apw"></td>
+					<td><input type="button" onclick="location='/mvc/manager/schid'" value="id 찾기"></td>	
+					<td><input type="button" onclick="location='/mvc/manager/schpw'" value="pw 찾기"></td>
 				</tr>
 				
 			</table>

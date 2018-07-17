@@ -19,8 +19,8 @@ public class Schval implements Validator{
 		
 		MngUserVO dto = (MngUserVO)target;
 		
-		if(dto.getAid() == null) {
-			errors.rejectValue("aid", "invalid.aid","아이디 입력하세요");
+		if(dto.getAname() == null || dto.getAname().trim().equals("")) {
+			errors.rejectValue("aname", "invalid.aname","이름을 입력하세요");
 		}
 			
 	}
