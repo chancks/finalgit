@@ -10,20 +10,32 @@
 #outter {
 	border-left: 1px black solid;
 	border-top: 1px black solid;
-	width: 100px;
-	height: 900px;
+/* 	width: 100px;
+	height: 900px; */
 	float: left;
 }
 
 #inner {
 	border-bottom: 1px black solid;
 	border-right: 1px black solid;
-	width: 100px;
-	height: 100px;
+ 	width: 90px;
+	height: 90px; 
+
 }
+
+#aa{
+ 	width: 100%;
+	height: 900px;
+	/* background-color: orange; */
+}
+
+
+
+
 </style>
 </head>
 <body>
+<div id="aa">
 <c:forEach var="i" begin="0" end="7">
 	<div id="outter">
 		<c:forEach var="j" begin="0" end="8">
@@ -48,5 +60,6 @@
 		</c:forEach>
 	</div>
 </c:forEach>
+</div>
 </body>
 </html>
