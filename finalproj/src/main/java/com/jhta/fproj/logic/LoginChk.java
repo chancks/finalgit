@@ -18,15 +18,24 @@ public class LoginChk extends HandlerInterceptorAdapter {
 		
 		HttpSession session = request.getSession();
 		Object obj = session.getAttribute("id");
+		String grade = (String)session.getAttribute("grade");
 		
 		String url = request.getRequestURI();
+		String servletpath = request.getServletPath();
 		
 		System.out.println("url:"+url);
-		System.out.println("ServletPath:"+request.getServletPath()+"길이:"+request.getServletPath().length());
+		System.out.println("ServletPath:"+servletpath+"길이:"+servletpath.length());
 		
 		if(request.getServletPath().length()>1) {
 			
-			if(obj == null && url.contains(request.getServletPath())) {
+			if(obj == null && url.contains(servletpath)) {
+				response.sendRedirect("/mvc");
+				return false;
+			}
+			
+			if(grade.equals("강사")&& 
+					servletpath.contains("jun_List") && !servletpath.contains("p_")) {
+				
 				response.sendRedirect("/mvc");
 				return false;
 			}
