@@ -32,17 +32,15 @@
     <interceptors>
         <interceptor>
             <mapping path="/**"/>
-            <exclude-mapping path="/board/boardList"/>
             <exclude-mapping path="/board/noticeDetail"/>
             <exclude-mapping path="/board/noticeList"/>
-            <exclude-mapping path="/board/qnaList"/>
             <exclude-mapping path="/board/qnaDetail"/>
-            <exclude-mapping path="/board/reviewList"/>
-            <exclude-mapping path="/board/reviewDetail"/>
+            <exclude-mapping path="/board/qnaList"/>
             <exclude-mapping path="/manager/join"/>
             <exclude-mapping path="/manager/login"/>
             <exclude-mapping path="/manager/loginf"/>
             <exclude-mapping path="/Bs/academyinfo"/>
+            <exclude-mapping path="/Bs/courseinfo"/>
            
             <beans:ref bean="LoginChk"/>
         </interceptor>
