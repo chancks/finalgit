@@ -176,10 +176,11 @@ border: pink 1px solid;
 
 			<div id="menu_rap" class="btn-group">
 				
-				<button class ="btn">학원 소개</btn>
-				<button class ="btn">강사 소개</btn>
-				<button class ="btn">과목 소개</btn>
-				<button class ="btn">고객 센터</btn>
+				<input type="button" class="btn" onclick="location.href='/mvc/Bs/academyinfo'" value="학원소개">
+				<input type="button" class="btn" onclick="location.href='/mvc/jun_List/professor_List'" value="강사소개">
+				<input type="button" class="btn" onclick="location.href='/mvc/jun_List/course_List'" value="과목소개">
+				<input type="button" class="btn" onclick="location.href='/mvc/board/boardList'" value="고객센터">
+			<!-- 	<button class ="btn">고객 센터</btn> -->
 
 				
 
