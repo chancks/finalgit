@@ -13,6 +13,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 	<table align="center" class="table table-hover">
 		<tr> 
 			<td align="center">번호</td>
@@ -71,13 +72,13 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<option value="content">내용</option>
 					</select>
 					<input type="text" name="title" value="${param.title}">
-					<input type="submit" value="검색">
+					<input class="btn btn-default" type="submit" value="검색">
 
 				</td>
 			</tr>
 		</form>
 		<tr>
-			<td colspan="5" align="right">
+			<td colspan="5" align="right" class="btn btn-default">
 				<a href="qnaInsertForm">글쓰기</a>
 			</td>
 		</tr>

@@ -20,8 +20,8 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="submit" value="삭제" />
-                <a href="noticeList">목록으로</a>
+                <input class="btn btn-default" type="submit" value="삭제" />
+                <a href="noticeDetail?id=${notice.id}">뒤로</a>
             </td>
         </tr>
     </table>

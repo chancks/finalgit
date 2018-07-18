@@ -32,7 +32,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="작성" />
+				<input class="btn btn-default" type="submit" value="작성" />
 				<a href="qnaList">뒤로</a>
 			</td>
 		</tr>
