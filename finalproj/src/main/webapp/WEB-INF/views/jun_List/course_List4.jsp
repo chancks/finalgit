@@ -32,13 +32,78 @@
 	}
 }
 
-#search {
-	margin-top: 60px;
+.points_table thead {
+	width: 100%;
 }
 
-#table{
-border-radius: 50%;
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
 }
+
+.points_table thead tr{
+	width: 99%;
+}
+
+ .points_table tr{
+ 	width: 100%;
+ }
+
+.points_table thead, .points_table tbody, .points_table tr, .points_table td, .points_table th{
+	display: inline-block;
+}
+
+.points_table thead{
+	background: #212121;
+	color: #fff;
+}
+
+.points_table tbody td, .points_table thead > tr> th{
+	float: left;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td, .points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th{
+ 	padding: 8px;
+	height: 26px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar{
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar{
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+}
+
 </style>
 
 
@@ -61,41 +126,44 @@ border-radius: 50%;
 	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
 
+<div class="container" style="width:100%">
+	<div class="row">
+		<table class="points_table">
+			<thead>
+				<tr>
 
+				<th class="col-xs-4">과정 명</th>
+				<th class="col-xs-1">강사 명</th>
+				<th class="col-xs-1">강사 id</th>
+				<th class="col-xs-4">과정 기간</th>
+				<th class="col-xs-2">수업 시간</th>
 
-<div class="container" style=" width: 900px;">
-	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
-		<thead>
-			<tr style="background-color: #FF4848; text-align: center" >
-
-				<th style="text-align: center"><font color = "white">과정 명</font></th>
-				<th style="text-align: center"><font color = "white">강사 명</font></th>
-				<th style="text-align: center"><font color = "white">강사 id</font></th>
-				<th style="text-align: center"><font color = "white">과정 기간</font></th>
-				<th style="text-align: center"><font color = "white">수업 시간</font></th>
-			
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach items="${data }" var="row" varStatus="no">
-				<tr style="text-align: center">
-					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
-					<td style="background-color: #FFEAEA;text-align: center">${row.cname }</td>
-					<td style="background-color:#FFC6C6;text-align: center">${row.cid}</td>
-					<td style="background-color: #FFEAEA;text-align: center">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
-					<td style="background-color: #FFC6C6; text-align: center">${row.ctime}</td>
+				</tr>
+			</thead>
+		<tbody class="points_table_scrollbar">
+		<c:forEach items="${data }" var="row" varStatus="status">
+				
+				<c:choose>
+							<c:when test="${status.index%2==0}">
+									<tr class="odd"style="text-align: center">
+							</c:when>
+							<c:otherwise>
+									<tr class="even"style="text-align: center">
+							
+							</c:otherwise>
+						</c:choose>
+				
+					<td class="col-xs-4"><a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+					<td class="col-xs-1">${row.cname }</td>
+					<td class="col-xs-1">${row.cid}</td>
+					<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
+					<td class="col-xs-2">${row.ctime}</td>
 				</tr>
 			</c:forEach>
+			
+			
 		</tbody>
 	</table>
-	<div class="text-center">
-		<ul class="pagination">
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-		</ul>
-	</div>
 </div>
 
 
@@ -105,30 +173,3 @@ border-radius: 50%;
 </body>
 </html>
 
-
-
-<%-- 
-	<div id="table"  style="text-align: center;">   <!-- border: 1px silver solid; width:920px -->
-		<div style=" display: inline-block; border: 1px silver gray; " >
-			<div  style="background-color:silver;   float : left; width: 250px; text-align: center;  font-size:15px; font-weight: bold;">과정	명</div>
-			<div  style="background-color:silver;  float : left; width: 80px; text-align: center;  font-size:15px; font-weight: bold;">강사 명</div>
-			<div  style="background-color:silver;   float : left; width: 80px; text-align: center;  font-size:15px; font-weight: bold;">강사 id</div>
-			<div  style="background-color:silver;  float : left; width: 300px; text-align: center;  font-size:15px; font-weight: bold;">과정 기간</div>
-			<div  style="background-color:silver;   float : left; width: 100px; text-align: center;  font-size:15px; font-weight: bold;">수업 시간</div>
-		</div>	
-		
-		
-		<div style="  display: inline-block;">
-		<c:forEach items="${data }" var="row" varStatus="no">
-	
-			<div  style="background-color:#ddd;   float : left; width: 250px; text-align: center;  font-size:15px;"><a href="course_Detail?ccode=${row.ccode }">${row.ctitle}</a></div>
-			<div  style="  float : left; width: 80px; text-align: center;">${row.cname }</div>
-			<div  style="background-color:#ddd;   float : left; width: 80px; text-align: center; ">${row.cid }</div>
-			<div  style="  float : left; width: 300px; text-align: center; ">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish} </div>
-			<div  style="background-color:#ddd;   float : left; width: 100px; text-align: center;">${row.ctime}</div>
-					
-<hr size=1px color="#ddd">	
-		
-		</c:forEach>
-		</div>
-	</div> --%>
