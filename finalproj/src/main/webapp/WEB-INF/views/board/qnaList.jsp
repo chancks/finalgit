@@ -10,7 +10,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
-
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +28,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<c:otherwise>
 		 		<c:forEach items="${qna}" var="qnaRow" varStatus="qnaNo">
 					<tr>
-						<td align="center">${qnaNo.index+1}</td>
+						<td align="center">${(data3.page*15)+qnaNo.index-14}</td>
 						<td><a href="qnaDetail?id=${qnaRow.id }">${qnaRow.title}</a></td>
 						<td>${qnaRow.pname}</td>
 						<td>${qnaRow.reg_date}</td>
@@ -77,10 +76,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				</td>
 			</tr>
 		</form>
-		<tr>	
-			<td align="left">
-				<a href="boardList">뒤로</a>
-			</td>
+		<tr>
 			<td colspan="5" align="right">
 				<a href="qnaInsertForm">글쓰기</a>
 			</td>

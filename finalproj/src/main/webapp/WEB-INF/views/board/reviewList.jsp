@@ -29,7 +29,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<c:otherwise>
 				<c:forEach items="${review}" var="reviewRow" varStatus="reviewNo">
 					<tr>
-						<td align="center">${reviewNo.index+1}</td>
+						<td align="center">${(data3.page*15)+reviewNo.index-14}</td>
 						<td><a href="reviewDetail?id=${reviewRow.id }">${reviewRow.title}</a></td>
 						<td>익명</td>
 						<td>${reviewRow.reg_date}</td>
@@ -78,9 +78,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			</tr>
 		</form>	
 		<tr>	
-			<td align="left">
-				<a href="boardList">뒤로</a>
-			</td>
 			<c:if test="${grade eq '학생' }">
 				<td colspan="5" align="right">
 					<a href="reviewInsertForm">글쓰기</a>

@@ -29,7 +29,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			<c:otherwise>
 				<c:forEach items="${notice}" var="noticeRow" varStatus="noticeNo">
 					<tr>
-						<td align="center">${noticeNo.index+1}</td>
+						<td align="center">${(data3.page*15)+noticeNo.index-14}</td>
 						<td><a href="noticeDetail?id=${noticeRow.id }">${noticeRow.title}</a></td>
 						<td>관리자</td>
 						<td>${noticeRow.reg_date}</td>
@@ -78,9 +78,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			</tr>
 		</form>
 		<tr>
-			<td align="left">
-				<a href="boardList">뒤로</a>
-			</td>	
 			<c:if test="${grade eq '관리자' }">
 				<td colspan="5" align="right">
 				<a href="noticeInsertForm">글쓰기</a>
