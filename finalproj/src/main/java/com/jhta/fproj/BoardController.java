@@ -44,16 +44,15 @@ public class BoardController {
 		}
 		
 		model.addAttribute("service", "board");
+		model.addAttribute("main","boardList");
 		return "home";
 	}
 	
 	@ModelAttribute("qna")
 	Object qna(@PathVariable("main") String main,BoardVO vo, PageVO pvo, Model model) {
-
-		Object List = model.addAttribute("main","boardList");
+		
 		switch (main) {
 			case "qnaList":
-				
 				vo.setTot((Integer)dao.qnaTotalCount());
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
 				vo.setStart2(pvo.getStart());
@@ -66,9 +65,12 @@ public class BoardController {
 				res = dao.qnaDetail(vo);
 				model.addAttribute("List","qnaDetail.jsp");
 				break;
+			case "qnaInsertForm":
+				model.addAttribute("List","qnaInsertForm.jsp");
+				break;
 			case "qnaInsertReg":
 				res = dao.qnaInsert(vo);
-				model.addAttribute("msg", "작성되었습니다.");
+				model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 				model.addAttribute("url", "qnaDetail?id="+vo.getId());
 				break;
 			case "qnaReply":
@@ -77,7 +79,7 @@ public class BoardController {
 				break;	
 			case "qnaReplyReg":
 				res = dao.qnaReplyReg(vo);
-				model.addAttribute("msg", "작성되었습니다.");
+				model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 				model.addAttribute("url", "qnaList");
 				break;
 			case "qnaModify":
@@ -86,15 +88,16 @@ public class BoardController {
 				break;
 			case "qnaModifyReg":
 				res = dao.qnaPwChk(vo);
+				model.addAttribute("List","qnaModifyReg.jsp");
 				if(dao.qnaPwChk(vo)!=null) {
 	                res = dao.qnaModifyReg(vo);
-	                model.addAttribute("msg", "수정되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
 	            }else if(dao.qnaPwChk(vo)==null){
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "qnaModify?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "qnaModify?id="+vo.getId());
 	            }
 	            break;
@@ -104,14 +107,15 @@ public class BoardController {
 				break;
 			case "qnaDeleteReg":
 				res = dao.qnaPwChk(vo);
+				model.addAttribute("List","qnaDeleteReg.jsp");
 		       if(dao.qnaPwChk(vo)!=null) {
 	            	//BoardVO vo1 = (BoardVO) dao.qnaPwChk(vo);
 	            	res = dao.qnaDelete(vo);
 	                res = dao.qnaDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "삭제되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "qnaList");
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "qnaDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -139,7 +143,8 @@ public class BoardController {
 				break;
 			case "noticeInsertReg":
 				res = dao.noticeInsert(vo);
-				model.addAttribute("msg", "작성되었습니다.");
+				model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
+				model.addAttribute("List","noticeInsertReg.jsp");
 				model.addAttribute("url", "noticeDetail?id="+vo.getId());
 				break;
 			case "noticeModify":
@@ -150,13 +155,13 @@ public class BoardController {
 				res = dao.noticePwChk(vo);
 				if(dao.noticePwChk(vo)!=null) {
 	                res = dao.noticeModifyReg(vo);
-	                model.addAttribute("msg", "작성되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "noticeDetail?id="+vo.getId());
 	            }else if(dao.noticePwChk(vo)==null){
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "noticeModify?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "noticeModify?id="+vo.getId());
 	            }
 	            break;
@@ -169,10 +174,10 @@ public class BoardController {
 	            if(dao.noticePwChk(vo)!=null) {
 	            	res = dao.noticeDelete(vo);
 	                res = dao.noticeDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "작성되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "noticeList");
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "noticeDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -202,7 +207,7 @@ public class BoardController {
 				break;
 			case "reviewInsertReg":
 				res = dao.reviewInsert(vo);
-				model.addAttribute("msg", "작성되었습니다.");
+				model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 				model.addAttribute("url", "reviewDetail?id="+vo.getId());
 				break;
 			case "reviewModify":
@@ -213,13 +218,13 @@ public class BoardController {
 				res = dao.reviewPwChk(vo);
 				if(dao.reviewPwChk(vo)!=null) {
 	                res = dao.reviewModifyReg(vo);
-	                model.addAttribute("msg", "작성되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "reviewDetail?id="+vo.getId());
 	            }else if(dao.reviewPwChk(vo)==null){
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "reviewModify?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "reviewModify?id="+vo.getId());
 	            }
 	            break;
@@ -232,10 +237,10 @@ public class BoardController {
 	            if(dao.reviewPwChk(vo)!=null) {
 	            	res = dao.reviewDelete(vo);
 	                res = dao.reviewDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "작성되었습니다.");
+	                model.addAttribute("msg", "�옉�꽦�릺�뿀�뒿�땲�떎.");
 	                model.addAttribute("url", "reviewList");
 	            }else {
-	            	model.addAttribute("msg", "비밀번호를 확인해주세요.");
+	            	model.addAttribute("msg", "鍮꾨�踰덊샇瑜� �솗�씤�븯�꽭�슂.");
 	                model.addAttribute("url", "reviewDelete?id="+vo.getId());
 	            }        
 	            break;

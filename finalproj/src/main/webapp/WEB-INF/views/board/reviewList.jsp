@@ -73,13 +73,13 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<option value="cnt">조횟수</option>
 					</select>
 					<input type="text" name="title" value="${param.title}">
-					<input type="submit" value="검색">
+					<input class="btn btn-default" type="submit" value="검색">
 				</td>
 			</tr>
 		</form>	
 		<tr>	
 			<c:if test="${grade eq '학생' }">
-				<td colspan="5" align="right">
+				<td colspan="5" align="right" class="btn btn-default">
 					<a href="reviewInsertForm">글쓰기</a>
 				</td>
 			</c:if>

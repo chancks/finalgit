@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="작성" />
+				<input class="btn btn-default" type="submit" value="작성" />
 				<a href="qnaDetail?id=${qna.id}">뒤로</a>
 			</td>
 		</tr>

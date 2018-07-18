@@ -33,7 +33,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<input type="submit" value="수정" />
+				<input class="btn btn-default" type="submit" value="수정" />
 				<a href="qnaDetail?id=${qna.id}">뒤로</a>
 			</td>
 		</tr>
