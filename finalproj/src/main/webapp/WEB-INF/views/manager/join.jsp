@@ -3,6 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<link rel="stylesheet"
+	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+
+<script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 		
 	function idchk() {
@@ -93,9 +100,9 @@
 </c:if>
 
 <form action="joinreg" method="post" name="frm">
-	<table border="">
+	<table class="table">
 		<tr>
-			<td>id</td>
+			<td style="background-color:#D8D8D8 ">id</td>
 			<td>
 			<input type="text" name="aid" value="${user.aid }" id="id">
 			
@@ -114,24 +121,24 @@
 			
 		</tr>
 		<tr>
-			<td>패스워드</td>
+			<td style="background-color:#D8D8D8 ">패스워드</td>
 			<td><input type="password" name="apw" id="pw"></td>
 			
 		</tr>
 		<tr>
-			<td>패스워드 확인</td>
+			<td style="background-color:#D8D8D8 ">패스워드 확인</td>
 			<td><input type="password" name="apw2" id="pw2"></td>
 		</tr>
 		<tr>
-			<td>이름</td>
+			<td style="background-color:#D8D8D8 ">이름</td>
 			<td><input type="text" name="aname" value="${user.aname }"></td>
 		</tr>
 		<tr>
-			<td>이메일</td>
+			<td style="background-color:#D8D8D8 ">이메일</td>
 			<td><input type="text" name="aemail" value="${user.aemail }"></td>
 		</tr>
 		<tr>
-			<td>핸드폰</td>
+			<td style="background-color:#D8D8D8 ">핸드폰</td>
 			<td>
 			<input type="text" name="phone" value="010" maxlength="3" size="3">
 			-
@@ -141,11 +148,11 @@
 			</td>
 		</tr>
 		<tr>
-			<td>생일</td>
+			<td style="background-color:#D8D8D8 ">생일</td>
 			<td><input type="date" name="abirth" value=${user.abirth }></td>
 		</tr>
 		<tr>
-			<td>자기소개</td>
+			<td style="background-color:#D8D8D8 ">자기소개</td>
 			<td><textarea  name="ainfo" style="resize: none;">${user.ainfo }</textarea></td>
 		</tr>
 		<tr>

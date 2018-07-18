@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 
 <script type="text/javascript">
@@ -59,38 +62,51 @@ function che() { //인증번호 비교
 		auth();
 	</script>
 </c:if>
-<form action="schidreg">	
-	<table>
-		<tr>
-			<td colspan="2">ID찾기</td>
-		<tr>
-		<tr>
-			<td>
-				이름
-			</td>
-			<td>
-				<input type="text" name ="aname" value="${user.aname }">
-				<form:errors path="mngUserVO.aname"/>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				이메일
-			</td>
-			<td>
-				<input type="text" name="aemail" value="${user.aemail }">
-				<form:errors path="mngUserVO.aemail"/>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="submit" value="찾기">
-				<form:errors path="mngUserVO.ainfo"/>
-			</td>
-		</tr>
-	</table>
-	
-</form>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <form action="schidreg">
+            	<fieldset>
+	               <div id="legend">
+	                 <legend class="">ID찾기</legend>
+	               </div>
+               
+	               <div class="control-group">
+	                 <label class="control-label">이름</label>
+	                 <div class="controls">
+	                 	<input type="text" name ="aname" value="${user.aname }"  placeholder="" class="input-xlarge">
+	                 	<form:errors path="mngUserVO.aname"/>
+	                 </div>
+	               </div>
+               
+					<div class="control-group">
+              			<label class="control-label" for="password">이메일</label>
+	                 	<div class="controls">
+	                 		<input type="text" name="aemail" value="${user.aemail }" placeholder="" class="input-xlarge">
+	                 		<form:errors path="mngUserVO.aemail"/>
+	                    </div>
+               		</div>
+               
+              		<div class="control-group">
+                 
+                 		<div class="controls">
+                 
+	                 		<input type="submit" value="찾기" class="btn btn-success">
+	                   		<form:errors path="mngUserVO.ainfo"/>
+	                  	</div>
+	                </div>
+	              </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
