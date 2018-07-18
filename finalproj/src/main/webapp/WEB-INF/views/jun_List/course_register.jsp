@@ -168,7 +168,7 @@
 		
 
 			<div>
-				<input type="submit" value="작성" /><a href="../">뒤로 가기</a>
+				<input type="submit" value="작성" /><a href="/mvc/manager/memberlist?mypage=true">뒤로 가기</a>
 			</div>
 
 	</div>

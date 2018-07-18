@@ -79,7 +79,7 @@
 		</tr>
 		<tr>
 			<td colspan="3">
-				<a href="myinfo">뒤로</a>
+				<a href="myinfo?aid=${id }&mypage=true">뒤로</a>
 				<input type="submit" value="입력">
 			</td>
 		</tr>

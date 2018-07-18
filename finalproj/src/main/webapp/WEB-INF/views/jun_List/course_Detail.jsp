@@ -119,8 +119,8 @@ link_delete = function(ccode){
 	<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	<br>
 <div><a href="course_List?mypage=true">뒤로 가기</a></div>
-<div><a href="course_Modify?ccode=${data.ccode }&mypage=true">과목 수정</a></div>
-<div><a href="course_Delete?ccode=${data.ccode }&mypage=true">과목 삭제</a></div>
+<div><a href="course_Modify?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 수정</a></div>
+<div><a href="course_Delete?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 삭제</a></div>
 
 <%-- <c:when test="${sessionScope.id=='admin' }">
 	

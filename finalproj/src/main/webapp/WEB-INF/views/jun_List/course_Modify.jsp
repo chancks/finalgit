@@ -173,7 +173,7 @@
 				<input type="reset" value="초기화" />
 			</div>
 			<div>
-				<a href="course_Detail?ccode=${row.ccode }&mypage=true">뒤로가기</a>
+				<a href="course_Detail?ccode=${row.ccode }&cday=${cday }&mypage=true">뒤로가기</a>
 			</div>
 		</div>
 	</form>
