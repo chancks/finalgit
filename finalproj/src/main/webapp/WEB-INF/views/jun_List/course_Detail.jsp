@@ -118,7 +118,7 @@ link_delete = function(ccode){
 	</div>
 	<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	<br>
-<div><a href="course_List">뒤로 가기</a></div>
+<div><a href="course_List?mypage=true">뒤로 가기</a></div>
 <div><a href="course_Modify?ccode=${data.ccode }&mypage=true">과목 수정</a></div>
 <div><a href="course_Delete?ccode=${data.ccode }&mypage=true">과목 삭제</a></div>
 
