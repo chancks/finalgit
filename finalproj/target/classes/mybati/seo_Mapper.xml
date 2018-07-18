@@ -54,17 +54,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="course_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course
+		select * from course order by ccode 
 		<include refid="whereSch"/>
 	</select>
 	
 	
 	<select id="course_detail" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where ccode = #{ccode}
+		select * from course where ccode = #{ccode} and cday = #{cday}
 	</select>
 	
 	<select id="course_modify" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where ccode =  #{ccode} 
+		select * from course where ccode =  #{ccode} and cday = #{cday}
 	</select>
 	
 	<select id="course_modify1" resultType="jun_Vo"  parameterType="jun_Vo">
@@ -78,7 +78,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<delete id="course_deleteReg" parameterType="jun_Vo">
 		 delete from course where ccode = #{ccode}
-
 	</delete>
 	
 	

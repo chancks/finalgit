@@ -73,18 +73,19 @@
 				<th style="text-align: center"><font color = "white">강사 명</font></th>
 				<th style="text-align: center"><font color = "white">강사 id</font></th>
 				<th style="text-align: center"><font color = "white">과정 기간</font></th>
+				<th style="text-align: center"><font color = "white">요일</font></th>
 				<th style="text-align: center"><font color = "white">수업 시간</font></th>
-			
 			</tr>
 		</thead>
-		<tbody>
+		<tbody> 
 				<c:forEach items="${data }" var="row" varStatus="no">
 				<tr style="text-align: center">
-					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&cday=${row.cday }&mypage=true">${row.ctitle}</a></td>
 					<td style="background-color: #FFEAEA;text-align: center">${row.cname }</td>
 					<td style="background-color:#FFC6C6;text-align: center">${row.cid}</td>
 					<td style="background-color: #FFEAEA;text-align: center">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
-					<td style="background-color: #FFC6C6; text-align: center">${row.ctime}</td>
+					<td style="background-color: #FFC6C6; text-align: center">${row.cday}</td>
+					<td style="background-color: #FFEAEA;text-align: center">${row.ctime }</td>
 				</tr>
 			</c:forEach>
 		</tbody>

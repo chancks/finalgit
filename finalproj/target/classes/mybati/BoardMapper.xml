@@ -46,7 +46,7 @@
 		(select * from qna)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
 			<include refid="whereSch"/>
-			order by ff.gid desc , ff.id asc
+			order by gid desc , id asc
 	</select>
 
 	<update id="qnaReadCnt" parameterType="boardVo">
@@ -120,7 +120,7 @@
 		(select * from notice)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
 			<include refid="whereSch"/>
-			order by ff.gid desc , ff.id asc
+			order by gid desc , id asc
 	</select>
 	
 	<update id="noticeReadCnt" parameterType="boardVo">
@@ -182,7 +182,7 @@
 		(select * from review)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
 			<include refid="whereSch"/>
-			order by ff.gid desc , ff.id asc
+			order by gid desc , id asc
 	</select>
 	
 	<update id="reviewReadCnt" parameterType="boardVo">
