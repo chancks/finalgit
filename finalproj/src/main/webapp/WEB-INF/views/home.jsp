@@ -163,10 +163,7 @@ border: pink 1px solid;
 							value="로그인">
 						<input type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
 							value="회원가입">
-						<input type="button" onclick="location='/mvc/manager/schid'"
-							value="id 찾기">	
-						<input type="button" onclick="location='/mvc/manager/schpw'"
-						value="pw 찾기">	
+		
 					</c:otherwise>
 				</c:choose>
 			</div>
