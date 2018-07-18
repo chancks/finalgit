@@ -124,7 +124,7 @@
 					</c:otherwise>
 				</c:choose>
 				
-					<td class="col-xs-4">${qq.title }</td>
+					<td class="col-xs-4"><a href="board/qnaDetail?id=${qq.id }">${qq.title }</a></td>
 					<td class="col-xs-4">${qq.reg_date }</td>
 					</tr>
 			</c:if>
@@ -158,7 +158,7 @@
 					</c:otherwise>
 				</c:choose>
 				
-					<td class="col-xs-4">${qq.title }</td>
+					<td class="col-xs-4"><a href="board/noticeDetail?id=${qq.id }">${qq.title }</a></td>
 					<td class="col-xs-4">${qq.reg_date }</td>
 					</tr>
 			</c:if>
@@ -192,7 +192,7 @@
 					</c:otherwise>
 				</c:choose>
 				
-					<td class="col-xs-4">${qq.title }</td>
+					<td class="col-xs-4"><a href="board/reviewDetail?id=${qq.id }">${qq.title }</a></td>
 					<td class="col-xs-4">${qq.reg_date }</td>
 					</tr>
 			</c:if>

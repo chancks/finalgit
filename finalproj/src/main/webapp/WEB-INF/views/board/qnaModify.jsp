@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//Dth HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dth">
 <html>
 <head>
 <meta name="viewport"content="width=device-width, initial-scale=1.0"/>
@@ -17,26 +17,26 @@
 
 	<table class="table" align="center">
 		<tr>
-			<td>제목</td>
-			<td><input type="text" name="title" value="${qna.title}" /></td>
+			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
+			<th><input type="text" name="title" value="${qna.title}" /></th>
 		</tr>
 		<tr>
-			<td>작성자</td>
-			<td>${qna.pname}</td>
+			<th style="background-color:#D8D8D8 ">작성자</th>
+			<th>${qna.pname}</th>
 		</tr>
 		<tr>
-			<td>암호</td>
-			<td><input type="text" name="pw"/></td>
+			<th style="background-color:#D8D8D8 ">암호</th>
+			<th><input type="text" name="pw"/></th>
 		</tr>
 		<tr>
-			<td>내용</td>
-			<td><textarea name="content" rows="5" cols="20">${qna.content }</textarea></td>
+			<th style="background-color:#D8D8D8 ">내용</th>
+			<th><textarea name="content" rows="5" cols="20">${qna.content }</textarea></th>
 		</tr>
 		<tr>
-			<td colspan="2" align="center">
+			<th colspan="2" align="center">
 				<input class="btn btn-default" type="submit" value="수정" />
 				<a href="qnaDetail?id=${qna.id}">뒤로</a>
-			</td>
+			</th>
 		</tr>
 	</table>
 </form>
