@@ -158,7 +158,7 @@
 							</c:choose>
 
 							<td class="col-xs-4"><a
-								href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+								href="course_Detail?ccode=${row.ccode }&cday=${row.cday}&mypage=true">${row.ctitle}</a></td>
 							<td class="col-xs-1">${row.cname }</td>
 							<td class="col-xs-1">${row.cid}</td>
 							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>

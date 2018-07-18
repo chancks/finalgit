@@ -102,8 +102,12 @@ public class JunController {
 		System.out.println(" jun 컨트롤러 진입 :" + vo);
 		
 		model.addAttribute("service", "jun_List");
-		vo.setCid((String)session.getAttribute("id"));
+	
 		
+			if(session.getAttribute("grade").equals("강사")) {
+				vo.setCid((String)session.getAttribute("id"));
+				
+			}
 		
 		Object res = null;
 
@@ -156,7 +160,7 @@ public class JunController {
 			res = dao.course_insert(vo);
 
 			model.addAttribute("msg", "등록성공");
-			model.addAttribute("url", "course_Detail?ccode="+vo.getCcode());
+			model.addAttribute("url", "course_Detail?ccode="+vo.getCcode()+"&cday="+vo.getCday());
 
 			break;
 			
@@ -219,6 +223,7 @@ public class JunController {
 			break;
 			
 		case "professor_Course_List":
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 			System.out.println("강사의 강의목록:" + vo);
 			res = dao.professor_course_list(vo);
 	

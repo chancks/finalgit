@@ -103,8 +103,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	강사의 강의 몰록 리스트
-
 
 	<div style="border: 0.5px silver solid; height: 100%;">
 

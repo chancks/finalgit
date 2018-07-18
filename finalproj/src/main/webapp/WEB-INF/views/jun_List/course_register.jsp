@@ -120,7 +120,7 @@
 				정 원
 			</div>
 			<div>
-				<input type="number" name="ctotal" style="margin-top: 4px; width:110px; height:21px;margin-left: 10px" />
+				<input type="number" name="ctotal" min="1" max="100" style="margin-top: 4px; width:110px; height:21px;margin-left: 10px" />
 			</div>
 		</div>
 

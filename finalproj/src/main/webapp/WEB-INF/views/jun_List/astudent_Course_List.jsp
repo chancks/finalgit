@@ -147,40 +147,7 @@
 		</div>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	<c:forEach items="${data }" var="row" varStatus="no">
-		<div id="a">
-			<div>
-				<h2>과목명</h2>
-			</div>
-			<div>${row.rtitle}</div>
-		</div>
-		
-		<div id="a">
-			<div>
-				<h2>강사명</h2>
-			</div>
-			<div>${row.rname}</div>
-		</div>
-		
-		<div>
-			<div>
-				<h2>등록 정보</h2>
-			</div>
-			<div>${row.rpay}</div>
-		</div>
-	</c:forEach>
 	<a href="astudent_List?mypage=true">뒤로 가기</a>
 </body>
 </html>

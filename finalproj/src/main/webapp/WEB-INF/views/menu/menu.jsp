@@ -133,7 +133,7 @@ body {
 								style="width: 140px"><i class="fa fa-book fa-fw"></i>강사 리스트</a></li>
 							<li><a class="z"
 								href="/mvc/Bs/totpay?mypage=true?mypage=true"
-								style="width: 140px"><i class="fa fa-pencil fa-fw"></i>경제 내역</a></li>
+								style="width: 140px"><i class="fa fa-pencil fa-fw"></i>결제 내역</a></li>
 						</c:otherwise>
 
 					</c:choose>
