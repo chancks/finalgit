@@ -120,9 +120,10 @@ public class MngController {
 			
 			System.out.println("서비스"+main);
 			
-			user = new MngUserVO();
-			user.setAid((String)session.getAttribute("id"));
+			String str = (String)session.getAttribute("grade");
 			
+			if(!(str.equals("관리자")||str.equals("행정")))
+				user.setAid((String)session.getAttribute("id"));
 			
 			model.addAttribute("user",dao.chkid(user));
 			

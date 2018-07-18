@@ -98,7 +98,7 @@ h3{ margin-bottom: 20px;}
 	
 	
 	<div id ="m"  style="  margin-left: -29px; cursor: pointer;" 
-				onclick="location.href='/mvc/manager/myinfo?mypage=true'">		<a class="btn" data-toggle="tab" style="width: 100px; margin-bottom: 2px; background: #fb5353; color:#fff">내 정보</a></div>
+				onclick="location.href='/mvc/manager/myinfo?aid=${id}&mypage=true'">		<a class="btn" data-toggle="tab" style="width: 100px; margin-bottom: 2px; background: #fb5353; color:#fff">내 정보</a></div>
 			
 
 

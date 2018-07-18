@@ -76,14 +76,6 @@ public class LoginChk extends HandlerInterceptorAdapter {
 				return false;
 			}
 			
-			if(grade.equals("관리자")&& servletpath.contains("myinfo")) {
-				
-				chk=grade.equals("관리자")&& servletpath.contains("myinfo");
-				System.out.println("관리자인터셉터:"+chk);
-				
-				response.sendRedirect("/mvc");
-				return false;
-			}
 		}
 		
 		return true;

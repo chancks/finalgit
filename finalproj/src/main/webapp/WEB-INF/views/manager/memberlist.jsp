@@ -27,7 +27,9 @@
 		<c:forEach var="mem" items="${data }">
 				<c:if test="${mem.agrade ne '관리자' }">
 				<tr style="text-align: center">
-					<td style="background-color:#FFC6C6;text-align: center">${mem.aid }</td>
+					<td style="background-color:#FFC6C6;text-align: center">
+						<a href="/mvc/manager/myinfo?aid=${mem.aid }&mypage=true">${mem.aid }</a>
+					</td>
 					<td style="background-color:#FFC6C6;text-align: center">${mem.aname }</td>
 					<td style="background-color: #FFEAEA;text-align: center">${mem.aemail }</td>
 					<td style="background-color:#FFC6C6;text-align: center">${mem.aphone }</td>
