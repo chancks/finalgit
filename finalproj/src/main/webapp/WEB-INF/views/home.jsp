@@ -13,36 +13,82 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
 
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <html>
 
+
 <style>
+
+a:hover , a:focus{ text-decoration: none;}
+ul{ margin: 0px; padding: 0px;}
+ul li{ list-style-type: none;}
+.clear{ clear: both;}
+h3{ margin-bottom: 20px;}
+
+
+/******Main navigation css start******/
+.navigation{ background: #fb5353; position: relative;}  
+.nav-ul li{ float: left;}
+.nav-ul li a{ font-size: 16px; color: #fff; padding: 12px 25px; display: inline-block;}
+.nav-ul li:hover a , nav ul li.active a{ background: #FFB2D9; color: #fff;}
+/******Main navigation css end******/
+
+@media only screen and (max-width: 760px){
+.navigation{ background: none; position:relative;}
+.menu_header{ padding: 0px 15px; background: #f2f2f2; z-index:2; border-bottom:1px solid #ddd;}
+.menu_header span{ padding-top: 5px; display:inline-block;}
+.menu_header button{ float:right;}
+.baars{ display:inline-block; margin-right: 5px; vertical-align:middle;}
+.baars .icon_bar{ width: 22px; height: 3px; margin-bottom:3px; background: #000; display: block; padding: 0px; transition: all 0.5s ease;}
+.cross .icon_bar:first-child{ -webkit-transform: rotate(-45deg) translate(-4px, 5px); transform: rotate(-45deg) translate(-4px, 5px); opacity: 1;}
+.cross .icon_bar{opacity: 0; color: #000;}
+.cross .icon_bar:last-child{ -webkit-transform: rotate(45deg) translate(-2.5px, -5px); transform: rotate(45deg) translate(-2.5px, -5px); opacity: 1;}
+
+.nav-ul{ left:-100%; position: absolute; top: 34px; width: 100%; transition: all 0.5s ease; background: #fb5353;}
+.nav-ul.active{ left:0px; transition: all 0.5s ease;}
+.nav-ul li{ float: none; border-bottom: 1px solid #323232;}
+.nav-ul li a{display:block; padding: 10px 15px;}
+.nav-ul li:hover a{ background: #FFB2D9; color: #fff;}
+}
+
+#background{
+background-color: #FFEBFF;
+}
+
 #hight_top {
-	border: red 1px solid;
+	/* border: red 1px solid; */
 	width: 1024px;
 	height: 100px;
 	margin-left: 10%;
+/* 	background: #FFEBFF; */
 }
 
 #logo {
-	width: 100px;
-	height: 50px;
-	margin-top: 20px;
-	margin-left: 20px;
+	width: 275px;
+	height: 90px;
+	margin-left: 370px;
 	background-color: fuchsia;
 	float: left;
+	background-image: url('${url }'); 
+	background-size: 100%;  
+	cursor: pointer;
 }
 
 #login {
-	margin-top: 60px;
-	margin-right: 20px; background-color : fuchsia;
+	margin-top: 75px;
+/* 	margin-right: 20px; 
+	background-color : fuchsia; */
 	float: right;
-	background-color: fuchsia;
+
 }
 
 #top_menu {
 	width: 1024px;
 	height: 50px;
-	border: blue 1px solid;
+/* 	border: blue 1px solid; */
 	margin-left: 10%;
 	position: relative;
 	text-align:center; 
@@ -88,21 +134,22 @@ height: 30px;
 #main_rap{
 margin-left: 10%;
 width:1024px;
-
-border: pink 1px solid;
+/* background-color: #FFC6C6; */
+/* border: pink 1px solid; */
 }
 
 #sub_menu {
 	width:100px;
 	float: left;
-	border: red 1px solid;
+	/* border: red 1px solid; */
 }
 
 #main {
 	margin-left: 100px;
 	width: 924px ;
-	border: blue 1px solid;
+/* 	border: blue 1px solid; */
 	position: relative;
+	/* background-color: #fff; */
 }
 
 
@@ -115,6 +162,8 @@ border: pink 1px solid;
 </style>
 
 <head>
+
+
 <title>Home</title>
 </head>
 <body>
@@ -122,9 +171,8 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-			<div >
-				<img id="logo" src="${url }"
-				onclick="location.href='/mvc/'">
+			<div id="logo"  onclick="location.href='/mvc/'">
+			
 			</div>
 
 
@@ -162,43 +210,37 @@ border: pink 1px solid;
 					<c:otherwise>
 						<input type="button" onclick="location='/mvc/manager/loginf'"
 							value="로그인">
-						<input type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
+						<input type="button" onclick="location='/mvc/manager/join'"
 							value="회원가입">
 					</c:otherwise>
 				</c:choose>
 			</div>
 		</div>
 
-		<hr size=2px color="gray">
 
 		<div id="top_menu">
 
-			<div id="menu_rap" class="btn-group">
-				
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/academyinfo'" value="학원소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/manager/teacherinfo'" value="강사소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/courseinfo'" value="과목소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/board/boardList'" value="고객센터">
-			<!-- 	<button class ="btn">고객 센터</btn> -->
 
-				
+			<div class="navigation" style="border-radius: 10px;">
+				<nav>
+					<div class="visible-xs menu_header">
+						<span class="mobile_logo">Menu</span>
+						<button class="btn menu_btn baars">
+							<span class="icon_bar"></span> <span class="icon_bar"></span> <span
+								class="icon_bar"></span>
+						</button>
+						<div class="clear"></div>
+					</div>
 
-								<!-- <div id="menu1" class="menu">
-					<a href="/mvc/Bs/academyinfo">학원소개</a>
-				</div>
-
-
-				<div id="menu2" class="menu">
-					<a href="">강사소개</a>
-				</div>
-
-				<div id="menu3" class="menu">
-					<a href="/mvc/jun_List/course_List">과목소개</a>
-				</div>
-
-				<div id="menu4" class="menu">
-					<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
-				</div> -->
+					<ul class="nav-ul">
+						<li style="border-radius: 10px;"><a href="#">학원 소개</a></li>
+						<li style="border-radius: 10px;"><a href="#">강사 소개</a></li>
+						<li style="border-radius: 10px;"><a href="/mvc/jun_List/course_List">과목 소개</a></li>
+						<li style="border-radius: 10px;"><a href="/mvc/board/boardList">고객 센터</a></li>
+						<div class="clear">
+						</div>
+					</ul>
+				</nav>
 			</div>
 
 		</div>
@@ -208,7 +250,7 @@ border: pink 1px solid;
 
 		<div id="main_rap">
 			<div id="sub_menu">
-				<c:if test="${param.mypage!=null ||mypage!=null }">
+				<c:if test="${param.mypage!=null }">
 					<jsp:include page="menu/menu.jsp" />
 				</c:if>
 			</div>
