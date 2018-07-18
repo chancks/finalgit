@@ -120,11 +120,24 @@ public class RfcController {
 				
 			case "payReg":
 				
-				res = dao.insertpayment(vo);//결제내역등록
-				res = dao.chkpayment(vo);//rpay-결제로 변경
-				
 				model.addAttribute("msg", "결제 완료");
 				model.addAttribute("url", "registerfc?mypage=true");
+				
+				if(vo.getCpprice()==0) {
+					
+					model.addAttribute("msg", "결제할 과목이 없습니다.");
+					model.addAttribute("url", "registerfc?mypage=true");
+					
+				} else {
+					if(vo.getCpnum()==null) {
+						model.addAttribute("msg", "카드번호를 입력해주세요");
+						model.addAttribute("url", "payment?mypage=true");
+					} else {
+						res = dao.insertpayment(vo);//결제내역등록
+						res = dao.chkpayment(vo);//rpay-결제로 변경
+					}
+				}
+			
 				break;
 				
 			case "totpay"://결제인원
