@@ -43,4 +43,9 @@ public class MngDAO {
 		
 		return sessionTemplate.selectList("pcmp.list");
 	}
+	
+	public Object memtot() {
+		
+		return sessionTemplate.selectOne("pcmp.memTot");
+	}
 }

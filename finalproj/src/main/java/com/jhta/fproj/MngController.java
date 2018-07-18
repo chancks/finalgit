@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jhta.fproj.logic.Joinlogic;
+import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.logic.Schval;
 import com.jhta.fproj.model.MngDAO;
 import com.jhta.fproj.model.MngUserVO;
+import com.jhta.fproj.model.PageVO;
 
 @Controller
 @RequestMapping("manager/{main}")
@@ -27,11 +29,12 @@ public class MngController {
 	
 	@RequestMapping()
 	String view(@PathVariable("main") String main,
-			MngUserVO user,Model model,
+			MngUserVO user,PageVO pvo,Model model,
 			HttpSession session,HttpServletRequest request,BindingResult errors) {
 		
 		Joinlogic jl = new Joinlogic(dao);
 		model.addAttribute("service", "manager");
+		Paging paging = new Paging();
 		
 		String res = "manager/"+main;
 		
@@ -152,8 +155,6 @@ public class MngController {
 			return "redirect:/manager/myinfo";
 			
 	
-		
-	
 		case "filedelete" :
 			
 			System.out.println("파일 델레트");
@@ -174,6 +175,7 @@ public class MngController {
 		case "memberlist":
 			
 			model.addAttribute("data", dao.list());
+			model.addAttribute("data3", paging.makePaging(pvo.getPage(),(Integer)dao.memtot()));
 			break;
 		
 		case "schidreg" :

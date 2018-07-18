@@ -8,20 +8,8 @@ import org.apache.ibatis.type.Alias;
 public class Jun_VO {
 	 
 	 Date cstart, cfinish;
-	 String ctitle,cday, cname, ccontent,ctime,ccode, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
-	Integer ctotal;
-	 
-
-	public String getCday() {
-		return cday;
-	}
-	public void setCday(String cday) {
-		this.cday = cday;
-	}
-	public void setRpay(String rpay) {
-		this.rpay = rpay;
-	}
-	public String getCol() {
+	 String ctitle,cday,cname, ccontent,ctime,ccode, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
+	 public String getCol() {
 		return col;
 	}
 	public void setCol(String col) {
@@ -33,6 +21,7 @@ public class Jun_VO {
 	public void setRcode(String rcode) {
 		this.rcode = rcode;
 	}
+	Integer ctotal;
 
 	 
 	public String getRid() {
@@ -167,7 +156,12 @@ public class Jun_VO {
 	public void setAgrade(String agrade) {
 		this.agrade = agrade;
 	}
-	
+	public String getCday() {
+		return cday;
+	}
+	public void setCday(String cday) {
+		this.cday = cday;
+	}
 	public Integer getCtotal() {
 		return ctotal;
 	}
@@ -176,15 +170,15 @@ public class Jun_VO {
 	}
 	@Override
 	public String toString() {
-		return "Jun_VO [cstart=" + cstart + ", cfinish=" + cfinish + ", ctitle=" + ctitle + ", cday=" + cday
-				+ ", cname=" + cname + ", ccontent=" + ccontent + ", ctime=" + ctime + ", ccode=" + ccode + ", cid="
-				+ cid + ", schCol=" + schCol + ", col=" + col + ", aid=" + aid + ", apw=" + apw + ", aname=" + aname
-				+ ", aemail=" + aemail + ", aphone=" + aphone + ", abirth=" + abirth + ", ainfo=" + ainfo + ", aupfile="
-				+ aupfile + ", agrade=" + agrade + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname
-				+ ", rpay=" + rpay + ", rcode=" + rcode + ", ctotal=" + ctotal + "]";
+		return "Jun_VO [cstart=" + cstart + ", cfinish=" + cfinish + ", ctitle=" + ctitle + ", cname=" + cname
+				+ ", ccontent=" + ccontent + ", ctime=" + ctime + ", ccode=" + ccode + ", cid=" + cid + ", schCol="
+				+ schCol + ", col=" + col + ", aid=" + aid + ", apw=" + apw + ", aname=" + aname + ", aemail=" + aemail
+				+ ", aphone=" + aphone + ", abirth=" + abirth + ", ainfo=" + ainfo + ", aupfile=" + aupfile
+				+ ", agrade=" + agrade + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rpay=" + rpay
+				+ ", rcode=" + rcode + ", cday=" + cday + ", ctotal=" + ctotal + "]";
 	}
-
-
+	
+	
 	
 	
 	 

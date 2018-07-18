@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="modify" parameterType="uservo">
 	
 		update astudent set aname = #{aname} ,aemail = #{aemail},aphone = #{aphone},
-		abirth= #{abirth},ainfo = #{ainfo},aupfile = #{aupfile,jdbcType=VARCHAR}
+		abirth= #{abirth},ainfo = #{ainfo},aupfile = #{aupfile}
 		
 		where aid = #{aid}
 		
@@ -37,7 +37,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="list" resultType="uservo" >
-		select * from astudent
+		select * from astudent order by agrade 
+	</select>
+	
+	<select id="memTot" resultType="java.lang.Integer" >
+		select count(*) as tot from astudent order by agrade 
 	</select>
 	
 </mapper>
