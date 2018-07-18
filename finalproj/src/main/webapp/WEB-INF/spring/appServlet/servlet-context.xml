@@ -26,7 +26,8 @@
 	<beans:bean id="multipartResolver"
     	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
     />
-    
+
+	 
     <beans:bean id="LoginChk" class="com.jhta.fproj.logic.LoginChk"/>
     <!-- Interceptor 설정 -->
     <interceptors>
@@ -50,7 +51,7 @@
             <exclude-mapping path="/manager/idchk"/>
             <exclude-mapping path="/manager/schid"/>
             <exclude-mapping path="/manager/schpw"/>
-             <exclude-mapping path="/manager/schidreg"/>
+            <exclude-mapping path="/manager/schidreg"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
             

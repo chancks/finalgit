@@ -16,7 +16,13 @@ function auth() {  //이름 이메일 인증되면 모달창
   
 function clo(){	//모달창 닫기
 	var mymodal = document.getElementById('modal');
+	var ikey = document.getElementById('keytext').value;
+	var ikey2 = '${key}';
+	
 	mymodal.style.display = 'none';
+	if(ikey.toUpperCase()==ikey2){
+		location.href='loginf';
+	}
 }
 
 function che() { //인증번호 비교
@@ -45,7 +51,7 @@ function che() { //인증번호 비교
     <input type="text" id = keytext>
     <input type="button" onclick="che()" value="확인">
     <input type="button" onclick="clo()" value="닫기">
-   <!--  <button onclick="close()">닫기</button> -->
+  
 </div>
 
 <c:if test="${auth }">

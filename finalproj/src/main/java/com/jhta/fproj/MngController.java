@@ -30,7 +30,7 @@ public class MngController {
 	
 	@RequestMapping()
 	String view(@PathVariable("main") String main,
-			MngUserVO user,PageVO pvo,Model model,
+			MngUserVO user,Model model,
 			HttpSession session,HttpServletRequest request,BindingResult errors) {
 		
 		Joinlogic jl = new Joinlogic(dao);
@@ -185,10 +185,9 @@ public class MngController {
 			return "redirect:/manager/myinfo";
 			
 		case "teacherinfo":
-		case "memberlist":
 			
 			model.addAttribute("data", dao.list());
-			model.addAttribute("data3", paging.makePaging(pvo.getPage(),(Integer)dao.memtot()));
+			
 			break;
 		
 		case "schidreg" :
