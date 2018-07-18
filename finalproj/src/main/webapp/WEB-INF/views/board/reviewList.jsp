@@ -79,9 +79,10 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</form>	
 		<tr>	
 			<c:if test="${grade eq '학생'}">
-				<td colspan="5" align="right" class="btn btn-default">
-					<a href="reviewInsertForm">글쓰기</a>
-				</td>
+				<td colspan="5" align="right">
+				<input type="button" class="btn btn-default"
+				onclick="location.href='reviewInsertForm'" value="글쓰기"/>
+			</td> 
 			</c:if>
 		</tr>
 	</table>

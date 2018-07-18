@@ -78,9 +78,10 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			</tr>
 		</form>
 		<tr>
-			<td colspan="5" align="right" class="btn btn-default">
-				<a href="qnaInsertForm">글쓰기</a>
-			</td>
+			<td colspan="5" align="right">
+				<input type="button" class="btn btn-default"
+				onclick="location.href='qnaInsertForm'" value="글쓰기"/>
+			</td> 
 		</tr>
 	</table>
 </body>

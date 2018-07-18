@@ -80,9 +80,10 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</form>
 		<tr>
 			<c:if test="${grade eq '관리자' }">
-				<td colspan="5" align="right" class="btn btn-default">
-				<a href="noticeInsertForm">글쓰기</a>
-				</td>
+				<td colspan="5" align="right">
+				<input type="button" class="btn btn-default"
+				onclick="location.href='noticeInsertForm'" value="글쓰기"/>
+			</td> 
 			</c:if>
 		</tr>	
 				
