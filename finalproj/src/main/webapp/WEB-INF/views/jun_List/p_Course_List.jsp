@@ -52,18 +52,18 @@
 	<div>
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List?cid=${id}'">전체 강의 목록</div>
+			onclick="location.href='p_Course_List?cid=${id}&mypage=true'">전체 강의 목록</div>
 
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List1?cid=${id}'">진행중인 강의 목록</div>
+			onclick="location.href='p_Course_List1?cid=${id}&mypage=true'">진행중인 강의 목록</div>
 
 		<div
 			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List2?cid=${id}'">종료된 강의 목록</div>
+			onclick="location.href='p_Course_List2?cid=${id}&mypage=true'">종료된 강의 목록</div>
 
 		<div style="background-color: gray; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List3?cid=${id}'">개설예정인 강의 목록</div>
+			onclick="location.href='p_Course_List3?cid=${id}&mypage=true'">개설예정인 강의 목록</div>
 
 	</div>
 

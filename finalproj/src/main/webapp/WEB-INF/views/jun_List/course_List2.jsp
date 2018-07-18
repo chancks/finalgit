@@ -70,7 +70,7 @@
 				<h2>과정명</h2>
 			</div>
 			<div>
-				<a href="course_Detail?ccode=${row.ccode }">${row.ctitle}</a>
+				<a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a>
 			</div>
 			<div>${row.ctitle}</div>
 		</div>

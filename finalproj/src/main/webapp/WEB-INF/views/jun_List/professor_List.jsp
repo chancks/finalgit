@@ -66,7 +66,7 @@ margin: 5px;
 					<div>
 						<h2>이름</h2>
 					</div>
-					<a href="professor_Course_List?cid=${row.aid}">${row.aname}</a>
+					<a href="professor_Course_List?cid=${row.aid}&mypage=true">${row.aname}</a>
 					<div>${row.aname}</div>
 				</div>
 

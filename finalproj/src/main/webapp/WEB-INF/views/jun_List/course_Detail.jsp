@@ -120,7 +120,6 @@ link_delete = function(ccode){
 	<br>
 <div><a href="course_List">뒤로 가기</a></div>
 <div><a href="course_Modify?ccode=${data.ccode }">과목 수정</a></div>
- <input type="button" value="과목 삭제" onclick="link_delete(${data.ccode})" >
 <div><a href="course_Delete?ccode=${data.ccode }">과목 삭제</a></div>
 
 <%-- <c:when test="${sessionScope.id=='admin' }">
