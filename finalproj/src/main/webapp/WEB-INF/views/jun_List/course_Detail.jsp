@@ -22,7 +22,7 @@
 <style>
 @media screen and (min-width:600px) {
 	table {
-		background-color: #ffff00;
+	
 	}
 }
 
@@ -32,21 +32,12 @@
 	}
 }
 
-#a {
-	float: left;
-	background-color: gray;
-	margin: 5px;
+#table_rap{
+width: 700px;
 }
 </style>
 <script>
 
-link_delete = function(ccode){
-     if (confirm("정말 삭제하시겠습니까??") == true){    //확인
-            location.href="course_Delete?ccode="+ccode;
-     }else{   //취소
-         return false;
-     }
-}
 
 </script>
 
@@ -54,70 +45,48 @@ link_delete = function(ccode){
 </head>
 <body>
 
-	<div id="a">
-		<div>
-			<h2>과정명</h2>
-		</div>
-		<div>${data.ctitle }</div>
-	</div>
+<div id="table_rap">
+	<table class="table">
+		<tr>
+			<td style="background-color:#D8D8D8 ">과정 명</td>
+			<td colspan="5">${data.ctitle }</td>
+		</tr>
 
-	<div id="a">
-		<div>
-			<h2>강사명</h2>
-		</div>
-		<div>${data.cname }</div>
-	</div>
+		<tr>
+			<td style="background-color:#D8D8D8 ">강사 명</td>
+			<td>${data.cname }</td>
+			<td style="background-color:#D8D8D8 ">id</td>
+			<td>${data.cid}</td>
+			<td style="background-color:#D8D8D8 ">과목 코드</td>
+			<td>${data.ccode }</td>
+		</tr>
+	
+		<tr>
+			<td style="background-color:#D8D8D8 ">요일</td>
+			<td>${data.cday}</td>
+			<td style="background-color:#D8D8D8 ">날짜</td>
+			<td>${data.ctime}</td>
+			<td style="background-color:#D8D8D8 ">총원</td>
+			<td>${data.ctotal}</td>
+		</tr>
+		
+		<tr>
+			<td style="background-color:#D8D8D8 ">과정 기간</td>
+			<td colspan="5">${data.cstart} ~ ${data.cfinish}</td>
 
-	<div id="a">
-		<div>
-			<h2>강사아이디</h2>
-		</div>
-		<div>${data.cid}</div>
-	</div>
-
-
-	<div id="a">
-		<div>
-			<h2>과목 코드</h2>
-		</div>
-		<div>${data.ccode }</div>
-	</div>
-
-	<div id="a">
-		<div>
-			<h2>과정 기간</h2>
-		</div>
-		<div>시작일</div>
-		<div>${data.cstart}</div>
-		<div>종료일</div>
-		<div>${data.cfinish}</div>
-	</div>
-
-	<div id="a">
-		<div>
-			<h2>수업 시간</h2>
-		</div>
-		<div>요일</div>
-		<div>${data.cday }</div>
-		<div>파트</div>
-		<div>${data.ctime}</div>
-	</div>
-
-	<div id="a">
-		<div>
-			<h2>과정내용</h2>
-		</div>
-		<div>${data.ccontent }</div>
-	</div>
-
-	<div>
-		<div>
-			<h2>총 원</h2>
-		</div>
-		<div>${data.ctotal}</div>
-	</div>
-	<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	<br>
+		</tr>
+		
+	
+		
+		
+		<tr>
+			<td colspan="6" style="height: 400px">${data.ccontent }</td>
+		</tr>
+		
+	</table>
+	
+</div>
+		<hr size=1px color="silver">
 <div><a href="course_List?mypage=true">뒤로 가기</a></div>
 <div><a href="course_Modify?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 수정</a></div>
 <div><a href="course_Delete?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 삭제</a></div>

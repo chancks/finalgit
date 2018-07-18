@@ -13,98 +13,114 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
 
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <html>
 
+
 <style>
-#hight_top {
-	border: red 1px solid;
-	width: 1024px;
-	height: 100px;
-	margin-left: 10%;
+@media screen and (max-width : 400px) {
+	#background {
+		width: 400px;
+		background-color: blue;
+	}
+	#hight_top {
+		width: 300px;
+		height: 50px;
+	}
+	
+	#logo {
+	width: 100px;
+	height: 35px;
+	margin-left: 100px;
+	background-color: fuchsia;
+	float: left;
+	background-image: url('${url }');
+	background-size: 100%;
+	cursor: pointer;
+	}
+	
+	
 }
 
-#logo {
-    width: 300px;
-    height: 90px;
-    margin-left: 20px;
-    background-color: fuchsia;
-    float: left;
+@media screen and (min-width : 400px) {
+	
+/* 	#background {
+		background-color: red;
+	}
+ */
+
+	#hight_top {
+		width: 1010px;
+		height: 100px;
+	}
+	
+	#logo {
+	width: 275px;
+	height: 90px;
+	margin-left: 370px;
+	background-color: fuchsia;
+	float: left;
+	background-image: url('${url }');
+	background-size: 100%;
+	cursor: pointer;
+	}
+	
 }
+
 
 #login {
-	margin-top: 60px;
-	margin-right: 20px; background-color : fuchsia;
+	margin-top: 75px;
+	/* 	margin-right: 20px; 
+	background-color : fuchsia; */
 	float: right;
-	background-color: fuchsia;
 }
 
 #top_menu {
-	width: 1024px;
+	width: 1010px;
 	height: 50px;
-	border: blue 1px solid;
-	margin-left: 10%;
+	/* 	border: blue 1px solid; */
 	position: relative;
-	text-align:center; 
-
+	text-align: center;
 }
 
-#menu_rap{
+#menu_rap {
 	width: 450px;
 	height: 40px;
 	border: black 1px solid;
-	display:inline-block; 
+	display: inline-block;
 	margin-top: 5px;
 }
 
-#menu1{
-	background-color:gray;
-
-     float:left;
-}
-#menu2{
-background-color:gray;
-
-     float:left;
+.menu {
+	margin: 6px;
+	width: 100px;
+	height: 30px;
 }
 
-#menu3{
-background-color:gray;
-
-     float:left;
-}
-
-#menu4{
-background-color:gray;
-
-     float:left;
-}
-.menu{
-margin: 6px;
-width: 100px;
-height: 30px;
-}
-
-#main_rap{
-margin-left: 10%;
-width:1024px;
-
-border: pink 1px solid;
+#main_rap {
+	width: 1024px;
+	/* background-color: #FFC6C6; */
+	/* border: pink 1px solid; */
 }
 
 #sub_menu {
-	width:100px;
+	width: 140px;
 	float: left;
-	border: red 1px solid;
+	/* 
+	background-color: pink; */
+	/* border: red 1px solid; */
 }
 
 #main {
-	margin-left: 100px;
-	width: 924px ;
-	border: blue 1px solid;
+	margin-left: 140px;
+	width: 870px;
+	/* 	border: blue 1px solid; */
 	position: relative;
+	/* background-color: #fff; */
 }
-
-
 
 #bottom {
 	bottom: 0px;
@@ -114,6 +130,8 @@ border: pink 1px solid;
 </style>
 
 <head>
+
+
 <title>Home</title>
 </head>
 <body>
@@ -121,10 +139,7 @@ border: pink 1px solid;
 
 		<div id="hight_top">
 
-			<div id="logo" 
-			style=" background-image: url('${url }'); background-size: 100%;  cursor: pointer;" 
-			onclick="location.href='/mvc/'">
-			</div>
+			<div id="logo" onclick="location.href='/mvc/'"></div>
 
 
 
@@ -168,41 +183,45 @@ border: pink 1px solid;
 			</div>
 		</div>
 
-		<hr size=2px color="gray">
 
 		<div id="top_menu">
 
-			<div id="menu_rap" class="btn-group">
-				
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/academyinfo'" value="학원소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/manager/teacherinfo'" value="강사소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/Bs/courseinfo'" value="과목소개">
-				<input type="button" class="btn" onclick="location.href='/mvc/board/boardList'" value="고객센터">
-			<!-- 	<button class ="btn">고객 센터</btn> -->
+			<nav class="navbar navbar-default navbar-static-top navbar-inverse"
+				role="navigation">
 
-				
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#navbar-menu">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<!--         <a href="/" class="navbar-brand">야하자</a> -->
+					</div>
+					<div id="navbar-menu" class="collapse navbar-collapse navbar-right">
+						<ul class="nav navbar-nav navbar-center">
 
-								<!-- <div id="menu1" class="menu">
-					<a href="/mvc/Bs/academyinfo">학원소개</a>
+							<li class="hidden-sm "><a href="/mvc/Bs/academyinfo">학원
+									소개</a></li>
+							<li class="hidden-sm "><a href="/mvc/manager/teacherinfo">강사
+									소개</a></li>
+							<li class="hidden-sm "><a href="/mvc/Bs/courseinfo">과목
+									소개</a></li>
+							<li class="hidden-sm"><a href="/mvc/board/boardList">고객
+									센터</a></li>
+
+
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a id="signout"><span
+									class="glyphicon glyphicon-lock"></span> 공부하자</a></li>
+						</ul>
+					</div>
 				</div>
-
-
-				<div id="menu2" class="menu">
-					<a href="">강사소개</a>
-				</div>
-
-				<div id="menu3" class="menu">
-					<a href="/mvc/jun_List/course_List">과목소개</a>
-				</div>
-
-				<div id="menu4" class="menu">
-					<a onclick="location.href='/mvc/board/boardList'">고객센터</a>
-				</div> -->
-			</div>
-
 		</div>
 
-		<hr size=2px color="gray"> <!-- #ddd -->
+		<hr size=2px color="gray">
+		<!-- #ddd -->
 
 
 		<div id="main_rap">
@@ -220,13 +239,12 @@ border: pink 1px solid;
 		</div>
 
 		<div id="bottom" align="center">
-			<small>
-			Creators 크리에이터스몰비즈니스<br>
-			Partners 비즈니스 파트너 안내비즈니스 · 광고스토어 개설지역업체 등록<br> Developers 네이버
-			개발자센터오픈 API오픈소스네이버 D2네이버 랩스<br> 네이버 정책 및
-			약관/회사소개/인재채용/제휴/제안/이용약관/개인정보처리방침청/소년보호정책/네이버 정책고객센터ⓒ NAVER Corp.
+			<small> Creators 크리에이터스몰비즈니스<br> Partners 비즈니스 파트너
+				안내비즈니스 · 광고스토어 개설지역업체 등록<br> Developers 네이버 개발자센터오픈 API오픈소스네이버
+				D2네이버 랩스<br> 네이버 정책 및
+				약관/회사소개/인재채용/제휴/제안/이용약관/개인정보처리방침청/소년보호정책/네이버 정책고객센터ⓒ NAVER Corp.
 			</small>
 		</div>
 	</div>
 </body>
-</html>
+</html>s

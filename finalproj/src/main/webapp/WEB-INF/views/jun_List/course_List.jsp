@@ -25,7 +25,7 @@
 <style>
 @media screen and (min-width:600px) {
 	table {
-		background-color: #ffff00;
+		
 	}
 }
 
@@ -86,30 +86,7 @@
 </div>
 
 
-<!-- 
-	<div style="text-align: center;">
 
-		<div style="display:inline-block;">
-			<div
-				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
-				onclick="location.href='course_List?mypage=true'">전체 강의 목록</div>
-
-			<div
-				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
-				onclick="location.href='course_List1?mypage=true'">개강 예정인 강의 목록</div>
-
-			<div
-				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
-				onclick="location.href='course_List2?mypage=true'">개강 중인 강의 목록</div>
-
-			<div style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
-				onclick="location.href='course_List3?mypage=true'">개강 종료된 강의 목록</div>
-		</div>
-
-	</div>
-
-
- -->
 	
 	<!-- 여기부터 테스트입니다@@@@@@@@ㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲ -->
 

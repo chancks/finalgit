@@ -20,17 +20,7 @@
 
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		background-color: #ffff00;
-	}
-}
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
-}
 </style>
 
 
@@ -161,6 +151,7 @@
 			</div>
 		</div>
 
+			
 			
 <hr size=1px color="#ddd">	
 		

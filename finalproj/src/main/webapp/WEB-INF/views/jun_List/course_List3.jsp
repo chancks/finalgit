@@ -22,7 +22,7 @@
 <style>
 @media screen and (min-width:600px) {
 	table {
-		background-color: #ffff00;
+		
 	}
 }
 
@@ -32,14 +32,80 @@
 	}
 }
 
-#a {
-	float: left;
-	background-color: gray;
-	margin: 5px;
+.points_table thead {
+	width: 100%;
 }
 
-#search {
-	margin-top: 60px;
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.points_table thead tr {
+	width: 99%;
+}
+
+.points_table tr {
+	width: 100%;
+}
+
+.points_table thead, .points_table tbody, .points_table tr,
+	.points_table td, .points_table th {
+	display: inline-block;
+}
+
+.points_table thead {
+	background: #232323;
+	color: #A6A6A6;
+}
+
+.points_table tbody td, .points_table thead>tr>th {
+	float: left;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td,
+	.points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th
+	{
+	padding: 8px;
+	height: 30px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar {
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar {
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4)
+		50%, transparent, transparent)
 }
 </style>
 
@@ -47,60 +113,66 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="border: 0.5px silver solid; height:100%; ">
-	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-	<div style="text-align: center; ">
-		<div id="search" style="display: inline-block; height: 40px">
-			<form action="?">
-				<select name="schCol" style="width: 100px; height: 28px;">
-					<option value="ctitle">과목 명</option>
-					<option value="cname">강사명</option>
-					<option value="ccode">과목 코드</option>
-				</select> <input type="text" name="ctitle" style="height: 25px; margin-top: 9px;" /><input type="submit" value="검색" style="height: 28px; margin-left: 4px;" />
-			</form>
+	<div style="border: 0.5px silver solid; height: 100%;">
+		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div style="text-align: center;">
+			<div id="search" style="display: inline-block; height: 40px">
+				<form action="?">
+					<select name="schCol" style="width: 100px; height: 28px;">
+						<option value="ctitle">과목 명</option>
+						<option value="cname">강사명</option>
+						<option value="ccode">과목 코드</option>
+					</select> <input type="text" name="ctitle"
+						style="height: 25px; margin-top: 9px;" /><input type="submit"
+						value="검색" style="height: 28px; margin-left: 4px;" />
+				</form>
+			</div>
 		</div>
-	</div>
-	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
 
+		<div class="container" style="width: 100%">
+			<div class="row">
+				<table class="points_table" style="width:100%;">
+					<thead>
+						<tr>
 
-<div class="container" style=" width: 900px;">
-	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
-		<thead>
-			<tr style="background-color: #FF4848; text-align: center" >
+							<th class="col-xs-4">과정 명</th>
+							<th class="col-xs-1">강사 명</th>
+							<th class="col-xs-1">강사 id</th>
+							<th class="col-xs-4">과정 기간</th>
+							<th class="col-xs-1">요일</th>
+							<th class="col-xs-1">시간</th>
 
-				<th style="text-align: center"><font color = "white">과정 명</font></th>
-				<th style="text-align: center"><font color = "white">강사 명</font></th>
-				<th style="text-align: center"><font color = "white">강사 id</font></th>
-				<th style="text-align: center"><font color = "white">과정 기간</font></th>
-				<th style="text-align: center"><font color = "white">요일</font></th>
-				<th style="text-align: center"><font color = "white">수업 시간</font></th>
-			
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${data }" var="row" varStatus="no">
-				<tr style="text-align: center">
-					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&cday=${row.cday }&mypage=true">${row.ctitle}</a></td>
-					<td style="background-color: #FFEAEA;text-align: center">${row.cname }</td>
-					<td style="background-color:#FFC6C6;text-align: center">${row.cid}</td>
-					<td style="background-color: #FFEAEA;text-align: center">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
-					<td style="background-color: #FFC6C6; text-align: center">${row.cday}</td>
-					<td style="background-color: #FFEAEA;text-align: center">${row.ctime }</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	<div class="text-center">
-		<ul class="pagination">
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-		</ul>
-	</div>
-</div>
+						</tr>
+					</thead>
+					<tbody class="points_table_scrollbar">
+						<c:forEach items="${data }" var="row" varStatus="status">
 
+							<c:choose>
+								<c:when test="${status.index%2==0}">
+									<tr class="odd" style="text-align: center">
+								</c:when>
+								<c:otherwise>
+									<tr class="even" style="text-align: center">
+								</c:otherwise>
+							</c:choose>
+
+							<td class="col-xs-4"><a
+								href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+							<td class="col-xs-1">${row.cname }</td>
+							<td class="col-xs-1">${row.cid}</td>
+							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
+							<td class="col-xs-1">${row.cday}</td>
+							<td class="col-xs-1">${row.ctime}</td>
+							</tr>
+						</c:forEach>
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
 
 <hr size=1px color="#ddd">	
 	<a href="../">뒤로 가기</a>

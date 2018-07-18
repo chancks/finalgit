@@ -20,59 +20,139 @@
 
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		background-color: #ffff00;
-	}
+.points_table thead {
+	width: 100%;
 }
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
 }
 
-#a {
+.points_table thead tr {
+	width: 99%;
+}
+
+.points_table tr {
+	width: 100%;
+}
+
+.points_table thead, .points_table tbody, .points_table tr,
+	.points_table td, .points_table th {
+	display: inline-block;
+}
+
+.points_table thead {
+	background: #212121;
+	color: #fff;
+}
+
+.points_table tbody td, .points_table thead>tr>th {
 	float: left;
-	background-color: gray;
-	margin: 5px;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td,
+	.points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th
+	{
+	padding: 8px;
+	height: 26px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar {
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar {
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4)
+		50%, transparent, transparent)
 }
 </style>
 <script>
-
+	
 </script>
 
 <title>Insert title here</title>
 </head>
 <body>
-강사의 강의 몰록 리스트 
-	
-	<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	<br>
-	<c:forEach items="${data }" var="row" varStatus="no">
-		<div id="a">
-			<div>
-				<h2>과목명</h2>
+	강사의 강의 몰록 리스트
+
+
+	<div style="border: 0.5px silver solid; height: 100%;">
+
+		<div class="container" style="width: 100%;">
+			<div class="row">
+				<h2>강의 리스트</h2>
+
+				<table class="points_table" style="width: 100%;">
+					<thead>
+						<tr>
+							<th class="col-xs-3">과정 명</th>
+							<th class="col-xs-2">강사 명</th>
+							<th class="col-xs-3">과정 기간</th>
+							<th class="col-xs-1">요 일</th>
+							<th class="col-xs-1">시 간</th>
+							<th class="col-xs-2">정원</th>
+
+						</tr>
+					</thead>
+					<tbody class="points_table_scrollbar">
+						<c:forEach items="${data }" var="row" varStatus="status">
+
+							<c:choose>
+								<c:when test="${status.index%2==0}">
+									<tr class="odd" style="text-align: center">
+								</c:when>
+								<c:otherwise>
+									<tr class="even" style="text-align: center">
+								</c:otherwise>
+							</c:choose>
+
+							<td class="col-xs-3">${row.ctitle}</td>
+							<td class="col-xs-2">${row.cname}</td>
+							<td class="col-xs-3">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
+							<td class="col-xs-1">${row.cday}</td>
+							<td class="col-xs-1">${row.ctime}</td>
+							<td class="col-xs-2">${row.ctotal}</td>
+
+
+
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
-			<div>${row.ctitle}</div>
-		</div>
-		
-		<div id="a">
-			<div>
-				<h2>강사명</h2>
-			</div>
-			<div>${row.cname}</div>
-		</div>
-		
-		<div>
-			<div>
-				<h2>수강생 정원</h2>
-			</div>
-			<div>${row.ctotal}</div>
+		<hr size=1px color="#ddd">
+			<a href="professor_List?mypage=true">뒤로 가기</a>
 		</div>
 
-<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	</c:forEach>
-	<a href="professor_List?mypage=true">뒤로 가기</a>
 </body>
 </html>

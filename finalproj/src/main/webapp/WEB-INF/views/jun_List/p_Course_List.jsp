@@ -9,20 +9,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet"href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet"href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 
 <script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
-<script type="text/javascript"
-	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript"src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
 
 <style>
 @media screen and (min-width:600px) {
 	table {
-		background-color: #ffff00;
+		
 	}
 }
 
@@ -38,10 +41,9 @@
 	margin: 5px;
 }
 
-#search{
+#search {
 	margin-top: 60px;
 }
-
 </style>
 
 
@@ -49,35 +51,49 @@
 </head>
 <body>
 
-	<div>
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List?cid=${id}&mypage=true'">전체 강의 목록</div>
 
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List1?cid=${id}&mypage=true'">진행중인 강의 목록</div>
+<div class="container" style=" height:35px; width:100% ;" >
+	<div class="row">
+		<div class="span12">
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+             
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List?cid=${id}&mypage=true'">
+				 <a class="btn" data-toggle="tab">전체 강의 목록  </a>
+			</div>
+              
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List1?cid=${id}&mypage=true'">
+         	     <a class="btn"  data-toggle="tab">개강 예정 목록</a>
+             </div>
+  			<!-- style="background:#FFC6C6; -->          
+            
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List2?cid=${id}&mypage=true'">
+         	 	  <a  class="btn" data-toggle="tab">진행 중 목록</a>
+            </div>
+             
+             
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List3?cid=${id}&mypage=true'">
+     				<a class="btn"  data-toggle="tab">개강 종료 목록</a>
+            </div>
+            
+          </div> 
+          
+        </div>
+    </div>
+</div>
 
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List2?cid=${id}&mypage=true'">종료된 강의 목록</div>
 
-		<div style="background-color: gray; cursor: pointer; padding: 10px;"
-			onclick="location.href='p_Course_List3?cid=${id}&mypage=true'">개설예정인 강의 목록</div>
-
+	<div style="width: 100%; border-bottom: 1px inset gray; background-color:">
+<!-- 	<div style="background-color: gray;"><a href="/mvc/jun_List/course_register">등록등록</a>
 	</div>
-
-	<div>
-	아이디아이디아이디아이디 @@@@@@ ${id }
-	</div>
-
-
-	<div
-		style="width: 100%; height: 700px; border-bottom: 1px inset gray; background-color: yellow;">
-			<div style="background-color: silver;">${list }</div>	
+	 -->
 		<jsp:include page="${list }"></jsp:include>
 		
 	</div>
+
 
 
 </body>

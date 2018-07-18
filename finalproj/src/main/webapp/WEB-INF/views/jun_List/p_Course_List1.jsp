@@ -19,10 +19,11 @@
 	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
 
+
 <style>
 @media screen and (min-width:600px) {
 	table {
-		background-color: #ffff00;
+		
 	}
 }
 
@@ -32,16 +33,81 @@
 	}
 }
 
-#a {
+.points_table thead {
+	width: 100%;
+}
+
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.points_table thead tr {
+	width: 99%;
+}
+
+.points_table tr {
+	width: 100%;
+}
+
+.points_table thead, .points_table tbody, .points_table tr,
+	.points_table td, .points_table th {
+	display: inline-block;
+}
+
+.points_table thead {
+	background: #232323;
+	color: #A6A6A6;
+}
+
+.points_table tbody td, .points_table thead>tr>th {
 	float: left;
-	background-color: gray;
-	margin: 5px;
+	border-bottom-width: 0;
 }
 
-#search{
-	margin-top: 60px;
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td,
+	.points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th
+	{
+	padding: 8px;
+	height: 30px;
+	text-align: center;
+	line-height: 12px;
 }
 
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar {
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar {
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4)
+		50%, transparent, transparent)
+}
 </style>
 
 
@@ -49,95 +115,72 @@
 </head>
 <body>
 
-	<div>개설 예정 강의</div>
-		
-		
-	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-	<div id="search">
-		<form action="?">
-			<select name="schCol">
-				<option value="ctitle">과목 명</option>
-				<option value="cname">강사명</option>
-				<option value="ccode">과목 코드</option>
-			</select> <input type="text" name="ctitle" /><input type="submit" value="검색" />
-		</form>
+
+	<div style="border: 0.5px silver solid; height: 100%;">
+		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+		<div style="text-align: center;">
+			<div id="search" style="display: inline-block; height: 40px">
+				<form action="?">
+					<select name="schCol" style="width: 100px; height: 28px;">
+						<option value="ctitle">과목 명</option>
+						<option value="cname">강사명</option>
+						<option value="ccode">과목 코드</option>
+					</select> <input type="text" name="ctitle"
+						style="height: 25px; margin-top: 9px;" /><input type="submit"
+						value="검색" style="height: 28px; margin-left: 4px;" />
+				</form>
+			</div>
+		</div>
+		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+		<div class="container" style="width: 100%">
+			<div class="row">
+				<table class="points_table">
+					<thead>
+						<tr>
+
+							<th class="col-xs-4">과정 명</th>
+							<th class="col-xs-1">강사 명</th>
+							<th class="col-xs-1">강사 ID</th>
+							<th class="col-xs-4">과정 기간</th>
+							<th class="col-xs-1">요일</th>
+							<th class="col-xs-1">시간</th>
+
+						</tr>
+					</thead>
+					<tbody class="points_table_scrollbar">
+						<c:forEach items="${data }" var="row" varStatus="status">
+
+							<c:choose>
+								<c:when test="${status.index%2==0}">
+									<tr class="odd" style="text-align: center">
+								</c:when>
+								<c:otherwise>
+									<tr class="even" style="text-align: center">
+								</c:otherwise>
+							</c:choose>
+
+							<td class="col-xs-4"><a
+								href="p_Astudent_List?rcode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+							<td class="col-xs-1">${row.cname }</td>
+							<td class="col-xs-1">${row.cid}</td>
+							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
+							<td class="col-xs-1">${row.cday}</td>
+							<td class="col-xs-1">${row.ctime}</td>
+							</tr>
+						</c:forEach>
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<hr size=1px color="#ddd">
+		<a href="../">뒤로 가기</a>
 	</div>
-	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-		
-		
-			<c:forEach items="${data }" var="row" varStatus="no">
 
-				<div id="a">
-					<div>
-						<h2>과정명</h2>
-					</div>
-					<div>
-						<a href="p_Astudent_List?rcode=${row.ccode }&mypage=true">${row.ctitle}</a>
-
-					</div>
-					<div>${row.ctitle}</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>강사명</h2>
-					</div>
-					<div>${row.cname }</div>
-				</div>
-
-
-				<div id="a">
-					<div>
-						<h2>강사ID</h2>
-					</div>
-					<div>${row.cid }</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>과목 코드</h2>
-					</div>
-					<div>${row.ccode }</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>과정 기간</h2>
-					</div>
-					<div>시작일</div>
-					<div>${row.cstart}</div>
-					<div>종료일</div>
-					<div>${row.cfinish}</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>수업 시간</h2>
-					</div>
-					<div>요일</div>
-					<div>${row.cday }</div>
-					<div>파트</div>
-					<div>${row.ctime}</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>과정내용</h2>
-					</div>
-					<div>${row.ccontent }</div>
-				</div>
-
-				<div>
-					<div>
-						<h2>총 원</h2>
-					</div>
-					<div>${row.ctotal}</div>
-				</div>
-				<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-			</c:forEach>
-			
-				<a href="../">뒤로 가기</a>
-	
 
 </body>
 </html>
