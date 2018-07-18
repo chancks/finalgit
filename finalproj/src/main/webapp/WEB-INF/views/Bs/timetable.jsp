@@ -14,7 +14,7 @@
 <c:forEach var="i" begin="0" end="8">
 	<tr>
 		<c:forEach var="j" begin="0" end="7">
-		<td>
+		<td width="50px" height="50px;">
 			<c:forEach items="${data }" var="dd" varStatus="no">
 					<c:if test="${i==0 && j!=0 && no.index==1}">
 						${dd.dayarr[j-1] }
@@ -26,10 +26,11 @@
 							</c:if>
 						</c:forEach>
 					</c:if>
-				</c:forEach>
-			
-				${i },${j }
-			</td>
+			</c:forEach>
+					<c:if test="${i!=0 && j==0 }">
+						${i }교시
+					</c:if>
+		</td>
 		</c:forEach>
 	</tr>
 </c:forEach>
