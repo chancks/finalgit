@@ -6,36 +6,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>수강신청</title>
-<style type="text/css">
-#in{
 
- float: left;
- width: 100px;
- border: 1px black solid;
-}
-#wrap{
-border: 1px red solid;
-width: 600px;
-height: 200px;
-}
-#mine{
-border: 1px blue solid;
-width: 600px;
-height: 200px;
-}
-</style>
 </head>
 <body>
 <div id="wrap">
-<c:forEach var="rr" items="${data }">
-	<div id="in">${rr.ccode }</div>
-	<div id="in">${rr.ctitle }</div>
-	<div id="in">${rr.cname }</div>
-	<div id="in">${rr.ctotal-rr.tot }</div>
-	<div id="in"><a href="insertReg?ccode=${rr.ccode }">신청</a></div>	
-</c:forEach>
-</div>
-<div>
+
+<div class="container" style=" width: 900px;">
+	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
+		<thead>
+			<tr style="background-color: #FF4848; text-align: center" >
+
+				<th style="text-align: center"><font color = "white">과목코드</font></th>
+				<th style="text-align: center"><font color = "white">과목명</font></th>
+				<th style="text-align: center"><font color = "white">강사</font></th>
+				<th style="text-align: center"><font color = "white">정원</font></th>
+				<th style="text-align: center"><font color = "white">신청</font></th>
+			
+			</tr>
+		</thead>
+		<tbody>
+		<c:forEach var="rr" items="${data }">
+	
+				<tr style="text-align: center">
+					<td style="background-color:#FFC6C6;text-align: center">${rr.ccode }</td>
+					<td style="background-color: #FFEAEA;text-align: center">${rr.ctitle }</td>
+					<td style="background-color:#FFC6C6;text-align: center">${rr.cname }</td>
+					<td style="background-color: #FFEAEA;text-align: center">${rr.ctotal-rr.tot }</td>
+					<td style="background-color: #FFC6C6; text-align: center"><a href="insertReg?ccode=${rr.ccode }">신청</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+<div class="text-center">
 	<c:if test="${startPage >1}">
 		<a href="registerfc?mypage=true&page=1">[처음]</a>
 		<a href="registerfc?mypage=true&page=${data3.startPage-1}"><</a>
@@ -55,6 +57,11 @@ height: 200px;
 		<a href="registerfc?mypage=true&page=${data3.totalPage }">[마지막]</a>
 	</c:if>
 </div>
+
+</div>
+
+
+
 <div id="mine"><jsp:include page="myregister.jsp"/></div>
 </body>
 </html>

@@ -5,35 +5,40 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style type="text/css">
-#in2{
-
- float: left;
- width: 100px;
-}
-#wrap2{
-border: 1px red solid;
-width: 450px;
-height: 200px;
-}
-
-</style>
 </head>
 <body>
-	<div id="wrap2">
+<div id="wrap2">
+	<div class="container" style=" width: 900px;">
+	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
+		<thead>
+			<tr style="background-color: #FF4848; text-align: center" >
+
+				<th style="text-align: center"><font color = "white">과정명</font></th>
+				<th style="text-align: center"><font color = "white">강사</font></th>
+				<th style="text-align: center"><font color = "white">취소</font></th>
+			
+			</tr>
+		</thead>
+		<tbody>
+		
 		<c:forEach var="rr" items="${data2 }">
-				<div id="in2">${rr.ctitle }</div>
-				<div id="in2">${rr.cname }</div>
-				<div id="in2">
-					<a href="deleteReg?rcode=${rr.ccode }">취소</a>
-				</div>
-		</c:forEach>
-		<div id="in2">
-			<div>총 갯수:${data2.size() }</div>
-			<div>
+			
+				<tr style="text-align: center">
+					<td style="background-color:#FFC6C6;text-align: center">${rr.ctitle }</td>
+					<td style="background-color: #FFEAEA;text-align: center">${rr.cname }</td>
+					<td style="background-color:#FFC6C6;text-align: center"><a href="deleteReg?rcode=${rr.ccode }">취소</a></td>
+				</tr>
+			</c:forEach>
+			
+			<tr>
+				<td colspan="3" align="right">
+				총 갯수:${data2.size() }&nbsp;&nbsp;
 				<a href="payment?cnt=${data2.size() }">결제</a>
-			</div>
-		</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 	</div>
+</div>
 </body>
 </html>
