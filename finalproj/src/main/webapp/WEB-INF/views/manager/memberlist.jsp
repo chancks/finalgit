@@ -5,40 +5,139 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+@media screen and (min-width:600px) {
+	table {
+		
+	}
+}
+
+@media screen and (max-width:600px) {
+	table {
+		background-color: #00ff00;
+	}
+}
+
+.points_table thead {
+	width: 100%;
+}
+
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.points_table thead tr {
+	width: 99%;
+}
+
+.points_table tr {
+	width: 100%;
+}
+
+.points_table thead, .points_table tbody, .points_table tr,
+	.points_table td, .points_table th {
+	display: inline-block;
+}
+
+.points_table thead {
+	background: #232323;
+	color: #A6A6A6;
+}
+
+.points_table tbody td, .points_table thead>tr>th {
+	float: left;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td,
+	.points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th
+	{
+	padding: 8px;
+	height: 30px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar {
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar {
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4)
+		50%, transparent, transparent)
+}
+</style>
+
 <title>회원리스트</title>
 </head>
 <body>
-	
-	<div class="container" style=" width: 900px;">
-	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
-		<thead>
-			<tr style="background-color: #FF4848; text-align: center" >
+<div id="wrap">
 
-				<th style="text-align: center"><font color = "white">id</font></th>
-				<th style="text-align: center"><font color = "white">이름</font></th>
-				<th style="text-align: center"><font color = "white">이메일</font></th>
-				<th style="text-align: center"><font color = "white">핸드폰</font></th>
-				<th style="text-align: center"><font color = "white">등급</font></th>
-				<th style="text-align: center"><font color = "white">삭제</font></th>
+<div class="container" style="width: 100%">
+	<div class="row">
+		<table class="points_table">
+			<thead>
+				<tr>
+				<th class="col-xs-2">id</th>
+				<th class="col-xs-2">이름</th>
+				<th class="col-xs-2">이메일</th>
+				<th class="col-xs-2">핸드폰</th>
+				<th class="col-xs-2">등급</th>
+				<th class="col-xs-2">삭제</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="points_table_scrollbar">
 		
 		<c:forEach var="mem" items="${data }">
 				<c:if test="${mem.agrade ne '관리자' }">
-				<tr style="text-align: center">
-					<td style="background-color:#FFC6C6;text-align: center">
-						<a href="/mvc/manager/myinfo?aid=${mem.aid }&mypage=true">${mem.aid }</a>
-					</td>
-					<td style="background-color:#FFC6C6;text-align: center">${mem.aname }</td>
-					<td style="background-color: #FFEAEA;text-align: center">${mem.aemail }</td>
-					<td style="background-color:#FFC6C6;text-align: center">${mem.aphone }</td>
-					<td style="background-color: #FFEAEA;text-align: center">${mem.agrade }</td>
+					<tr style="text-align: center">
+						<c:choose>
+							<c:when test="${status.index%2==0}">
+								<tr class="odd" style="text-align: center">
+							</c:when>
+							<c:otherwise>
+								<tr class="even" style="text-align: center">
+							</c:otherwise>
+						</c:choose>
+						<td class="col-xs-2">
+							<a href="/mvc/manager/myinfo?aid=${mem.aid }&mypage=true">${mem.aid }</a>
+						</td>
+						<td class="col-xs-2">${mem.aname }</td>
+						<td class="col-xs-2">${mem.aemail }</td>
+						<td class="col-xs-2">${mem.aphone }</td>
+						<td class="col-xs-2">${mem.agrade }</td>
 				<c:choose>
 					<c:when test="${grade eq '행정' && mem.agrade eq '행정' }">
 					</c:when>
 					<c:otherwise>
-					<td style="background-color: #FFEAEA;text-align: center"><a href="?aid=${mem.aid }">삭제</a></td>
+						<td class="col-xs-2"><a href="?aid=${mem.aid }">삭제</a></td>
 					</c:otherwise>
 				</c:choose>
 				</tr>
@@ -67,7 +166,7 @@
 	</c:if>
 	</div>
 </div>
-	
-	
+</div>	
+</div>
 </body>
 </html>
