@@ -77,7 +77,7 @@
 				<th style="text-align: center"><font color = "white">수업 시간</font></th>
 			</tr>
 		</thead>
-		<tbody> 
+		<tbody>
 				<c:forEach items="${data }" var="row" varStatus="no">
 				<tr style="text-align: center">
 					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&cday=${row.cday }&mypage=true">${row.ctitle}</a></td>
