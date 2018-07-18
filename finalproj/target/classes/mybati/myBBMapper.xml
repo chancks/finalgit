@@ -44,4 +44,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) as tot from astudent order by agrade 
 	</select>
 	
+	<select id="schid" resultType="uservo" parameterType="uservo">
+		select * from astudent where aname=#{aname} and aemail=#{aemail}
+	</select>
+	<select id="admin" resultType="uservo" >
+		select * from astudent where aid = 'admin'
+	</select>
+	
 </mapper>

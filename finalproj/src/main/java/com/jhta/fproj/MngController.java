@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jhta.fproj.logic.Joinlogic;
+import com.jhta.fproj.logic.Maillogic;
 import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.logic.Schval;
 import com.jhta.fproj.model.MngDAO;
@@ -122,6 +123,7 @@ public class MngController {
 			if(!(str.equals("관리자")||str.equals("행정")))
 				user.setAid((String)session.getAttribute("id"));
 			
+			model.addAttribute("mypage", true);
 			model.addAttribute("user",dao.chkid(user));
 			
 			System.out.println(model.toString());
@@ -134,6 +136,7 @@ public class MngController {
 			
 			user.setAid((String)session.getAttribute("id"));
 			
+			model.addAttribute("mypage", true);
 			model.addAttribute("user",dao.chkid(user));
 			
 			System.out.println(model.toString());
@@ -196,11 +199,19 @@ public class MngController {
 
 			main = "schid";
 			
+			MngUserVO sch = dao.sch(user);
+			
 			if(!errors.hasErrors()) {
-				return "redirect:/board/fist";
+				if(sch!=null) {
+					String key = new Maillogic(dao, user).makekey();
+					model.addAttribute("key",key);
+					model.addAttribute("user", sch);
+					model.addAttribute("auth", true);
+					break;
+				}
+				errors.rejectValue("ainfo", "invalid.ainfo","이름과 이메일이 일치하지 않습니다.");
 			}
 			
-			errors.rejectValue("aname", "invalid.aname","sakjdakljdl ㄱ머");
 			break;
 			
 		case "schpw" :

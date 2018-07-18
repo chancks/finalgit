@@ -48,4 +48,13 @@ public class MngDAO {
 		
 		return sessionTemplate.selectOne("pcmp.memTot");
 	}
+	
+	public MngUserVO admin() {
+
+		return sessionTemplate.selectOne("pcmp.admin");
+	}
+	public MngUserVO sch(MngUserVO vo) {
+		
+		return sessionTemplate.selectOne("pcmp.schid", vo);
+	}
 }
