@@ -233,9 +233,9 @@ width:1024px;
 					</div>
 
 					<ul class="nav-ul">
-						<li style="border-radius: 10px;"><a href="#">학원 소개</a></li>
-						<li style="border-radius: 10px;"><a href="#">강사 소개</a></li>
-						<li style="border-radius: 10px;"><a href="/mvc/jun_List/course_List">과목 소개</a></li>
+						<li style="border-radius: 10px;"><a href="/mvc/Bs/academyinfo">학원 소개</a></li>
+						<li style="border-radius: 10px;"><a href="/mvc/manager/teacherinfo">강사 소개</a></li>
+						<li style="border-radius: 10px;"><a href="/mvc/Bs/courseinfo">과목 소개</a></li>
 						<li style="border-radius: 10px;"><a href="/mvc/board/boardList">고객 센터</a></li>
 						<div class="clear">
 						</div>

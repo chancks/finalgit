@@ -6,60 +6,34 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>시간표</title>
-<style type="text/css">
-#outter {
-	border-left: 1px black solid;
-	border-top: 1px black solid;
-/* 	width: 100px;
-	height: 900px; */
-	float: left;
-}
 
-#inner {
-	border-bottom: 1px black solid;
-	border-right: 1px black solid;
- 	width: 90px;
-	height: 90px; 
-
-}
-
-#aa{
- 	width: 100%;
-	height: 900px;
-	/* background-color: orange; */
-}
-
-
-
-
-</style>
 </head>
 <body>
 <div id="aa">
-<c:forEach var="i" begin="0" end="7">
-	<div id="outter">
-		<c:forEach var="j" begin="0" end="8">
-			<div id="inner">
-				<c:forEach items="${data }" var="dd" varStatus="no">
-					<c:if test="${j==0 && i!=0 && no.index==1}">
-						${dd.dayarr[i-1] }
+<table border="">
+<c:forEach var="i" begin="0" end="8">
+	<tr>
+		<c:forEach var="j" begin="0" end="7">
+		<td>
+			<c:forEach items="${data }" var="dd" varStatus="no">
+					<c:if test="${i==0 && j!=0 && no.index==1}">
+						${dd.dayarr[j-1] }
 					</c:if>
-					<c:if test="${dd.dayarr[i-1] eq dd.cday}">
+					<c:if test="${dd.dayarr[j-1] eq dd.cday}">
 						<c:forEach var="tt" items="${dd.timearr }">
-							<c:if test="${j==tt }">
+							<c:if test="${i==tt }">
 								${dd.ctitle }<br>${dd.cname }
 							</c:if>
 						</c:forEach>
 					</c:if>
 				</c:forEach>
-				<c:if test="${i==0 && j!=0 }">
-					${j }교시
-				</c:if>
+			
 				${i },${j }
-			</div>
+			</td>
 		</c:forEach>
-	</div>
+	</tr>
 </c:forEach>
+</table>
 </div>
 </body>
 </html>

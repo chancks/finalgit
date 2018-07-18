@@ -72,7 +72,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<update id="course_modifyReg"  parameterType="jun_Vo">
-		update course set ctitle=#{ctitle}, ccontent=#{ccontent}, cday=#{cday}, ctime=#{ctime},  cstart=#{cstart},  cfinish=#{cfinish}, ctotal=#{ctotal}, cid=#{cid} where ccode=#{ccode}
+		update course set ctitle=#{ctitle},cname= #{schCol}, ccontent=#{ccontent}, cday=#{cday}, ctime=#{ctime},  cstart=#{cstart},  cfinish=#{cfinish}, ctotal=#{ctotal}, cid=#{col} where ccode=#{ccode}
 
 	</update>
 	
