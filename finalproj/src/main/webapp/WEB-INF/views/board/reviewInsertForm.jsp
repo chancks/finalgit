@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>후기</h2>
 <form action="reviewInsertReg" method="post" enctype="multipart/form-data">
 	<table class="table" align="center">
 		<tr>
@@ -20,7 +21,7 @@
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td><input type="text" value="익명" /></td>
+			<td><input type="hidden" name="pname" value="익명" />익명</td>
 		</tr>
 		<tr>
 			<td>암호</td>

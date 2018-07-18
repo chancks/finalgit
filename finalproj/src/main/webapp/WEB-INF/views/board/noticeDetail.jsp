@@ -13,12 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>공지사항</h2>
 <table class="table" align="center">
 
 	<tr>
 		<td>제목</td><td>${notice.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>관리자</td>
+		<td>작성자</td><td>${notice.pname }</td>
 		</tr><tr>
 		<td>작성일</td><td>${notice.reg_date}</td>
 		</tr><tr>

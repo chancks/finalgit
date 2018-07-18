@@ -14,6 +14,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title>Insert title here</title>
 </head>
 <body>
+<h2>후기</h2>
 	<table align="center" class="table table-hover">
 		<tr> 
 			<td align="center">번호</td>

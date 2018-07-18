@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 <form action="qnaDeleteReg" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${param.id }" />
     <table class="table" align="center">

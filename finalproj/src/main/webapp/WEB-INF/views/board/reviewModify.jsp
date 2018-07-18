@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>후기</h2>
 <form action="reviewModifyReg?id=${review.id }" method="post" enctype="multipart/form-data">
 
 	<table class="table" align="center">

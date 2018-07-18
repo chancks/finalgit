@@ -13,12 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>후기</h2>
 <input type="hidden" value="${review.seq}" name="seq">
 <table class="table" align="center">
 	<tr>	
 		<td>제목</td><td>${review.title}</td>
 		</tr><tr>
-		<td>작성자</td><td>익명</td>
+		<td>작성자</td><td>${review.pname }</td>
 		</tr><tr>
 		<td>작성일</td><td>${review.reg_date}</td>
 		</tr><tr>
@@ -29,8 +30,10 @@
 		
 		<td colspan="2" align="right">
 			<a href="reviewList">목록</a>
-			<a href="reviewDelete?id=${review.id}">삭제</a>
-			<a href="reviewModify?id=${review.id}">수정</a>
+			<c:if test="${grade eq '학생' }">
+				<a href="reviewDelete?id=${review.id}">삭제</a>
+				<a href="reviewModify?id=${review.id}">수정</a>
+			</c:if>
 		</td>
 		
 	</tr>

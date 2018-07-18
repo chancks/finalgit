@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 <input type="hidden" value="${qna.seq}" name="seq">
 <table class="table" align="center">
 	<tr>

@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>후기</h2>
 <form action="reviewDeleteReg" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${param.id }" />
     <table class="table" align="center">

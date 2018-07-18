@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 <form action="qnaModifyReg?id=${qna.id }" method="post" enctype="multipart/form-data">
 
 	<table class="table" align="center">

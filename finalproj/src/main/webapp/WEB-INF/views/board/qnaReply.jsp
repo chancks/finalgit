@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 <form action="qnaReplyReg?id=${qna.id}" method="post" enctype="multipart/form-data">
 <input type="hidden" value="${qna.gid}" name="gid">
 <input type="hidden" value="${qna.seq}" name="seq">

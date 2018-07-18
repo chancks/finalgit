@@ -128,7 +128,6 @@ public class BoardDAO {
 
 	public Object noticeTotalCount() {
 		// TODO Auto-generated method stub
-		System.out.println("...............................");
 		return sessionTemplate.selectOne("kdh.noticeTotalCount");
 	}
 

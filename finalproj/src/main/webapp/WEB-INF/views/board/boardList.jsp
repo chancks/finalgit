@@ -40,7 +40,7 @@
 </head>
 <body>
 
-	<div><!-- <nav class="navbar navbar"  id="body"> --><!-- navbar-default   navbar-fixed-top -->
+	<div>
 		<div align="center" >
 			<ul class="nav navbar-nav nav-tabs">
 				<li class="btn"><a onclick="location.href='qnaList'" data-toggle="tab">QNA</a></li>
@@ -48,23 +48,9 @@
 				<li class="btn"><a onclick="location.href='reviewList'" data-toggle="tab">후기</a></li>
 			</ul>
 		</div>
-		
-	<!-- </nav> -->
+
 	</div>
-<!-- 	
-	 	<div class="tab-content" id="con">
-		<div class="tab-pane fade active in" id="qna">
-			<a href="qnaList">QNA</a>
-		</div>
-		
-		<div class="tab-pane fade" id="notice">
-		<a href="noticeList">NOTICE</a>
-		</div>
-		
-		<div class="tab-pane fade" id="review">
-			<a href="reviewList">REVIEW</a>
-		</div>
-	</div> -->
+
 
 	<div>
 		<jsp:include page="${List}"></jsp:include>

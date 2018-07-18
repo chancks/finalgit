@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>공지사항</h2>
 <form action="noticeInsertReg" method="post" enctype="multipart/form-data">
 	<table class="table" align="center">
 		<tr>
@@ -20,7 +21,7 @@
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td><input type="hidden" name="pname"/>관리자</td>
+			<td><input type="hidden" name="pname" value="관리자"/>관리자</td>
 		</tr>
 		<tr>
 			<td>암호</td>

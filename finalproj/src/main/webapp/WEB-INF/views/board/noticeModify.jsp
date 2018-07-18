@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>공지사항</h2>
 <form action="noticeModifyReg?id=${notice.id }" method="post" enctype="multipart/form-data">
 
 	<table class="table" align="center">

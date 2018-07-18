@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>Q&A</h2>
 <form action="qnaInsertReg" method="post" enctype="multipart/form-data">
 	<table class="table" align="center">
 		<tr>
@@ -20,11 +21,11 @@
 		</tr>
 		<tr>
 			<td>작성자</td>
-			<td><input type="text" name="pname" /></td>
+			<td><input type="text" name="pname" value="${user.aname }"/>${user.aname }</td>
 		</tr>
 		<tr>
 			<td>암호</td>
-			<td><input type="text" name="pw" /></td>
+			<td><input type="password" name="pw"/></td>
 		</tr>
 		<tr>
 			<td>내용</td>
