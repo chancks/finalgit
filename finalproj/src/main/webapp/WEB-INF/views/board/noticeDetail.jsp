@@ -29,8 +29,11 @@
 		
 		<td colspan="2" align="right">
 			<a href="noticeList">목록</a>
-			<a href="noticeDelete?id=${notice.id}">삭제</a>
-			<a href="noticeModify?id=${notice.id}">수정</a>
+			<c:if test="${grade eq '관리자'}">
+				<a href="noticeDelete?id=${notice.id}">삭제</a>
+				<a href="noticeModify?id=${notice.id}">수정</a>
+			</c:if>
+			
 		</td>
 		
 	</tr>
