@@ -47,92 +47,61 @@
 <title>Insert title here</title>
 </head>
 <body>
-개강중인 목록
- <br><br><br><br><br><br> 
-
-
+<div style="border: 0.5px silver solid; height:100%; ">
 	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
-	<div id="search">
-		<form action="?">
-			<select name="schCol">
-				<option value="ctitle">과목 명</option>
-				<option value="cname">강사명</option>
-				<option value="ccode">과목 코드</option>
-			</select> <input type="text" name="ctitle" /><input type="submit" value="검색" />
-		</form>
+	<div style="text-align: center; ">
+		<div id="search" style="display: inline-block; height: 40px">
+			<form action="?">
+				<select name="schCol" style="width: 100px; height: 28px;">
+					<option value="ctitle">과목 명</option>
+					<option value="cname">강사명</option>
+					<option value="ccode">과목 코드</option>
+				</select> <input type="text" name="ctitle" style="height: 25px; margin-top: 9px;" /><input type="submit" value="검색" style="height: 28px; margin-left: 4px;" />
+			</form>
+		</div>
 	</div>
 	<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
-	<c:forEach items="${data }" var="row" varStatus="no">
-
-		<div id="a">
-			<div>
-				<h2>과정명</h2>
-			</div>
-			<div>
-				<a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a>
-			</div>
-			<div>${row.ctitle}</div>
-		</div>
-
-		<div id="a">
-			<div>
-				<h2>강사명</h2>
-			</div>
-			<div>${row.cname }</div>
-		</div>
 
 
-		<div id="a">
-			<div>
-				<h2>강사ID</h2>
-			</div>
-			<div>${row.cid }</div>
-		</div>
+<div class="container" style=" width: 900px;">
+	<table id = "table1" class="table table-hover" style="border: 1px white solid;">
+		<thead>
+			<tr style="background-color: #FF4848; text-align: center" >
 
-		<div id="a">
-			<div>
-				<h2>과목 코드</h2>
-			</div>
-			<div>${row.ccode }</div>
-		</div>
+				<th style="text-align: center"><font color = "white">과정 명</font></th>
+				<th style="text-align: center"><font color = "white">강사 명</font></th>
+				<th style="text-align: center"><font color = "white">강사 id</font></th>
+				<th style="text-align: center"><font color = "white">과정 기간</font></th>
+				<th style="text-align: center"><font color = "white">수업 시간</font></th>
+			
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${data }" var="row" varStatus="no">
+				<tr style="text-align: center">
+					<td style="background-color:#FFC6C6;text-align: center"><a href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
+					<td style="background-color: #FFEAEA;text-align: center">${row.cname }</td>
+					<td style="background-color:#FFC6C6;text-align: center">${row.cid}</td>
+					<td style="background-color: #FFEAEA;text-align: center">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
+					<td style="background-color: #FFC6C6; text-align: center">${row.ctime}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	<div class="text-center">
+		<ul class="pagination">
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+		</ul>
+	</div>
+</div>
 
-		<div id="a">
-			<div>
-				<h2>과정 기간</h2>
-			</div>
-			<div>시작일</div>
-			<div>${row.cstart}</div>
-			<div>종료일</div>
-			<div>${row.cfinish}</div>
-		</div>
 
-		<div id="a">
-			<div>
-				<h2>수업 시간</h2>
-			</div>
-			<div>요일</div>
-			<div>${row.cday }</div>
-			<div>파트</div>
-			<div>${row.ctime}</div>
-		</div>
-
-		<div id="a">
-			<div>
-				<h2>과정내용</h2>
-			</div>
-			<div>${row.ccontent }</div>
-		</div>
-
-		<div>
-			<div>
-				<h2>총 원</h2>
-			</div>
-			<div>${row.ctotal}</div>
-		</div>
-		<br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-	</c:forEach>
-
+<hr size=1px color="#ddd">	
 	<a href="../">뒤로 가기</a>
+	</div>
 </body>
 </html>

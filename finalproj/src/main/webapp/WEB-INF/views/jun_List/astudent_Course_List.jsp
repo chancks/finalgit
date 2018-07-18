@@ -74,6 +74,6 @@
 <br>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	</c:forEach>
 	
-	<a href="astudent_List?mypage=true">뒤로 가기</a>
+	<a href="astudent_List">뒤로 가기</a>
 </body>
 </html>

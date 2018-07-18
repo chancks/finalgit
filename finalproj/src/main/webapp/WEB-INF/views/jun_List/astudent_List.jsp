@@ -68,7 +68,7 @@ astudent_List
 					<div>
 						<h2>이름</h2>
 					</div>
-					<a href="astudent_Course_List?rid=${row.aid}&mypage=true">${row.aname}</a>
+					<a href="astudent_Course_List?rid=${row.aid}">${row.aname}</a>
 <%-- astudent_Course_List?id=${row.id} --%>					
 					<div>${row.aname}</div>
 				</div>

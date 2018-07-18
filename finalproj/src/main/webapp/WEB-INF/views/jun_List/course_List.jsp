@@ -9,14 +9,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet"href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet"href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+
+
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 
 <script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
-<script type="text/javascript"
-	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript"src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
 
 <style>
@@ -48,34 +51,72 @@
 </head>
 <body>
 
-	<div>
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='course_List'">전체 강의 목록</div>
 
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='course_List1'">개강 예정인 강의 목록</div>
+<div class="container" style=" height:35px; width:100% ;" >
+	<div class="row">
+		<div class="span12">
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+             
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='course_List?mypage=true'">
+				 <a class="btn" data-toggle="tab">전체 강의 목록  </a>
+			</div>
+              
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='course_List1?mypage=true'">
+         	     <a class="btn"  data-toggle="tab">개강 예정 목록</a>
+             </div>
+  			<!-- style="background:#FFC6C6; -->          
+            
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='course_List2?mypage=true'">
+         	 	  <a  class="btn" data-toggle="tab">진행 중 목록</a>
+            </div>
+             
+             
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='course_List3?mypage=true'">
+     				<a class="btn"  data-toggle="tab">개강 종료 목록</a>
+            </div>
+            
+          </div> 
+          
+        </div>
+    </div>
+</div>
 
-		<div
-			style="background-color: gray; float: left; cursor: pointer; padding: 10px;"
-			onclick="location.href='course_List2'">개강 중인 강의 목록</div>
 
-		<div style="background-color: gray; cursor: pointer; padding: 10px;"
-			onclick="location.href='course_List3'">개강 종료된 강의 목록</div>
+<!-- 
+	<div style="text-align: center;">
+
+		<div style="display:inline-block;">
+			<div
+				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
+				onclick="location.href='course_List?mypage=true'">전체 강의 목록</div>
+
+			<div
+				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
+				onclick="location.href='course_List1?mypage=true'">개강 예정인 강의 목록</div>
+
+			<div
+				style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
+				onclick="location.href='course_List2?mypage=true'">개강 중인 강의 목록</div>
+
+			<div style="background-color: gray; float: left; cursor: pointer; margin: 10px;"
+				onclick="location.href='course_List3?mypage=true'">개강 종료된 강의 목록</div>
+		</div>
 
 	</div>
 
 
-
+ -->
 	
 	<!-- 여기부터 테스트입니다@@@@@@@@ㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲ -->
 
-	<div
-		style="width: 100%; height: 700px; border-bottom: 1px inset gray; background-color: yellow;">
-	<div style="background-color: gray;"><a href="/mvc/jun_List/course_register">등록등록</a>
+	<div style="width: 100%; border-bottom: 1px inset gray; background-color:">
+<!-- 	<div style="background-color: gray;"><a href="/mvc/jun_List/course_register">등록등록</a>
 	</div>
-	
+	 -->
 		<jsp:include page="${list }"></jsp:include>
 		
 	</div>
