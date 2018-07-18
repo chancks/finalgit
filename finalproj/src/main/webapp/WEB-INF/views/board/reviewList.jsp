@@ -14,7 +14,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<table border="" align="center">
+	<table align="center" class="table table-hover">
 		<tr> 
 			<td align="center">번호</td>
 			<td align="center">제목</td>

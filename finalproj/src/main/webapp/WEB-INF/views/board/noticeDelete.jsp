@@ -13,7 +13,7 @@
 <body>
 <form action="noticeDeleteReg" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="id" value="${param.id }" />
-    <table border="" align="center">
+    <table class="table" align="center">
         <tr>
             <td>암호</td>
             <td><input type="text" name="pw" /></td>

@@ -15,7 +15,7 @@
 <form action="qnaReplyReg?id=${qna.id}" method="post" enctype="multipart/form-data">
 <input type="hidden" value="${qna.gid}" name="gid">
 <input type="hidden" value="${qna.seq}" name="seq">
-	<table border="" align="center">
+	<table class="table" align="center">
 		<tr>
 			<td>제목</td>
 			<td><input type="text" name="title"  value="&nbsp; RE : ${qna.title}"/></td>

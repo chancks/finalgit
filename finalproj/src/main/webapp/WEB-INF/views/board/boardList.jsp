@@ -14,6 +14,9 @@
 #back{
 	margin : 550px;
 }
+.btn{
+	width: 130px;
+}
 </style>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0 , user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -40,9 +43,9 @@
 	<div><!-- <nav class="navbar navbar"  id="body"> --><!-- navbar-default   navbar-fixed-top -->
 		<div align="center" >
 			<ul class="nav navbar-nav nav-tabs">
-				<li><a onclick="location.href='qnaList'" data-toggle="tab">QNA</a></li><br>
-				<li><a onclick="location.href='noticeList'" data-toggle="tab">공지사항</a></li><br>
-				<li><a onclick="location.href='reviewList'" data-toggle="tab">후기</a></li>
+				<li class="btn"><a onclick="location.href='qnaList'" data-toggle="tab">QNA</a></li>
+				<li class="btn"><a onclick="location.href='noticeList'" data-toggle="tab">공지사항</a></li>
+				<li class="btn"><a onclick="location.href='reviewList'" data-toggle="tab">후기</a></li>
 			</ul>
 		</div>
 		

@@ -13,7 +13,7 @@
 </head>
 <body>
 <form action="noticeInsertReg" method="post" enctype="multipart/form-data">
-	<table border="" align="center">
+	<table class="table" align="center">
 		<tr>
 			<td>제목</td>
 			<td><input type="text" name="title" /></td>

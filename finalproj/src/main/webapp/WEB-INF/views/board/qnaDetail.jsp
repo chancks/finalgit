@@ -14,7 +14,7 @@
 </head>
 <body>
 <input type="hidden" value="${qna.seq}" name="seq">
-<table border="" align="center">
+<table class="table" align="center">
 	<tr>
 		<td>제목</td><td>${qna.title}</td>
 		</tr><tr>

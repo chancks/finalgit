@@ -14,7 +14,7 @@
 </head>
 <body>
 <input type="hidden" value="${review.seq}" name="seq">
-<table border="" align="center">
+<table class="table" align="center">
 	<tr>	
 		<td>제목</td><td>${review.title}</td>
 		</tr><tr>

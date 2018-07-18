@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="" align="center">
+<table class="table" align="center">
 
 	<tr>
 		<td>제목</td><td>${notice.title}</td>
