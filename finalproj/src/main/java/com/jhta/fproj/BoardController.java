@@ -57,6 +57,7 @@ public class BoardController {
 	@ModelAttribute("qna")
 	Object qna(@PathVariable("main") String main,BoardVO vo, PageVO pvo, Model model) {
 
+		Object List = model.addAttribute("main","boardList");
 				System.out.println("qna 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈셾占쎈빍占쎈솇占쎌굲~~~~~~~~~~~~~:"+main);
 	
 				System.out.println(pvo);
@@ -75,11 +76,12 @@ public class BoardController {
 				System.out.println("page占쎄문占쎄쉐占쎌뜎=pvo.getPage : "+pvo.getPage()+" :: vo.getTot() : "+vo.getTot());
 
 				model.addAttribute("data3", pvo);
-				
+				model.addAttribute("List","qnaList.jsp");
 				break;
 			case "qnaDetail":
 				System.out.println("detail : "+vo);
 				res = dao.qnaDetail(vo);
+				model.addAttribute("List","qnaDetail.jsp");
 				break;
 			case "qnaInsertReg":
 				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜"+vo);
@@ -87,13 +89,10 @@ public class BoardController {
 				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜2222222222222"+vo);
 				model.addAttribute("msg", "작성되었습니다.");
 				model.addAttribute("url", "qnaDetail?id="+vo.getId());
-		/*		if(dao.qnaInsert(vo)==null) {
-					model.addAttribute("msg", "빈칸을 작성해 주세요");
-					model.addAttribute("url","qnaInsertForm");
-				}*/
 				break;
 			case "qnaReply":
 				res = dao.qnaReply(vo);
+				model.addAttribute("List","qnaReply.jsp");
 				break;	
 			case "qnaReplyReg":
 				System.out.println("占쎈쐻占쎈짗占쎌굲占쎈뱜占쎈쐻占쎈뼩筌뚭쑴�굲 vo 占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲占쎈쐻占쎈짗占쎌굲?"+vo);
@@ -104,6 +103,7 @@ public class BoardController {
 				break;
 			case "qnaModify":
 				res = dao.qnaModify(vo);
+				model.addAttribute("List","qnaModify.jsp");
 				break;
 			case "qnaModifyReg":
 				res = dao.qnaPwChk(vo);
@@ -123,6 +123,7 @@ public class BoardController {
 				res = dao.qnaDelete(vo);
 				System.out.println(vo);
 				System.out.println("qnaDelete : "+ res);
+				model.addAttribute("List","qnaDelete.jsp");
 				break;
 			case "qnaDeleteReg":
 				res = dao.qnaPwChk(vo);
@@ -163,11 +164,12 @@ public class BoardController {
 				System.out.println("page占쎄문占쎄쉐占쎌뜎=pvo.getPage : "+pvo.getPage()+" :: vo.getTot() : "+vo.getTot());
 
 				model.addAttribute("data3", pvo);
+				model.addAttribute("List","noticeList.jsp");
 				break;
 			case "noticeDetail":
 				System.out.println("detail : "+vo);
 				res = dao.noticeDetail(vo);
-				
+				model.addAttribute("List","noticeDetail.jsp");
 				break;
 			case "noticeInsertReg":
 				System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜"+vo);
@@ -178,6 +180,7 @@ public class BoardController {
 				break;
 			case "noticeModify":
 				res = dao.noticeModify(vo);
+				model.addAttribute("List","noticeModify.jsp");
 				break;
 			case "noticeModifyReg":
 				res = dao.noticePwChk(vo);
@@ -196,6 +199,7 @@ public class BoardController {
 			case "noticeDelete":
 				res = dao.noticeDelete(vo);
 				System.out.println("noticeDelete : "+ res);
+				model.addAttribute("List","noticeDelete.jsp");
 				break;
 			case "noticeDeleteReg":
 				res = dao.noticePwChk(vo);
@@ -231,13 +235,13 @@ public class BoardController {
 				System.out.println("占쎌넞占쎄섯"+vo);
 				res = dao.reviewList(vo);
 		//		System.out.println("page占쎄문占쎄쉐占쎌뜎=pvo.getPage : "+pvo.getPage()+" :: vo.getTot() : "+vo.getTot());
-	
+				model.addAttribute("List","reviewList.jsp");
 				model.addAttribute("data3", pvo);
 				break;
 			case "reviewDetail":
 				System.out.println("detail : "+vo);
 				res = dao.reviewDetail(vo);
-				
+				model.addAttribute("List","reviewDetail.jsp");
 				break;
 			case "reviewInsertReg":
 		//		System.out.println("占쎈쐻占쎈뼢占쎈닰占쎌굲占쎈뱜"+vo);
@@ -248,6 +252,7 @@ public class BoardController {
 				break;
 			case "reviewModify":
 				res = dao.reviewModify(vo);
+				model.addAttribute("List","reviewModify.jsp");
 				break;
 			case "reviewModifyReg":
 				res = dao.reviewPwChk(vo);
@@ -266,6 +271,7 @@ public class BoardController {
 			case "reviewDelete":
 				res = dao.reviewDelete(vo);
 				System.out.println("reviewDelete : "+ res);
+				model.addAttribute("List","reviewDelete.jsp");
 				break;
 			case "reviewDeleteReg":
 				res = dao.reviewPwChk(vo);
