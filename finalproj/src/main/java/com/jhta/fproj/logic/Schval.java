@@ -1,5 +1,8 @@
 package com.jhta.fproj.logic;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -19,10 +22,19 @@ public class Schval implements Validator{
 		
 		MngUserVO dto = (MngUserVO)target;
 		
-		if(dto.getAname() == null || dto.getAname().trim().equals("")) {
-			errors.rejectValue("aname", "invalid.aname","이름을 입력하세요");
+		Pattern p = Pattern.compile("[가-힣]{2,5}$");
+	    Matcher m =p.matcher(dto.getAname());
+	    
+		if(dto.getAname() == null || dto.getAname().trim().equals("")||!m.matches()) {
+			errors.rejectValue("aname", "invalid.aname","이름을 확인해주세요");
 		}
-			
+		
+		p = Pattern.compile("[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$");
+	    m =p.matcher(dto.getAemail());
+	    
+		if(dto.getAemail() == null || dto.getAemail().trim().equals("")||!m.matches()) {
+			errors.rejectValue("aemail", "invalid.aeamil","이메일을 확인해주세요");
+		}	
 	}
 
 	
