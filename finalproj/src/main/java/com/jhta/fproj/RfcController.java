@@ -108,14 +108,14 @@ public class RfcController {
 						model.addAttribute("msg", "수강신청 완료");
 					}
 				}
-				model.addAttribute("url", "registerfc");
+				model.addAttribute("url", "registerfc?mypage=true");
 				break;
 				
 			case "deleteReg"://내 수강신청목록에서 삭제
 				res = dao.deleteregist(vo);
 				
 				model.addAttribute("msg", "취소 완료");
-				model.addAttribute("url", "registerfc");
+				model.addAttribute("url", "registerfc?mypage=true");
 				break;
 				
 			case "payReg":
@@ -124,7 +124,7 @@ public class RfcController {
 				res = dao.chkpayment(vo);//rpay-결제로 변경
 				
 				model.addAttribute("msg", "결제 완료");
-				model.addAttribute("url", "registerfc");
+				model.addAttribute("url", "registerfc?mypage=true");
 				break;
 				
 			case "totpay"://결제인원
