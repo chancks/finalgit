@@ -16,6 +16,7 @@ import com.jhta.fproj.logic.CheckAll;
 import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.model.BsDAO;
 import com.jhta.fproj.model.BsVO;
+import com.jhta.fproj.model.MngUserVO;
 import com.jhta.fproj.model.PageVO;
 
 @Controller
@@ -38,7 +39,9 @@ public class RfcController {
 		return "home";
 	}
 	@ModelAttribute("data")
-	Object data(@PathVariable("main") String main,PageVO pvo ,BsVO vo, Model model,HttpSession session) {
+	Object data(@PathVariable("main") String main,
+			PageVO pvo ,BsVO vo,MngUserVO muvo, 
+			Model model,HttpSession session) {
 	
 		model.addAttribute("service", "Bs");
 		vo.setRid((String)session.getAttribute("id"));
@@ -150,6 +153,10 @@ public class RfcController {
 				
 				res = dao.clist();
 				break;
+				
+			case "memberlist"://회원리스트
+				res = dao.list();
+				model.addAttribute("data3",paging.makePaging(pvo.getPage(), (Integer)dao.memtot()));
 		}
 	
 		return res;

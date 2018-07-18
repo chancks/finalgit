@@ -83,4 +83,14 @@ public class BsDAO {
 		return sessionTemplate.selectList("bsm.bsCourseList");
 	}
 	
+	public Object list() {//회원리스트
+		
+		return sessionTemplate.selectList("bsm.list");
+	}
+	
+	public Object memtot() {//회원수
+		
+		return sessionTemplate.selectOne("bsm.memTot");
+	}
+	
 }

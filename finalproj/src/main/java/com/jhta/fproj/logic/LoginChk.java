@@ -65,11 +65,13 @@ public class LoginChk extends HandlerInterceptorAdapter {
 			
 			if((grade.equals("관리자")||grade.equals("행정"))&& 
 					(servletpath.contains("p_")
-					||(servletpath.contains("Bs")&&!servletpath.contains("totpay")))) {
+					||(servletpath.contains("Bs")&&
+							!(servletpath.contains("totpay")||servletpath.contains("memberlist"))))) {
 				
 				chk=(grade.equals("관리자")||grade.equals("행정"))&& 
 						(servletpath.contains("p_")
-						||(servletpath.contains("Bs")&&!servletpath.contains("totpay")));
+								||(servletpath.contains("Bs")&&
+										!(servletpath.contains("totpay")||servletpath.contains("memberlist"))));
 				System.out.println("관리자및행정인터셉터:"+chk);
 				
 				response.sendRedirect("/mvc");
