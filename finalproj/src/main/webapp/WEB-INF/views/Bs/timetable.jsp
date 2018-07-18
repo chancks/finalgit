@@ -14,7 +14,7 @@
 <c:forEach var="i" begin="0" end="8">
 	<tr>
 		<c:forEach var="j" begin="0" end="7">
-		<td width="50px" height="50px;">
+		<td width="50px" height="50px" style="text-align: center">
 			<c:forEach items="${data }" var="dd" varStatus="no">
 					<c:if test="${i==0 && j!=0 && no.index==1}">
 						${dd.dayarr[j-1] }
