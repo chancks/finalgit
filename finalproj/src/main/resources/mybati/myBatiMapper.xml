@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 회원리스트 -->
 	<select id="list" resultType="uservo" >
-		select * from astudent order by agrade 
+		select * from astudent order by agrade,aname 
 	</select>
 
 	<!-- 회원수 -->
