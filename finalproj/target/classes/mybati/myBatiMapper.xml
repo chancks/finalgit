@@ -5,6 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="bsm">
 
+	<!-- 관리자 정보 -->
+	<select id="myInfo" resultType="uservo" parameterType="java.lang.String" >
+		select * from astudent where aid = #{str}
+	</select>
+
+	<!-- 관리자 정보 -->
+	<select id="adminInfo" resultType="uservo" >
+		select * from astudent where agrade = '관리자'
+	</select>
+
 	<!-- 회원리스트 -->
 	<select id="list" resultType="uservo" >
 		select * from astudent order by agrade 

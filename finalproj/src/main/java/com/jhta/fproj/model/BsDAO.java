@@ -98,4 +98,12 @@ public class BsDAO {
 		return sessionTemplate.selectOne("bsm.memTot");
 	}
 	
+	public Object admininfo() {
+		return sessionTemplate.selectOne("bsm.adminInfo");
+	}
+	
+	public Object myinfo(String str) {
+		return sessionTemplate.selectOne("bsm.myInfo",str);
+	}
+	
 }

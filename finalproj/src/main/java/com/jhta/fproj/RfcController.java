@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jhta.fproj.logic.CheckAll;
+import com.jhta.fproj.logic.ConPayMail;
 import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.model.BsDAO;
 import com.jhta.fproj.model.BsVO;
@@ -46,6 +47,7 @@ public class RfcController {
 		model.addAttribute("service", "Bs");
 		vo.setRid((String)session.getAttribute("id"));
 		String grade = (String)session.getAttribute("grade");
+		ConPayMail cpm = new ConPayMail(dao, muvo);
 	
 		System.out.println(vo);
 		
@@ -144,6 +146,8 @@ public class RfcController {
 					} else {
 						res = dao.insertpayment(vo);//결제내역등록
 						res = dao.chkpayment(vo);//rpay-결제로 변경
+						cpm.makemessage((String)session.getAttribute("id"));
+						
 					}
 				}
 			
