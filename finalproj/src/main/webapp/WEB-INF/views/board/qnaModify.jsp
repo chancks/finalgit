@@ -34,8 +34,8 @@
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
-				<input class="btn btn-success" type="submit" value="수정" />
-				<input  class="btn btn-success" type="button" href="qnaDetail?id=${qna.id}" value="뒤로"/>
+				<input class="btn btn-default" type="submit" value="수정" />
+				<a href="qnaDetail?id=${qna.id}">뒤로</a>
 			</th>
 		</tr>
 	</table>

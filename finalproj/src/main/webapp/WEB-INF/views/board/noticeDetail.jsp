@@ -29,10 +29,10 @@
 		</tr><tr>
 		
 		<th colspan="2" align="right">
-			<input type="button" class="btn btn-success" href="noticeList" value="목록"/>
+			<a href="noticeList">목록</a>
 			<c:if test="${grade eq '관리자'}">
-				<input type="button" class="btn btn-success" href="noticeDelete?id=${notice.id}" value="삭제"/>
-				<input type="button" class="btn btn-success" href="noticeModify?id=${notice.id}" value="수정">
+				<a href="noticeDelete?id=${notice.id}">삭제</a>
+				<a href="noticeModify?id=${notice.id}">수정</a>
 			</c:if>
 			
 		</th>

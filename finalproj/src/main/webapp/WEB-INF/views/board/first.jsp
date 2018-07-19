@@ -133,7 +133,7 @@
 	</table>
 </div>
 </div>
-
+</div>
 
 <div class="container" style="width: 100%">
 	<div class="row">
@@ -167,7 +167,7 @@
 	</table>
 </div>
 </div>
-
+</div>
 
 <div class="container" style="width: 100%">
 	<div class="row">
@@ -175,7 +175,7 @@
 			<thead>
 				<tr>
 				<th class="col-xs-6">후기</th>
-				<th class="col-xs-4">
+				<th class="col-xs-3">
 					<a href="/mvc/board/reviewList">전체보기</a>
 				</th>
 			</tr>
@@ -201,8 +201,6 @@
 	</table>
 </div>
 </div>
-
-
 </div>
 </body>
 </html>

@@ -29,11 +29,11 @@
 		</tr><tr>
 		
 		<th colspan="2" align="right">
-			<input type="button" class="btn btn-success" href="qnaList" value="목록"/>
-			<input type="button" class="btn btn-success" href="qnaDelete?id=${qna.id}" value="삭제"/>
-			<input type="button" class="btn btn-success" href="qnaModify?id=${qna.id}" value="수정"/>
+			<a href="qnaList">목록</a>
+			<a href="qnaDelete?id=${qna.id}">삭제</a>
+			<a href="qnaModify?id=${qna.id}">수정</a>
 			<c:if test="${grade eq '관리자'}">
-				<input type="button" class="btn btn-success" href="qnaReply?id=${qna.id}" value="답변"/>
+				<a href="qnaReply?id=${qna.id}">답변</a>
 			</c:if>
 		</th>
 		
