@@ -52,6 +52,7 @@
             <exclude-mapping path="/manager/schid"/>
             <exclude-mapping path="/manager/schpw"/>
             <exclude-mapping path="/manager/schidreg"/>
+            <exclude-mapping path="/manager/schpwreg"/>
             <exclude-mapping path="/Bs/academyinfo"/>
             <exclude-mapping path="/Bs/courseinfo"/>
             

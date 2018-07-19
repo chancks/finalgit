@@ -75,13 +75,13 @@ function che() { //인증번호 비교
             <form action="schidreg">
             	<fieldset>
 	               <div id="legend">
-	                 <legend class="">ID찾기</legend>
+	                 <legend>ID찾기</legend>
 	               </div>
                
 	               <div class="control-group">
 	                 <label class="control-label">이름</label>
 	                 <div class="controls">
-	                 	<input type="text" name ="aname" value="${user.aname }"  placeholder="" class="input-xlarge">
+	                 	<input type="text" name ="aname" value="${user.aname }" class="input-xlarge">
 	                 	<form:errors path="mngUserVO.aname"/>
 	                 </div>
 	               </div>
@@ -89,7 +89,7 @@ function che() { //인증번호 비교
 					<div class="control-group">
               			<label class="control-label" for="password">이메일</label>
 	                 	<div class="controls">
-	                 		<input type="text" name="aemail" value="${user.aemail }" placeholder="" class="input-xlarge">
+	                 		<input type="text" name="aemail" value="${user.aemail }" class="input-xlarge">
 	                 		<form:errors path="mngUserVO.aemail"/>
 	                    </div>
                		</div>

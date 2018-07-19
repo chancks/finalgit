@@ -47,8 +47,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="schid" resultType="uservo" parameterType="uservo">
 		select * from astudent where aname=#{aname} and aemail=#{aemail}
 	</select>
+	
+	<select id="schpw" resultType="uservo" parameterType="uservo">
+		select * from astudent where aid=#{aid} and aname=#{aname} and abirth=#{abirth} and aphone=#{aphone}
+	</select>
+	
+	
 	<select id="admin" resultType="uservo" >
 		select * from astudent where aid = 'admin'
 	</select>
+	
 	
 </mapper>

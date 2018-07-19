@@ -57,4 +57,9 @@ public class MngDAO {
 		
 		return sessionTemplate.selectOne("pcmp.schid", vo);
 	}
+	
+	public MngUserVO schpw(MngUserVO vo) {
+		
+		return sessionTemplate.selectOne("pcmp.schpw", vo);
+	}
 }

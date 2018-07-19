@@ -15,20 +15,20 @@
             <form action="/mvc/manager/login" method="post">
             	<fieldset>
 	               <div id="legend">
-	                 <legend class="">Login</legend>
+	                 <legend>Login</legend>
 	               </div>
                
 	               <div class="control-group">
-	                 <label class="control-label"  for="username">아이디</label>
+	                 <label class="control-label" >아이디</label>
 	                 <div class="controls">
-	                 	<input type="text" name="aid" id="username" placeholder="" class="input-xlarge">
+	                 	<input type="text" name="aid" id="username" class="input-xlarge" style="height:32px">
 	                 </div>
 	               </div>
                
 					<div class="control-group">
-              			<label class="control-label" for="password">패스워드</label>
+              			<label class="control-label">패스워드</label>
 	                 	<div class="controls">
-	                 		<input type="password" name="apw" id="password" placeholder="" class="input-xlarge">
+	                 		<input type="password" name="apw" id="password" class="input-xlarge" style="height:32px">
 	                    </div>
                		</div>
                

@@ -24,8 +24,6 @@ public class Maillogic {
 	
 	public String makekey() {
 		
-		MngUserVO sch = dao.sch(user);
-		
 		String key="";
 		
 		for (int i =0; i<6; i++) {
@@ -50,8 +48,8 @@ public class Maillogic {
 		try {
 			mmsg.setFrom(new InternetAddress(admin.getAemail()));
 
-			System.out.println(sch);
-			mmsg.setRecipient(Message.RecipientType.TO, new InternetAddress(sch.getAemail()));
+			System.out.println(user);
+			mmsg.setRecipient(Message.RecipientType.TO, new InternetAddress(user.getAemail()));
 			
 			mmsg.setSubject("야하자 아이디 찾기", "UTF-8");
 			mmsg.setContent("인증번호 : "+key, "text/html; charset=utf-8");

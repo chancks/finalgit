@@ -17,6 +17,7 @@ import com.jhta.fproj.logic.Joinlogic;
 import com.jhta.fproj.logic.Maillogic;
 import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.logic.Schval;
+import com.jhta.fproj.logic.Smslogic;
 import com.jhta.fproj.model.MngDAO;
 import com.jhta.fproj.model.MngUserVO;
 import com.jhta.fproj.model.PageVO;
@@ -202,7 +203,7 @@ public class MngController {
 			
 			if(!errors.hasErrors()) {
 				if(sch!=null) {
-					String key = new Maillogic(dao, user).makekey();
+					String key = new Maillogic(dao, sch).makekey();
 					model.addAttribute("key",key);
 					model.addAttribute("user", sch);
 					model.addAttribute("auth", true);
@@ -213,8 +214,33 @@ public class MngController {
 			
 			break;
 			
-		case "schpw" :
-			System.out.println("dkjfskldjfkl");
+		case "schpwreg" :
+
+			main = "schpw";
+			
+			new Schval().validate(user, errors);
+			
+			MngUserVO schpw = dao.schpw(user);
+			
+			if(!errors.hasErrors()) {
+				if(schpw!=null) {
+					
+					System.out.println("===============================");
+					System.out.println(schpw);
+					System.out.println("===============================");
+					
+					String key = new Smslogic(dao,schpw).send();
+					
+					model.addAttribute("key", key);
+					model.addAttribute("user", schpw);
+					model.addAttribute("auth", true);
+					break;
+				}
+				
+				errors.rejectValue("ainfo", "inavalid.ainfo","일치하는 회원정보가 없습니다.");
+			}
+			
+			model.addAttribute("user", user);
 			break;
 		}
 		
