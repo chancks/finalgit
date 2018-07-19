@@ -191,12 +191,12 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 							</c:when>
 							<c:when test="${grade eq '행정' }">
 								<input type="button"
-									onclick="location.href='/mvc/manager/memberlist?mypage=true'"
+									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
 									value="마이페이지">
 							</c:when>
 							<c:otherwise>
 								<input type="button"
-									onclick="location.href='/mvc/manager/memberlist?mypage=true'"
+									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
 									value="마이페이지">
 							</c:otherwise>
 						</c:choose>
