@@ -34,8 +34,8 @@
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
-				<input class="btn btn-default" type="submit" value="수정" />
-				<a href="noticeDetail?id=${notice.id}">뒤로</a>
+				<input type="button" class="btn btn-success" type="submit" value="수정" />
+				<input type="button" class="btn btn-success" href="noticeDetail?id=${notice.id}" value="뒤로"/>
 			</th>
 		</tr>
 	</table>

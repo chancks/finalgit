@@ -33,8 +33,8 @@
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
-				<input class="btn btn-default" type="submit" value="작성" />
-				<a href="noticeList">뒤로</a>
+				<input type="button" class="btn btn-success" type="submit" value="작성" />
+				<input type="button" class="btn btn-success" href="noticeList" value="뒤로"/>
 			</th>
 		</tr>
 	</table>

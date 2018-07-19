@@ -21,8 +21,8 @@
         </tr>
         <tr>
             <th colspan="2" align="center">
-                <input class="btn btn-default" type="submit" value="삭제" />
-                <a href="qnaDetail?id=${qna.id}">뒤로</a>
+                <input type="button" class="btn btn-success" type="submit" value="삭제" />
+                <input type="button" class="btn btn-success" href="qnaDetail?id=${qna.id}" value="뒤로"/>
             </th>
         </tr>
     </table>

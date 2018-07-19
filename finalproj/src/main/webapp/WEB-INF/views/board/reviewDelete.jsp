@@ -21,8 +21,8 @@
         </tr>
         <tr>
             <th colspan="2" align="center">
-                <input class="btn btn-default" type="submit" value="삭제" />
-                <a href="reviewDetail?id=${review.id}">뒤로</a>
+                <input class="btn btn-success" type="submit" value="삭제" />
+                <input class="btn btn-success" type="button" href="reviewDetail?id=${review.id}" value="뒤로"/>
             </th>
         </tr>
     </table>

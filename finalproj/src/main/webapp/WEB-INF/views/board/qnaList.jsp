@@ -72,14 +72,14 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<option value="content">내용</option>
 					</select>
 					<input type="text" name="title" value="${param.title}">
-					<input class="btn btn-default" type="submit" value="검색">
+					<input class="btn btn-success" type="submit" value="검색">
 
 				</th>
 			</tr>
 		</form>
 		<tr>
 			<th colspan="5" align="right">
-				<input type="button" class="btn btn-default"
+				<input type="button" class="btn btn-success"
 				onclick="location.href='qnaInsertForm'" value="글쓰기"/>
 			</th> 
 		</tr>
