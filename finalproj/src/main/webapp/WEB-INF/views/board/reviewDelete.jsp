@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//Dth HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dth">
 <html>
 <head>
@@ -17,7 +18,14 @@
     <table class="table" align="center">
         <tr>
             <th style="background-color:#D8D8D8; width: 100px; ">암호</th>
-            <th><input type="password" name="pw" /></th>
+           <c:choose>
+            	<c:when test="${grade eq '관리자' or grade eq '행정' }">
+            		<th><input type="password" name="pw" value="${review.pw }" /></th>
+            	</c:when>
+            	<c:otherwise>
+            		<th><input type="password" name="pw" /></th>
+            	</c:otherwise>
+            </c:choose>
         </tr>
         <tr>
             <th colspan="2" align="center">
