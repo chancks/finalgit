@@ -65,14 +65,12 @@ public class RfcController {
 				if(grade.equals("학생")) {
 				
 					res = dao.list(vo);
-					
 					model.addAttribute("day", str);
 				
 				} else {
 					
 					res = dao.plist(vo);
 					model.addAttribute("day", str);
-					System.out.println("왜 안나오죠?"+vo);
 					
 				}
 				

@@ -23,7 +23,10 @@
 					<c:if test="${dd.dayarr[j-1] eq dd.cday}">
 						<c:forEach var="tt" items="${dd.timearr }">
 							<c:if test="${i==tt }">
-								${dd.ctitle }<br>${dd.cname }
+								${dd.ctitle }
+								<c:if test="${grade eq '학생' }">
+									<br>${dd.cname }
+								</c:if>
 							</c:if>
 						</c:forEach>
 					</c:if>
