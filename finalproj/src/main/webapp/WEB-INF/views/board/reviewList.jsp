@@ -48,7 +48,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 					</c:if>
 					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
 						<c:choose>
-							<c:when test="${i==page }">
+							<c:when test="${i==data3.page }">
 								[${i}]
 							</c:when>
 							<c:otherwise>

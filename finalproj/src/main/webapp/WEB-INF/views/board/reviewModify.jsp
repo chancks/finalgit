@@ -23,6 +23,8 @@
 		<tr>
 			<th style="background-color:#D8D8D8 ">작성자</th>
 			<th>익명</th>
+			<th style="background-color:#D8D8D8 ">강사</th>
+			<th>${review.pro }</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>

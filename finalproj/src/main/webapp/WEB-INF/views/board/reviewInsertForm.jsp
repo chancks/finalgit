@@ -18,6 +18,13 @@
 		<tr>
 			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
 			<th><input type="text" name="title" /></th>
+			<th style="background-color:#D8D8D8; width: 100px; ">강사</th>
+			<th><select name="Pro" style="width: 100px;">
+						<option value="Pro1">강사1</option>
+						<option value="Pro2">강사2</option>
+						<option value="Pro3">강사3</option>
+				</select>
+			</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">작성자</th>

@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
 
-@Alias("boardVo") // �솻洹��뫒�눧�씛�삕占쎈굵 嶺뚮씭�뒧獄�釉앹삕占쎈펲.
+@Alias("boardVo") // �뜝�럩�뀇�윜諭꾩삕�뜝�럥爾��뜝�럥�떛�뜝�럩逾쎾뜝�럩援뀐옙�쐻占쎈윥�뤃占� �솾�꺂�뒧占쎈뎐�뜝�럥裕쏉옙�쎗�뜝�띂�눀占쎈튂占쎄뎡占쎈쐻占쎈윥占쎈젩.
 public class BoardVO {
 	 Integer id, gid, seq , lev ,cnt, count, start2, end2, tot;
 	 Date reg_date;
-	 String   pname, pw, title, content, schCol;
+	 String   pname, pw, title, content, schCol, pro;
 	
 	 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	 
@@ -142,6 +142,16 @@ public class BoardVO {
 
 	public void setTot(Integer tot) {
 		this.tot = tot;
+	}
+ 
+
+	public String getPro() {
+		return pro;
+	}
+
+
+	public void setPro(String pro) {
+		this.pro = pro;
 	}
 
 

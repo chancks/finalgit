@@ -203,9 +203,9 @@
 			<include refid="reviewMaxId"/>
 		</selectKey>
 		insert into review 
-		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content)
+		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content, pro)
 		values
-		(#{id}, #{id}, 0, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content})
+		(#{id}, #{id}, 0, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content}, #{pro})
 	</insert>
 	
 	
