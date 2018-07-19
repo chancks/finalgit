@@ -22,7 +22,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 수강신청 수 -->
 	<select id="bsRegistList" resultType="bsVo">
-		select * from regist 
+		select * from regist order by rdate desc
+	</select>
+	
+	<!-- 결제 내역 -->
+	<select id="bsCpList" resultType="bsVo">
+		select * from cardpay
 	</select>
 
 	<!-- 수강신청 인원 -->
@@ -37,8 +42,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 내 수강신청목록에 추가 -->
 	<insert id="bsInsertRegist">
-		insert into regist (rid,rtitle,rname,rcode) 
-		values(#{rid},#{ctitle},#{cname},#{ccode})
+		insert into regist (rid,rtitle,rname,rcode,rdate) 
+		values(#{rid},#{ctitle},#{cname},#{ccode},sysdate)
 	</insert>
 	
 	<!-- 내 수강신청목록에서 삭제 -->

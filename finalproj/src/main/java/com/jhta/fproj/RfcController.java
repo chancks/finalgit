@@ -153,6 +153,7 @@ public class RfcController {
 				
 				res = dao.rlist();
 				model.addAttribute("tot", dao.tot());
+				model.addAttribute("card", dao.cplist());
 				break;
 				
 			case "courseinfo"://과목소개

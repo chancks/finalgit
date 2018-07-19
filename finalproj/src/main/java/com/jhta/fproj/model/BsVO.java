@@ -10,7 +10,7 @@ public class BsVO {
 
 	String ccode,ctitle,cname,ccontent,cday,ctime,cpid,rid,rtitle,rname,rcode,rpay;
 	Integer ctotal,cpnum,cpprice,tot;
-	Date cstart, cfinish,cpdate;
+	Date cstart, cfinish,cpdate,rdate;
     
     String [] dayarr = {"월","화","수","목","금","토","일"};
     Integer [] timearr;
@@ -137,6 +137,13 @@ public class BsVO {
 	public void setCfinish(Date cfinish) {
 		this.cfinish = cfinish;
 	}
+	
+	public Date getRdate() {
+		return rdate;
+	}
+	public void setRdate(Date rdate) {
+		this.rdate = rdate;
+	}
 	public Integer[] getTimearr() {
 		return timearr;
 	}
@@ -146,6 +153,7 @@ public class BsVO {
 	public String[] getDayarr() {
 		return dayarr;
 	}
+
 	@Override
 	public String toString() {
 		return "BsVO [ccode=" + ccode + ", ctitle=" + ctitle + ", cname=" + cname + ", ccontent=" + ccontent + ", cday="
@@ -153,7 +161,7 @@ public class BsVO {
 				+ ", cfinish=" + cfinish + ", dayarr=" + Arrays.toString(dayarr) + ", timearr="
 				+ Arrays.toString(timearr) + ", cpid=" + cpid + ", cpprice=" + cpprice + ", cpnum=" + cpnum
 				+ ", cpdate=" + cpdate + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rcode=" + rcode
-				+ ", rpay=" + rpay + "]";
+				+ ", rpay=" + rpay + ", rdate=" + rdate + "]";
 	}
 	
 }

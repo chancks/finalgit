@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -104,11 +105,13 @@
 		<table class="points_table">
 			<thead>
 				<tr>
-					<th class="col-xs-2">학생 id</th>
-					<th class="col-xs-3">과목명</th>
-					<th class="col-xs-2">강사</th>
-					<th class="col-xs-3">과목코드</th>
-					<th class="col-xs-2">결제상태</th>
+					<th class="col-xs-1">학생 id</th>
+					<th class="col-xs-2">과목명</th>
+					<th class="col-xs-1">강사</th>
+					<th class="col-xs-2">과목코드</th>
+					<th class="col-xs-2">수강신청일</th>
+					<th class="col-xs-1">결제</th>
+					<th class="col-xs-2">결제일</th>
 				</tr>
 			</thead>
 		<tbody class="points_table_scrollbar">
@@ -123,13 +126,23 @@
 				</c:otherwise>
 			</c:choose>
 				
-					<td class="col-xs-2">
+					<td class="col-xs-1">
 						<a href="/mvc/manager/myinfo?aid=${pay.rid }&mypage=true">${pay.rid }</a>
 					</td>
-					<td class="col-xs-3">${pay.rtitle }</td>
-					<td class="col-xs-2">${pay.rname }</td>
-					<td class="col-xs-3">${pay.rcode }</td>
-					<td class="col-xs-2">${pay.rpay }</td>
+					<td class="col-xs-2">${pay.rtitle }</td>
+					<td class="col-xs-1">${pay.rname }</td>
+					<td class="col-xs-2">${pay.rcode }</td>
+					<td class="col-xs-2">
+					<fmt:formatDate value="${pay.rdate }" pattern="yyyy-MM-dd" />
+					</td>
+					<td class="col-xs-1">${pay.rpay }</td>
+					<c:forEach var="cc" items="${card }">
+						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid }">
+						<td class="col-xs-2">
+							<fmt:formatDate value="${cc.cpdate }" pattern="yyyy-MM-dd" />
+						</td>
+						</c:if>
+					</c:forEach>
 				</tr>
 		</c:forEach>
 				<tr>
