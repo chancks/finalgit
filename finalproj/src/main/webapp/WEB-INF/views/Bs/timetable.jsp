@@ -14,9 +14,9 @@
 <c:forEach var="i" begin="0" end="8">
 	<tr>
 		<c:forEach var="j" begin="0" end="7">
-		<td width="50px" height="50px" style="text-align: center">
+		<td width="150px" height="50px" style="text-align: center">
 			<c:if test="${i==0 && j!=0}">
-				${day }
+				${day[j-1] }
 			</c:if>
 			<c:forEach items="${data }" var="dd" varStatus="no">
 					
@@ -29,7 +29,8 @@
 					</c:if>
 			</c:forEach>
 					<c:if test="${i!=0 && j==0 }">
-						${i }교시
+						${i }교시<br>
+						${i+13 }:00~${i+14 }:00
 					</c:if>
 		</td>
 		</c:forEach>
