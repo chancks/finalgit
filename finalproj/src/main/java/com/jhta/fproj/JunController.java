@@ -1,5 +1,7 @@
 package com.jhta.fproj;
 
+import java.util.ArrayList;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.jhta.fproj.logic.CheckAll;
 import com.jhta.fproj.model.Jun_DAO;
 import com.jhta.fproj.model.Jun_VO;
 import com.jhta.fproj.model.PageVO;
@@ -103,6 +106,7 @@ public class JunController {
 		
 		model.addAttribute("service", "jun_List");
 	
+		CheckAll ca = new CheckAll();
 		
 			if(session.getAttribute("grade").equals("강사")) {
 				vo.setCid((String)session.getAttribute("id"));
@@ -156,11 +160,25 @@ public class JunController {
 			System.out.println("@@@@@@@@@@@");
 			System.out.println("@@@@@@@@@@@@@");
 			
+			ArrayList<Jun_VO> arr = new ArrayList<>();
+			ArrayList<Jun_VO> arr2 = new ArrayList<>();
 			
-			res = dao.course_insert(vo);
+			arr.add(vo);
+			arr2 = (ArrayList)dao.plist(vo);
+			
+			if(ca.chktime2(arr, arr2)) {
+				
+				model.addAttribute("msg", "시간대가 겹칩니다.");
+				model.addAttribute("url", "course_register?mypage=true");
+			} else {
+				
+				res = dao.course_insert(vo);
 
-			model.addAttribute("msg", "등록성공");
-			model.addAttribute("url", "course_Detail?ccode="+vo.getCcode()+"&cday="+vo.getCday());
+				model.addAttribute("msg", "등록성공");
+				model.addAttribute("url", "course_Detail?ccode="+vo.getCcode()+"&cday="+vo.getCday());
+			}
+			
+			
 
 			break;
 			

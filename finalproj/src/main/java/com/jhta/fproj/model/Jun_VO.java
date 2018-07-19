@@ -9,7 +9,15 @@ public class Jun_VO {
 	 
 	 Date cstart, cfinish;
 	 String ctitle,cday,cname, ccontent,ctime,ccode, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
-	 public String getCol() {
+	 Integer [] timearr;
+	 
+	 public Integer[] getTimearr() {
+		return timearr;
+	}
+	public void setTimearr(Integer[] timearr) {
+		this.timearr = timearr;
+	}
+	public String getCol() {
 		return col;
 	}
 	public void setCol(String col) {
@@ -82,6 +90,12 @@ public class Jun_VO {
 		return ctime;
 	}
 	public void setCtime(String ctime) {
+		String [] str = ctime.split(",");
+		timearr = new Integer [str.length];
+
+		for(int i=0; i<str.length;i++) {
+			timearr[i] = Integer.parseInt(str[i]);
+		} 
 		this.ctime = ctime;
 	}
 	public String getCcode() {

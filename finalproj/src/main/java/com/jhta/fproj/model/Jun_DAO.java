@@ -135,9 +135,14 @@ public class Jun_DAO {
 	
 	}
 	
+	public Object plist(Jun_VO vo) {
+		
+		System.out.println("DAO plist 들어옴:  "+vo);
+		
+		return sessionTemplate.selectList("seo_mm.plist",vo);
 	
-	
-	
+	}
+
 
 	public Object p_astudent_list(Jun_VO vo) {
 		
@@ -146,8 +151,6 @@ public class Jun_DAO {
 		return sessionTemplate.selectList("seo_mm.p_astudent_list",vo);
 	
 	}
-	
-	
 	
 	public Object course_list1(Jun_VO vo) {
 			
