@@ -63,7 +63,7 @@ body {
 			<div class="col-md-3">
 				<ul class="nav nav-pills nav-stacked" style="margin-left: -15px;">
 					<!-- style="margin-left:-58px;" -->
-					<li class="active"><a href="#"
+					<li class="active"><a href="/mvc/Bs/memberlist?mypage=true"
 						style="background-color: #353535; width: 140px"><i
 							class="fa fa-home fa-fw"></i>Home</a></li>
 
