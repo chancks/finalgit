@@ -30,9 +30,11 @@
 		
 		<th colspan="2" align="right">
 			<a href="qnaList">목록</a>
-			<a href="qnaDelete?id=${qna.id}">삭제</a>
-			<a href="qnaModify?id=${qna.id}">수정</a>
-			<c:if test="${grade eq '관리자'}">
+			<c:if test="${qna.pname eq id }">
+				<a href="qnaDelete?id=${qna.id}">삭제</a>
+				<a href="qnaModify?id=${qna.id}">수정</a>
+			</c:if>
+			<c:if test="${grade eq '관리자' or grade eq '행정'}">
 				<a href="qnaReply?id=${qna.id}">답변</a>
 			</c:if>
 		</th>

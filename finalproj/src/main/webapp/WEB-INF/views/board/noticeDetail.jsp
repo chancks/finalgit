@@ -30,7 +30,7 @@
 		
 		<th colspan="2" align="right">
 			<a href="noticeList">목록</a>
-			<c:if test="${grade eq '관리자'}">
+			<c:if test="${grade eq '관리자' or grade eq '행정'}">
 				<a href="noticeDelete?id=${notice.id}">삭제</a>
 				<a href="noticeModify?id=${notice.id}">수정</a>
 			</c:if>

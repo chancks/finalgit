@@ -21,11 +21,11 @@
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">작성자</th>
-			<th><input type="hidden" name="pname" value="익명" />익명</th>
+			<th><input type="hidden" name="pname" value="${id }" />익명</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>
-			<th><input type="text" name="pw" /></th>
+			<th><input type="password" name="pw" /></th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>

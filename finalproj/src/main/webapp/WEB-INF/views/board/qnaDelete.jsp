@@ -17,7 +17,7 @@
     <table class="table" align="center">
         <tr>
             <th style="background-color:#D8D8D8; width: 100px; ">암호</th>
-            <th><input type="text" name="pw" /></th>
+            <th><input type="password" name="pw" /></th>
         </tr>
         <tr>
             <th colspan="2" align="center">

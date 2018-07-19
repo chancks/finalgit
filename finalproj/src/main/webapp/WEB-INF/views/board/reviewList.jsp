@@ -67,7 +67,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		<form alction="?">
 			<tr>
 				<th colspan="5" align="center">
-					<select name="schCol">
+					<select name="schCol" style="width: 100px;">
 						<option value="title">제목</option>
 						<option value="pname">작성자</option>
 						<option value="content">내용</option>
@@ -81,7 +81,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		<tr>	
 			<c:if test="${grade eq '학생'}">
 				<th colspan="5" align="right">
-				<input type="button" class="btn btn-default"
+				<input type="button" class="btn btn-success"
 				onclick="location.href='reviewInsertForm'" value="글쓰기"/>
 			</th> 
 			</c:if>

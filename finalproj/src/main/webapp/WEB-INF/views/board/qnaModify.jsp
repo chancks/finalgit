@@ -26,7 +26,7 @@
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>
-			<th><input type="text" name="pw"/></th>
+			<th><input type="password" name="pw"/></th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>

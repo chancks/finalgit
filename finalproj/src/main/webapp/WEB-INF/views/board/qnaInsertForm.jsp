@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">작성자</th>
-			<th><input type="text" name="pname" value="${user.aname }"/>${user.aname }</th>
+			<th><input type="hidden" name="pname" value="${id }"/>${id }</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>

@@ -19,7 +19,7 @@
 	<tr>	
 		<th style="background-color:#D8D8D8; width: 100px; ">제목</th><th>${review.title}</th>
 		</tr><tr>
-		<th style="background-color:#D8D8D8 ">작성자</th><th>${review.pname }</th>
+		<th style="background-color:#D8D8D8 ">작성자</th><th>익명</th>
 		</tr><tr>
 		<th style="background-color:#D8D8D8 ">작성일</th><th>${review.reg_date}</th>
 		</tr><tr>
@@ -30,7 +30,7 @@
 		
 		<th colspan="2" align="right">
 			<a href="reviewList">목록</a>
-			<c:if test="${grade eq '학생' }">
+			<c:if test="${review.pname eq id}">
 				<a href="reviewDelete?id=${review.id}">삭제</a>
 				<a href="reviewModify?id=${review.id}">수정</a>
 			</c:if>
