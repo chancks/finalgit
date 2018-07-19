@@ -15,6 +15,7 @@ import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.model.BoardDAO;
 import com.jhta.fproj.model.BoardVO;
 import com.jhta.fproj.model.BsVO;
+import com.jhta.fproj.model.MngDAO;
 import com.jhta.fproj.model.MngUserVO;
 import com.jhta.fproj.model.PageVO;
 
@@ -24,6 +25,7 @@ public class BoardController {
 
 	@Resource
 	BoardDAO dao;
+	MngDAO mdao;
 	Object res = null;
 	
 	
