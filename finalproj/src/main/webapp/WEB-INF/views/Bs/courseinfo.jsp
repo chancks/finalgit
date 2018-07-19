@@ -114,8 +114,8 @@
 									<th class="col-xs-2">과목명</th>
 									<th class="col-xs-4">내용</th>
 									<th class="col-xs-1">강사</th>
-									<th class="col-xs-3">시작일</th>
-									<th class="col-xs-3">종료일</th>
+									<th class="col-xs-2">시작일</th>
+									<th class="col-xs-2">종료일</th>
 								</tr>
 							</thead>
 							<tbody class="points_table_scrollbar">
@@ -132,9 +132,9 @@
 									<td class="col-xs-2">${cc.ctitle }</td>
 									<td class="col-xs-4">${cc.ccontent }</td>
 									<td class="col-xs-1">${cc.cname }</td>
-									<td class="col-xs-3"><fmt:formatDate value="${cc.cstart }"
+									<td class="col-xs-2"><fmt:formatDate value="${cc.cstart }"
 											pattern="yyyy-MM-dd" /></td>
-									<td class="col-xs-3"><fmt:formatDate
+									<td class="col-xs-2"><fmt:formatDate
 											value="${cc.cfinish }" pattern="yyyy-MM-dd" /></td>
 									</tr>
 								</c:forEach>
