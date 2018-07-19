@@ -21,6 +21,20 @@
 
 <style>
 
+@media screen and (min-width:380px) {
+
+}
+
+@media screen and (max-width:380px) {
+
+
+table{
+	font-size: 10px;
+	width:320;
+}
+
+}
+
 .points_table thead {
 	width: 100%;
 }

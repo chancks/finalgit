@@ -23,23 +23,50 @@
 
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
+@media screen and (min-width:380px) {
+
 }
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+@media screen and (max-width:380px) {
+
+
+table{
+	font-size: 10px;
+	width:320;
 }
 
-#a {
-	float: left;
-	background-color: gray;
-	margin: 5px;
+/* #ss{
+	width:90px;
+} */
+
+.btn{
+	width: 78px;
 }
+
+#qq{
+	font-size: 10px;
+}
+
+#hight_top{
+	margin-left: -20px;
+}
+
+#top_menu{
+	margin-left: -40px;
+}
+
+
+#main{
+ 	margin-left: 20px;
+
+}
+
+#sub_menu{
+	margin-left: -20px;
+}
+
+}
+
 
 #search {
 	margin-top: 60px;
@@ -59,24 +86,24 @@
              
              <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='course_List?mypage=true'">
-				 <a class="btn" data-toggle="tab">전체 강의 목록  </a>
+				 <a class="btn" data-toggle="tab"><div id="qq">전체 강의 목록</div>  </a>
 			</div>
               
              <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='course_List1?mypage=true'">
-         	     <a class="btn"  data-toggle="tab">개강 예정 목록</a>
+         	     <a class="btn"  data-toggle="tab"><div id="qq">개강 예정 목록</div></a>
              </div>
   			<!-- style="background:#FFC6C6; -->          
             
             <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='course_List2?mypage=true'">
-         	 	  <a  class="btn" data-toggle="tab">진행 중 목록</a>
+         	 	  <a  class="btn" data-toggle="tab"><div id="qq">진행 중 목록</div></a>
             </div>
              
              
             <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='course_List3?mypage=true'">
-     				<a class="btn"  data-toggle="tab">개강 종료 목록</a>
+     				<a class="btn"  data-toggle="tab"><div id="qq">개강 종료 목록</div></a>
             </div>
             
           </div> 

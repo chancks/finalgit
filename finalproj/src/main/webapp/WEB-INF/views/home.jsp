@@ -1,151 +1,167 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<meta name="viewport"content="width=device-width, initial-scale=1.0 , 
-user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 , 
+user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../resources/bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap-theme.min.css">
 
 <script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="../resources/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="../resources/bootstrap/js/bootstrap.min.js"></script>
 
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <html>
 
 
 <style>
-@media screen and (max-width : 400px) {
+@media screen and (max-width : 380px) {
+	table{
+		font-size: 10px;
+		width:320;
+	}
+	
 	#background {
-		width: 400px;
-		
+		width: 360px;
+
 	}
 	#hight_top {
-		width: 300px;
+
+		width: 360px;
 		height: 50px;
 	}
-	
 	#logo {
-	width: 100px;
-	height: 35px;
-	margin-left: 10px;
-	background-color: fuchsia;
-	float: left;
-	background-image: url('${url }');
-	background-size: 100%;
-	cursor: pointer;
+		width: 100px;
+		height: 35px;
+		margin-top: 7px;
+		margin-left: 10px;
+		/* background-color: fuchsia; */
+		float: left;
+		background-image: url('${url }');
+		background-size: 100%;
+		cursor: pointer;
 	}
-	
 	#login {
 		margin-top: 20px;
 		/* 	margin-right: 20px; 
 		background-color : fuchsia; */
 		float: right;
+		font-size: 10px;
 	}
-	
-	#btn{
-	width:50px;
+	#btn {
+		width: 50px;
+		font-size: 10px;
 	}
-	
+	#top_menu {
+		width: 360px;
+		height: 30px;
+		/* 	border: blue 1px solid; */
+		/* 	position: relative; */
+		text-align: center;
+	}
+	#main_rap {
+		width: 360px;
+		/* background-color: #FFC6C6; */
+		/* border: pink 1px solid; */
+	}
+	#sub_menu {
+		float: left;
+		width: 20px;
+		height: 30px;
+	/* 	background-color: pink; */
+		/* 
+	background-color: pink; */
+		/* border: red 1px solid; */
+	}
+	#main {
+		margin-left: 40px;
+		width: 360px;
+		/* 	border: blue 1px solid; */
+		/* 	position: relative; */
+		/* background-color: #fff; */
+	}
+	#bottom {
+		bottom: 0px;
+		width: 100%;
+		border-bottom: 1px inset gray;
+		font-size: 10px;
+	}
 }
 
-@media screen and (min-width : 400px) {
-	
- 	
+@media screen and (min-width : 380px) {
+	#background {
 
+	}
 	#hight_top {
+
 		width: 1010px;
 		height: 100px;
 	}
-	
 	#logo {
-	width: 275px;
-	height: 90px;
-	margin-left: 370px;
-	background-color: fuchsia;
-	float: left;
-	background-image: url('${url }');
-	background-size: 100%;
-	cursor: pointer;
+		width: 275px;
+		height: 90px;
+		margin-left: 370px;
+	/* 	background-color: fuchsia; */
+		float: left;
+		background-image: url('${url }');
+		background-size: 100%;
+		cursor: pointer;
 	}
-		
-#login {
-	margin-top: 75px;
-	/* 	margin-right: 20px; 
+	#login {
+		margin-top: 75px;
+		/* 	margin-right: 20px; 
 	background-color : fuchsia; */
-	float: right;
+		float: right;
+	}
+	#top_menu {
+		width: 1010;
+		height: 50px;
+		/* 	border: blue 1px solid; */
+		/* 		position: relative; */
+		text-align: center;
+	}
+	#main_rap {
+		width: 1010px;
 	
-}
-
-
-#login {
-	margin-top: 75px;
-	/* 	margin-right: 20px; 
-	background-color : fuchsia; */
-	float: right;
-}
-
-#top_menu {
-	width: 1010px;
-	height: 50px;
-	/* 	border: blue 1px solid; */
-	position: relative;
-	text-align: center;
-}
-
-#menu_rap {
-	width: 450px;
-	height: 40px;
-	border: black 1px solid;
-	display: inline-block;
-	margin-top: 5px;
-}
-
-.menu {
-	margin: 6px;
-	width: 100px;
-	height: 30px;
-}
-
-#main_rap {
-	width: 1024px;
-	/* background-color: #FFC6C6; */
-	/* border: pink 1px solid; */
-}
-
-#sub_menu {
-	width: 140px;
-	float: left;
-	/* 
+		/* background-color: #FFC6C6; */
+		/* border: pink 1px solid; */
+	}
+	#sub_menu {
+		width: 140px;
+		float: left;
+		/* 
 	background-color: pink; */
-	/* border: red 1px solid; */
-}
-
-#main {
-	margin-left: 140px;
-	width: 870px;
-	/* 	border: blue 1px solid; */
-	position: relative;
-	/* background-color: #fff; */
-}
-
-#bottom {
-	bottom: 0px;
-	width: 100%;
-	border-bottom: 1px inset gray;
+		/* border: red 1px solid; */
+	}
+	#main {
+		margin-left: 140px;
+		width: 870px;
+		/* 	border: blue 1px solid; */
+		/* 	position: relative; */
+		/* background-color: #fff; */
+	}
+	#bottom {
+		bottom: 0px;
+		width: 100%;
+		border-bottom: 1px inset gray;
+	}
 }
 </style>
 
-<head>
 
-
-<title>Home</title>
-</head>
 <body>
 	<div id="background">
 
@@ -175,21 +191,21 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 							</c:when>
 							<c:when test="${grade eq '행정' }">
 								<input type="button"
-									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
+									onclick="location.href='/mvc/manager/memberlist?mypage=true'"
 									value="마이페이지">
 							</c:when>
 							<c:otherwise>
 								<input type="button"
-									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
+									onclick="location.href='/mvc/manager/memberlist?mypage=true'"
 									value="마이페이지">
 							</c:otherwise>
 						</c:choose>
 					</c:when>
 					<c:otherwise>
-						<input  id="btn"  type="button" onclick="location='/mvc/manager/loginf'"
-							value="로그인">
-						<input   id="btn" type="button" onclick="location='/mvc/manager/join?jgrade=학생'"
-							value="회원가입">
+						<input id="btn" type="button"
+							onclick="location='/mvc/manager/loginf'" value="로그인">
+						<input id="btn" type="button"
+							onclick="location='/mvc/manager/join?jgrade=학생'" value="회원가입">
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -210,23 +226,20 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						</button>
 						<!--         <a href="/" class="navbar-brand">야하자</a> -->
 					</div>
-					<div id="navbar-menu" class="collapse navbar-collapse navbar-right">
+					<div id="navbar-menu"
+						class="collapse navbar-collapse navbar-center">
 						<ul class="nav navbar-nav navbar-center">
 
-							<li class="hidden-sm "><a href="/mvc/Bs/academyinfo">학원
+							<li class="hidden-sx "><a href="/mvc/Bs/academyinfo">학원
 									소개</a></li>
-							<li class="hidden-sm "><a href="/mvc/manager/teacherinfo">강사
+							<li class="hidden-sx "><a href="/mvc/manager/teacherinfo">강사
 									소개</a></li>
-							<li class="hidden-sm "><a href="/mvc/Bs/courseinfo">과목
+							<li class="hidden-sx "><a href="/mvc/Bs/courseinfo">과목
 									소개</a></li>
-							<li class="hidden-sm"><a href="/mvc/board/boardList">고객
+							<li class="hidden-sx"><a href="/mvc/board/boardList">고객
 									센터</a></li>
 
 
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a id="signout"><span
-									class="glyphicon glyphicon-lock"></span> 공부하자</a></li>
 						</ul>
 					</div>
 				</div>
@@ -237,6 +250,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 
 
 		<div id="main_rap">
+
+
 			<div id="sub_menu">
 				<c:if test="${param.mypage!=null ||mypage!=null }">
 					<jsp:include page="menu/menu.jsp" />

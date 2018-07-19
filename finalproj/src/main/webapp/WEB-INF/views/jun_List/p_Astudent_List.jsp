@@ -20,16 +20,18 @@
 
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		background-color: #ffff00;
-	}
+@media screen and (min-width:380px) {
+
 }
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+@media screen and (max-width:380px) {
+
+
+table{
+	font-size: 10px;
+	width:320;
+}
+
 }
 #a {
 	float: left;

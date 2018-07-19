@@ -21,16 +21,21 @@
 
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
+@media screen and (min-width:380px) {
+
 }
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+@media screen and (max-width:380px) {
+
+
+table{
+	font-size: 10px;
+	width:320;
+}
+
+#ss{
+	width:90px;
+}
 }
 
 .points_table thead {
@@ -125,7 +130,7 @@
 						<option value="ctitle">과목 명</option>
 						<option value="cname">강사명</option>
 						<option value="ccode">과목 코드</option>
-					</select> <input type="text" name="ctitle"
+					</select> <input type="text" name="ctitle" id="ss"
 						style="height: 25px; margin-top: 9px;" /><input type="submit"
 						value="검색" style="height: 28px; margin-left: 4px;" />
 				</form>
