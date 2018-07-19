@@ -149,9 +149,11 @@ public class BsVO {
 	@Override
 	public String toString() {
 		return "BsVO [ccode=" + ccode + ", ctitle=" + ctitle + ", cname=" + cname + ", ccontent=" + ccontent + ", cday="
-				+ cday + ", ctime=" + ctime + ", timearr=" + Arrays.toString(timearr) + ", ctotal=" + ctotal + ", tot="
-				+ tot + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rcode=" + rcode + ", rpay="
-				+ rpay + ", cpid=" + cpid + ", cpnum=" + cpnum + ", cpprice=" + cpprice + ", cpdate=" + cpdate
-				+ ", cstart=" + cstart + ", cfinish=" + cfinish + "]";
+				+ cday + ", ctime=" + ctime + ", ctotal=" + ctotal + ", tot=" + tot + ", cstart=" + cstart
+				+ ", cfinish=" + cfinish + ", dayarr=" + Arrays.toString(dayarr) + ", timearr="
+				+ Arrays.toString(timearr) + ", cpid=" + cpid + ", cpprice=" + cpprice + ", cpnum=" + cpnum
+				+ ", cpdate=" + cpdate + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rcode=" + rcode
+				+ ", rpay=" + rpay + "]";
 	}
+	
 }

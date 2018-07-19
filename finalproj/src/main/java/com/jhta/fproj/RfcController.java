@@ -60,13 +60,20 @@ public class RfcController {
 		switch(main) {
 			case "timetable"://시간표
 				
+				String [] str = {"월","화","수","목","금","토","일"};
+				
 				if(grade.equals("학생")) {
 				
 					res = dao.list(vo);
+					
+					model.addAttribute("day", str);
 				
 				} else {
 					
 					res = dao.plist(vo);
+					model.addAttribute("day", str);
+					System.out.println("왜 안나오죠?"+vo);
+					
 				}
 				
 				break;
@@ -75,6 +82,7 @@ public class RfcController {
 				
 				res = dao.mylist(vo);//내 수강신청 목록
 				model.addAttribute("data2", res);
+				
 				//수강신청이 가능한 과목 목록
 				vo.setTot((Integer)dao.reglisttot());
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
@@ -155,8 +163,10 @@ public class RfcController {
 				break;
 				
 			case "memberlist"://회원리스트
+				
 				res = dao.list();
 				model.addAttribute("data3",paging.makePaging(pvo.getPage(), (Integer)dao.memtot()));
+				break;
 		}
 	
 		return res;

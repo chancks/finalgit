@@ -15,10 +15,11 @@
 	<tr>
 		<c:forEach var="j" begin="0" end="7">
 		<td width="50px" height="50px" style="text-align: center">
+			<c:if test="${i==0 && j!=0}">
+				${day }
+			</c:if>
 			<c:forEach items="${data }" var="dd" varStatus="no">
-					<c:if test="${i==0 && j!=0 && no.index==1}">
-						${dd.dayarr[j-1] }
-					</c:if>
+					
 					<c:if test="${dd.dayarr[j-1] eq dd.cday}">
 						<c:forEach var="tt" items="${dd.timearr }">
 							<c:if test="${i==tt }">
