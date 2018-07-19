@@ -195,7 +195,7 @@ public class JunController {
 			res = dao.course_delete(vo);
 	
 			model.addAttribute("msg", "삭제성공");
-			model.addAttribute("url", "course_List");
+			model.addAttribute("url", "course_List?mypage=true");
 
 			break;
 			
