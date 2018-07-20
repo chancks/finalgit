@@ -5,7 +5,7 @@
 
 <div style="width: 100%; height: 100%; background: yellow; overflow: scroll; ">
 	<c:forEach items="${data }" var="dd">
-		<c:if test="${dd.agrade eq '강사' }">
+		<c:if test="${dd.agrade eq 'teacher' }">
 			<c:set var="a" value="true"></c:set>
 			<center>
 				<div style="width: 95%; height : 30%; background: blue; margin: 3px; border: 3px solid red;">

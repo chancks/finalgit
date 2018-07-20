@@ -59,7 +59,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<update id="udelete" parameterType="string">
 	
-		update astudent set agrade='탈퇴'
+		update astudent set agrade='withdrawal'
 		
 		where aid = #{uid}
 		

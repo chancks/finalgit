@@ -57,7 +57,7 @@ public class MngController {
 			model.addAttribute("idchk",chk);
 			model.addAttribute("user", user);
 			
-			if(!(user.getAgrade().equals("학생"))) {
+			if(!(user.getAgrade().equals("student"))) {
 				model.addAttribute("mypage", true);
 			}
 			
@@ -121,7 +121,7 @@ public class MngController {
 			
 			String str = (String)session.getAttribute("grade");
 			
-			if(!(str.equals("관리자")||str.equals("행정")))
+			if(!(str.equals("admin")||str.equals("administ")))
 				user.setAid((String)session.getAttribute("id"));
 			
 			model.addAttribute("mypage", true);
