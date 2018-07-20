@@ -39,7 +39,11 @@ public class HomeController {
 		
 		model.addAttribute("service", "board");
 		model.addAttribute("main", "first");
-		session.setAttribute("url", "/mvc/resources/picture/logo.png");
+		session.setAttribute("url","https://blogfiles.pstatic.net/"
+				+ "MjAxODA3MjBfMjcy/MDAxNTMyMDQ1MjcwMzcx."
+				+ "gmBZfnmfRQRy51Awui_CDEe5pTFpZdC2nn8MJ0CuANEg."
+				+ "CkW2MkV5n9hYFco3fs-Uvar3Z1JLKu8r-2U9yDT82kwg.PNG."
+				+ "dkcktksvkfkd/ll.png");
 		
 		model.addAttribute("data", dao.qnaList());
 		model.addAttribute("data2", dao.noticeList());
