@@ -89,7 +89,16 @@ width: 700px;
 	
 </div>
 		<hr size=1px color="silver">
-<div><a href="course_List?mypage=true">뒤로 가기</a></div>
+<div>
+<c:choose>
+	<c:when test="${grade eq '관리자' or grade eq '행정' }">
+		<a href="course_List?mypage=true">뒤로 가기</a>
+	</c:when>
+	<c:otherwise>
+		<a href="/mvc/Bs/courseinfo">뒤로 가기</a>
+	</c:otherwise>
+</c:choose>
+</div>
 <div><a href="course_Modify?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 수정</a></div>
 <div><a href="course_Delete?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 삭제</a></div>
 

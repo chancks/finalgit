@@ -156,5 +156,5 @@ table{
 </div>
 
 <hr size=1px color="#ddd">	
-	<a href="../">뒤로 가기</a>
+	
 </div>

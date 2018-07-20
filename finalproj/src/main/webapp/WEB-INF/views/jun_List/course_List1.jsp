@@ -124,6 +124,7 @@ table{
 		<div style="text-align: center;">
 			<div id="search" style="display: inline-block; height: 40px">
 				<form action="?">
+				<input type="hidden" name="mypage" value="true"/>
 					<select name="schCol" style="width: 100px; height: 28px;">
 						<option value="ctitle">과목 명</option>
 						<option value="cname">강사명</option>
@@ -181,7 +182,7 @@ table{
 		</div>
 
 <hr size=1px color="#ddd">	
-	<a href="../">뒤로 가기</a>
+	
 	
 	</div>
 </body>
