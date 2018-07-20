@@ -54,8 +54,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="course_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course order by ccode 
+		select * from course  
 		<include refid="whereSch"/>
+		order by cname,ccode
 	</select>
 	
 	
@@ -136,8 +137,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 
-
-
+	<select id="plist" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where cid = #{col} and <![CDATA[ cfinish>sysdate ]]>
+	</select>
 
 
 </mapper>
