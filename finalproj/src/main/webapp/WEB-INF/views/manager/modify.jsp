@@ -71,7 +71,7 @@
 		<tr>
 			<td style="background-color:#D8D8D8 ">생일</td>
 			<td colspan="2">
-			<input type="text" name="abirth" value="${user.abirth }">
+			<input type="date" name="abirth" value="${user.abirth }">
 			</td>
 		</tr>
 		<tr>
