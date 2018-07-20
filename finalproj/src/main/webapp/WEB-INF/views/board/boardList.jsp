@@ -36,33 +36,62 @@
 <script type="text/javascript"src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
 <style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
+@media screen and (min-width:380px) {
+
 }
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+@media screen and (max-width:380px) {
+
+
+table{
+	font-size: 10px;
+	width:320;
 }
 
-#a {
-	float: left;
-	background-color: gray;
-	margin: 5px;
+/* #ss{
+	width:90px;
+} */
+
+.btn{
+	width: 78px;
 }
+
+#qq{
+	font-size: 10px;
+}
+
+#hight_top{
+	margin-left: -20px;
+}
+
+#top_menu{
+	margin-left: -40px;
+}
+
+
+#main{
+ 	margin-left: 20px;
+
+}
+
+#sub_menu{
+	margin-left: -20px;
+}
+
+}
+
 
 #search {
 	margin-top: 60px;
 }
 </style>
 
+
+
 <title>Insert title here</title>
 </head>
 <body>
-
+<!-- 
 <div class="container" style=" height:35px; width:100% ;" >
 	<div class="row">
 		<div class="span12">
@@ -75,7 +104,34 @@
 
 	</div>
 </div>
-
+ -->
+<div class="container" style=" height:35px; width:100% ;" >
+	<div class="row">
+		<div class="span12">
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+             
+             <div style="float:left;  cursor: pointer;"
+				onclick="location.href='qnaList'">
+				 <a class="btn" data-toggle="tab"><div id="qq">QNA</div> </a>
+			</div>
+              
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='noticeList'">
+         	     <a class="btn"  data-toggle="tab"><div id="qq">공지사항</div></a>
+             </div>
+  			<!-- style="background:#FFC6C6; -->          
+            
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='reviewList'">
+         	 	  <a  class="btn" data-toggle="tab"><div id="qq">후기</div></a>
+            </div>
+             
+            
+          </div> 
+          
+        </div>
+    </div>
+</div>
 	<div style="width: 100%; border-bottom: 1px inset gray; background-color:">
 		<jsp:include page="${List}"></jsp:include>
 	</div>

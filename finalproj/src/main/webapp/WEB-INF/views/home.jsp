@@ -236,7 +236,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 									소개</a></li>
 							<li class="hidden-sx "><a href="/mvc/Bs/courseinfo">과목
 									소개</a></li>
-							<li class="hidden-sx"><a href="/mvc/board/boardList">고객
+							<li class="hidden-sx"><a href="/mvc/board/qnaList">고객
 									센터</a></li>
 
 
