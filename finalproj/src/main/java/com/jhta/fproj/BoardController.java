@@ -75,10 +75,10 @@ public class BoardController {
 			case "qnaInsertReg":
                 res = dao.qnaInsert(vo);
 				if(dao.qnaPwChk(vo)!=null) {
-	                model.addAttribute("msg", "ï¿½ì˜‰ï¿½ê½¦ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "qnaInsertForm");
 	            }
 				break;
@@ -88,7 +88,7 @@ public class BoardController {
 				break;	
 			case "qnaReplyReg":
 				res = dao.qnaReplyReg(vo);
-				model.addAttribute("msg", "ï¿½ì˜‰ï¿½ê½¦ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+				model.addAttribute("msg", "´äº¯ÀÌ ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
 				model.addAttribute("url", "qnaList");
 				break;
 			case "qnaModify":
@@ -100,10 +100,10 @@ public class BoardController {
 				model.addAttribute("List","qnaModifyReg.jsp");
 				if(dao.qnaPwChk(vo)!=null) {
 	                res = dao.qnaModifyReg(vo);
-	                model.addAttribute("msg", "ï¿½ë‹”ï¿½ì ™ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "qnaModify?id="+vo.getId());
 	            }
 	            break;
@@ -116,10 +116,10 @@ public class BoardController {
 		       if(dao.qnaPwChk(vo)!=null) {
 	            	res = dao.qnaDelete(vo);
 	                res = dao.qnaDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "ï¿½ê¶˜ï¿½ì £ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "qnaList");
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "qnaDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -151,10 +151,10 @@ public class BoardController {
 			case "noticeInsertReg":
                 res = dao.noticeInsert(vo);
 				if(dao.noticePwChk(vo)!=null) {
-	                model.addAttribute("msg", "ï¿½ì˜‰ï¿½ê½¦ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
 					model.addAttribute("url","noticeDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "noticeInsertForm");
 	            }
 				break;
@@ -166,10 +166,10 @@ public class BoardController {
 				res = dao.noticePwChk(vo);
 				if(dao.noticePwChk(vo)!=null) {
 	                res = dao.noticeModifyReg(vo);
-	                model.addAttribute("msg", "ï¿½ë‹”ï¿½ì ™ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "noticeDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "noticeModify?id="+vo.getId());
 	            }
 	            break;
@@ -182,10 +182,10 @@ public class BoardController {
 	            if(dao.noticePwChk(vo)!=null) {
 	            	res = dao.noticeDelete(vo);
 	                res = dao.noticeDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "ï¿½ê¶˜ï¿½ì £ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "noticeList");
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "noticeDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -219,10 +219,10 @@ public class BoardController {
 			case "reviewInsertReg":
 				res = dao.reviewInsert(vo);
 				if(dao.reviewPwChk(vo)!=null) {
-	                model.addAttribute("msg", "ï¿½ì˜‰ï¿½ê½¦ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
 					model.addAttribute("url", "reviewDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "reviewInsertForm");
 	            }
 				break;
@@ -234,10 +234,10 @@ public class BoardController {
 				res = dao.reviewPwChk(vo);
 				if(dao.reviewPwChk(vo)!=null) {
 	                res = dao.reviewModifyReg(vo);
-	                model.addAttribute("msg", "ï¿½ë‹”ï¿½ì ™ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "reviewDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "reviewModify?id="+vo.getId());
 	            }
 	            break;
@@ -250,10 +250,10 @@ public class BoardController {
 	            if(dao.reviewPwChk(vo)!=null) {
 	            	res = dao.reviewDelete(vo);
 	                res = dao.reviewDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "ï¿½ê¶˜ï¿½ì £ï¿½ë¦ºï¿½ë¿€ï¿½ë’¿ï¿½ë•²ï¿½ë–.");
+	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
 	                model.addAttribute("url", "reviewList");
 	            }else {
-	            	model.addAttribute("msg", "é®ê¾¨ï¿½è¸°ëŠìƒ‡ç‘œï¿½ ï¿½ì†—ï¿½ì”¤ï¿½ë¸¯ï¿½ê½­ï¿½ìŠ‚.");
+	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
 	                model.addAttribute("url", "reviewDelete?id="+vo.getId());
 	            }        
 	            break;
