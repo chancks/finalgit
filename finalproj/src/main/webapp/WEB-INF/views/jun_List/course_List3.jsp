@@ -148,8 +148,7 @@ table{
 							<th class="col-xs-1">강사 명</th>
 							<th class="col-xs-1">강사 id</th>
 							<th class="col-xs-4">과정 기간</th>
-							<th class="col-xs-1">요일</th>
-							<th class="col-xs-1">시간</th>
+						
 
 						</tr>
 					</thead>
@@ -166,12 +165,11 @@ table{
 							</c:choose>
 
 							<td class="col-xs-4"><a
-								href="course_Detail?ccode=${row.ccode }&cday=${row.cday}&mypage=true">${row.ctitle}</a></td>
+								href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
 							<td class="col-xs-1">${row.cname }</td>
 							<td class="col-xs-1">${row.cid}</td>
 							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
-							<td class="col-xs-1">${row.cday}</td>
-							<td class="col-xs-1">${row.ctime}</td>
+							
 							</tr>
 						</c:forEach>
 

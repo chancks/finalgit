@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- #{cname} -->
 	<select id="course_list1" resultType="jun_Vo"
 		parameterType="jun_Vo">
-		select * from course where <![CDATA[ cstart>sysdate ]]>
+		select distinct ccode,cname,cid,cstart,cfinish  from course where <![CDATA[ cstart>sysdate ]]>
 		<include refid="date"/>
 		<!-- <include refid="whereSch" /> -->
 	</select>
@@ -40,7 +40,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="course_list2" resultType="jun_Vo"
 		parameterType="jun_Vo">
-		select * from course where <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
+		select distinct ccode,cname,cid,cstart,cfinish from course where <![CDATA[ cstart<sysdate ]]> and <![CDATA[ cfinish>sysdate ]]>
 		<include refid="date"/>
 	<!-- 	<include refid="whereSch" /> -->
 	</select>
@@ -48,13 +48,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="course_list3" resultType="jun_Vo"
 		parameterType="jun_Vo">
-		select * from course where <![CDATA[ cfinish<sysdate ]]>
+		select distinct ccode,cname,cid,cstart,cfinish from course where <![CDATA[ cfinish<sysdate ]]>
 		<include refid="date"/>
 	<!-- 	<include refid="whereSch" /> -->
 	</select>
 	
 	<select id="course_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course  
+		select distinct ccode,cname,cid,cstart,cfinish from course  
 		<include refid="whereSch"/>
 		order by cname,ccode
 	</select>
