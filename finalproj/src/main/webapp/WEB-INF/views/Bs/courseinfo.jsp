@@ -119,8 +119,7 @@
 						<table class="points_table">
 							<thead>
 								<tr>
-									<th class="col-xs-2">과목명</th>
-									<th class="col-xs-4">내용</th>
+									<th class="col-xs-6">과목명</th>
 									<th class="col-xs-1">강사</th>
 									<th class="col-xs-2">시작일</th>
 									<th class="col-xs-2">종료일</th>
@@ -137,8 +136,7 @@
 											<tr class="even" style="text-align: center">
 										</c:otherwise>
 									</c:choose>
-									<td class="col-xs-2">${cc.ctitle }</td>
-									<td class="col-xs-4">${cc.ccontent }</td>
+									<td class="col-xs-6">${cc.ctitle }</td>
 									<td class="col-xs-1">${cc.cname }</td>
 									<td class="col-xs-2"><fmt:formatDate value="${cc.cstart }"
 											pattern="yyyy-MM-dd" /></td>

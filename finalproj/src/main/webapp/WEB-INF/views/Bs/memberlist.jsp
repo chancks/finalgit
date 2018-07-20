@@ -142,7 +142,7 @@
 						<td class="col-xs-2">${mem.aphone }</td>
 						<td class="col-xs-2">${mem.agrade }</td>
 				<c:choose>
-					<c:when test="${grade eq '행정' && mem.agrade eq '행정' }">
+					<c:when test="${grade eq '행정' && mem.agrade eq '행정'  }">
 					</c:when>
 					<c:otherwise>
 						<td class="col-xs-2"><a href="?aid=${mem.aid }">삭제</a></td>
