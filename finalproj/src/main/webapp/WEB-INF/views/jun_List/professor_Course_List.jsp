@@ -165,7 +165,6 @@ table{
 				</table>
 			</div>
 		<hr size=1px color="#ddd">
-			<a href="professor_List?mypage=true">뒤로 가기</a>
 		</div>
 
 </body>

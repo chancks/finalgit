@@ -150,9 +150,7 @@ table{
 							<th class="col-xs-1">강사 명</th>
 							<th class="col-xs-1">강사 ID</th>
 							<th class="col-xs-4">과정 기간</th>
-							<th class="col-xs-1">요일</th>
-							<th class="col-xs-1">시간</th>
-
+							
 						</tr>
 					</thead>
 					<tbody class="points_table_scrollbar">
@@ -172,8 +170,6 @@ table{
 							<td class="col-xs-1">${row.cname }</td>
 							<td class="col-xs-1">${row.cid}</td>
 							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
-							<td class="col-xs-1">${row.cday}</td>
-							<td class="col-xs-1">${row.ctime}</td>
 							</tr>
 						</c:forEach>
 

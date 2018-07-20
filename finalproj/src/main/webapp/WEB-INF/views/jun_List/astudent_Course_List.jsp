@@ -160,8 +160,5 @@ table{
 			</div>
 		</div>
 	
-	
-
-	<a href="astudent_List?mypage=true">뒤로 가기</a>
 </body>
 </html>
