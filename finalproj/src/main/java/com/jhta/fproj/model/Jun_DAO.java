@@ -32,7 +32,7 @@ public class Jun_DAO {
 
 		System.out.println("DAO course_detail 들어옴:  "+vo);
 
-		return sessionTemplate.selectOne("seo_mm.course_detail", vo);
+		return sessionTemplate.selectList("seo_mm.course_detail", vo);
 		
 	}
 	
