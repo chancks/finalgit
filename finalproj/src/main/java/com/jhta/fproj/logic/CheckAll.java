@@ -10,6 +10,7 @@ import com.jhta.fproj.model.Jun_VO;
 
 public class CheckAll {
 	
+	//학생 시간표
 	public boolean chktime(ArrayList<BsVO> arr,ArrayList<BsVO> arr2) {//arr-선택한거 arr2-전체 리스트
 		boolean chk = false;
 		for (BsVO vo : arr2) {
@@ -28,6 +29,7 @@ public class CheckAll {
 		return chk;
 	}
 	
+	//강사시간표
 	public boolean chktime2(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr2) {//arr-선택한거 arr2-전체 리스트
 		boolean chk = false;
 		for (Jun_VO vo : arr2) {
