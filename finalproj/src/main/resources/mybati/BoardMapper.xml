@@ -43,10 +43,10 @@
 	
 	<select id="qnaListSch" resultType="boardVo" parameterType="boardVo">
 		select ff.* from (select * from (select rownum rnum, tt.* from 
-		(select * from qna)tt)
+		(select * from qna <include refid="whereSch"/>
+			order by gid desc , id asc)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
-			<include refid="whereSch"/>
-			order by gid desc , id asc
+			
 	</select>
 
 	<update id="qnaReadCnt" parameterType="boardVo">
@@ -117,10 +117,10 @@
 	
 	<select id="noticeListSch" resultType="boardVo" parameterType="boardVo">
 		select ff.* from (select * from (select rownum rnum, tt.* from 
-		(select * from notice)tt)
+		(select * from notice <include refid="whereSch"/>
+			order by gid desc , id asc)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
-			<include refid="whereSch"/>
-			order by gid desc , id asc
+			
 	</select>
 	
 	<update id="noticeReadCnt" parameterType="boardVo">
@@ -179,10 +179,10 @@
 	
 	<select id="reviewListSch" resultType="boardVo" parameterType="boardVo">
 		select ff.* from (select * from (select rownum rnum, tt.* from 
-		(select * from review)tt)
+		(select * from review <include refid="whereSch"/>
+			order by gid desc , id asc)tt)
 		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
-			<include refid="whereSch"/>
-			order by gid desc , id asc
+			
 	</select>
 	
 	<update id="reviewReadCnt" parameterType="boardVo">
