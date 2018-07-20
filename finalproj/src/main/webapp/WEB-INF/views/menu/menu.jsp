@@ -107,7 +107,7 @@ body {
 
 
 					<c:choose>
-						<c:when test="${grade eq '학생' }">
+						<c:when test="${grade eq 'student' }">
 							<!-- 학생  -->
 							<li><a class="z" href="/mvc/manager/myinfo?mypage=true"
 								><i class="fa fa-table fa-fw"></i><div id="ff">내 정보</div></a></li>
@@ -122,7 +122,7 @@ body {
 
 						</c:when>
 
-						<c:when test="${grade eq '강사' }">
+						<c:when test="${grade eq 'teacher' }">
 							<!-- 강사 -->
 
 							<li><a class="z" href="/mvc/manager/myinfo?mypage=true"
@@ -147,7 +147,7 @@ body {
 									><i class="fa fa-table fa-fw"></i><div id="ff">행정직
 										등록</div></a></li>
 							</c:if>
-							<c:if test="${grade eq '행정' || id ne 'admin' }">
+							<c:if test="${grade eq 'administ' || id ne 'admin' }">
 								<li><a class="z"
 									href="/mvc/manager/myinfo?aid=${id}&mypage=true"
 									><i class="fa fa-list-alt fa-fw"></i><div id="ff">내

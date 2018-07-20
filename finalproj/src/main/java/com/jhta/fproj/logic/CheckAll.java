@@ -87,4 +87,64 @@ public class CheckAll {
 		
 		return vo;
 	}
+	
+	//과목 상세 생성
+	public ArrayList<BsVO> cinfolist(ArrayList<BsVO> arr){
+		ArrayList<BsVO> arr2 = new ArrayList<BsVO>();
+		BsVO vo = new BsVO();
+		String str = null;
+		int cnt = 1;
+		
+		if(arr.size()>1) {
+			for(int i = 1; i < arr.size(); i++) {
+				
+				boolean chk = false;
+				chk =arr.get(i).getCcode().equals(arr.get(i-1).getCcode());
+				
+				if(chk) {
+					str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
+							+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						
+					cnt++;
+					
+					if(i == arr.size()-1) {
+						cnt = 0;
+					}
+					
+				} else {
+					
+					if(i == arr.size()-1) {
+						str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
+								+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						vo = arr.get(i-1);
+						vo.setCinfo(str);
+						arr2.add(vo);
+						
+						str = arr.get(i).getCday()+arr.get(i).getCtime();
+						vo = arr.get(i);
+						vo.setCinfo(str);
+						arr2.add(vo);
+						System.out.println(i+":"+vo);
+						
+					} else {
+						
+						cnt = 0;
+						
+					}
+				}
+				
+				if(cnt == 0) {
+					vo = arr.get(i-1);
+					vo.setCinfo(str);
+					arr2.add(vo);
+					System.out.println(i+":"+vo);
+				}
+			}
+				
+		} else {
+			arr2 = arr;
+		}
+			
+		return arr2;
+	}
 }

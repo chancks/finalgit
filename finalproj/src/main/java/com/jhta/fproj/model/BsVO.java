@@ -8,13 +8,19 @@ import org.apache.ibatis.type.Alias;
 @Alias("bsVo")
 public class BsVO {
 
-	String ccode,ctitle,cname,ccontent,cday,ctime,cpid,rid,rtitle,rname,rcode,rpay;
+	String ccode,ctitle,cname,ccontent,cday,ctime,cinfo,cpid,rid,rtitle,rname,rcode,rpay;
 	Integer ctotal,cpnum,cpprice,tot;
 	Date cstart, cfinish,cpdate,rdate;
     
     String [] dayarr = {"월","화","수","목","금","토","일"};
     Integer [] timearr;
     
+	public String getCinfo() {
+		return cinfo;
+	}
+	public void setCinfo(String cinfo) {
+		this.cinfo = cinfo;
+	}
 	public Integer getTot() {
 		return tot;
 	}
@@ -157,7 +163,7 @@ public class BsVO {
 	@Override
 	public String toString() {
 		return "BsVO [ccode=" + ccode + ", ctitle=" + ctitle + ", cname=" + cname + ", ccontent=" + ccontent + ", cday="
-				+ cday + ", ctime=" + ctime + ", ctotal=" + ctotal + ", tot=" + tot + ", cstart=" + cstart
+				+ cday + ", ctime=" + ctime +", cinfo=" + cinfo + ", ctotal=" + ctotal + ", tot=" + tot + ", cstart=" + cstart
 				+ ", cfinish=" + cfinish + ", dayarr=" + Arrays.toString(dayarr) + ", timearr="
 				+ Arrays.toString(timearr) + ", cpid=" + cpid + ", cpprice=" + cpprice + ", cpnum=" + cpnum
 				+ ", cpdate=" + cpdate + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rcode=" + rcode

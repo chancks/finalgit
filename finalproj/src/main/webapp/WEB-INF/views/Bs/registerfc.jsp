@@ -113,9 +113,10 @@
 		<table class="points_table">
 			<thead>
 				<tr>
-					<th class="col-xs-2">과목코드</th>
-					<th class="col-xs-4">과목명</th>
+					<th class="col-xs-3">과목코드</th>
+					<th class="col-xs-3">과목명</th>
 					<th class="col-xs-1">강사</th>
+					<th class="col-xs-3">시간</th>
 					<th class="col-xs-1">정원</th>
 					<th class="col-xs-1">신청</th>
 				</tr>
@@ -132,9 +133,10 @@
 							</c:choose>
 	
 				
-					<td class="col-xs-2">${rr.ccode }</td>
-					<td class="col-xs-4">${rr.ctitle }</td>
+					<td class="col-xs-3">${rr.ccode }</td>
+					<td class="col-xs-3">${rr.ctitle }</td>
 					<td class="col-xs-1">${rr.cname }</td>
+					<td class="col-xs-3">${rr.cinfo }</td>
 					<td class="col-xs-1">${rr.ctotal-rr.tot }</td>
 					<td class="col-xs-1"><a href="insertReg?ccode=${rr.ccode }">신청</a></td>
 				</tr>

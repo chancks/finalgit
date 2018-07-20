@@ -87,13 +87,14 @@ public class RfcController {
 				vo.setTot((Integer)dao.reglisttot());
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
 				model.addAttribute("data3", pvo);
-				System.out.println("pvo"+pvo);
+				
 				arr = (ArrayList<BsVO>)dao.reglistpaging(pvo);
+				System.out.println("페이지:"+pvo);
 				for(BsVO vv : arr) {
 					vv.setTot((Integer)dao.tot(vv));
 				}
 				
-				res = arr;
+				res = ca.cinfolist(arr);
 				
 				break;
 				
