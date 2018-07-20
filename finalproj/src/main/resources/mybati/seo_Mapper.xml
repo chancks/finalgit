@@ -69,7 +69,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="course_modify1" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade = '강사'
+		select * from astudent where agrade = 'teacher'
 	</select>
 	
 	<update id="course_modifyReg"  parameterType="jun_Vo">
@@ -83,7 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = '학생'
+		select * from astudent where agrade  = 'student'
 
 	</select>
 	
@@ -95,7 +95,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="professor_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = '강사'
+		select * from astudent where agrade  = 'teacher'
 
 	</select>
 
