@@ -1,8 +1,13 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<% Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	String strdate = sdf.format(date);
+%>   
 <link rel="stylesheet"
 	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -149,7 +154,7 @@
 		</tr>
 		<tr>
 			<td style="background-color:#D8D8D8 ">생일</td>
-			<td><input type="date" name="abirth" value=${user.abirth }></td>
+			<td><input type="date" name="abirth" value=${user.abirth } max=<%=strdate %>></td>
 		</tr>
 		<tr>
 			<td style="background-color:#D8D8D8 ">자기소개</td>

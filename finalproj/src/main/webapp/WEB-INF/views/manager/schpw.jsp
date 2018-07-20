@@ -1,7 +1,13 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<% Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	String strdate = sdf.format(date);
+%>       
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -93,7 +99,7 @@ function che() { //인증번호 비교
 					<div class="control-group">
               			<label class="control-label">생년월일</label>
 	                 	<div class="controls">
-	                 		<input type="date" name="abirth" value="${user.abirth }" class="input-xlarge">
+	                 		<input type="date" name="abirth" value="${user.abirth }" max=<%=strdate %> class="input-xlarge">
 	                 		<form:errors path="mngUserVO.abirth"/>
 	                    </div>
                		</div>
