@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 관리자 정보 -->
 	<select id="adminInfo" resultType="uservo" >
-		select * from astudent where agrade = '관리자'
+		select * from astudent where agrade = 'admin'
 	</select>
 
 	<!-- 회원리스트 -->

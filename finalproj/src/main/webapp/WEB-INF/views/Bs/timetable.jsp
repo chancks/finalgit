@@ -32,7 +32,7 @@
 						<c:forEach var="tt" items="${dd.timearr }">
 							<c:if test="${i==tt }">
 								${dd.ctitle }
-								<c:if test="${grade eq '학생' }">
+								<c:if test="${grade eq 'student' }">
 									<br>${dd.cname }
 								</c:if>
 							</c:if>

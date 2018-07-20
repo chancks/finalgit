@@ -124,7 +124,7 @@
 		<tbody class="points_table_scrollbar">
 		
 		<c:forEach var="mem" items="${data }">
-				<c:if test="${mem.agrade ne '관리자' }">
+				<c:if test="${mem.agrade ne 'admin' }">
 					<tr style="text-align: center">
 						<c:choose>
 							<c:when test="${status.index%2==0}">
@@ -142,7 +142,7 @@
 						<td class="col-xs-2">${mem.aphone }</td>
 						<td class="col-xs-2">${mem.agrade }</td>
 				<c:choose>
-					<c:when test="${grade eq '행정' && mem.agrade eq '행정'  }">
+					<c:when test="${(grade eq 'administ' && mem.agrade eq 'administ') or mem.agrade eq 'withdrawal' }">
 					</c:when>
 					<c:otherwise>
 						<td class="col-xs-2"><a href="/mvc/manager/delete?aid=${mem.aid }">삭제</a></td>

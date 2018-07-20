@@ -179,17 +179,17 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
             <input id="btn" type="button"
 							onclick="location.href='/mvc/manager/logout'" value="로그아웃">
 						<c:choose>
-							<c:when test="${grade eq '학생' }">
+							<c:when test="${grade eq 'student' }">
 								<input type="button"
 									onclick="location.href='/mvc/Bs/timetable?mypage=true'"
 									value="마이페이지">
 							</c:when>
-							<c:when test="${grade eq '강사' }">
+							<c:when test="${grade eq 'teacher' }">
 								<input type="button"
 									onclick="location.href='/mvc/jun_List/p_Course_List?mypage=true'"
 									value="마이페이지">
 							</c:when>
-							<c:when test="${grade eq '행정' }">
+							<c:when test="${grade eq 'administ' }">
 								<input type="button"
 									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
 									value="마이페이지">
@@ -205,7 +205,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 						<input id="btn" type="button"
 							onclick="location='/mvc/manager/loginf'" value="로그인">
 						<input id="btn" type="button"
-							onclick="location='/mvc/manager/join?jgrade=학생'" value="회원가입">
+							onclick="location='/mvc/manager/join?jgrade=student'" value="회원가입">
 					</c:otherwise>
 				</c:choose>
 			</div>
