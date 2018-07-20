@@ -79,7 +79,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 		</form>
 		<tr>
 			<th colspan="5" align="right">
-				<c:if test="${grade eq '학생' }">
+				<c:if test="${grade eq 'student' }">
 					<input type="button" class="btn btn-success"
 					onclick="location.href='qnaInsertForm'" value="글쓰기"/>
 				</c:if>

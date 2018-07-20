@@ -35,7 +35,7 @@
 				<a href="reviewDelete?id=${review.id}">삭제</a>
 				<a href="reviewModify?id=${review.id}">수정</a>
 			</c:if>
-			<c:if test="${grade eq '관리자' or grade eq '행정' }">
+			<c:if test="${grade eq 'admin' or grade eq 'administ' }">
 				<a href="reviewDelete?id=${review.id}">삭제</a>
 			</c:if>
 		</th>

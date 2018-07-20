@@ -19,7 +19,7 @@
         <tr>
             <th style="background-color:#D8D8D8; width: 100px; ">암호</th>
             <c:choose>
-            	<c:when test="${grade eq '관리자' or grade eq '행정' }">
+            	<c:when test="${grade eq 'admin' or grade eq 'administ' }">
             		<th><input type="password" name="pw" value="${qna.pw }" /></th>
             	</c:when>
             	<c:otherwise>

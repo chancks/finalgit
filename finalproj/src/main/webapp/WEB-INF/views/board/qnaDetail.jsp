@@ -34,7 +34,7 @@
 				<a href="qnaDelete?id=${qna.id}">삭제</a>
 				<a href="qnaModify?id=${qna.id}">수정</a>
 			</c:if>
-			<c:if test="${grade eq '관리자' or grade eq '행정'}">
+			<c:if test="${grade eq 'admin' or grade eq 'administ'}">
 				<a href="qnaDelete?id=${qna.id}">삭제</a>
 				<a href="qnaReply?id=${qna.id}">답변</a>
 			</c:if>

@@ -79,7 +79,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 			</tr>
 		</form>
 		<tr>
-			<c:if test="${grade eq '관리자' or grade eq '행정'}">
+			<c:if test="${grade eq 'admin' or grade eq 'administ'}">
 				<th colspan="5" align="right">
 					<input type="button" class="btn btn-success"
  					onclick="location.href='noticeInsertForm'" value="글쓰기"/>
