@@ -57,5 +57,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from astudent where aid = 'admin'
 	</select>
 	
+	<update id="udelete" parameterType="string">
 	
+		update astudent set agrade='탈퇴'
+		
+		where aid = #{uid}
+		
+	</update>
 </mapper>

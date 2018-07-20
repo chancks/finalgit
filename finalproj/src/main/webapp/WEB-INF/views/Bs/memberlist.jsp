@@ -145,7 +145,7 @@
 					<c:when test="${grade eq '행정' && mem.agrade eq '행정'  }">
 					</c:when>
 					<c:otherwise>
-						<td class="col-xs-2"><a href="?aid=${mem.aid }">삭제</a></td>
+						<td class="col-xs-2"><a href="/mvc/manager/delete?aid=${mem.aid }">삭제</a></td>
 					</c:otherwise>
 				</c:choose>
 				</tr>

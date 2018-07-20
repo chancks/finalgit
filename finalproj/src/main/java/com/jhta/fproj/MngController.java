@@ -242,6 +242,18 @@ public class MngController {
 			
 			model.addAttribute("user", user);
 			break;
+			
+		case "delete" :
+			System.out.println("들어오나?@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+request.getParameter("aid"));
+			
+			dao.udelete(request.getParameter("aid"));	
+			
+			
+			
+			model.addAttribute("url","/mvc/Bs/memberlist?mypage=true");
+			main="alert";
+			
+			break;
 		}
 		
 		

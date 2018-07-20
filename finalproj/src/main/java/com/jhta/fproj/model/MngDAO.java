@@ -62,4 +62,9 @@ public class MngDAO {
 		
 		return sessionTemplate.selectOne("pcmp.schpw", vo);
 	}
+	
+	public void udelete(String uid) {
+
+		sessionTemplate.update("pcmp.udelete",uid);
+	}
 }
