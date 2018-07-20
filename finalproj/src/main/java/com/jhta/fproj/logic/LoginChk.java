@@ -36,10 +36,10 @@ public class LoginChk extends HandlerInterceptorAdapter {
 				return false;
 			}
 			
-			if(grade.equals("강사")&& 
+			if(grade.equals("teacher")&& 
 					((servletpath.contains("jun_List") && !servletpath.contains("p_"))
 					||(servletpath.contains("Bs") && !servletpath.contains("timetable")))) {
-				chk=grade.equals("강사")&& 
+				chk=grade.equals("teacher")&& 
 						((servletpath.contains("jun_List") && !servletpath.contains("p_"))
 								||(servletpath.contains("Bs") && !servletpath.contains("timetable")));
 				System.out.println("강사인터셉터:"+chk);
@@ -48,12 +48,12 @@ public class LoginChk extends HandlerInterceptorAdapter {
 				return false;
 			}
 			
-			if(grade.equals("학생")&& 
+			if(grade.equals("student")&& 
 					(servletpath.contains("notice")
 					||servletpath.contains("jun_List")
 					||servletpath.contains("memberlist"))) {
 				
-				chk=grade.equals("학생")&& 
+				chk=grade.equals("student")&& 
 						(servletpath.contains("notice")
 								||servletpath.contains("jun_List")
 								||servletpath.contains("memberlist"));
@@ -63,12 +63,12 @@ public class LoginChk extends HandlerInterceptorAdapter {
 				return false;
 			}
 			
-			if((grade.equals("관리자")||grade.equals("행정"))&& 
+			if((grade.equals("admin")||grade.equals("administ"))&& 
 					(servletpath.contains("p_")
 					||(servletpath.contains("Bs")&&
 							!(servletpath.contains("totpay")||servletpath.contains("memberlist"))))) {
 				
-				chk=(grade.equals("관리자")||grade.equals("행정"))&& 
+				chk=(grade.equals("admin")||grade.equals("administ"))&& 
 						(servletpath.contains("p_")
 								||(servletpath.contains("Bs")&&
 										!(servletpath.contains("totpay")||servletpath.contains("memberlist"))));
