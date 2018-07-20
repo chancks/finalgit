@@ -166,7 +166,11 @@ public class JunController {
 			arr.add(vo);
 			arr2 = (ArrayList)dao.plist(vo);
 			
-			if(ca.chktime2(arr, arr2)) {
+			if(ca.chkstr(arr)) {
+				
+				model.addAttribute("msg", "시간은 1~8교시만 가능합니다.");
+				model.addAttribute("url", "course_register?mypage=true");
+			} else if(ca.chktime2(arr, arr2)) {
 				
 				model.addAttribute("msg", "시간대가 겹칩니다.");
 				model.addAttribute("url", "course_register?mypage=true");

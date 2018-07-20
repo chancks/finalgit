@@ -10,7 +10,7 @@ import com.jhta.fproj.model.Jun_VO;
 
 public class CheckAll {
 	
-	//학생 시간표
+	//학생시간표체크
 	public boolean chktime(ArrayList<BsVO> arr,ArrayList<BsVO> arr2) {//arr-선택한거 arr2-전체 리스트
 		boolean chk = false;
 		for (BsVO vo : arr2) {
@@ -25,13 +25,13 @@ public class CheckAll {
 				}
 			}
 		}
-		
 		return chk;
 	}
 	
-	//강사시간표
+	//과목등록 시간표 체크
 	public boolean chktime2(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr2) {//arr-선택한거 arr2-전체 리스트
 		boolean chk = false;
+		
 		for (Jun_VO vo : arr2) {
 			for(Jun_VO vo2 : arr) {
 				if(vo.getCday().equals(vo2.getCday())) {//선택한것과 내 수강친청 목록에서 날짜가 겹치는것 체크
@@ -43,6 +43,19 @@ public class CheckAll {
 					}
 				}
 			}
+		}
+		
+		return chk;
+	}
+	
+	public boolean chkstr(ArrayList<Jun_VO> arr) {
+		
+		boolean chk = false;
+		String [] str = arr.get(0).getCtime().split(",");
+		
+		for (int i = 0; i< str.length;i++) {
+			if(Integer.parseInt(str[i])>8)
+				chk = true;
 		}
 		
 		return chk;
