@@ -64,7 +64,7 @@ public class RfcController {
 				
 				String [] str = {"월","화","수","목","금","토","일"};
 				
-				if(grade.equals("학생")) {
+				if(grade.equals("student")) {
 				
 					res = dao.list(vo);
 					model.addAttribute("day", str);
