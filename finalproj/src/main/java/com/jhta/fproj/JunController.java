@@ -105,13 +105,18 @@ public class JunController {
 		System.out.println(" jun 컨트롤러 진입 :" + vo);
 		
 		model.addAttribute("service", "jun_List");
+		
+		ArrayList<Jun_VO> arr = new ArrayList<>();
+		ArrayList<Jun_VO> arr2 = new ArrayList<>();
 	
 		CheckAll ca = new CheckAll();
 		
-			if(session.getAttribute("grade").equals("강사")) {
+		if(session.getAttribute("grade") != null) {
+			if(session.getAttribute("grade").equals("teacher")) {
 				vo.setCid((String)session.getAttribute("id"));
 				
 			}
+		}
 		
 		Object res = null;
 
@@ -160,8 +165,7 @@ public class JunController {
 			System.out.println("@@@@@@@@@@@");
 			System.out.println("@@@@@@@@@@@@@");
 			
-			ArrayList<Jun_VO> arr = new ArrayList<>();
-			ArrayList<Jun_VO> arr2 = new ArrayList<>();
+			
 			
 			arr.add(vo);
 			arr2 = (ArrayList)dao.plist(vo);
@@ -189,10 +193,11 @@ public class JunController {
 			
 		case "course_Detail":	
 			System.out.println("과목 정보:" +vo);
-			res = dao.course_detail(vo);
+			arr = (ArrayList)dao.course_detail(vo);
 			
-			System.out.println(vo.getCstart());
-			System.out.println(vo.getCfinish());
+			System.out.println(ca.cinfo(arr));
+			
+			res = ca.cinfo(arr);
 			
 			break;
 			

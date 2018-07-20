@@ -8,10 +8,16 @@ import org.apache.ibatis.type.Alias;
 public class Jun_VO {
 	 
 	 Date cstart, cfinish;
-	 String ctitle,cday,cname, ccontent,ctime,ccode, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
+	 String ctitle,cday,cname, ccontent,ctime,ccode,cinfo, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
 	 Integer [] timearr;
 	 
-	 public Integer[] getTimearr() {
+	 public String getCinfo() {
+		return cinfo;
+	}
+	public void setCinfo(String cinfo) {
+		this.cinfo = cinfo;
+	}
+	public Integer[] getTimearr() {
 		return timearr;
 	}
 	public void setTimearr(Integer[] timearr) {
@@ -189,7 +195,7 @@ public class Jun_VO {
 				+ schCol + ", col=" + col + ", aid=" + aid + ", apw=" + apw + ", aname=" + aname + ", aemail=" + aemail
 				+ ", aphone=" + aphone + ", abirth=" + abirth + ", ainfo=" + ainfo + ", aupfile=" + aupfile
 				+ ", agrade=" + agrade + ", rid=" + rid + ", rtitle=" + rtitle + ", rname=" + rname + ", rpay=" + rpay
-				+ ", rcode=" + rcode + ", cday=" + cday + ", ctotal=" + ctotal + "]";
+				+ ", rcode=" + rcode + ", cday=" + cday + ", ctotal=" + ctotal+ ", cinfo=" + cinfo + "]";
 	}
 	
 	

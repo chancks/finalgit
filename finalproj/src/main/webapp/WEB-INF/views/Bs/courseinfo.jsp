@@ -136,7 +136,7 @@
 											<tr class="even" style="text-align: center">
 										</c:otherwise>
 									</c:choose>
-									<td class="col-xs-6">${cc.ctitle }</td>
+									<td class="col-xs-6"><a href="/mvc/jun_List/course_Detail?ccode=${cc.ccode }">${cc.ctitle }</a></td>
 									<td class="col-xs-1">${cc.cname }</td>
 									<td class="col-xs-2"><fmt:formatDate value="${cc.cstart }"
 											pattern="yyyy-MM-dd" /></td>

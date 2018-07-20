@@ -64,10 +64,8 @@ width: 700px;
 		</tr>
 	
 		<tr>
-			<td style="background-color:#D8D8D8 ">요일</td>
-			<td>${data.cday}</td>
-			<td style="background-color:#D8D8D8 ">날짜</td>
-			<td>${data.ctime}</td>
+			<td style="background-color:#D8D8D8 ">시간</td>
+			<td>${data.cinfo}</td>
 			<td style="background-color:#D8D8D8 ">총원</td>
 			<td>${data.ctotal}</td>
 		</tr>
@@ -89,7 +87,16 @@ width: 700px;
 	
 </div>
 		<hr size=1px color="silver">
-<div><a href="course_List?mypage=true">뒤로 가기</a></div>
+<div>
+<c:choose>
+	<c:when test="${grade eq 'admin' or grade eq 'daminist' }">
+		<a href="course_List?mypage=true">뒤로 가기</a>
+	</c:when>
+	<c:otherwise>
+		<a href="/mvc/Bs/courseinfo">뒤로 가기</a>
+	</c:otherwise>
+</c:choose>
+</div>
 <div><a href="course_Modify?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 수정</a></div>
 <div><a href="course_Delete?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목 삭제</a></div>
 

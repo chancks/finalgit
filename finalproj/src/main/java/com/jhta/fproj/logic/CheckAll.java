@@ -48,6 +48,7 @@ public class CheckAll {
 		return chk;
 	}
 	
+	//ctime 정규식 체크
 	public boolean chkstr(ArrayList<Jun_VO> arr) {
 		
 		boolean chk = false;
@@ -59,5 +60,31 @@ public class CheckAll {
 		}
 		
 		return chk;
+	}
+	
+	//과목 상세 생성
+	public Jun_VO cinfo(ArrayList<Jun_VO> arr){
+		ArrayList<Jun_VO> arr2 = new ArrayList<Jun_VO>();
+		Jun_VO vo = new Jun_VO();
+		String str = null;
+		System.out.println("arr.size():"+arr.size());
+		if(arr.size()>1) {
+			for(int i = 1; i < arr.size(); i++) {
+				if(arr.get(i).getCcode().equals(arr.get(i-1).getCcode())) {
+					str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
+							+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+					
+				}
+				vo = arr.get(i);
+				System.out.println(i+","+str);
+				vo.setCinfo(str);
+				
+			}
+			
+			System.out.println(vo);
+			
+		}
+		
+		return vo;
 	}
 }

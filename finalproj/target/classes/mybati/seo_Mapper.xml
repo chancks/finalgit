@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="course_detail" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from course where ccode = #{ccode} and cday = #{cday}
+		select * from course where ccode = #{ccode}
 	</select>
 	
 	<select id="course_modify" resultType="jun_Vo"  parameterType="jun_Vo">
