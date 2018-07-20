@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="bsm">
 
-	<!-- 관리자 정보 -->
+	<!-- 내 정보 -->
 	<select id="myInfo" resultType="uservo" parameterType="java.lang.String" >
 		select * from astudent where aid = #{str}
 	</select>
@@ -109,7 +109,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 개설 과목 -->
 	<select id="bsCourseList" resultType="bsVo">
 		select DISTINCT ccode,ctitle,ccontent,cname,ctotal,cstart,cfinish from course
-			where <![CDATA[ cstart > sysdate or sysdate < cfinish	]]>
+			where <![CDATA[  sysdate < cfinish	]]>
             order by ctitle
 	</select>
 	
