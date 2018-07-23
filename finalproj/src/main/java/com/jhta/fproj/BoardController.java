@@ -74,13 +74,8 @@ public class BoardController {
 				break;
 			case "qnaInsertReg":
                 res = dao.qnaInsert(vo);
-				if(dao.qnaPwChk(vo)!=null) {
-	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
-	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
-	                model.addAttribute("url", "qnaInsertForm");
-	            }
 				break;
 			case "qnaReply":
 				res = dao.qnaReply(vo);
@@ -88,7 +83,7 @@ public class BoardController {
 				break;	
 			case "qnaReplyReg":
 				res = dao.qnaReplyReg(vo);
-				model.addAttribute("msg", "´äº¯ÀÌ ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
+				model.addAttribute("msg", "ì‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 				model.addAttribute("url", "qnaList");
 				break;
 			case "qnaModify":
@@ -100,10 +95,10 @@ public class BoardController {
 				model.addAttribute("List","qnaModifyReg.jsp");
 				if(dao.qnaPwChk(vo)!=null) {
 	                res = dao.qnaModifyReg(vo);
-	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "qnaDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "qnaModify?id="+vo.getId());
 	            }
 	            break;
@@ -116,10 +111,10 @@ public class BoardController {
 		       if(dao.qnaPwChk(vo)!=null) {
 	            	res = dao.qnaDelete(vo);
 	                res = dao.qnaDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "qnaList");
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "qnaDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -150,13 +145,8 @@ public class BoardController {
 				break;
 			case "noticeInsertReg":
                 res = dao.noticeInsert(vo);
-				if(dao.noticePwChk(vo)!=null) {
-	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 					model.addAttribute("url","noticeDetail?id="+vo.getId());
-	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
-	                model.addAttribute("url", "noticeInsertForm");
-	            }
 				break;
 			case "noticeModify":
 				res = dao.noticeModify(vo);
@@ -166,10 +156,10 @@ public class BoardController {
 				res = dao.noticePwChk(vo);
 				if(dao.noticePwChk(vo)!=null) {
 	                res = dao.noticeModifyReg(vo);
-	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "noticeDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "noticeModify?id="+vo.getId());
 	            }
 	            break;
@@ -182,10 +172,10 @@ public class BoardController {
 	            if(dao.noticePwChk(vo)!=null) {
 	            	res = dao.noticeDelete(vo);
 	                res = dao.noticeDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "noticeList");
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "noticeDelete?id="+vo.getId());
 	            }        
 	            break;
@@ -218,13 +208,8 @@ public class BoardController {
 				break;
 			case "reviewInsertReg":
 				res = dao.reviewInsert(vo);
-				if(dao.reviewPwChk(vo)!=null) {
-	                model.addAttribute("msg", "ÀÛ¼ºµÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‘ì„±ë˜ì—ˆìŠµë‹ˆë‹¤.");
 					model.addAttribute("url", "reviewDetail?id="+vo.getId());
-	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
-	                model.addAttribute("url", "reviewInsertForm");
-	            }
 				break;
 			case "reviewModify":
 				res = dao.reviewModify(vo);
@@ -234,10 +219,10 @@ public class BoardController {
 				res = dao.reviewPwChk(vo);
 				if(dao.reviewPwChk(vo)!=null) {
 	                res = dao.reviewModifyReg(vo);
-	                model.addAttribute("msg", "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "reviewDetail?id="+vo.getId());
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "reviewModify?id="+vo.getId());
 	            }
 	            break;
@@ -250,10 +235,10 @@ public class BoardController {
 	            if(dao.reviewPwChk(vo)!=null) {
 	            	res = dao.reviewDelete(vo);
 	                res = dao.reviewDeleteReg((BoardVO) res);
-	                model.addAttribute("msg", "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+	                model.addAttribute("msg", "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	                model.addAttribute("url", "reviewList");
 	            }else {
-	            	model.addAttribute("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
+	            	model.addAttribute("msg", "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
 	                model.addAttribute("url", "reviewDelete?id="+vo.getId());
 	            }        
 	            break;

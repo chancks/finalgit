@@ -9,11 +9,44 @@
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
 
+<script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+	function input() {
+		var frm = document.insert;
+		var title = frm.title;
+		var pw = frm.pw;
+		var content = frm.content;
+		
+		if(title.value == '' || title.value == null){
+			alert("제목을 작성하세요");
+			title.value='';
+			title.focus();
+			return ;
+		}
+		if(pw.value == '' || pw.value == null){
+			alert("비밀번호를 작성하세요");
+			pw.value='';
+			pw.focus();
+			return;
+		}
+		if(content.value == '' || content.value == null){
+			alert("제목을 작성하세요");
+			content.value='';
+			content.focus();
+			return;
+		}
+		
+		frm.submit;
+	}
+</script>
+
 <title>Insert title here</title>
 </head>
 <body>
 <h2>후기</h2>
-<form action="reviewInsertReg" method="post" enctype="multipart/form-data">
+<form action="reviewInsertReg" method="post" enctype="multipart/form-data" name="insert">
 	<table class="table" align="center">
 		<tr>
 			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
@@ -40,7 +73,7 @@
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
-				<input class="btn btn-default" type="submit" value="작성" />
+				<input class="btn btn-default" type="button" value="작성" onclick="input()"/>
 				<a href="reviewList">뒤로</a>
 			</th>
 		</tr>
