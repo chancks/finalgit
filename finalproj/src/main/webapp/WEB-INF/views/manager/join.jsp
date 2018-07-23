@@ -101,12 +101,21 @@
 	<legend> ${param.jgrade eq null ? user.agrade:param.jgrade} 등록</legend>
 </div>
 
+<c:choose>
+	<c:when test="${!idchk&&idchk!=null&&idchk!='' }">
+		<script>
+			alert('아이디 중복');
+		</script>
+	</c:when>
+	
+	<c:when test="${idchk&&idchk!=null&&idchk!='' }">
+		<script>
+		alert('아이디 사용가능');
+		</script>
+	</c:when>
 
-<c:if test="${!idchk&&idchk!=null&&idchk!='' }">
-	<script>
-		alert('아이디 중복');
-	</script>
-</c:if>
+</c:choose>
+
 
 <form action="joinreg" method="post" name="frm">
 	<table class="table">

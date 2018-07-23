@@ -179,6 +179,7 @@ function che() { //인증번호 비교
                  
                  		<div class="controls" style="margin-top: 10px;">
                  
+                 			<input type="button" value="돌아가기" class="btn btn-success" onclick="location='/mvc/manager/loginf'">
 	                 		<input type="submit" value="찾기" class="btn btn-success">
 	                   		<form:errors path="mngUserVO.ainfo"/>
 	                  	</div>

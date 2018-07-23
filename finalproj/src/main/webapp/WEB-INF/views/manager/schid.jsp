@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0 , user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -145,7 +146,7 @@ function che() { //인증번호 비교
 					<div class="control-group">
 
 						<div class="controls" style="margin-top: 10px;">
-
+							<input type="button" value="돌아가기" class="btn btn-success" onclick="location='/mvc/manager/loginf'">
 							<input type="submit" value="찾기" class="btn btn-success">
 							<form:errors path="mngUserVO.ainfo" />
 						</div>
