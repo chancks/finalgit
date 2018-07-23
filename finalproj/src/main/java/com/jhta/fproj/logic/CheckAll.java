@@ -83,12 +83,16 @@ public class CheckAll {
 			
 			System.out.println(vo);
 			
+		} else {
+			
+			vo = arr.get(0);
+			vo.setCinfo(arr.get(0).getCday()+arr.get(0).getCtime());
 		}
 		
 		return vo;
 	}
 	
-	//과목 상세 생성
+	//과목 리스트 생성
 	public ArrayList<BsVO> cinfolist(ArrayList<BsVO> arr){
 		ArrayList<BsVO> arr2 = new ArrayList<BsVO>();
 		BsVO vo = new BsVO();
