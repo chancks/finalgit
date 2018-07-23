@@ -119,6 +119,9 @@ table{
 </head>
 <body>
 
+<div id="legend">
+	<legend>학생 강의 목록</legend>
+</div>
 	
 	<div class="container" style="width: 100%">
 			<div class="row">

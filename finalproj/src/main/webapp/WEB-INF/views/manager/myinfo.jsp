@@ -1,15 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<% Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	String strdate = sdf.format(date);
+%>       
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 , user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap-theme.min.css">
+
+
+
+<link
+	href="//netdna.bootstrapcdn.com/twitter-bootstrap/3.3.0/css/bootstrap-combined.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-<h1>내정보</h1>
+<script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"
+	src="../resources/bootstrap/js/bootstrap.min.js"></script>
+
+<div id="legend">
+	<legend> 개인 정보</legend>
+</div>
 <table border="" class="table">
 	<tr>
-		<td style="background-color:#D8D8D8 ">등급</td>
+		<td style="background-color:#D8D8D8;  width:150px">등급</td>
 		<td width="150">${user.agrade }</td>
 		
 		<c:choose>

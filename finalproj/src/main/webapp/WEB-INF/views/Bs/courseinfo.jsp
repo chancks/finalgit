@@ -1,31 +1,32 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 , 
+user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
 <link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
+	href="../resources/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
+	href="../resources/bootstrap/css/bootstrap-theme.min.css">
 
 <script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
 <script type="text/javascript"
-	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-<style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
-}
+	src="../resources/bootstrap/js/bootstrap.min.js"></script>
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
-}
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
+
 
 .points_table thead {
 	width: 100%;
@@ -106,7 +107,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id="wrap">
+	               <div id="legend">
+	                 <legend>과목 소개</legend>
+	               </div>
+
+
+	<div id="wrap" style=" width:100%; height: 400px;">
 
 		<div class="container" style="width: 100%">
 			<div class="row">

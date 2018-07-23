@@ -1,7 +1,29 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 , 
+user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../resources/bootstrap/css/bootstrap-theme.min.css">
+
+<script type="text/javascript" src="../resources/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"
+	src="../resources/bootstrap/js/bootstrap.min.js"></script>
+
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <html>
 <head>
 <style type="text/css">
@@ -105,6 +127,10 @@ table{
 	</div>
 </div>
  -->
+ 
+   <div id="legend">
+	                 <legend>고객 센터</legend>
+	                 </div>
 <div class="container" style=" height:35px; width:100% ;" >
 	<div class="row">
 		<div class="span12">

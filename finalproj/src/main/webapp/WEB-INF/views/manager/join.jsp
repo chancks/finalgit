@@ -96,7 +96,11 @@
 
 </script>
 
-<h1>${param.jgrade eq null ? user.agrade:param.jgrade} 등록</h1>
+
+<div id="legend">
+	<legend> ${param.jgrade eq null ? user.agrade:param.jgrade} 등록</legend>
+</div>
+
 
 <c:if test="${!idchk&&idchk!=null&&idchk!='' }">
 	<script>
@@ -107,8 +111,8 @@
 <form action="joinreg" method="post" name="frm">
 	<table class="table">
 		<tr>
-			<td style="background-color:#D8D8D8 ">id</td>
-			<td>
+			<td style="background-color:#D8D8D8;width:100px">id</td>
+			<td colspan="3">
 			<input type="text" name="aid" value="${user.aid }" id="id">
 			
 			<c:choose>
@@ -126,39 +130,41 @@
 			
 		</tr>
 		<tr>
-			<td style="background-color:#D8D8D8 ">패스워드</td>
+			<td style="background-color:#D8D8D8;width:100px ">패스워드</td>
 			<td><input type="password" name="apw" id="pw"></td>
+			
+				<td style="background-color:#D8D8D8;width:150px ">패스워드 확인</td>
+			<td><input type="password" name="apw2" id="pw2"></td>
 			
 		</tr>
 		<tr>
-			<td style="background-color:#D8D8D8 ">패스워드 확인</td>
-			<td><input type="password" name="apw2" id="pw2"></td>
+
 		</tr>
 		<tr>
-			<td style="background-color:#D8D8D8 ">이름</td>
+			<td style="background-color:#D8D8D8;width:100px ">이름</td>
 			<td><input type="text" name="aname" value="${user.aname }"></td>
-		</tr>
-		<tr>
-			<td style="background-color:#D8D8D8 ">이메일</td>
+			
+			<td style="background-color:#D8D8D8;">이메일</td>
 			<td><input type="text" name="aemail" value="${user.aemail }"></td>
 		</tr>
+
 		<tr>
-			<td style="background-color:#D8D8D8 ">핸드폰</td>
+			<td style="background-color:#D8D8D8;width:100px ">핸드폰</td>
 			<td>
-			<input type="text" name="phone" value="010" maxlength="3" size="3">
+			<input type="text" name="phone" value="010" maxlength="3" size="3" style="width:56px;">
 			-
-			<input type="text" name="phone" maxlength="4" size="4" value="${user.phone[1] }">
+			<input type="text" name="phone" maxlength="4" size="4" value="${user.phone[1] }" style="width:56px;">
 			-
-			<input type="text" name="phone" maxlength="4" size="4" value="${user.phone[2] }">
+			<input type="text" name="phone" maxlength="4" size="4" value="${user.phone[2] }" style="width:56px;">
 			</td>
+			
+			<td style="background-color:#D8D8D8; ">생일</td>
+			<td><input type="date" name="abirth" value=${user.abirth } max=<%=strdate %> style="width:200px; height:26px" ></td>
 		</tr>
+
 		<tr>
-			<td style="background-color:#D8D8D8 ">생일</td>
-			<td><input type="date" name="abirth" value=${user.abirth } max=<%=strdate %>></td>
-		</tr>
-		<tr>
-			<td style="background-color:#D8D8D8 ">자기소개</td>
-			<td><textarea  name="ainfo" style="resize: none;">${user.ainfo }</textarea></td>
+			<td style="background-color:#D8D8D8;width:100px ">자기소개</td>
+			<td colspan="3"><textarea  name="ainfo" style="resize: none;" rows="10" cols="80px">${user.ainfo }</textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2">

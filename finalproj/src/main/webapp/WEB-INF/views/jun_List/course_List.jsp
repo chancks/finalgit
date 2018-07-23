@@ -79,6 +79,10 @@ table{
 <body>
 
 
+<div id="legend">
+	<legend>과목 리스트</legend>
+</div>
+
 <div class="container" style=" height:35px; width:100% ;" >
 	<div class="row">
 		<div class="span12">

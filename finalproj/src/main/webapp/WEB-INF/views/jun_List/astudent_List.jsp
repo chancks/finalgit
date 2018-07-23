@@ -115,7 +115,12 @@ table{
 <title>Insert title here</title>
 </head>
 <body>
-	<div style="border: 0.5px silver solid; height: 100%;">
+
+
+<div id="legend">
+	<legend>학생 리스트</legend>
+</div>
+	<div style="border: 0.5px silver solid;">
 
 		<div class="container" style="width: 100%">
 			<div class="row">

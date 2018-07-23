@@ -50,7 +50,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		margin-left: 10px;
 		/* background-color: fuchsia; */
 		float: left;
-		background-image: url('${url }');
+		background-image: url('https://blogfiles.pstatic.net/MjAxODA3MjBfMjcy/MDAxNTMyMDQ1MjcwMzcx.gmBZfnmfRQRy51Awui_CDEe5pTFpZdC2nn8MJ0CuANEg.CkW2MkV5n9hYFco3fs-Uvar3Z1JLKu8r-2U9yDT82kwg.PNG.dkcktksvkfkd/ll.png');
 		background-size: 100%;
 		cursor: pointer;
 	}
@@ -66,7 +66,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		font-size: 10px;
 	}
 	#top_menu {
-		width: 360px;
+		width: 380px;
 		height: 30px;
 		/* 	border: blue 1px solid; */
 		/* 	position: relative; */
@@ -74,6 +74,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 	}
 	#main_rap {
 		width: 360px;
+
 		/* background-color: #FFC6C6; */
 		/* border: pink 1px solid; */
 	}
@@ -154,9 +155,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		/* background-color: #fff; */
 	}
 	#bottom {
-		bottom: 0px;
 		width: 100%;
-		border-bottom: 1px inset gray;
+		border-bottom: 1px inset #ddd;
 	}
 }
 </style>
@@ -180,24 +180,24 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 							onclick="location.href='/mvc/manager/logout'" value="로그아웃">
 						<c:choose>
 							<c:when test="${grade eq 'student' }">
-								<input type="button"
+								<input type="button" id="btn"
 									onclick="location.href='/mvc/Bs/timetable?mypage=true'"
 									value="마이페이지">
 							</c:when>
 							<c:when test="${grade eq 'teacher' }">
-								<input type="button"
+								<input type="button" id="btn"
 									onclick="location.href='/mvc/jun_List/p_Course_List?mypage=true'"
-									value="마이페이지">
+									value="마이페이지"> 
 							</c:when>
 							<c:when test="${grade eq 'administ' }">
-								<input type="button"
+								<input type="button" id="btn"
 									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
 									value="마이페이지">
 							</c:when>
-							<c:otherwise>
-								<input type="button"
+							<c:otherwise> 
+								<input type="button" id="btn"
 									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
-									value="마이페이지">
+									value="마이페이지"> 
 							</c:otherwise>
 						</c:choose>
 					</c:when>
@@ -217,8 +217,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 			<nav class="navbar navbar-default navbar-static-top navbar-inverse"
 				role="navigation">
 
-				<div class="container-fluid">
-					<div class="navbar-header">
+				<div class="container-fluid" >
+					<div class="navbar-header"  >
 						<button type="button" class="navbar-toggle" data-toggle="collapse"
 							data-target="#navbar-menu">
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
@@ -245,30 +245,32 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 				</div>
 		</div>
 
-		<hr size=2px color="gray">
+		<hr size=2px color="#8C8C8C">
 		<!-- #ddd -->
 
 
-		<div id="main_rap">
+		<div id="main_rap" >
 
 
-			<div id="sub_menu">
+			<div id="sub_menu" >
 				<c:if test="${param.mypage!=null ||mypage!=null }">
 					<jsp:include page="menu/menu.jsp" />
 				</c:if>
 			</div>
 
 
-			<div id="main">
+			<div id="main" >
 				<jsp:include page="${service }/${main }.jsp" />
 			</div>
 
 		</div>
-
-		<div id="bottom" align="center">
+		
+<!-- 			<hr size=2px color=" ">
+ -->
+		<div id="bottom" align="center" ><!--  style="	background-color: yellow;" -->
 			<small> Creators 크리에이터스몰비즈니스<br> Partners 비즈니스 파트너
 				안내비즈니스 · 광고스토어 개설지역업체 등록<br> Developers 네이버 개발자센터오픈 API오픈소스네이버
-				D2네이버 랩스<br> 네이버 정책 및
+				D2네이버 <br> 네이버 정책 및
 				약관/회사소개/인재채용/제휴/제안/이용약관/개인정보처리방침청/소년보호정책/네이버 정책고객센터ⓒ NAVER Corp.
 			</small>
 		</div>

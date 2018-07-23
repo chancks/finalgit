@@ -14,17 +14,7 @@
 <script type="text/javascript"
 	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
-}
 
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
-}
 
 .points_table thead {
 	width: 100%;
@@ -106,6 +96,9 @@
 <title>회원리스트</title>
 </head>
 <body>
+<div id="legend">
+	<legend>회원 리스트</legend>
+</div>
 <div id="wrap">
 
 <div class="container" style="width: 100%">
@@ -115,10 +108,10 @@
 				<tr>
 				<th class="col-xs-2">id</th>
 				<th class="col-xs-2">이름</th>
-				<th class="col-xs-2">이메일</th>
-				<th class="col-xs-2">핸드폰</th>
-				<th class="col-xs-2">등급</th>
-				<th class="col-xs-2">삭제</th>
+				<th class="col-xs-3">이메일</th>
+				<th class="col-xs-3">핸드폰</th>
+				<th class="col-xs-1">등급</th>
+				<th class="col-xs-1">삭제</th>
 			</tr>
 		</thead>
 		<tbody class="points_table_scrollbar">
@@ -138,14 +131,14 @@
 							<a href="/mvc/manager/myinfo?aid=${mem.aid }&mypage=true">${mem.aid }</a>
 						</td>
 						<td class="col-xs-2">${mem.aname }</td>
-						<td class="col-xs-2">${mem.aemail }</td>
-						<td class="col-xs-2">${mem.aphone }</td>
-						<td class="col-xs-2">${mem.agrade }</td>
+						<td class="col-xs-3">${mem.aemail }</td>
+						<td class="col-xs-3">${mem.aphone }</td>
+						<td class="col-xs-1">${mem.agrade }</td>
 				<c:choose>
 					<c:when test="${(grade eq 'administ' && mem.agrade eq 'administ') or mem.agrade eq 'withdrawal' }">
 					</c:when>
 					<c:otherwise>
-						<td class="col-xs-2"><a href="/mvc/manager/delete?aid=${mem.aid }">삭제</a></td>
+						<td class="col-xs-1"><a href="/mvc/manager/delete?aid=${mem.aid }">삭제</a></td>
 					</c:otherwise>
 				</c:choose>
 				</tr>

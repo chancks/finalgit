@@ -8,15 +8,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
 @media screen and (min-width:600px) {
-	table {
-		
-	}
+
 }
 
 @media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
+
 }
 
 .points_table thead {
@@ -98,6 +94,11 @@
 <title>정산</title>
 </head>
 <body>
+
+
+	<div id="legend">
+	<legend>결재 내역</legend>
+</div>
 <div id="wrap">
 
 <div class="container" style="width: 100%">

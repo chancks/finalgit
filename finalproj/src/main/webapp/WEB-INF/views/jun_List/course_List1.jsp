@@ -119,7 +119,7 @@ table{
 <title>Insert title here</title>
 </head>
 <body>
-	<div style="border: 0.5px silver solid; height: 100%;">
+	<div style="border: 0.5px silver solid; ">
 		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<div style="text-align: center;">
 			<div id="search" style="display: inline-block; height: 40px">

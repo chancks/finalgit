@@ -47,6 +47,11 @@ width: 700px;
 </head>
 <body>
 
+<div id="legend">
+	<legend>과목 정보</legend>
+</div>
+
+
 <div id="table_rap">
 	<table class="table">
 		<tr>

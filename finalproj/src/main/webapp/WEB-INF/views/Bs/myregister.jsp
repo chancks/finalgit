@@ -14,17 +14,6 @@
 <script type="text/javascript"
 	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <style>
-@media screen and (min-width:600px) {
-	table {
-		
-	}
-}
-
-@media screen and (max-width:600px) {
-	table {
-		background-color: #00ff00;
-	}
-}
 
 .points_table thead {
 	width: 100%;
@@ -134,12 +123,12 @@
 			</c:forEach>
 			
 			<tr>
-				<td class="col-xs-6">
+				<td class="col-xs-10">
 				</td>			
 			
 				<td class="col-xs-2">
 					총 갯수:${data2.size() }&nbsp;&nbsp;
-					<a href="payment?cnt=${data2.size() }">결제</a>
+					<a href="payment?mypage=true&cnt=${data2.size() }">결제</a>
 				</td>
 			</tr>
 		</tbody>

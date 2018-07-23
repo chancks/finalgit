@@ -114,13 +114,16 @@ table{
 <title>Insert title here</title>
 </head>
 <body>
-<div style="border: 0.5px silver solid; height:100%; ">
+	<div id="legend">
+	<legend>강사 리스트</legend>
+</div>
+<div style="border: 0.5px silver solid; ">
 
-<div class="container">
+<div class="container" style="width: 100%">
 	<div class="row">
-		<h2>강사리스트</h2>
+
 		
-		<table class="points_table">
+		<table class="points_table" style="width: 100%">
 			<thead>
 				<tr>
 					<th class="col-xs-2">강사 이름</th>

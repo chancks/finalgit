@@ -17,6 +17,10 @@
 
 </head>
 <body>
+<div id="legend">
+	<legend>시간표</legend>
+</div>
+
 <div id="aa">
 <table border="">
 <c:forEach var="i" begin="0" end="8">

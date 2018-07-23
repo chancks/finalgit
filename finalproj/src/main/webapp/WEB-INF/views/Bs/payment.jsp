@@ -5,6 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 , user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
 <link rel="stylesheet"
 	href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -14,23 +20,48 @@
 <script type="text/javascript"
 	src="../resources/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <style>
+@media screen and (min-width:380px) {
+#rab{
+margin-left:150px ;
+}
 
+}
+
+@media screen and (max-width:380px) {
+#rab{
+
+margin-left: ;
+}
+
+}
 </style>
 <title>Insert title here</title>
 </head>
+<div id="legend">
+	<legend>결제</legend>
+</div>
+
 <body>
 	<form action="payReg" method="post" enctype="multipart/form-data">
 		<input type="hidden" value="${30*param.cnt }" name="cpprice" />
-		<div class="panel panel-info">
-            <div class="panel-body">
-           		<div class="form-group">
-                	<div class="col-md-12"><strong>Credit Card Number:</strong></div>
-                	<div class="col-md-12"><input type="text" name="cpnum" /></div>
-                	<div>결제 금액:${30*param.cnt }만원</div>
-					<div><input type="submit" value="결제" /></div>
-            	</div>
-           	</div>
-   		 </div>
+	
+	<div style="height: 400px;">
+		<div id="rab" style="width: 500px; height: 150px; border:  1px solid #ddd;">
+			
+			<div style="margin-top: 20px; margin-left:  80px;">
+				<div  style="float: left; margin-right: 10px;"><strong>Credit Card Number:</strong></div>
+				<div style="padding-left: 20px;"> <input type="text" name="cpnum" /></div>
+			</div>
+			
+			
+			<div style="margin-top: 20px; margin-left:  80px;">
+				<div style="float: left; margin-right: 180px;"> 결제 금액:${30*param.cnt }만원</div>
+				<div > <input  type="submit" value="결제" /></div>
+			</div>
+			
+		</div>
+		
+	</div>
    </form>
 </body>
 </html>

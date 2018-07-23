@@ -77,7 +77,9 @@ table{
 <title>Insert title here</title>
 </head>
 <body>
-
+<div id="legend">
+	<legend>내 강의 목록</legend>
+</div>
 
 <div class="container" style=" height:35px; width:100% ;" >
 	<div class="row">
