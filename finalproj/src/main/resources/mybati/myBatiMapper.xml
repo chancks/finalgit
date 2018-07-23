@@ -80,7 +80,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 강사 시간표 -->
 	<select id="bsPList" resultType="bsVo">
-		select * from course where cid = #{rid}
+		select * from course where cid = #{rid} and  <![CDATA[ cfinish>sysdate	]]>
 	</select>
 	
 	<!-- 내 수강신청 목록 -->
