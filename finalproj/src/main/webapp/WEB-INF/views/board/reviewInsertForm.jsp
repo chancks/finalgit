@@ -38,7 +38,7 @@
 			return;
 		}
 		
-		frm.submit;
+		frm.submit();
 	}
 </script>
 

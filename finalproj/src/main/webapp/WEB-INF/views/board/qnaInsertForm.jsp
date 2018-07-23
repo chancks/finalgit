@@ -14,10 +14,12 @@
 <script type="text/javascript">
 
 	function input() {
-		var frm = document.insert;
+		
+	 	var frm = document.insert;
 		var title = frm.title;
 		var pw = frm.pw;
 		var content = frm.content;
+		
 		
 		if(title.value == '' || title.value == null){
 			alert("제목을 작성하세요");
@@ -38,7 +40,7 @@
 			return;
 		}
 		
-		frm.submit;
+		frm.submit(); 
 		
 	}
 </script>
