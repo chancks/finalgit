@@ -57,8 +57,10 @@ public class Joinlogic {
 	public String fileUP(MultipartFile up,HttpServletRequest request) {
         
         try {
-            String filePath = 
-            		"C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";
+            String filePath = request.getRealPath("resources/")+"picture/";
+            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            System.out.println(filePath);
+            		/*"C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";*/
             
        /*     filePath = request.getRealPath("resources/fff")+"/"+up.getOriginalFilename();
             
@@ -97,7 +99,8 @@ public class Joinlogic {
 		System.out.println(vo.getAupfile()+"askdljaskldjaskldjalk");
 		if(!(vo.getAupfile()==null)) {
 			String path = request.getRealPath("up")+"\\";
-			path = "C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";
+			path = request.getRealPath("resources/")+"picture/";
+					/*"C:\\Users\\user\\git\\finalgit\\finalproj\\src\\main\\webapp\\resources\\picture\\";*/
 			System.out.println("sdkjaflksdjflksajfklasdjfklasjdklfjlk");
 			new File(path+vo.getAupfile()).delete();
 		}

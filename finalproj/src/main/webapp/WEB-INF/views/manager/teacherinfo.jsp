@@ -48,7 +48,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 								사진없음
 							</c:when>
 							<c:otherwise>
-								<img src="../resources/picture/${dd.aupfile }" width="250px" height="170px">
+								<img src="${pageContext.request.contextPath}/resources/picture/${dd.aupfile }" width="250px" height="170px">
 							</c:otherwise>
 						</c:choose>
 						

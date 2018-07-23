@@ -23,7 +23,7 @@
 				<c:when test="${user.aupfile!=null }">
 					<td colspan="2" rowspan="3">
 						<div id="picture">
-						<img src="../resources/picture/${user.aupfile }" width="150" height="200">
+						<img src="${pageContext.request.contextPath}/resources/picture/${user.aupfile }" width="150" height="200">
 						</div>
 					
 					<br>

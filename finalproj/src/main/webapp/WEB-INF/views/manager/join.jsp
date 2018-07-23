@@ -44,7 +44,7 @@
 		var aphone = phone[0].value+phone[1].value+phone[2].value;
 		var birth = frm.abirth;
 		
-/* 		if(id.value!=id2){
+		if(id.value!=id2){
 			alert("아이디를 확인해주세요");
 			id.value = id2;
 			id.focus();
@@ -89,7 +89,7 @@
 		if(birth.value==''){
 			alert('생년월일을 입력해주세요');
 			return;
-		} */
+		} 
 		
 		frm.submit();
 	}
