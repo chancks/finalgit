@@ -76,9 +76,9 @@ table{
 				</select></td>
 			
 			<td style="background-color:#D8D8D8;">강사 id</td>
-			<td>	<select name="schCol" style="width:120px; height:26px">
+			<td>	<select name="col" style="width:120px; height:21px">
 					<c:forEach items="${data }" var="row" varStatus="no">
-						<option value="${row.aname}">${row.aname}</option>
+						<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
 					</c:forEach>
 				</select></td>
 			
