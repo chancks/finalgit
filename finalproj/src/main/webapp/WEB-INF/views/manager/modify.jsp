@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@taglib prefix="ct" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -77,7 +78,9 @@
 		<tr>
 			<td style="background-color:#D8D8D8 ">정보</td>
 			<td colspan="2">
-			<textarea  name="ainfo" style="resize: none;">${user.ainfo }</textarea>
+			<textarea  name="ainfo" style="resize: none; " rows="5">${user.ainfo }
+			</textarea>
+			
 			</td>
 		</tr>
 		<tr>

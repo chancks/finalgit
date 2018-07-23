@@ -136,9 +136,12 @@ public class MngController {
 			
 			
 			user.setAid((String)session.getAttribute("id"));
-			
+			MngUserVO modivo = (MngUserVO) dao.chkid(user);
+	
+			modivo.setAinfo(modivo.getAinfo().trim().replaceAll("<br>", "\n"));
+
 			model.addAttribute("mypage", true);
-			model.addAttribute("user",dao.chkid(user));
+			model.addAttribute("user",modivo);
 			
 			System.out.println(model.toString());
 			

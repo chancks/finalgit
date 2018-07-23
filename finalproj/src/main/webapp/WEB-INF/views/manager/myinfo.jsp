@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@taglib prefix="ct" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <% Date date = new Date();
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -79,7 +80,9 @@
 	</tr>
 	<tr>
 		<td style="background-color:#D8D8D8 ">정보</td>
-		<td colspan="2">${user.ainfo }</td>
+		<td colspan="2">
+		<ct:conBr>${user.ainfo }</ct:conBr> 
+		</td>
 	</tr>
 	<tr>
 		<td colspan="3">

@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="ct" tagdir="/WEB-INF/tags" %>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0 , 
 user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -53,7 +54,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 						
 					</div>
 					<div style="width: 70%; height:70%;float : right; position: relative; vertical-align:middle; padding:4px; border: 1px solid #ddd;">
-						${dd.ainfo }
+						<ct:conBr>${dd.ainfo }</ct:conBr> 
 					</div>
 				</div>
 			</center>
