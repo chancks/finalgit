@@ -27,9 +27,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 
 
 
-               <div id="legend">
-	                 <legend>강사 소개</legend>
-	               </div>
+<div id="legend">
+   <legend>강사 소개</legend>
+</div>
 
 
 <div style="width: 100%; height: 100%; overflow: scroll; ">
@@ -53,7 +53,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 						</c:choose>
 						
 					</div>
-					<div style="width: 70%; height:70%;float : right; position: relative; vertical-align:middle; padding:4px; border: 1px solid #ddd;">
+					<div style="width: 70%; height:70%;float : right; position: relative; overflow:scroll; vertical-align:middle; padding:4px; border: 1px solid #ddd;">
 						<ct:conBr>${dd.ainfo }</ct:conBr> 
 					</div>
 				</div>

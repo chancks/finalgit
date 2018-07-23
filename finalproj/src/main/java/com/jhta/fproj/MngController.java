@@ -61,7 +61,9 @@ public class MngController {
 				model.addAttribute("mypage", true);
 			}
 			
+			System.out.println("여기까지 옴?");
 			main="join";
+			
 			/*res = "manager/join";*/
 			
 			/*"redirect:/manager/join";*/

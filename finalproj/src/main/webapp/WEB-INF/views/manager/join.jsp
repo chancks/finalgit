@@ -96,7 +96,6 @@
 
 </script>
 
-
 <div id="legend">
 	<legend> ${param.jgrade eq null ? user.agrade:param.jgrade} 등록</legend>
 </div>
@@ -121,9 +120,8 @@
 	<table class="table">
 		<tr>
 			<td style="background-color:#D8D8D8;width:100px">id</td>
-			<td colspan="2">
+			<td colspan="3">
 			<input type="text" name="aid" value="${user.aid }" id="id">
-			
 			<c:choose>
 				<c:when test="${param.jgrade==null }">
 					<input type="hidden" name="agrade" value="${user.agrade }">
@@ -136,7 +134,7 @@
 			
 			<input type="button" onclick="idchk()" value="중복체크">
 			</td>
-			
+		
 		</tr>
 		<tr>
 			<td style="background-color:#D8D8D8;width:100px ">패스워드</td>
