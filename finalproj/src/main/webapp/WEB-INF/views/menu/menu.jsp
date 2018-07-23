@@ -143,7 +143,7 @@ body {
 							<!-- 관리자,행정 -->
 							<c:if test="${id eq 'admin' }">
 								<li><a class="z"
-									href="/mvc/manager/join?jgrade=행정&mypage=true"
+									href="/mvc/manager/join?jgrade=administ&mypage=true"
 									><i class="fa fa-table fa-fw"></i><div id="ff">행정직
 										등록</div></a></li>
 							</c:if>
@@ -158,7 +158,7 @@ body {
 								href="/mvc/jun_List/course_register?mypage=true"
 								><i class="fa fa-list-alt fa-fw"></i><div id="ff">과목 등록</div></a></li>
 							<li><a class="z"
-								href="/mvc/manager/join?jgrade=강사&mypage=true"
+								href="/mvc/manager/join?jgrade=teacher&mypage=true"
 								><i class="fa fa-file-o fa-fw"></i><div id="ff">강사 등록</div></a></li>
 							<li><a class="z"
 								href="/mvc/jun_List/course_List?mypage=true"

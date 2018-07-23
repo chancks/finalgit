@@ -74,6 +74,11 @@ public class MngController {
 			String msg = user.getAname()+"님 회원가입이 완료되었습니다."; 
 			String url = "../";
 			
+			if(!user.getAgrade().equals("student")) {
+				msg=user.getAname()+"님 등록 완료.";
+			}
+			System.out.println();
+			
 			if(!jl.joinreg(user)) {
 				
 				System.out.println(user);
@@ -136,10 +141,12 @@ public class MngController {
 			
 			
 			user.setAid((String)session.getAttribute("id"));
+			
 			MngUserVO modivo = (MngUserVO) dao.chkid(user);
 	
-			modivo.setAinfo(modivo.getAinfo().trim().replaceAll("<br>", "\n"));
-
+			if(modivo.getAinfo()!=null){
+				modivo.setAinfo(modivo.getAinfo().trim().replaceAll("<br>", "\n"));
+			}
 			model.addAttribute("mypage", true);
 			model.addAttribute("user",modivo);
 			

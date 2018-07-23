@@ -78,8 +78,7 @@
 		<tr>
 			<td style="background-color:#D8D8D8 ">정보</td>
 			<td colspan="2">
-			<textarea  name="ainfo" style="resize: none; " rows="5">${user.ainfo }
-			</textarea>
+			<textarea  name="ainfo" style="resize: none; " rows="5">${user.ainfo }</textarea>
 			
 			</td>
 		</tr>

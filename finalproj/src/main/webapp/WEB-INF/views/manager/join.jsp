@@ -121,7 +121,7 @@
 	<table class="table">
 		<tr>
 			<td style="background-color:#D8D8D8;width:100px">id</td>
-			<td colspan="3">
+			<td colspan="2">
 			<input type="text" name="aid" value="${user.aid }" id="id">
 			
 			<c:choose>
