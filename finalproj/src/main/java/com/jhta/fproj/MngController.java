@@ -61,7 +61,6 @@ public class MngController {
 				model.addAttribute("mypage", true);
 			}
 			
-			System.out.println("여기까지 옴?");
 			main="join";
 			
 			/*res = "manager/join";*/
@@ -99,7 +98,7 @@ public class MngController {
 		case "login" :
 
 			msg = "로그인 실패";
-			
+			url = "/mvc/manager/loginf";
 			if(dao.login(user)!=null) {
 				System.out.println("로그인");
 				
@@ -109,10 +108,11 @@ public class MngController {
 				session.setAttribute("grade", user.getAgrade());
 				
 				msg = user.getAname()+"님 반갑습니다.";
+				url = "../";
 			}
 			
 			model.addAttribute("msg", msg);
-			model.addAttribute("url", "../");
+			model.addAttribute("url", url);
 			
 			return "manager/alert";
 			
