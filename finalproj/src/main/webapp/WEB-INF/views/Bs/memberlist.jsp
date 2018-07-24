@@ -103,7 +103,7 @@
 
 <div class="container" style="width: 100%">
 	<div class="row">
-		<table class="points_table">
+		<table class="points_table table-hover" style="width:100%">
 			<thead>
 				<tr>
 				<th class="col-xs-2">id</th>

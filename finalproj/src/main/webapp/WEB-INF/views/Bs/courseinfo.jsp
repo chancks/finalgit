@@ -122,7 +122,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 
 					</c:when>
 					<c:otherwise>
-						<table class="points_table">
+						<table class="points_table table-hover" style="width:100%">
 							<thead>
 								<tr>
 									<th class="col-xs-6">과목명</th>

@@ -110,7 +110,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 
 		<div class="container" style="width: 100%">
 			<div class="row">
-				<table class="points_table" style="width: 100%">
+				<table class="points_table table-hover" style="width: 100%">
 					<thead>
 						<tr>
 							<th class="col-xs-3">과목코드</th>

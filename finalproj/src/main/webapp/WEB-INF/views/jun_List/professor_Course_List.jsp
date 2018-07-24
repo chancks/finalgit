@@ -126,7 +126,7 @@ table{
 			<div class="row">
 				<h2>강의 리스트</h2>
 
-				<table class="points_table" style="width: 100%;">
+				<table class="points_table table-hover" style="width: 100%;">
 					<thead>
 						<tr>
 							<th class="col-xs-3">과정 명</th>
