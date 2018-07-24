@@ -140,6 +140,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="plist" resultType="jun_Vo"  parameterType="jun_Vo">
 		select * from course where cid = #{col} and <![CDATA[ cfinish>sysdate ]]>
 	</select>
+	
+	
+	<select id="clist" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from course where ccode = #{ccode} and <![CDATA[ cfinish>sysdate ]]>
+	</select>
+	
+
 
 
 </mapper>

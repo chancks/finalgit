@@ -31,7 +31,7 @@ public class Jun_DAO {
 	public Object course_detail(Jun_VO vo) {
 
 		System.out.println("DAO course_detail 들어옴:  "+vo);
-
+		/*vo.getCcontent().replaceAll("\n", "<br>");*/
 		return sessionTemplate.selectList("seo_mm.course_detail", vo);
 		
 	}
@@ -39,14 +39,14 @@ public class Jun_DAO {
 	public Object course_modify(Jun_VO vo) {
 		
 		System.out.println("DAO course_modify 들어옴:  "+vo);
-
+		/*vo.getCcontent().replaceAll("<br>", "\n");*/
 		return sessionTemplate.selectOne("seo_mm.course_modify", vo);
 	}
 	
 	public Object course_modify1(Jun_VO vo) {
 		
 		System.out.println("DAO course_modify1 들어옴:  "+vo);
-
+		/*vo.getCcontent().replaceAll("<br>", "\n");*/
 		return sessionTemplate.selectList("seo_mm.course_modify1", vo);
 	}
 	
@@ -142,6 +142,16 @@ public class Jun_DAO {
 		return sessionTemplate.selectList("seo_mm.plist",vo);
 	
 	}
+	
+	
+	public Object clist(Jun_VO vo) {
+		
+		System.out.println("DAO clist 들어옴:  "+vo);
+		
+		return sessionTemplate.selectList("seo_mm.clist",vo);
+	
+	}
+	
 
 
 	public Object p_astudent_list(Jun_VO vo) {

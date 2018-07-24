@@ -140,9 +140,9 @@ table{
 		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
 
-		<div class="container" style="width: 100%">
+		<div class="container" >
 			<div class="row">
-				<table class="points_table">
+				<table class="points_table" style="width: 100%">
 					<thead>
 						<tr>
 

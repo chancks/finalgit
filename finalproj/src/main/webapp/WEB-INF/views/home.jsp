@@ -155,7 +155,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		/* background-color: #fff; */
 	}
 	#bottom {
-		width: 100%;
+		width: 1024;
 		border-bottom: 1px inset #ddd;
 	}
 }

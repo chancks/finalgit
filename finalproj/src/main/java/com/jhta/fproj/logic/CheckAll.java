@@ -4,11 +4,17 @@ import java.util.ArrayList;
 
 import javax.annotation.Resource;
 
+import org.mybatis.spring.SqlSessionTemplate;
+
 import com.jhta.fproj.model.BsDAO;
 import com.jhta.fproj.model.BsVO;
 import com.jhta.fproj.model.Jun_VO;
 
 public class CheckAll {
+	
+	
+	@Resource
+	SqlSessionTemplate sessionTemplate;
 	
 	//학생시간표체크
 	public boolean chktime(ArrayList<BsVO> arr,ArrayList<BsVO> arr2) {//arr-선택한거 arr2-전체 리스트
@@ -83,16 +89,16 @@ public class CheckAll {
 			
 			System.out.println(vo);
 			
-		} else {
-			
-			vo = arr.get(0);
-			vo.setCinfo(arr.get(0).getCday()+arr.get(0).getCtime());
-		}
+		}else {
+            
+            vo = arr.get(0);
+            vo.setCinfo(arr.get(0).getCday()+arr.get(0).getCtime());
+        }
 		
 		return vo;
 	}
 	
-	//과목 리스트 생성
+	//과목 상세 생성
 	public ArrayList<BsVO> cinfolist(ArrayList<BsVO> arr){
 		ArrayList<BsVO> arr2 = new ArrayList<BsVO>();
 		BsVO vo = new BsVO();
@@ -151,4 +157,80 @@ public class CheckAll {
 			
 		return arr2;
 	}
+	
+	
+	
+	//과목 코드 중복 체크
+	public boolean chkccode(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr3) {//arr-선택한거 arr2-전체 리스트
+		boolean chk = false;
+		System.out.println("chkccode@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@1111");
+		for (Jun_VO vo : arr3) {
+
+			System.out.println("-------------------------------------");
+			for(Jun_VO vo3: arr) {
+				
+
+				System.out.println("chkccode@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@3333");
+				System.out.println("vo         :   "+vo);
+				System.out.println("vo3         :   "+vo3);
+
+
+	
+					if(!vo.getCid().equals(vo3.getCol())) {
+								chk = true;
+					}
+					
+				
+			}
+		}
+		
+		return chk;
+	}
+	
+	
+	public boolean chkcid(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr2) {//arr-선택한거 arr2-전체 리스트
+		
+		System.out.println("checkID 진입@@!#@$@$*&!($&!@*(&!@(*#&!@#*(@&#*(");
+		boolean chk = true;
+		
+		for (Jun_VO vo : arr2) {
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@1111111111");
+
+			System.out.println(vo.getCid());
+			System.out.println("씨방여기 왜안나오는데 1111222222222");
+			for(Jun_VO vo2 : arr) {
+				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@222222222222");
+
+				System.out.println("vo2.getCid()        :"+vo2.getCol());
+				System.out.println("vo2            :"+vo2);
+				System.out.println("===========================");
+				System.out.println("vo.getCid()        :"+vo.getCid());
+				System.out.println("vo            :    "+vo);
+				
+				
+
+				if(vo.getCid().equals(vo2.getCol())) {//선택한것과 내 수강친청 목록에서 코드 겹치는것 체크
+					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@");
+					
+					System.out.println(vo.getCid());
+					System.out.println(vo2.getCol());
+					
+					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@");
+					
+					if(vo.getCname().equals(vo2.getSchCol())) {
+						System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
+						
+						System.out.println(vo.getCname());
+						System.out.println(vo2.getSchCol());
+						chk = false;
+						System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
+					}
+					
+				}
+			}
+		}
+		
+		return chk;
+	}
+	
 }
