@@ -268,10 +268,12 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 <!-- 			<hr size=2px color=" ">
  -->
 		<div id="bottom" align="center" ><!--  style="	background-color: yellow;" -->
-			<small> Creators 크리에이터스몰비즈니스<br> Partners 비즈니스 파트너
-				안내비즈니스 · 광고스토어 개설지역업체 등록<br> Developers 네이버 개발자센터오픈 API오픈소스네이버
-				D2네이버 <br> 네이버 정책 및
-				약관/회사소개/인재채용/제휴/제안/이용약관/개인정보처리방침청/소년보호정책/네이버 정책고객센터ⓒ NAVER Corp.
+			<small>
+			COPYRIGHT ⓒ 2018 YAHAJA CO, LTD. ALL RESERVED<br>
+			사업자등록번호 104-81-59383 통신판매업신고번호 중구 065325 야하자㈜<br>
+			서울특별시 종로구 율곡로10길 105 디아망 401호(봉익동 10-1 디아망 401호)<br> 
+			TEL: 070-8240-3211 FAX: 02-777-5407<br>
+			야하자 정책  및 약관/회사소개/인재채용/제휴/제안/이용약관/개인정보처리방침청/소년보호정책/ⓒ 2018 YAHAJA<br>
 			</small>
 		</div>
 	</div>

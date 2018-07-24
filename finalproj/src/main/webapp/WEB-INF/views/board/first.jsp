@@ -215,8 +215,8 @@ height:660px;
 					<table class="points_table">
 						<thead>
 							<tr>
-								<th class="col-xs-7">QnA</th>
-								<th class="col-xs-4"><a href="/mvc/board/qnaList">전체보기</a>
+								<th class="col-xs-7" style="height:32px;">QnA</th>
+								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/qnaList">전체보기</a>
 								</th>
 							</tr>
 						</thead>
@@ -232,8 +232,8 @@ height:660px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7">${qq.title }</td>
-									<td class="col-xs-4">${qq.reg_date }</td>
+									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
@@ -250,8 +250,8 @@ height:660px;
 					<table class="points_table">
 						<thead>
 							<tr>
-								<th class="col-xs-7">공지</th>
-								<th class="col-xs-4"><a href="/mvc/board/noticeList">전체보기</a>
+								<th class="col-xs-7" style="height:32px;">공지</th>
+								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/noticeList">전체보기</a>
 								<!-- <a href="/mvc/board/noticeList">전체보기</a> -->
 								</th>
 							</tr>
@@ -268,8 +268,8 @@ height:660px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7">${qq.title }</td>
-									<td class="col-xs-4">${qq.reg_date }</td>
+									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
@@ -284,8 +284,8 @@ height:660px;
 					<table class="points_table">
 						<thead>
 							<tr>
-								<th class="col-xs-7">후기</th>
-								<th class="col-xs-4"><a href="/mvc/board/reviewList">전체보기</a>
+								<th class="col-xs-7" style="height:32px;">후기</th>
+								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/reviewList">전체보기</a>
 								</th>
 							</tr><!-- 
 							<a href="/mvc/board/reviewList">전체보기</a> -->
@@ -302,8 +302,8 @@ height:660px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7">${qq.title }</td>
-									<td class="col-xs-4">${qq.reg_date }</td>
+									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
