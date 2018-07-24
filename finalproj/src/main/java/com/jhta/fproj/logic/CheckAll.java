@@ -115,16 +115,25 @@ public class CheckAll {
 				if(chk) {
 					str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
 							+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
-						
-					cnt++;
 					
+					cnt++;
+						
 					if(i == arr.size()-1) {
-						cnt = 0;
+						vo = arr.get(i-1);
+						vo.setCinfo(str);
+						arr2.add(vo);
 					}
 					
 				} else {
 					
-					if(i == arr.size()-1) {
+					if(i == 1) {
+						
+						str = arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						vo = arr.get(i-1);
+						vo.setCinfo(str);
+						arr2.add(vo);
+						
+					} else if(i == arr.size()-1) {
 						str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
 								+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
 						vo = arr.get(i-1);
@@ -139,16 +148,16 @@ public class CheckAll {
 						
 					} else {
 						
+						vo = arr.get(i-1);
+						if(cnt == 0) {
+							str = arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						}
+						vo.setCinfo(str);
+						arr2.add(vo);
 						cnt = 0;
 						
 					}
-				}
-				
-				if(cnt == 0) {
-					vo = arr.get(i-1);
-					vo.setCinfo(str);
-					arr2.add(vo);
-					System.out.println(i+":"+vo);
+					
 				}
 			}
 				
