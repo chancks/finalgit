@@ -146,26 +146,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div class="text-center">
-		<c:if test="${startPage >1}">
-		<a href="registerfc?mypage=true&page=1">[처음]</a>
-		<a href="registerfc?mypage=true&page=${data3.startPage-1}"><</a>
-	</c:if>
-	<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
-		<c:choose>
-			<c:when test="${i==data3.page }">
-				[${i }]
-			</c:when>
-			<c:otherwise>
-				<a href="registerfc?mypage=true&page=${i }">${i }</a>				
-			</c:otherwise>
-		</c:choose>
-	</c:forEach>
-	<c:if test="${data3.endPage<data3.totalPage }">
-		<a href="registerfc?mypage=true&page=${data3.endPage+1}">></a>
-		<a href="registerfc?mypage=true&page=${data3.totalPage }">[마지막]</a>
-	</c:if>
-	</div>
+
+		<hr size=2px color="#8C8C8C">
+
 </div>
 </div>	
 </div>
