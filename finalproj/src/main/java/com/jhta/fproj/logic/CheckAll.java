@@ -104,7 +104,8 @@ public class CheckAll {
 		ArrayList<BsVO> arr2 = new ArrayList<BsVO>();
 		BsVO vo = new BsVO();
 		String str = null;
-		int cnt = 1;
+		int cnt = 0;
+		
 		
 		if(arr.size()>1) {
 			for(int i = 1; i < arr.size(); i++) {
@@ -113,8 +114,13 @@ public class CheckAll {
 				chk =arr.get(i).getCcode().equals(arr.get(i-1).getCcode());
 				
 				if(chk) {
-					str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
-							+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+					if(cnt==0) {
+						str = arr.get(i-1).getCday()+arr.get(i-1).getCtime()+"/"
+								+arr.get(i).getCday()+arr.get(i).getCtime();
+					} else {
+						str += "/"+arr.get(i).getCday()+arr.get(i).getCtime();
+					}
+					
 					
 					cnt++;
 						
@@ -134,8 +140,10 @@ public class CheckAll {
 						arr2.add(vo);
 						
 					} else if(i == arr.size()-1) {
-						str = arr.get(i).getCday()+arr.get(i).getCtime()+"/"
-								+arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						
+						if(!(arr.get(i-1).getCcode().equals(arr.get(i-2).getCcode()))) {
+							str = arr.get(i-1).getCday()+arr.get(i-1).getCtime();
+						}
 						vo = arr.get(i-1);
 						vo.setCinfo(str);
 						arr2.add(vo);

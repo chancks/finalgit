@@ -31,7 +31,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				<c:forEach items="${review}" var="reviewRow" varStatus="reviewNo">
 					<tr>
 						<th align="center">${(data3.page*15)+reviewNo.index-14}</th>
-						<th><a href="reviewDetail?id=${reviewRow.id }">${reviewRow.title}</a></th>
+						<th><a href="reviewDetail?id=${reviewRow.id }">[${reviewRow.pro }] ${reviewRow.title}</a></th>
 						<th>익명</th>
 						<th>${reviewRow.reg_date}</th>
 						<th align="center">${reviewRow.cnt}</th>
