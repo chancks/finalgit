@@ -108,10 +108,10 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 }
 
 .container {
-	width: 250px;
+	width: 220px;
 	float: left;
 	height: 200px;
-	margin: 20px;
+	margin: 15px;
 	
 
 }
@@ -126,12 +126,14 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 @media screen and (max-width : 380px) {
 #mmm{
 height:1000px;
+width:100%;
 }
 
 }
 @media screen and (min-width : 380px) {
 #mmm{
 height:660px;
+width:760px;
 }
 
 }
@@ -142,7 +144,7 @@ height:660px;
 </head>
 <body>
 
-	<div id="mmm"style=" width:100%;">
+	<div id="mmm">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -216,7 +218,7 @@ height:660px;
 						<thead>
 							<tr>
 								<th class="col-xs-7" style="height:32px;">QnA</th>
-								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/qnaList">전체보기</a>
+								<th class="col-xs-5" style="height:32px;"><a href="/mvc/board/qnaList">전체보기</a>
 								</th>
 							</tr>
 						</thead>
@@ -233,7 +235,7 @@ height:660px;
 									</c:choose>
 
 									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
-									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
+									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
@@ -251,7 +253,7 @@ height:660px;
 						<thead>
 							<tr>
 								<th class="col-xs-7" style="height:32px;">공지</th>
-								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/noticeList">전체보기</a>
+								<th class="col-xs-5" style="height:32px;"><a href="/mvc/board/noticeList">전체보기</a>
 								<!-- <a href="/mvc/board/noticeList">전체보기</a> -->
 								</th>
 							</tr>
@@ -269,7 +271,7 @@ height:660px;
 									</c:choose>
 
 									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
-									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
+									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
@@ -285,7 +287,7 @@ height:660px;
 						<thead>
 							<tr>
 								<th class="col-xs-7" style="height:32px;">후기</th>
-								<th class="col-xs-4" style="height:32px;"><a href="/mvc/board/reviewList">전체보기</a>
+								<th class="col-xs-5" style="height:32px;"><a href="/mvc/board/reviewList">전체보기</a>
 								</th>
 							</tr><!-- 
 							<a href="/mvc/board/reviewList">전체보기</a> -->
@@ -303,7 +305,7 @@ height:660px;
 									</c:choose>
 
 									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
-									<td class="col-xs-4" style="height:32px;">${qq.reg_date }</td>
+									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
 							</c:forEach>
