@@ -138,7 +138,7 @@
 					</td>
 					<td class="col-xs-1">${pay.rpay }</td>
 					<c:forEach var="cc" items="${card }" varStatus="no">
-						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid and no.index == 0 }">
+						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid}">
 						<td class="col-xs-2">
 							<fmt:formatDate value="${cc.cpdate }" pattern="yyyy-MM-dd" />
 						</td>
