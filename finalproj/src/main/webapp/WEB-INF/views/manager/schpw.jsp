@@ -60,6 +60,10 @@ function che() { //인증번호 비교
 	if(ikey.toUpperCase()==ikey2){
 		text.innerHTML='${user.apw} 입니다.';
 	}
+	
+	else{
+		alert('인증번호를 확인해주세요');
+	}
 	 
 	
 }
