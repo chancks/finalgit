@@ -98,7 +98,7 @@ public class CheckAll {
 		return vo;
 	}
 	
-	//과목 상세 생성
+	//과목 상세 리스트
 	public ArrayList<BsVO> cinfolist(ArrayList<BsVO> arr){
 		ArrayList<BsVO> arr2 = new ArrayList<BsVO>();
 		BsVO vo = new BsVO();
@@ -158,7 +158,7 @@ public class CheckAll {
 		return arr2;
 	}
 	
-	
+	///////////////////////////서준호 만듦
 	
 	//과목 코드 중복 체크
 	public boolean chkccode(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr3) {//arr-선택한거 arr2-전체 리스트
