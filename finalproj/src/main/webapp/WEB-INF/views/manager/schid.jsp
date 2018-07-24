@@ -56,7 +56,9 @@ function che() { //인증번호 비교
 		text.innerHTML='${user.aid} 입니다.';
 	}
 	 
-	
+	else{
+		alert('인증번호를 확인해주세요');
+	}
 }
 </script>
 
