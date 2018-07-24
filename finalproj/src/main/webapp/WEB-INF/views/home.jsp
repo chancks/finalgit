@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -36,10 +35,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 	
 	#background {
 		width: 360px;
-
 	}
 	#hight_top {
-
 		width: 360px;
 		height: 50px;
 	}
@@ -74,7 +71,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 	}
 	#main_rap {
 		width: 360px;
-
 		/* background-color: #FFC6C6; */
 		/* border: pink 1px solid; */
 	}
@@ -101,13 +97,10 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 		font-size: 10px;
 	}
 }
-
 @media screen and (min-width : 380px) {
 	#background {
-
 	}
 	#hight_top {
-
 		width: 1010px;
 		height: 100px;
 	}
@@ -160,7 +153,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 	}
 }
 </style>
-
+<title>YAHAJA</title>
 
 <body>
 	<div id="background">
