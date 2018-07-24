@@ -144,10 +144,10 @@ function join(){
 		
 		<tr>
 			<td style="background-color:#D8D8D8;">시작일</td>
-			<td>	<input type="date" name="cstart" value="2018-07-20" style="width:150px; height:21px"/>
+			<td>	<input type="date" name="cstart" value="2018-07-20" style="width:150px; height:26px"/>
 		</td>
 			<td style="background-color:#D8D8D8;">종료일</td>
-			<td>	<input type="date" name="cfinish" value="2018-08-30" style="width:150px; height:21px" />
+			<td>	<input type="date" name="cfinish" value="2018-08-30" style="width:150px; height:26px" />
 			</td>
 		</tr>
 		
