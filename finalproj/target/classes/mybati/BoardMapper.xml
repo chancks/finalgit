@@ -155,7 +155,7 @@
         delete from notice where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
-    <select id="noticePwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+    <select id="noticePwChk" resultType="boardVo"  parameterType="boardVo">
         select * from notice where id = #{id} and pw = #{pw}
     </select>
     
@@ -218,7 +218,7 @@
         delete from review where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
-    <select id="reviewPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+    <select id="reviewPwChk" resultType="boardVo"  parameterType="boardVo">
         select * from review where id = #{id} and pw = #{pw}
     </select>
     
