@@ -206,9 +206,10 @@
 		(id, gid, seq, lev, cnt, reg_date, pname, pw, title, content, pro)
 		values
 		(#{id}, #{id}, 0, 0, 0, sysdate, #{pname}, #{pw}, #{title}, #{content}, #{pro})
+		
+		
 	</insert>
-	
-	
+
 	<select id="reviewDelete" resultType="boardVo" parameterType="boardVo">
 		select * from review where id = #{id}
 	</select>
@@ -233,5 +234,13 @@
 	
 	<select id="reviewTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
 		select count(*) from review
+	</select>
+	
+	
+	
+	
+	<select id="professor_list" resultType="jun_Vo"  parameterType="jun_Vo">
+		select * from astudent where agrade  = 'teacher'
+
 	</select>
 </mapper>

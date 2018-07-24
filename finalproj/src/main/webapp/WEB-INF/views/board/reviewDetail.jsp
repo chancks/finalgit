@@ -26,7 +26,7 @@ width: 700px;
 <div id="table_rap">
 <table class="table" align="center">
 	<tr>	
-		<th style="background-color:#D8D8D8; width: 10%;">제목</th><th colspan="3">${review.title}</th>
+		<th style="background-color:#D8D8D8; width: 10%;">제목</th><th colspan="3">[${review.pro }] ${review.title}</th>
 		</tr><tr>
 		<th style="background-color:#D8D8D8 ">작성자</th><th>익명</th>
 		<th style="background-color:#D8D8D8; width: 50px; ">강사</th><th>${review.pro }</th>
