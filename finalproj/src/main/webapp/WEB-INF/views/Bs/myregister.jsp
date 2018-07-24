@@ -96,7 +96,7 @@
 <div id="wrap2">
 	<div class="container" style=" width: 100%" >
 	<div class="row">
-		<table class="points_table" style=" width: 100%">
+		<table class="points_table table-hover" style=" width: 100%">
 			<thead>
 				<tr>
 				<th class="col-xs-4">과정명</th>

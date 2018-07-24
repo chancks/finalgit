@@ -194,7 +194,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 							</c:otherwise>
 						</c:choose>
 					</c:when>
-					<c:otherwise>
+					<c:otherwise>  로그인 후 이용하세요     .
 						<input id="btn" type="button"
 							onclick="location='/mvc/manager/loginf'" value="로그인">
 						<input id="btn" type="button"
@@ -222,7 +222,22 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 					<div id="navbar-menu"
 						class="collapse navbar-collapse navbar-right">
 						<ul class="nav navbar-nav ">
-
+							
+		<!-- 					
+							<li class="hidden-md "><a href="      ">  &nbsp; &nbsp;
+							   		</a></li>
+							
+							<li class="hidden-md "><a href="      ">  &nbsp; &nbsp;
+									</a></li>
+							 
+							<li class="hidden-md "><a href="      ">  &nbsp; &nbsp;
+									</a></li>
+							
+							<li class="hidden-md "><a href="       ">   &nbsp; &nbsp;
+									</a></li>
+							 -->
+							
+							
 							<li class="hidden-sx "><a href="/mvc/Bs/academyinfo">학원
 									소개</a></li>
 							<li class="hidden-sx "><a href="/mvc/manager/teacherinfo">강사
