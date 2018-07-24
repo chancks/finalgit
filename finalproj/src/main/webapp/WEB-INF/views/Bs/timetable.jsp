@@ -24,32 +24,32 @@
 <div id="aa">
 <table border="">
 <c:forEach var="i" begin="0" end="8">
-	<tr>
-		<c:forEach var="j" begin="0" end="7">
-		<td width="150px" height="50px" style="text-align: center">
-			<c:if test="${i==0 && j!=0}">
-				${day[j-1] }
-			</c:if>
-			<c:forEach items="${data }" var="dd" varStatus="no">
-					
-					<c:if test="${dd.dayarr[j-1] eq dd.cday}">
-						<c:forEach var="tt" items="${dd.timearr }">
-							<c:if test="${i==tt }">
-								${dd.ctitle }
-								<c:if test="${grade eq 'student' }">
-									<br>${dd.cname }
-								</c:if>
-							</c:if>
-						</c:forEach>
-					</c:if>
-			</c:forEach>
-					<c:if test="${i!=0 && j==0 }">
-						${i }교시<br>
-						${i+13 }:00~${i+14 }:00
-					</c:if>
-		</td>
-		</c:forEach>
-	</tr>
+    <tr>
+        <c:forEach var="j" begin="0" end="7">
+        <td width="150px" height="50px" style="text-align: center; background-color:#DBFFD5">
+            <c:if test="${i==0 && j!=0}">
+                <div style="background-color: #B7F0B1; width: 100%; height:100%    ;">${day[j-1] }</div>
+            </c:if>
+            <c:forEach items="${data }" var="dd" varStatus="no">
+                    
+                    <c:if test="${dd.dayarr[j-1] eq dd.cday}">
+                        <c:forEach var="tt" items="${dd.timearr }">
+                            <c:if test="${i==tt }">
+                                ${dd.ctitle }
+                                <c:if test="${grade eq 'student' }">
+                                    <br>${dd.cname }
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </c:if>
+            </c:forEach>
+                    <c:if test="${i!=0 && j==0 }">
+                    <div style="background-color: #B7F0B1; width: 100%; height:100%;">    ${i }교시<br>
+                        ${i+13 }:00~${i+14 }:00</div>
+                    </c:if>
+        </td>
+        </c:forEach>
+    </tr>
 </c:forEach>
 </table>
 </div>
