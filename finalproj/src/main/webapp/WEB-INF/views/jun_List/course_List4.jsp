@@ -144,8 +144,8 @@ table{
 						<tr>
 
 							<th class="col-xs-4">과정 명</th>
-							<th class="col-xs-1">강사 명</th>
-							<th class="col-xs-1">강사 id</th>
+							<th class="col-xs-2">강사 명</th>
+							<th class="col-xs-2">강사 id</th>
 							<th class="col-xs-4">과정 기간</th>
 						
 						</tr>
@@ -164,8 +164,8 @@ table{
 
 							<td class="col-xs-4"><a
 								href="course_Detail?ccode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
-							<td class="col-xs-1">${row.cname }</td>
-							<td class="col-xs-1">${row.cid}</td>
+							<td class="col-xs-2">${row.cname }</td>
+							<td class="col-xs-2">${row.cid}</td>
 							<td class="col-xs-4">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
 					
 							</tr>
