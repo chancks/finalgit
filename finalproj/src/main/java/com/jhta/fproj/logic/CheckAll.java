@@ -87,12 +87,13 @@ public class CheckAll {
 				
 			}
 			
-			System.out.println(vo);
+			System.out.println("arr.size()>1:"+vo);
 			
 		}else {
             
             vo = arr.get(0);
             vo.setCinfo(arr.get(0).getCday()+arr.get(0).getCtime());
+            System.out.println("arr.size()<1:"+vo);
         }
 		
 		return vo;
@@ -152,6 +153,7 @@ public class CheckAll {
 			}
 				
 		} else {
+			arr.get(0).setCinfo(arr.get(0).getCday()+arr.get(0).getCtime());
 			arr2 = arr;
 		}
 			
