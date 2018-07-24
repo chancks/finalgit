@@ -101,7 +101,7 @@ public class BoardVO {
 		this.title = title;
 	}
 	public String getContent() {
-		return content.replaceAll("\n", "<br>");
+		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;

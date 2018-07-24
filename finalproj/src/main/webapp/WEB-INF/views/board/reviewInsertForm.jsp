@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//Dth HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dth">
 <html>
 <head>
@@ -53,9 +54,9 @@
 			<th><input type="text" name="title" /></th>
 			<th style="background-color:#D8D8D8; width: 100px; ">강사</th>
 			<th><select name="Pro" style="width: 100px;">
-						<option value="Pro1">강사1</option>
-						<option value="Pro2">강사2</option>
-						<option value="Pro3">강사3</option>
+					<c:forEach items="${review }" var="row">
+						<option value="${row.aid}">${row.aname}(이름:${row.aid})</option>
+					</c:forEach>
 				</select>
 			</th>
 		</tr>

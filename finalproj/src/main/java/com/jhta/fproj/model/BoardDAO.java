@@ -10,6 +10,7 @@ public class BoardDAO {
 
 	@Resource
 	SqlSessionTemplate sessionTemplate;
+	Jun_VO jvo;
 	
 	public Object qnaList() {
 		return sessionTemplate.selectList("kdh.qnalist");
@@ -145,6 +146,7 @@ public class BoardDAO {
 	
 	public Object reviewInsert(BoardVO vo) {
 		// TODO Auto-generated method stub
+			   sessionTemplate.selectList("seo_mm.professor_list", jvo);
 		return sessionTemplate.insert("kdh.reviewInsert", vo);
 	}
 
@@ -177,6 +179,15 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		System.out.println("...............................");
 		return sessionTemplate.selectOne("kdh.reviewTotalCount");
+	}
+	
+
+	public Object professor_list(Jun_VO vo) {
+		
+		System.out.println("DAO professor_list 들어옴:  "+vo);
+		
+		return sessionTemplate.selectList("kdh.professor_list",vo);
+	
 	}
 
 }

@@ -1,9 +1,11 @@
 package com.jhta.fproj;
 
+
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import javax.swing.JViewport;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.jhta.fproj.logic.Paging;
 import com.jhta.fproj.model.BoardDAO;
 import com.jhta.fproj.model.BoardVO;
-import com.jhta.fproj.model.BsVO;
+import com.jhta.fproj.model.Jun_DAO;
+import com.jhta.fproj.model.Jun_VO;
 import com.jhta.fproj.model.MngDAO;
 import com.jhta.fproj.model.MngUserVO;
 import com.jhta.fproj.model.PageVO;
@@ -26,12 +29,10 @@ public class BoardController {
 	@Resource
 	BoardDAO dao;
 	MngDAO mdao;
+	Jun_DAO jdao;
 	Object res = null;
 	
-	
 	Paging paging = new Paging();
-	
-	ArrayList<BsVO> arr = new ArrayList<>();
 	
 	@RequestMapping()
 	String boardView(@PathVariable("main") String main, Model model, HttpSession session) {
@@ -68,8 +69,6 @@ public class BoardController {
 				model.addAttribute("List","qnaDetail.jsp");
 				break;
 			case "qnaInsertForm":
-				vo.setPname(mvo.getAname());
-				model.addAttribute("user",mvo);
 				model.addAttribute("List","qnaInsertForm.jsp");
 				break;
 			case "qnaInsertReg":
@@ -187,8 +186,15 @@ public class BoardController {
 	    
 	    
 	@ModelAttribute("review")
-	Object review(@PathVariable("main") String main, BoardVO vo, PageVO pvo, Model model) {
+	Object review(@PathVariable("main") String main, BoardVO vo, PageVO pvo, Jun_VO jvo, HttpSession session, Model model) {
+			
+		if(session.getAttribute("grade") != null) {
+			if(session.getAttribute("grade").equals("teacher")) {
+				jvo.setCid((String)session.getAttribute("id"));
 				
+			}
+		}
+		
 			switch (main) {
 			case "reviewList":
 				vo.setTot((Integer)dao.reviewTotalCount());
@@ -204,10 +210,18 @@ public class BoardController {
 				model.addAttribute("List","reviewDetail.jsp");
 				break;
 			case "reviewInsertForm":
+				System.out.println("reviewInsertForm으로 들어옴@@@@@@@@@@@@@@@@@");
+				res = dao.professor_list(jvo);
+				System.out.println("res = jdao.professor_list(jvo); 실행시킴  :"+ res);
+				System.out.println("jvo는???   :"+ jvo);
+				System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+				
 				model.addAttribute("List","reviewInsertForm.jsp");
+				System.out.println("ㅡㅡmodel.addAttribute(\"List\",\"reviewInsertForm.jsp\")  실행됨ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+				
 				break;
 			case "reviewInsertReg":
-				res = dao.reviewInsert(vo);
+								res = dao.reviewInsert(vo);
 	                model.addAttribute("msg", "작성되었습니다.");
 					model.addAttribute("url", "reviewDetail?id="+vo.getId());
 				break;
