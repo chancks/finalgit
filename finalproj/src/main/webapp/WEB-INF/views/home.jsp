@@ -227,8 +227,8 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 						<!--         <a href="/" class="navbar-brand">야하자</a> -->
 					</div>
 					<div id="navbar-menu"
-						class="collapse navbar-collapse navbar-center">
-						<ul class="nav navbar-nav navbar-center">
+						class="collapse navbar-collapse navbar-right">
+						<ul class="nav navbar-nav ">
 
 							<li class="hidden-sx "><a href="/mvc/Bs/academyinfo">학원
 									소개</a></li>
