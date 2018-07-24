@@ -41,31 +41,38 @@
 		frm.submit();
 	}
 </script>
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>후기</h2>
 <form action="reviewModifyReg?id=${review.id }" method="post" enctype="multipart/form-data" name="insert">
-
+<div id="table_rap">
 	<table class="table" align="center">
 		<tr>
-			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
-			<th><input type="text" name="title" value="${review.title}" /></th>
+			<th style="background-color:#D8D8D8; width: 10%; ">제목</th>
+			<th colspan="3"><input type="text" name="title" value="${review.title}" /></th>
 		</tr>
 		<tr>
-			<th style="background-color:#D8D8D8 ">작성자</th>
+			<th style="background-color:#D8D8D8;">작성자</th>
 			<th>익명</th>
-			<th style="background-color:#D8D8D8 ">강사</th>
+			<th style="background-color:#D8D8D8; width: 50px; ">강사</th>
 			<th>${review.pro }</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>
-			<th><input type="password" name="pw"/></th>
+			<th colspan="3"><input type="password" name="pw"/></th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>
-			<th><textarea name="content" rows="5" cols="20">${review.content }</textarea></th>
+			<th colspan="3"><textarea name="content" rows="10" style="resize: none; width: 500px;">${review.content }</textarea></th>
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
@@ -74,6 +81,7 @@
 			</th>
 		</tr>
 	</table>
+</div>
 </form>
 </body>
 </html>

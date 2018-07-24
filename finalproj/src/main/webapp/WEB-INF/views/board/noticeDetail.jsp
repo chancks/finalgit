@@ -10,11 +10,19 @@
 
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>공지사항</h2>
+<div id="table_rap">
 <table class="table" align="center">
 
 	<tr>
@@ -41,5 +49,6 @@
 	</tr>
 
 </table>
+</div>
 </body>
 </html>

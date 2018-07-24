@@ -41,13 +41,20 @@
 		frm.submit();
 	}
 </script>
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>공지사항</h2>
 <form action="noticeModifyReg?id=${notice.id }" method="post" enctype="multipart/form-data" name="insert">
-
+<div id="table_rap">
 	<table class="table" align="center">
 		<tr>
 			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
@@ -63,7 +70,7 @@
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>
-			<th><textarea name="content" rows="5" cols="20">${notice.content }</textarea></th>
+			<th><textarea name="content" rows="10" style="resize: none; width: 500px;">${notice.content }</textarea></th>
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
@@ -72,6 +79,7 @@
 			</th>
 		</tr>
 	</table>
+</div>
 </form>
 </body>
 </html>

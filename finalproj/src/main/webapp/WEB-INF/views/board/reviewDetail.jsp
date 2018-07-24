@@ -10,24 +10,32 @@
 
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>후기</h2>
 <input type="hidden" value="${review.seq}" name="seq">
+<div id="table_rap">
 <table class="table" align="center">
 	<tr>	
-		<th style="background-color:#D8D8D8; width: 100px; ">제목</th><th>${review.title}</th>
+		<th style="background-color:#D8D8D8; width: 10%;">제목</th><th colspan="3">${review.title}</th>
 		</tr><tr>
 		<th style="background-color:#D8D8D8 ">작성자</th><th>익명</th>
-		<th style="background-color:#D8D8D8 ">강사</th><th>${review.pro }</th>
+		<th style="background-color:#D8D8D8; width: 50px; ">강사</th><th>${review.pro }</th>
 		</tr><tr>
-		<th style="background-color:#D8D8D8 ">작성일</th><th>${review.reg_date}</th>
+		<th style="background-color:#D8D8D8 ">작성일</th><th colspan="3">${review.reg_date}</th>
 		</tr><tr>
-		<th style="background-color:#D8D8D8 ">조회수</th><th>${review.cnt}</th>
+		<th style="background-color:#D8D8D8 ">조회수</th><th colspan="3">${review.cnt}</th>
 		</tr><tr>
-		<th style="background-color:#D8D8D8 ">내용</th><th><ct:conBr>${review.content}</ct:conBr></th>
+		<th style="background-color:#D8D8D8 ">내용</th><th colspan="3"><ct:conBr>${review.content}</ct:conBr></th>
 		</tr><tr>
 		
 		<th colspan="2" align="right">
@@ -43,5 +51,6 @@
 		
 	</tr>
 </table>
+</div>
 </body>
 </html>

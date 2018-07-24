@@ -10,12 +10,20 @@
 
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../resources/bootstrap-3.2.0-dist/css/bootstrap-theme.min.css">
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>Q&A</h2>
 <input type="hidden" value="${qna.seq}" name="seq">
+<div id="table_rap">
 <table class="table" align="center">
 	<tr>
 		<th style="background-color:#D8D8D8; width: 100px; ">제목</th><th>${qna.title}</th>
@@ -43,5 +51,6 @@
 		
 	</tr>
 </table>
+</div>
 </body>
 </html>

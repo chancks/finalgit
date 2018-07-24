@@ -42,35 +42,43 @@
 		frm.submit();
 	}
 </script>
-
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 <h2>후기</h2>
 <form action="reviewInsertReg" method="post" enctype="multipart/form-data" name="insert">
+<div id="table_rap">
 	<table class="table" align="center">
 		<tr>
-			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
-			<th><input type="text" name="title" /></th>
-			<th style="background-color:#D8D8D8; width: 100px; ">강사</th>
-			<th><select name="Pro" style="width: 100px;">
-					<c:forEach items="${review }" var="row">
-						<option value="${row.aid}">${row.aname}(이름:${row.aid})</option>
-					</c:forEach>
-				</select>
-			</th>
+			<th style="background-color:#D8D8D8; width: 15%; ">제목</th>
+			<th colspan="3"><input type="text" name="title" /></th>
 		</tr>
 		<tr>
-			<th style="background-color:#D8D8D8 ">작성자</th>
-			<th><input type="hidden" name="pname" value="${id }" />익명</th>
+			<th style="background-color:#D8D8D8">작성자</th>
+			<th style="width: 50%;"><input type="hidden" name="pname" value="${id }" />익명</th>
+			<th style="background-color:#D8D8D8; width: 50px;">강사</th>
+				<th><select name="Pro">
+						<c:forEach items="${review }" var="row">
+							<option value="${row.aname}(${row.aid})">${row.aname}(이름:${row.aid})</option>
+						</c:forEach>
+					</select>
+				</th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">암호</th>
-			<th><input type="password" name="pw" /></th>
+			<th colspan="3"><input type="password" name="pw" /></th>
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>
-			<th><textarea name="content" rows="5" cols="20">내용을 작성하세요</textarea></th>
+			<th colspan="3"><textarea name="content" rows="10" style="resize: none; width: 500px;">내용을 작성하세요</textarea></th>
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
@@ -79,6 +87,7 @@
 			</th>
 		</tr>
 	</table>
+</div>
 </form>
 </body>
 </html>

@@ -41,6 +41,14 @@
 		frm.submit();
 	}
 </script>
+<style type="text/css">
+table{
+	width:320;
+}
+#table_rap{
+width: 700px;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -48,6 +56,7 @@
 <form action="qnaReplyReg?id=${qna.id}" method="post" enctype="multipart/form-data" name="insert">
 <input type="hidden" value="${qna.gid}" name="gid">
 <input type="hidden" value="${qna.seq}" name="seq">
+<div id="table_rap">
 	<table class="table" align="center">
 		<tr>
 			<th style="background-color:#D8D8D8; width: 100px; ">제목</th>
@@ -63,7 +72,7 @@
 		</tr>
 		<tr>
 			<th style="background-color:#D8D8D8 ">내용</th>
-			<th><textarea name="content" rows="5" cols="20">내용을 작성하세요</textarea></th>
+			<th><textarea name="content" rows="10" style="resize: none; width: 500px;">내용을 작성하세요</textarea></th>
 		</tr>
 		<tr>
 			<th colspan="2" align="center">
@@ -72,6 +81,7 @@
 			</th>
 		</tr>
 	</table>
+</div>	
 </form>
 </body>
 </html>
