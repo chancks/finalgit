@@ -80,7 +80,7 @@
       delete from qna where gid = #{gid} <include refid="whereSeq"/>
     </delete>
     
-    <select id="qnaPwChk" resultType="java.lang.Integer"  parameterType="boardVo">
+    <select id="qnaPwChk" resultType="boardVo"  parameterType="boardVo">
         select * from qna where id = #{id} and pw = #{pw}
     </select>
     
