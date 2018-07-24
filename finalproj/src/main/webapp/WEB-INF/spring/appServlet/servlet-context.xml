@@ -33,6 +33,7 @@
     <interceptors>
         <interceptor>
             <mapping path="/**"/>
+            <exclude-mapping path="/resources/picture/**"/>
             <exclude-mapping path="/board/noticeDetail"/>
             <exclude-mapping path="/board/noticeList"/>
             <exclude-mapping path="/board/qnaDetail"/>
