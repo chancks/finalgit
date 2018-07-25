@@ -75,7 +75,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 학생 시간표 -->
 	<select id="bsList" resultType="bsVo">
 		select * from course,(select * from regist where rid = #{rid})tt 
-		where ctitle = tt.rtitle and cname = tt.rname
+		where ctitle = tt.rtitle and cname = tt.rname and  <![CDATA[ cfinish>sysdate	]]>
 	</select>
 	
 	<!-- 강사 시간표 -->
