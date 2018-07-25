@@ -224,6 +224,22 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+            
+             <plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+		
+				<configuration>
+					<path>/mvc</path>
+					<url>http://localhost:8080/manager/text</url>
+		
+					<username>mmm</username>
+					<password>1234</password>
+					<update>true</update>
+				</configuration>
+	   		</plugin>
+	   		
         </plugins>
     </build>
     
