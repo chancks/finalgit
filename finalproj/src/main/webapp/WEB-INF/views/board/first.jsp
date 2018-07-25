@@ -234,7 +234,7 @@ width:760px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-7" style="height:32px;"><a href="board/qnaDetail?id=${qq.id }">${qq.title}</a></td>
 									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
@@ -270,7 +270,7 @@ width:760px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-7" style="height:32px;"><a href="board/noticeDetail?id=${qq.id }">${qq.title}</a></td>
 									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
@@ -304,7 +304,7 @@ width:760px;
 										</c:otherwise>
 									</c:choose>
 
-									<td class="col-xs-7" style="height:32px;">${qq.title }</td>
+									<td class="col-xs-7" style="height:32px;"><a href="board/reviewDetail?id=${qq.id }">${qq.title}</a></td>
 									<td class="col-xs-5" style="height:32px;">${qq.reg_date }</td>
 									</tr>
 								</c:if>
