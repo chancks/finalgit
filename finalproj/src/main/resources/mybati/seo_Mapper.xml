@@ -73,8 +73,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<update id="course_modifyReg"  parameterType="jun_Vo">
-		update course set ctitle=#{ctitle},cname= #{schCol}, ccontent=#{ccontent}, cday=#{cday}, ctime=#{ctime},  cstart=#{cstart},  cfinish=#{cfinish}, ctotal=#{ctotal}, cid=#{col} where ccode=#{ccode}
-
+		update course set ctitle=#{ctitle},cname= #{schCol}, ccontent=#{ccontent}, ctotal=#{ctotal}, cid=#{col} where ccode=#{ccode} and cday = #{cday}
+<!-- cday=#{cday}, ctime=#{ctime},  cstart=#{cstart},  cfinish=#{cfinish}, -->
 	</update>
 	
 	<delete id="course_deleteReg" parameterType="jun_Vo">
@@ -125,7 +125,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="p_course_list" resultType="jun_Vo"  parameterType="jun_Vo">
 		select * from course where cid = #{cid}
-		<include refid="whereSch"/>
+		<include refid="date"/>
 	</select>
 	
 

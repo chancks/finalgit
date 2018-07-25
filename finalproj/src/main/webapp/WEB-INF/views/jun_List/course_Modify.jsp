@@ -39,70 +39,69 @@ table{
 </style>
 
 
+<script type="text/javascript">
+
+function join(){
+	var time = document.getElementById('time');
+	var frm = document.frm;
+	var title = document.getElementById('ctitle');
+	var code = document.getElementById('ccode');
+	var total = document.getElementById('ctotal');
+	var content = document.getElementById('ccontent');
+ 	
+	if(title.value==''||title.value==null){ alert("과정명을 입력하세요");return;}
+
+	else if(total.value==''||total.value==null){alert("정원을 입력하세요");return;}
+	else if(content.value==''||content.value==null){alert("내용을 입력하세요");return;}	
+	else{
+ 		frm.submit();
+ 		return;
+	 }  
+}
+
+</script>
+
+
 <title>Insert title here</title>
 </head>
 <body>
 
-	<form action="course_ModifyReg?=${data.ccode}" method="post"
-		enctype="multipart/form-data">
+		<form action="course_ModifyReg?" method="post"
+		enctype="multipart/form-data" name="frm">
 
-		<div id="rap" style="border: 1px #ddd solid; width: 605px">
+	<input type="hidden" name="mypage" value="true"/>
+	<input type="hidden" name="ccode" value="${data.ccode}"/>
+	<input type="hidden" name="cday" value="${data.cday}"/>
+		<table class="table"> 
+		<tr>
+			<td style="background-color:#D8D8D8;">과정 명</td>
+			<td colspan="5">	<input type="text" name="ctitle" id="ctitle" value="${ data.ctitle}" style="width:730px;height:21px" /></td>
+		</tr>
 		
-		
-			<div style="margin-bottom: 2px;" >
-				<div style="float: left; width: 90px; text-align:center" >과정 명</div>
-				<div style="margin-top: 2px">
-					<input type="text" name="ctitle" style="width:500px;height:21px" value="${ data.ctitle}" />
-				</div>
-			</div>
-			
-<hr size=1px color="#ddd">	
-	
-	
-		<div style="" >		
-			
-			<div style="float: left; width: 90px; margin-top: 2px; text-align:center">강사 선택</div>
-			
-			<div style="float: left; margin-top: 4px;">
-				<select name="schCol" style="width:80px; height:21px">
-					<c:forEach items="${teacher }" var="row" varStatus="no">
+		<tr>	
+			<td style="background-color:#D8D8D8;">강사 선택</td>
+			<td><select name="schCol" style="width:120px; height:26px">
+					<c:forEach items="${teacher}" var="row" varStatus="no">
 						<option value="${row.aname}">${row.aname}</option>
 					</c:forEach>
-				</select>
-			</div>
-
-			<div style="float: left; width: 90px;  margin-top: 2px; text-align:center">강사 id
-			</div>
-
-
-			<div style="float:left;  margin-top: 4px;">
-				<select name="col" style="width:120px; height:21px">
-					<c:forEach items="${teacher }" var="row" varStatus="no">
+				</select></td>
+			
+			<td style="background-color:#D8D8D8;">강사 id</td>
+			<td>	<select name="col" style="width:120px; height:26px">
+					<c:forEach items="${teacher}" var="row" varStatus="no">
 						<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
 					</c:forEach>
-				</select>
-			</div>
-
+				</select></td>
 			
-			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">과목 코드
-			</div>
-			
-			<div>
-				<input type="text" name="ccode" style="width:110px;height:21px; margin-top: 4px; margin-left: 10px"value="${ data.ccode}"/>
-			</div>
-			
-		</div>
-
-
-		<div style="margin-top: 2px; ">
-			<div  style="float: left; width: 90px; text-align:center; margin-top: 2px">
-				요 일
-			</div>
-			
-			
-			
-			<div style="float: left; margin-top: 4px;">
-				<select name="cday" style="width:80px; height:21px">
+			<td style="background-color:#D8D8D8;">과목 코드</td>
+			<td>${data.ccode}
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="background-color:#D8D8D8;">요일</td>
+			<td>${data.cday}</td>
+			<!-- <td>	<select name="cday" style="width:120px; height:26px">
 						<option value="월">월</option>
 						<option value="화">화</option>
 						<option value="수">수</option>
@@ -110,78 +109,53 @@ table{
 						<option value="금">금</option>
 						<option value="토">토</option>
 						<option value="일">일</option>
-				</select>
-			</div>
+				</select></td>
+			 -->
+			<td style="background-color:#D8D8D8;">시간</td>
+			<td>${data.ctime}</td>
+			<%-- <td>	<input type="text" name="ctime" id="time" value="${ data.ctime}" style=" width:120px;height:26px;" />
+		</td> --%>
 			
+			<td style="background-color:#D8D8D8;">정원</td>
+			<td>	<input type="number" name="ctotal" id="ctotal" min="1" max="100" style=" width:110px; height:26px;margin-left: 10px" value="${ data.ctotal}" />
+			</td>
+		</tr>
 		
-			<div  style="float: left; width: 90px;  margin-top: 2px; text-align:center">시 간</div>
-			<div>
-				<input type="text" name="ctime"  value="${ data.ctime}" style="margin-top: 4px; width:120px;height:21px; float: left;" />
-			</div>
+		
+		<tr>
+			<td style="background-color:#D8D8D8;">시작일</td>
 			
-			<div style="float: left; width: 80px; margin-top: 2px; margin-left: 10px; text-align:center">
-				정 원
-			</div>
-			<div>
-				<input type="number" name="ctotal" style="margin-top: 4px; width:110px; height:21px;margin-left: 10px" value="${ data.ctotal}" />
-			</div>
-		</div>
-
-
-<hr size=1px color="#ddd">	
-
-
-		<div style="margin-top: 5px; height: 20px">
+			<td>${ data.cstart}</td>
+			<%-- <td>	<input type="date" name="cstart" value="${ data.cstart}" style="width:150px; height:26px"/>
+		</td> --%>
+			<td style="background-color:#D8D8D8;">종료일</td>
 			
-			<div style="float:left;  width: 90px; text-align:center; ">
-				시작일
-			</div>
-			
-			
-			<div  style="float:left;">
-				<input type="date" name="cstart" value="${ data.cstart}" style="width:205px; height:21px"/>
-			</div>
-			
-			<div style="float:left;  width: 90px; text-align:center">
-				종료일
-			</div>
-			<div style="float:left;">
-				<input type="date" name="cfinish" value="${ data.cfinish}" style="width:205px; height:21px" />
-			</div>
-			
-		</div>
+			<td>${ data.cfinish}</td>
+		<%-- 	<td>	<input type="date" name="cfinish" value="${ data.cfinish}" style="width:150px; height:26px" />
+			</td> --%>
+		</tr>
+		
+		
+		<tr>
+			<td style="background-color:#D8D8D8;">과정 내용</td>
+			<td  colspan="5"><textarea name="ccontent" id="ccontent" rows="10" cols="89px" style="margin-top: 4px; resize: none;">${data.ccontent}</textarea></td>
+		</tr>
+		
+	
+		</table>
+		
 
-
-
-<hr size=1px color="#ddd">	
-
-
-
-		<div style="margin-top: 4px;">
-			<div style="float: left; width: 90px; margin-top: 2px; ">과정 내용</div>
-			<div>
-				<textarea name="ccontent" rows="10" cols="68.8px" style="margin-top: 4px; resize: none;">
-				${data.ccontent}
-				</textarea>
-			</div>
-		</div>
-
-			
 			
 <hr size=1px color="#ddd">	
 		
 
+			<div>
+			<input type="button" onclick="join()" value="등록">
+			<input type="reset" value="초기화" />
+			<a style="margin-left: 620px;" href="course_Detail?ccode=${data.ccode }&cday=${data.cday }&mypage=true">뒤로가기</a>
+			<!-- 	<input type="submit" value="작성" /><a href="/mvc/manager/memberlist?mypage=true">뒤로 가기</a> -->
+			</div>
 
-			<div>
-				<input type="submit" value="작성" />
-			</div>
-			<div>
-				<input type="reset" value="초기화" />
-			</div>
-			<div>
-				<a href="course_Detail?ccode=${row.ccode }&cday=${cday }&mypage=true">뒤로가기</a>
-			</div>
-		</div>
 	</form>
 </body>
 </html>

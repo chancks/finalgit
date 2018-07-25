@@ -78,8 +78,43 @@ table{
 </head>
 <body>
 <div id="legend">
-	<legend>내 강의 목록</legend>
+	<legend>내 강의 록</legend>
 </div>
+
+
+<div class="container" style=" height:35px; " >
+	<div class="row">
+		<div class="span12">
+            <div id="tab" class="btn-group" data-toggle="buttons-radio">
+             
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List?cid=${id}&mypage=true'">
+				 <a class="btn" data-toggle="tab"><div id="qq">전체 강의 목록</div>  </a>
+			</div>
+              
+             <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List1?cid=${id}&mypage=true'">
+         	     <a class="btn"  data-toggle="tab"><div id="qq">개강 예정 목록</div></a>
+             </div>
+  			<!-- style="background:#FFC6C6; -->          
+            
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List2?cid=${id}&mypage=true'">
+         	 	  <a  class="btn" data-toggle="tab"><div id="qq">진행 중 목록</div></a>
+            </div>
+             
+             
+            <div style="float:left;  cursor: pointer;" 
+				onclick="location.href='p_Course_List3?cid=${id}&mypage=true'">
+     				<a class="btn"  data-toggle="tab"><div id="qq">개강 종료 목록</div></a>
+            </div>
+            
+          </div> 
+          
+        </div>
+    </div>
+</div>
+<%-- 
 
 <div class="container" style=" height:35px; width:100% ;" >
 	<div class="row">
@@ -113,7 +148,7 @@ table{
         </div>
     </div>
 </div>
-
+ --%>
 
 	<div style="width: 100%; border-bottom: 1px inset gray; background-color:">
 <!-- 	<div style="background-color: gray;"><a href="/mvc/jun_List/course_register">등록등록</a>

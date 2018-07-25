@@ -231,23 +231,46 @@ public class JunController {
 		case "course_Modify":	
 			System.out.println("관리자  case: course_Modify:" + vo);
 			res = dao.course_modify(vo);
+			model.addAttribute("teacher", dao.course_modify1(vo));
 			
 			break;
-		
+
+
+			
+			
+			
+			
 		case "course_ModifyReg":
+
 			System.out.println("과목 수정:" +vo);
+			
+			arr.add(vo);
+			arr2 = (ArrayList)dao.plist(vo);
+			
+			if(ca.chkcid(arr, arr2)) {
+				model.addAttribute("msg", "강사의 id와 name이 불일치 합니다.");
+				model.addAttribute("url", "course_Modify?ccode="+vo.getCcode()+"&cday="+vo.getCday()+"&mypage=true");
+				
+			}else {
+			
 			res = dao.course_modifyReg(vo);
 
-			model.addAttribute("msg", "수정성공");
-			model.addAttribute("url", "course_Detail?ccode=" + vo.getCcode());
-
+			model.addAttribute("msg", "수정 완료");
+			model.addAttribute("url", "course_Detail?ccode=" + vo.getCcode()+"&mypage=true");
+			}
 			break;
 		
+			
+			
+			
+			
+			
+			
 		case "course_Delete":
 			System.out.println("과목삭제:" + vo);
 			res = dao.course_delete(vo);
 	
-			model.addAttribute("msg", "삭제성공");
+			model.addAttribute("msg", "삭제 완료");
 			model.addAttribute("url", "course_List?mypage=true");
 
 			break;

@@ -121,7 +121,7 @@ table{
 <body>
 
 
-	<div style="border: 0.5px silver solid; height: 100%;">
+	<div style="border: 0.5px silver solid; ">
 		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<div style="text-align: center;">
 			<div id="search" style="display: inline-block; height: 40px">
@@ -140,7 +140,7 @@ table{
 		<!-- 검색@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
 
-		<div class="container" >
+		<div class="container"  style="width: 100%">
 			<div class="row">
 				<table class="points_table table-hover" style="width: 100%">
 					<thead>

@@ -90,7 +90,7 @@
 	<hr size=1px color="silver">
 
 	<c:choose>
-		<c:when test="${grade eq 'admin' or grade eq 'daminist' }">
+		<c:when test="${grade eq 'admin' or grade eq 'adaminist' }">
 			<div style="width:100%; margin-bottom: 10px;">
 				
 					<a href="course_Modify?ccode=${data.ccode }&cday=${data.cday }&mypage=true">과목
@@ -99,7 +99,7 @@
 				
 					<a href="course_Delete?ccode=${data.ccode }&cday=${data.cday }&mypage=true"style="margin-left:20px;" >과목 삭제</a>
 						
-					<a href="course_List?mypage=true" style="margin-left: 440px;">뒤로 가기</a>
+					<a href="course_List?mypage=true" style="margin-left: 500px;">뒤로 가기</a>
 				
 			</div>
 		</c:when>
