@@ -212,12 +212,13 @@ public class CheckAll {
 		System.out.println("checkID 진입@@!#@$@$*&!($&!@*(&!@(*#&!@#*(@&#*(");
 		boolean chk = true;
 		
-		
+		if(arr2.isEmpty()) {
+			chk = false;
+		}
 		for (Jun_VO vo : arr2) {
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@1111111111");
-			if(vo.getCid()==null || vo.getCid()=="") {
-				chk = false;
-			}
+			
+			
 			System.out.println(vo.getCid());
 			System.out.println("여기 왜안나오는데 1111222222222");
 			for(Jun_VO vo2 : arr) {
