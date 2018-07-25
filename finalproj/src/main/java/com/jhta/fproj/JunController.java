@@ -186,6 +186,7 @@ public class JunController {
 			}
 			
 			
+			
 			if(ca.chkstr(arr)) {
 				
 				model.addAttribute("msg", "시간은 1~8교시만 가능합니다.");
