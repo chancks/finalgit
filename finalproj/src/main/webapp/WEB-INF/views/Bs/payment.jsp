@@ -50,7 +50,7 @@ margin-left: ;
 			
 			<div style="margin-top: 20px; margin-left:  80px;">
 				<div  style="float: left; margin-right: 10px;"><strong>Credit Card Number:</strong></div>
-				<div style="padding-left: 20px;"> <input type="text" name="cpnum" /></div>
+				<div style="padding-left: 20px;"> <input type="number" name="cpnum" max="9999" style="width:50px"/>-<input type="number" max="9999" style="width:50px"/>-<input type="number" max="9999" style="width:50px"/>-<input type="number" max="9999" style="width:50px"/></div>
 			</div>
 			
 			
