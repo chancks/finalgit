@@ -185,12 +185,12 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
 							<c:when test="${grade eq 'administ' }">
 								<input type="button" id="btn"
 									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
-									value="마이페이지">
+									value="관리페이지">
 							</c:when>
 							<c:otherwise> 
 								<input type="button" id="btn"
 									onclick="location.href='/mvc/Bs/memberlist?mypage=true'"
-									value="마이페이지"> 
+									value="관리페이지"> 
 							</c:otherwise>
 						</c:choose>
 					</c:when>
