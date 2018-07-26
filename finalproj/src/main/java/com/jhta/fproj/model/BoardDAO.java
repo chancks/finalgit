@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 
 @Component
 public class BoardDAO {
@@ -78,10 +79,10 @@ public class BoardDAO {
 		return sessionTemplate.update("kdh.qnaReplyReg", vo);
 	}
 
-	public Object qnaTotalCount() {
+	public Object qnaTotalCount(BoardVO vo) {
 		// TODO Auto-generated method stub
 		System.out.println("...............................");
-		return sessionTemplate.selectOne("kdh.qnaTotalCount");
+		return sessionTemplate.selectOne("kdh.qnaTotalCount", vo);
 	}
 	
 	
@@ -127,9 +128,9 @@ public class BoardDAO {
 		return sessionTemplate.selectOne("kdh.noticeDeleteReg", vo);
 	}
 
-	public Object noticeTotalCount() {
+	public Object noticeTotalCount(BoardVO vo) {
 		// TODO Auto-generated method stub
-		return sessionTemplate.selectOne("kdh.noticeTotalCount");
+		return sessionTemplate.selectOne("kdh.noticeTotalCount", vo);
 	}
 
 	//review
@@ -175,10 +176,10 @@ public class BoardDAO {
 		return sessionTemplate.selectOne("kdh.reviewDeleteReg", vo);
 	}
 
-	public Object reviewTotalCount() {
+	public Object reviewTotalCount(BoardVO vo) {
 		// TODO Auto-generated method stub
 		System.out.println("...............................");
-		return sessionTemplate.selectOne("kdh.reviewTotalCount");
+		return sessionTemplate.selectOne("kdh.reviewTotalCount", vo);
 	}
 	
 

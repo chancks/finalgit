@@ -1,12 +1,10 @@
 package com.jhta.fproj;
 
-
-import java.util.ArrayList;
-
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.swing.JViewport;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -56,7 +54,7 @@ public class BoardController {
 		
 		switch (main) {
 			case "qnaList":
-				vo.setTot((Integer)dao.qnaTotalCount());
+				vo.setTot((Integer)dao.qnaTotalCount(vo));
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
 				vo.setStart2(pvo.getStart());
 				vo.setEnd2(pvo.getEnd());
@@ -127,10 +125,13 @@ public class BoardController {
 				
 			switch (main) {
 			case "noticeList":
-				vo.setTot((Integer)dao.noticeTotalCount());
-				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
-				vo.setStart2(pvo.getStart());
-				vo.setEnd2(pvo.getEnd());
+				System.out.println(vo);
+				vo.setTot((Integer)dao.noticeTotalCount(vo)); //게시물 갯수
+				System.out.println("mdoel : "+model);
+				System.out.println(vo.getTot());
+				pvo = paging.makePaging(pvo.getPage(),vo.getTot()); //페이징
+				vo.setStart2(pvo.getStart()); //페이징 처음
+				vo.setEnd2(pvo.getEnd()); //페이징 마지막
 				res = dao.noticeList(vo);
 				model.addAttribute("data3", pvo);
 				model.addAttribute("List","noticeList.jsp");
@@ -197,7 +198,7 @@ public class BoardController {
 		
 			switch (main) {
 			case "reviewList":
-				vo.setTot((Integer)dao.reviewTotalCount());
+				vo.setTot((Integer)dao.reviewTotalCount(vo));
 				pvo = paging.makePaging(pvo.getPage(),vo.getTot());
 				vo.setStart2(pvo.getStart());
 				vo.setEnd2(pvo.getEnd());
