@@ -37,33 +37,33 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<th align="center">${noticeRow.cnt}</th>
 					</tr>
 				</c:forEach>
+			
+				<tr>
+					<th colspan="5" align="center">
+						<c:if test="${data3.startPage>1}">
+							<a href="noticeList?page=1&schCol=${param.schCol}&title=${param.title}">[처음]</a>
+							<a href="noticeList?page=${data3.startPage-1}&schCol=${param.schCol}&title=${param.title}"><</a>
+						</c:if>
+						<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
+							<c:choose>
+								<c:when test="${i==data3.page }">
+									[${i}]
+								</c:when>
+								<c:otherwise>
+									<a href="noticeList?page=${i }&schCol=${param.schCol}&title=${param.title}">${i}</a>
+								</c:otherwise>
+							</c:choose>
+							
+						</c:forEach>
+						<c:if test="${data3.endPage<data3.totalPage }">
+							<a href="noticeList?page=${data3.endPage+1}&schCol=${param.schCol}&title=${param.title}">></a>
+							<a href="noticeList?page=${data3.totalPage }">[마지막]</a>
+						</c:if>
+					</th>
+				</tr>
 			</c:otherwise>
 		</c:choose>
-	   	<tr>
-			<tr>
-				<th colspan="5" align="center">
-					<c:if test="${data3.startPage>1}">
-						<a href="noticeList?page=1">[처음]</a>
-						<a href="noticeList?page=${data3.startPage-1}"><</a>
-					</c:if>
-					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
-						<c:choose>
-							<c:when test="${i==data3.page }">
-								[${i}]
-							</c:when>
-							<c:otherwise>
-								<a href="noticeList?page=${i }">${i}</a>
-							</c:otherwise>
-						</c:choose>
-						
-					</c:forEach>
-					<c:if test="${data3.endPage<data3.totalPage }">
-						<a href="noticeList?page=${data3.endPage+1}">></a>
-						<a href="noticeList?page=${data3.totalPage }">[마지막]</a>
-					</c:if>
-				</th>
-			</tr>
-		</tr>
+	
 		<form alction="?">
 			<tr>
 				<th colspan="5" align="center">

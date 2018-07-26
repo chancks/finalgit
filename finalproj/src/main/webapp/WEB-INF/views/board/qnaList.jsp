@@ -36,14 +36,12 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<th align="center">${qnaRow.cnt}</th>
 					</tr>
 				</c:forEach>
-			</c:otherwise>
-		</c:choose>
-	   	<tr>
+			
 			<tr>
 				<th colspan="5" align="center">
 					<c:if test="${data3.startPage>1}">
-						<a href="qnaList?page=1">[처음]</a>
-						<a href="qnaList?page=${data3.startPage-1}"><</a>
+						<a href="qnaList?page=1&schCol=${param.schCol}&title=${param.title}">[처음]</a>
+						<a href="qnaList?page=${data3.startPage-1}&schCol=${param.schCol}&title=${param.title}"><</a>
 					</c:if>
 					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
 						<c:choose>
@@ -51,7 +49,7 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 								[${i}]
 							</c:when>
 							<c:otherwise>
-								<a href="qnaList?page=${i }">${i}</a>
+								<a href="qnaList?page=${i }&schCol=${param.schCol}&title=${param.title}">${i}</a>
 							</c:otherwise>
 						</c:choose>
 						
@@ -62,7 +60,9 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 					</c:if>
 				</th>
 			</tr>
-		</tr>
+		
+			</c:otherwise>
+		</c:choose>
 		<form alction="?">
 			<tr>
 				<th colspan="5" align="center">

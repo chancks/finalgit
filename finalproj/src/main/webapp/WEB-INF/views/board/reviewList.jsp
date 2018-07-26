@@ -37,14 +37,13 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 						<th align="center">${reviewRow.cnt}</th>
 					</tr>
 				</c:forEach>
-			</c:otherwise>
-		</c:choose>
-	  	<tr>
+				
+				
 			<tr>
 				<th colspan="5" align="center">
 					<c:if test="${data3.startPage>1}">
-						<a href="reviewList?page=1">[처음]</a>
-						<a href="reviewList?page=${data3.startPage-1}"><</a>
+						<a href="reviewList?page=1&schCol=${param.schCol}&title=${param.title}">[처음]</a>
+						<a href="reviewList?page=${data3.startPage-1}&schCol=${param.schCol}&title=${param.title}"><</a>
 					</c:if>
 					<c:forEach var="i" begin="${data3.startPage }" end="${data3.endPage }">
 						<c:choose>
@@ -52,17 +51,20 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 								[${i}]
 							</c:when>
 							<c:otherwise>
-								<a href="reviewList?page=${i }">${i}</a>
+								<a href="reviewList?page=${i }&schCol=${param.schCol}&title=${param.title}">${i}</a>
 							</c:otherwise>
 						</c:choose>
 						
 					</c:forEach>
 					<c:if test="${data3.endPage<data3.totalPage }">
-						<a href="reviewList?page=${data3.endPage+1}">></a>
-						<a href="reviewList?page=${data3.totalPage }">[마지막]</a>
+						<a href="reviewList?page=${data3.endPage+1}&schCol=${param.schCol}&title=${param.title}">></a>
+						<a href="reviewList?page=${data3.totalPage }&schCol=${param.schCol}&title=${param.title}">[마지막]</a>
 					</c:if>
 				</th>
 			</tr>
+			</c:otherwise>
+		</c:choose>
+	  	<tr>
 		</tr>
 		<form alction="?">
 			<tr>
