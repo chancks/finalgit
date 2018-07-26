@@ -207,32 +207,38 @@ public class CheckAll {
 	}
 	
 	
-	public boolean chkcid(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr2) {//arr-선택한거 arr2-전체 리스트
+	public void chkcid(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr4) {//arr-선택한거 arr2-전체 리스트
 		
-		System.out.println("checkID 진입@@!#@$@$*&!($&!@*(&!@(*#&!@#*(@&#*(");
-		boolean chk = true;
+		System.out.println("checkID 진입@@ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+/*		boolean chk = true;*/
 		
-		if(arr2.isEmpty()) {
+/*		if(arr4.isEmpty()) {
 			chk = false;
-		}
-		for (Jun_VO vo : arr2) {
-			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@1111111111");
+		}*/
+		for (Jun_VO vo : arr4) {
+			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			
 			
-			System.out.println(vo.getCid());
+			System.out.println("vo==arr4 vo.getAid()      :"+vo.getAid());
+			System.out.println("vo==arr4 vo.getAname()      :"+vo.getAname());
+			System.out.println("vo vo vo vo : "+ vo);
 			System.out.println("여기 왜안나오는데 1111222222222");
 			for(Jun_VO vo2 : arr) {
-				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@222222222222");
+				System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 
-				System.out.println("vo2.getCid()        :"+vo2.getCol());
-				System.out.println("vo2            :"+vo2);
-				System.out.println("===========================");
-				System.out.println("vo.getCid()        :"+vo.getCid());
-				System.out.println("vo            :    "+vo);
+				if(vo2.getCol().equals(vo.getAid())) {
+					System.out.println("@@@@@@@@@@@@@@@@같은아이디 찾았다@@!!!! 바꿈 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
+					vo2.setCname(vo.getAname());
+				}
+				System.out.println("===============================================");
+				System.out.println("vo2==arr vo2            :"+vo2);
+				System.out.println("===============================================");
 				
+				System.out.println(" vo==arr  vo            :    "+vo);
+				System.out.println("===============================================");
 				
 
-				if(vo.getCid().equals(vo2.getCol())) {//선택한것과 내 수강친청 목록에서 코드 겹치는것 체크
+/*				if(vo.getCid().equals(vo2.getCol())) {//선택한것과 내 수강친청 목록에서 코드 겹치는것 체크
 					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@");
 					
 					System.out.println(vo.getCid());
@@ -249,11 +255,11 @@ public class CheckAll {
 						System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
 					}
 					
-				}
+				}*/
 			}
 		}
 		
-		return chk;
+		return;
 	}
 	
 }

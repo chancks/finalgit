@@ -93,32 +93,56 @@ function join(){
 
 <form action="course_insertReg?=" method="post" enctype="multipart/form-data" name="frm">
 		<input type="hidden" name="mypage" value="true"/>
-		
+<%-- 		<input type="hidden" name="schCol" value="${data.aname }"/> --%>
 		<table class="table"> 
+		
+		
+		
+		
 		<tr>
 			<td style="background-color:#D8D8D8;">과정 명</td>
 			<td colspan="5">	<input type="text" name="ctitle" id="ctitle" style="width:730px;height:21px" /></td>
 		</tr>
 		
+		
+		
+		
 		<tr>	
-			<td style="background-color:#D8D8D8;">강사 선택</td>
+<%-- 			<td style="background-color:#D8D8D8;">강사 선택</td>
 			<td><select name="schCol" style="width:120px; height:26px">
 					<c:forEach items="${data }" var="row" varStatus="no">
 						<option value="${row.aname}">${row.aname}</option>
 					</c:forEach>
 				</select></td>
-			
-			<td style="background-color:#D8D8D8;">강사 id</td>
-			<td>	<select name="col" style="width:120px; height:26px">
+			 --%>
+			<td style="background-color:#D8D8D8;">강사 선택</td>
+			<td>	<select name="col" style="width:150px; height:26px">
 					<c:forEach items="${data }" var="row" varStatus="no">
-						<option value="${row.aid}">${row.aid}(이름:${row.aname})</option>
+						<option value="${row.aid}">${row.aname}(id:${row.aid})</option>
 					</c:forEach>
 				</select></td>
 			
 			<td style="background-color:#D8D8D8;">과목 코드</td>
-			<td><input type="text" name="ccode" id="ccode" style="width:110px;height:26px; margin-left: 10px"/>
+			<td><input type="text" name="ccode" id="ccode" style="width:150px;height:26px;"/>
 			</td>
 		</tr>
+		
+		
+		
+		
+		
+		<tr>
+			<td style="background-color:#D8D8D8;">시작일</td>
+			<td>	<input type="date" name="cstart" value="2018-07-20" style="width:150px; height:26px"/>
+		</td>
+			<td style="background-color:#D8D8D8;">종료일</td>
+			<td>	<input type="date" name="cfinish" value="2018-08-30" style="width:150px; height:26px" />
+			</td>
+		</tr>
+		
+		
+		
+		
 		
 		<tr>
 			<td style="background-color:#D8D8D8;">요일</td>
@@ -142,15 +166,7 @@ function join(){
 		</tr>
 		
 		
-		<tr>
-			<td style="background-color:#D8D8D8;">시작일</td>
-			<td>	<input type="date" name="cstart" value="2018-07-20" style="width:150px; height:26px"/>
-		</td>
-			<td style="background-color:#D8D8D8;">종료일</td>
-			<td>	<input type="date" name="cfinish" value="2018-08-30" style="width:150px; height:26px" />
-			</td>
-		</tr>
-		
+	
 		
 		<tr>
 			<td style="background-color:#D8D8D8;">과정 내용</td>

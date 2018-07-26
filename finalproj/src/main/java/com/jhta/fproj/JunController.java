@@ -109,6 +109,7 @@ public class JunController {
 		ArrayList<Jun_VO> arr = new ArrayList<>();
 		ArrayList<Jun_VO> arr2 = new ArrayList<>();
 		ArrayList<Jun_VO> arr3 = new ArrayList<>();
+		ArrayList<Jun_VO> arr4 = new ArrayList<>();
 	
 		CheckAll ca = new CheckAll();
 		
@@ -171,6 +172,7 @@ public class JunController {
 			arr.add(vo);
 			arr2 = (ArrayList)dao.plist(vo);
 			arr3 = (ArrayList)dao.clist(vo);
+			arr4 = (ArrayList)dao.professor_list(vo);
 			
 
 			for (Jun_VO jun_VO : arr3) {
@@ -200,12 +202,15 @@ public class JunController {
 				model.addAttribute("url", "course_register?mypage=true");
 				
 			}
-			else if(ca.chkcid(arr, arr2)) {
+/*			else if(ca.chkcid(arr, arr2)) {
 				model.addAttribute("msg", "강사의 id와 name이 불일치 합니다.");
 				model.addAttribute("url", "course_register?mypage=true");
 				
-			}else {
+			}*/else {
+				ca.chkcid(arr, arr4);
 				
+				
+				System.out.println("vo.getAname()          @@@@@@@@@@@@@@@@@@@  : "+vo.getCname());
 				res = dao.course_insert(vo);
 
 				model.addAttribute("msg", "등록성공");
@@ -247,17 +252,17 @@ public class JunController {
 			arr.add(vo);
 			arr2 = (ArrayList)dao.plist(vo);
 			
-			if(ca.chkcid(arr, arr2)) {
+	/*		if(ca.chkcid(arr, arr2)) {
 				model.addAttribute("msg", "강사의 id와 name이 불일치 합니다.");
 				model.addAttribute("url", "course_Modify?ccode="+vo.getCcode()+"&cday="+vo.getCday()+"&mypage=true");
 				
-			}else {
+			}else {*/
 			
 			res = dao.course_modifyReg(vo);
 
 			model.addAttribute("msg", "수정 완료");
 			model.addAttribute("url", "course_Detail?ccode=" + vo.getCcode()+"&mypage=true");
-			}
+		/*}*/
 			break;
 		
 			

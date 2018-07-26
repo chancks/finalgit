@@ -153,22 +153,38 @@ body {
 									><i class="fa fa-list-alt fa-fw"></i><div id="ff">내
 										정보</div></a></li>
 							</c:if>
-
+						
 							<li><a class="z"
 								href="/mvc/jun_List/course_register?mypage=true"
 								><i class="fa fa-list-alt fa-fw"></i><div id="ff">과목 등록</div></a></li>
-							<li><a class="z"
-								href="/mvc/manager/join?jgrade=teacher&mypage=true"
-								><i class="fa fa-file-o fa-fw"></i><div id="ff">강사 등록</div></a></li>
+							
 							<li><a class="z"
 								href="/mvc/jun_List/course_List?mypage=true"
 								><i class="fa fa-tasks fa-fw"></i><div id="ff">과목 리스트</div></a></li>
+							
+							<li class="active"><a 
+						style="background-color: #353535; height:40px"><i
+							class="fa fa-address-book-o fa-fw"></i>강사</a></li>
+							
+														
 							<li><a class="z"
-								href="/mvc/jun_List/astudent_List?mypage=true"
-								><i class="fa fa-calendar fa-fw"></i><div id="ff">학생 리스트</div></a></li>
+								href="/mvc/manager/join?jgrade=teacher&mypage=true"
+								><i class="fa fa-file-o fa-fw"></i><div id="ff">강사 등록</div></a></li>
+							
 							<li><a class="z"
 								href="/mvc/jun_List/professor_List?mypage=true"
 								><i class="fa fa-book fa-fw"></i><div id="ff">강사 리스트</div></a></li>
+							
+							
+							<li class="active"><a 
+						style="background-color: #353535; height:40px"><i
+							class="fa fa-address-book fa-fw"></i>학생</a></li>
+							
+							
+							<li><a class="z"
+								href="/mvc/jun_List/astudent_List?mypage=true"
+								><i class="fa fa-calendar fa-fw"></i><div id="ff">학생 리스트</div></a></li>
+							
 							<li><a class="z"
 								href="/mvc/Bs/totpay?mypage=true"
 								><i class="fa fa-pencil fa-fw"></i><div id="ff">결제 내역</div></a></li>

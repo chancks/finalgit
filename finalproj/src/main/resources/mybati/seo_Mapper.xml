@@ -26,8 +26,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		(ctitle, cname, ccontent, cday, ctime, cstart, cfinish, ccode, ctotal,
 		cid)
 		values
-		(#{ctitle}, #{schCol}, #{ccontent}, #{cday}, #{ctime} , #{cstart},
+		(#{ctitle},#{cname}, #{ccontent}, #{cday}, #{ctime} , #{cstart},
 		#{cfinish}, #{ccode}, #{ctotal}, #{col})
+		
+		
+		
+		
+		<!-- 
+				insert into course
+		(ctitle, cname, ccontent, cday, ctime, cstart, cfinish, ccode, ctotal,
+		cid)
+		values
+		(#{ctitle}, #{schCol}, #{ccontent}, #{cday}, #{ctime} , #{cstart},
+		#{cfinish}, #{ccode}, #{ctotal}, #{col}) -->
+		
+		
+		
 	</insert>
 <!-- #{cname} -->
 	<select id="course_list1" resultType="jun_Vo"

@@ -153,6 +153,9 @@ public class Jun_DAO {
 	}
 	
 
+	
+	
+
 
 	public Object p_astudent_list(Jun_VO vo) {
 		
