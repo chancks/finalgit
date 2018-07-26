@@ -20,6 +20,7 @@
 
 
 <style>
+
 @media screen and (min-width:380px) {
 
 }
@@ -33,10 +34,77 @@ table{
 }
 
 }
-#a {
+
+.points_table thead {
+	width: 100%;
+}
+
+.points_table tbody {
+	height: 300px;
+	overflow-y: auto;
+	width: 100%;
+}
+
+.points_table thead tr{
+	width: 99%;
+}
+
+ .points_table tr{
+ 	width: 100%;
+ }
+
+.points_table thead, .points_table tbody, .points_table tr, .points_table td, .points_table th{
+	display: inline-block;
+}
+
+.points_table thead{
+	background: #212121;
+	color: #fff;
+}
+
+.points_table tbody td, .points_table thead > tr> th{
 	float: left;
-	background-color: gray;
-	margin: 5px;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td, .points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th{
+ 	padding: 8px;
+	height: 26px;
+	text-align: center;
+	line-height: 12px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar{
+	height: 300px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar{
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #BDBDBD;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
 }
 
 
@@ -46,34 +114,51 @@ table{
 <title>Insert title here</title>
 </head>
 <body>
-<div>
-	<c:forEach items="${data }" var="row" varStatus="no">
-
-				<div id="a">
-					<div>
-						<h2>학생ID</h2>
-					</div>
-					<div>${row.aid}</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>학생이름</h2>
-					</div>
-					<div>${row.aname}</div>
-				</div>
-
-				<div id="a">
-					<div>
-						<h2>등록 여부</h2>
-					</div>
-					<div>${row.rpay}</div>
-				</div>
-
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-			</c:forEach>
-			<a href="/mvc/jun_List/p_Course_List?cid=bbb&mypage=true">뒤로 가기</a>
+	<div id="legend">
+	<legend>수강생 목록</legend>
 </div>
-</body>
-</html>
+<div style="border: 0.5px silver solid; ">
+
+<div class="container" style="width: 100%">
+	<div class="row">
+
+		
+		<table class="points_table table-hover" style="width: 100%">
+			<thead>
+				<tr>
+					<th class="col-xs-2">학생 이름</th>
+					<th class="col-xs-2">학생 id</th>
+					<th class="col-xs-3">전화 번호</th>
+					<th class="col-xs-3">e-mail</th>
+					<th class="col-xs-2">등록 여부</td>
+				</tr>
+			</thead>
+		<tbody class="points_table_scrollbar">
+		<c:forEach items="${data }" var="row" varStatus="status">
+				
+				<c:choose>
+							<c:when test="${status.index%2==0}">
+									<tr class="odd"style="text-align: center">
+							</c:when>
+							<c:otherwise>
+									<tr class="even"style="text-align: center">
+							
+							</c:otherwise>
+						</c:choose>
+				
+					<td class="col-xs-2" >${row.aname}</td>
+					<td class="col-xs-2">${row.aid }</td>					
+					<td class="col-xs-3">${row.aphone}</td>
+					<td class="col-xs-3">${row.aemail}</td>
+					<td class="col-xs-2">${row.rpay}</td>
+
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</div>
+</div>
+
+<hr size=1px color="#ddd">	
+	
+</div>

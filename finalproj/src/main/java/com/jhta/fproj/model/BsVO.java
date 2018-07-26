@@ -15,6 +15,7 @@ public class BsVO {
     String [] dayarr = {"월","화","수","목","금","토","일"};
     Integer [] timearr;
     
+ 
 	public String getCinfo() {
 		return cinfo;
 	}

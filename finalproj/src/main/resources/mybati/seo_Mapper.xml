@@ -83,7 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<select id="astudent_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = 'student'
+		select * from astudent where agrade  = 'student' order by aname
 
 	</select>
 	
@@ -95,7 +95,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="professor_list" resultType="jun_Vo"  parameterType="jun_Vo">
-		select * from astudent where agrade  = 'teacher'
+		select * from astudent where agrade  = 'teacher' order by aname
 
 	</select>
 

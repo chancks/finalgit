@@ -16,8 +16,11 @@ public class BoardVO {
 	 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	 
 	 ArrayList<BoardVO> arr;
-	 
-	 public BoardVO() {
+	
+
+
+
+	public BoardVO() {
 		// TODO Auto-generated constructor stub
 	}
 	 

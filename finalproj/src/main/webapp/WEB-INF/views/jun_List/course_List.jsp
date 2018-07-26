@@ -107,7 +107,7 @@ table{
              
             <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='course_List3?mypage=true'">
-     				<a class="btn"  data-toggle="tab"><div id="qq">개강 종료 목록</div></a>
+     				<a class="btn"  data-toggle="tab"><div id="qq">강의 종료 목록</div></a>
             </div>
             
           </div> 

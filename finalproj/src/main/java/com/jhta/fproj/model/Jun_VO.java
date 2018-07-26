@@ -10,8 +10,8 @@ public class Jun_VO {
 	 Date cstart, cfinish;
 	 String ctitle,cday,cname, ccontent,ctime,ccode,cinfo, cid, schCol, col, aid, apw, aname, aemail, aphone, abirth, ainfo, aupfile, agrade, rid, rtitle, rname, rpay, rcode;
 	 Integer [] timearr;
-	 
-	 public String getCinfo() {
+
+	public String getCinfo() {
 		return cinfo;
 	}
 	public void setCinfo(String cinfo) {

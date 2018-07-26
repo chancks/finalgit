@@ -51,8 +51,8 @@ public class RfcController {
 	
 		System.out.println(vo);
 		
-		CheckAll ca = new CheckAll();
 		Paging paging = new Paging();
+		CheckAll ca = new CheckAll();
 		
 		ArrayList<BsVO> arr = new ArrayList<>();
 		ArrayList<BsVO> arr2 = new ArrayList<>();

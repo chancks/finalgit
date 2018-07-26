@@ -150,7 +150,7 @@ table{
 								</c:otherwise>
 							</c:choose>
 
-							<td class="col-xs-3">${row.ctitle}</td>
+							<td class="col-xs-3"><a href="p_Astudent_List?rcode=${row.ccode }&mypage=true">${row.ctitle}</a></td>
 							<td class="col-xs-2">${row.cname}</td>
 							<td class="col-xs-3">${row.cstart}&nbsp&nbsp~&nbsp&nbsp${row.cfinish}</td>
 							<td class="col-xs-1">${row.cday}</td>

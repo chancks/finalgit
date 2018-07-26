@@ -170,7 +170,7 @@ body {
 								href="/mvc/jun_List/professor_List?mypage=true"
 								><i class="fa fa-book fa-fw"></i><div id="ff">강사 리스트</div></a></li>
 							<li><a class="z"
-								href="/mvc/Bs/totpay?mypage=true?mypage=true"
+								href="/mvc/Bs/totpay?mypage=true"
 								><i class="fa fa-pencil fa-fw"></i><div id="ff">결제 내역</div></a></li>
 						</c:otherwise>
 

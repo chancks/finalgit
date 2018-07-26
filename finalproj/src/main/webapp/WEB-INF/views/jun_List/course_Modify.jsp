@@ -65,6 +65,9 @@ function join(){
 <title>Insert title here</title>
 </head>
 <body>
+<div id="legend">
+    <legend>과목 수정</legend>
+</div>
 
 		<form action="course_ModifyReg?" method="post"
 		enctype="multipart/form-data" name="frm">

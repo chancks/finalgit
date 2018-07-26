@@ -78,7 +78,7 @@ table{
 </head>
 <body>
 <div id="legend">
-	<legend>내 강의 록</legend>
+	<legend>내 강의 목록</legend>
 </div>
 
 
@@ -106,7 +106,7 @@ table{
              
             <div style="float:left;  cursor: pointer;" 
 				onclick="location.href='p_Course_List3?cid=${id}&mypage=true'">
-     				<a class="btn"  data-toggle="tab"><div id="qq">개강 종료 목록</div></a>
+     				<a class="btn"  data-toggle="tab"><div id="qq">강의 종료 목록</div></a>
             </div>
             
           </div> 

@@ -10,7 +10,7 @@ public class MngUserVO {
 
 	String aid,apw,aname,aemail,
 	aphone,abirth,ainfo,aupfile,agrade,apw2;
-	
+
 	MultipartFile up1;
 	String [] phone;
 

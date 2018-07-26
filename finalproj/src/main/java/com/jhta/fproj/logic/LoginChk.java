@@ -27,7 +27,9 @@ public class LoginChk extends HandlerInterceptorAdapter {
 		
 		System.out.println("id:"+(String)session.getAttribute("id"));
 		System.out.println("등급:"+grade);
-		System.out.println("ServletPath:"+servletpath+"길이:"+servletpath.length());
+		if(!servletpath.contains("bootstrap"))
+			System.out.println("ServletPath:"+servletpath+
+								", 길이:"+servletpath.length());
 		
 		if(request.getServletPath().length()>1) {
 			
@@ -64,7 +66,8 @@ public class LoginChk extends HandlerInterceptorAdapter {
 			}
 			
 			if((grade.equals("admin")||grade.equals("administ"))&& 
-					(servletpath.contains("p_")
+					((servletpath.contains("p_")&&
+							!servletpath.contains("Astudent_List"))
 					||(servletpath.contains("Bs")&&
 							!(servletpath.contains("totpay")||servletpath.contains("memberlist"))))) {
 				

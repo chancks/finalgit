@@ -81,7 +81,8 @@
 
 
 			<tr>
-				<td colspan="6" style="height: 400px">${data.ccontent }</td>
+				<td colspan="6" style="height: 400px">
+<ct:conBr>${data.ccontent }</ct:conBr></td>
 			</tr>
 
 		</table>

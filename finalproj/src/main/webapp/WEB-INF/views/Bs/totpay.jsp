@@ -116,8 +116,8 @@
 				</tr>
 			</thead>
 		<tbody class="points_table_scrollbar">
-		
-		<c:forEach var="pay" items="${data }">
+		<c:forEach var="cc" items="${card }"  >
+		<c:forEach var="pay" items="${data }" varStatus="no">
 			<c:choose>
 				<c:when test="${status.index%2==0}">
 					<tr class="odd" style="text-align: center">
@@ -137,8 +137,8 @@
 					<fmt:formatDate value="${pay.rdate }" pattern="yyyy-MM-dd" />
 					</td>
 					<td class="col-xs-1">${pay.rpay }</td>
-					<c:forEach var="cc" items="${card }" varStatus="no">
-						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid}">
+					
+						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid and pay.no.index eq 0}">
 						<td class="col-xs-2">
 							<fmt:formatDate value="${cc.cpdate }" pattern="yyyy-MM-dd" />
 						</td>

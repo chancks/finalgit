@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BsDAO {
-
+	
 	@Resource
 	SqlSessionTemplate sessionTemplate;
 	
