@@ -99,16 +99,24 @@ public class MngController {
 
 			msg = "로그인 실패";
 			url = "/mvc/manager/loginf";
+			
 			if(dao.login(user)!=null) {
 				System.out.println("로그인");
 				
 				user = dao.login(user);
 				
-				session.setAttribute("id", user.getAid());
-				session.setAttribute("grade", user.getAgrade());
+				System.out.println(user.getAgrade());
+				if(user.getAgrade().equals("withdrawal")) {
+					msg = "탈퇴 된 회원 입니다.";
+				}
 				
-				msg = user.getAname()+"님 반갑습니다.";
-				url = "../";
+				else {
+					session.setAttribute("id", user.getAid());
+					session.setAttribute("grade", user.getAgrade());
+					
+					msg = user.getAname()+"님 반갑습니다.";
+					url = "../";
+				}
 			}
 			
 			model.addAttribute("msg", msg);
