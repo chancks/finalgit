@@ -179,9 +179,9 @@ public class CheckAll {
 	}
 	
 	//월별 정산
-	public String [] cal(ArrayList<BsVO> arr){
+	public Integer [] cal(ArrayList<BsVO> arr){
 
-		String [] montot = new String [12];
+		Integer [] montot = new Integer [12];
 		int tot = 0;
 		
 		for(int i = 0 ; i <montot.length; i++) {
@@ -191,7 +191,7 @@ public class CheckAll {
 				}
 			}
 			System.out.println((i+1)+"월:"+tot);
-			montot [i] = String.valueOf(tot);
+			montot [i] = tot;
 			tot=0;
 			
 		}

@@ -182,9 +182,15 @@ public class RfcController {
 						
 						arr =(ArrayList<BsVO>)dao.cplist(vo);
 						if(vo.getSchYear()!=null) {
+							int yearTot = 0;
 							System.out.println("year:"+vo.getSchYear());
 						
 							res = ca.cal(arr);
+							
+							for(Integer ii : ca.cal(arr)) {
+								yearTot +=ii;
+							}
+							model.addAttribute("yearTot", yearTot);
 						}
 						
 						break;

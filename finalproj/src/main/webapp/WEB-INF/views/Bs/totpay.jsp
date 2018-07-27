@@ -120,6 +120,7 @@
 		<tr>
 			<td>과정명</td>
 			<td>과목코드</td>
+			<td>강사명</td>
 			<td>수강신청인원</td>
 			<td>결제인원</td>
 			<td>결제금액</td>
@@ -167,6 +168,10 @@
 	<td>${mm }만원</td>
 	</tr>
 	</c:forEach>
+	<tr>
+	<td>총계</td>
+	<td>${yearTot }만원</td>
+	</tr>
 </c:when>
 <c:otherwise>
 	<c:forEach var="pay" items="${data }" >
