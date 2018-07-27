@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0 , 
 user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -110,11 +111,11 @@ body {
 						<c:when test="${grade eq 'student' }">
 							<!-- 학생  -->
 							<li><a class="z" href="/mvc/manager/myinfo?mypage=true"
-								><i class="fa fa-table fa-fw"></i><div id="ff">내 정보</div></a></li>
+								><i class="fa fa-list fa-fw"></i><div id="ff">내 정보</div></a></li>
 
 							<li><a class="z"
 								href="/mvc/Bs/registerfc?mypage=true&page=1"
-								><i class="fa fa-table fa-fw"></i><div id="ff">수강 신청</div></a></li>
+								><i class="fa fa-pencil fa-fw"></i><div id="ff">수강 신청</div></a></li>
 
 							<li><a class="z" href="/mvc/Bs/timetable?mypage=true"
 								><i class="fa fa-table fa-fw"></i><div id="ff">시간표</div></a></li>
@@ -126,11 +127,11 @@ body {
 							<!-- 강사 -->
 
 							<li><a class="z" href="/mvc/manager/myinfo?mypage=true"
-								><i class="fa fa-table fa-fw"></i><div id="ff">내 정보</div></a></li>
+								><i class="fa fa-list fa-fw"></i><div id="ff">내 정보</div></a></li>
 
 							<li><a class="z"
 								href="/mvc/jun_List/p_Course_List?cid=${id}&mypage=true"
-								><i class="fa fa-table fa-fw"></i><div id="ff">내 강의</div></a></li>
+								><i class="fa fa-pencil fa-fw"></i><div id="ff">내 강의</div></a></li>
 
 							<li><a class="z" href="/mvc/Bs/timetable?mypage=true"
 								><i class="fa fa-table fa-fw"></i><div id="ff">시간표</div></a></li>
@@ -162,6 +163,12 @@ body {
 								href="/mvc/jun_List/course_List?mypage=true"
 								><i class="fa fa-tasks fa-fw"></i><div id="ff">과목 리스트</div></a></li>
 							
+							
+							
+							
+							
+							
+							
 							<li class="active"><a 
 						style="background-color: #353535; height:40px"><i
 							class="fa fa-address-book-o fa-fw"></i>강사</a></li>
@@ -176,6 +183,11 @@ body {
 								><i class="fa fa-book fa-fw"></i><div id="ff">강사 리스트</div></a></li>
 							
 							
+							
+							
+							
+							
+							
 							<li class="active"><a 
 						style="background-color: #353535; height:40px"><i
 							class="fa fa-address-book fa-fw"></i>학생</a></li>
@@ -185,9 +197,33 @@ body {
 								href="/mvc/jun_List/astudent_List?mypage=true"
 								><i class="fa fa-calendar fa-fw"></i><div id="ff">학생 리스트</div></a></li>
 							
+						
+								
+						
+						
+						
+								<li class="active"><a 
+						style="background-color: #353535; height:40px"><i
+							class="fa fa-address-book-o fa-fw"></i>결제</a></li>
+							
+							<jsp:useBean id="sysdate" class="java.util.Date"/>
+							<fmt:formatDate value="${sysdate }" pattern="yyyy" var="sysdate"/>
+							
+							
 							<li><a class="z"
 								href="/mvc/Bs/totpay?mypage=true"
-								><i class="fa fa-pencil fa-fw"></i><div id="ff">결제 내역</div></a></li>
+								><i class="fa fa-list-alt fa-fw"></i><div id="ff">학생별 정산</div></a></li>
+							
+							<li><a class="z"
+								href="/mvc/Bs/totpay?mypage=true&name=course"
+								><i class="fa fa-tasks fa-fw"></i><div id="ff">과목별 정산</div></a></li>
+						
+						
+							<li><a class="z"
+								href="/mvc/Bs/totpay?mypage=true&name=date&schYear=${sysdate }"
+								><i class="fa fa-table fa-fw"></i><div id="ff">연도별 정산</div></a></li>
+							
+						
 						</c:otherwise>
 
 					</c:choose>
