@@ -130,6 +130,7 @@
 			<td class="col-xs-1">
 			<a href="/mvc/jun_List/p_Astudent_List?rcode=${pay.rcode }&mypage=true">${pay.rcode }</a>
 			</td>
+			<td class="col-xs-1">${pay.rname }</td>
 		<c:forEach var="pay2" items="${data2 }">
 		<c:if test="${pay.rcode eq pay2.rcode }">
 			<td class="col-xs-1">${pay2.tot }명</td>

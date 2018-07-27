@@ -45,10 +45,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 결제 내역(과목) -->
 	<select id="bsCCpList" resultType="bsVo">
-		select rtitle,rcode,count(rpay) as tot from regist,
+		select rtitle,rcode,rname,count(rpay) as tot from regist,
 		(select distinct ccode,ctitle from course where <![CDATA[ cfinish>sysdate]]>)tt 
 		where regist.rcode = tt.ccode
-		group by rcode,rtitle
+		group by rcode,rtitle,rname
 	</select>
 	
 	<!-- 수강신청 인원 리스트 -->
