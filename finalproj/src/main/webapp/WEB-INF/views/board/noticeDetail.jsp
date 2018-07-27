@@ -38,7 +38,7 @@ width: 700px;
 		</tr><tr>
 		
 		<th colspan="2" align="right">
-			<a href="noticeList">목록</a>
+			<a href="noticeList?page=${param.page }">목록</a>
 			<c:if test="${grade eq 'admin' or grade eq 'administ'}">
 				<a href="noticeDelete?id=${notice.id}">삭제</a>
 				<a href="noticeModify?id=${notice.id}">수정</a>

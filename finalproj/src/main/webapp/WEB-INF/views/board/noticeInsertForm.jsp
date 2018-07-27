@@ -75,7 +75,7 @@ width: 700px;
 		<tr>
 			<th colspan="2" align="center">
 				<input class="btn btn-default" type="button" value="작성" onclick="input()"/>
-				<a href="noticeList">뒤로</a>
+				<a href="noticeList?page=${param.page }">뒤로</a>
 			</th>
 		</tr>
 	</table>

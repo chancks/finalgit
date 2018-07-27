@@ -39,7 +39,7 @@ width: 700px;
 		</tr><tr>
 		
 		<th colspan="2" align="right">
-			<a href="reviewList">목록</a>
+			<a href="reviewList?page=${param.page}">목록</a>
 			<c:if test="${review.pname eq id}">
 				<a href="reviewDelete?id=${review.id}">삭제</a>
 				<a href="reviewModify?id=${review.id}">수정</a>

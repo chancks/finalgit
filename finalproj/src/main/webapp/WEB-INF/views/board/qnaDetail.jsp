@@ -38,7 +38,7 @@ width: 700px;
 		</tr><tr>
 		
 		<th colspan="2" align="right">
-			<a href="qnaList">목록</a>
+			<a href="qnaList?page=${param.page }">목록</a>
 			<c:if test="${qna.pname eq id }">
 				<a href="qnaDelete?id=${qna.id}">삭제</a>
 				<a href="qnaModify?id=${qna.id}">수정</a>

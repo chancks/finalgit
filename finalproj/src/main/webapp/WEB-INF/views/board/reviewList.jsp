@@ -71,7 +71,6 @@ user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
 				<th colspan="5" align="center">
 					<select name="schCol" style="width: 100px;">
 						<option value="title">제목</option>
-						<option value="pname">작성자</option>
 						<option value="content">내용</option>
 						<option value="cnt">조횟수</option>
 					</select>
