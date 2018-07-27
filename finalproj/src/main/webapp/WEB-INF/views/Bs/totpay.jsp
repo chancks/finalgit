@@ -196,11 +196,15 @@
 									type="hidden" value='date' name="name" />
 									<select name="schYear" style="width: 100px;">
 											<c:forEach var="yy" begin="${sysdate-10 }"
-												end="${sysdate-1 }">
-												<option value="${yy }">${yy }년도</option>
-												<c:if test="${sysdate eq yy+1 }">
-													<option value="${yy+1 }" selected="selected">${yy+1 }년도</option>
-												</c:if>
+												end="${sysdate }">
+												<c:choose>
+													<c:when test="${param.schYear eq yy }">
+														<option value="${yy }" selected="selected">${yy }년도</option>
+													</c:when>
+													<c:otherwise>
+														<option value="${yy }">${yy }년도</option>
+													</c:otherwise>
+												</c:choose>
 											</c:forEach>
 									</select>
 									<input class="btn btn-default" type="submit"
