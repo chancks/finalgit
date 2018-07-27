@@ -1,6 +1,7 @@
 package com.jhta.fproj.logic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.annotation.Resource;
 
@@ -177,6 +178,27 @@ public class CheckAll {
 		return arr2;
 	}
 	
+	//월별 정산
+	public String [] cal(ArrayList<BsVO> arr){
+
+		String [] montot = new String [12];
+		int tot = 0;
+		
+		for(int i = 0 ; i <montot.length; i++) {
+			for(BsVO vv : arr) {
+				if(vv.getCpdate().getMonth() == i) {
+					tot +=vv.getCpprice();
+				}
+			}
+			System.out.println((i+1)+"월:"+tot);
+			montot [i] = String.valueOf(tot);
+			tot=0;
+			
+		}
+		System.out.println("월별 정산:"+Arrays.toString(montot));
+		return montot;
+	}
+	
 	///////////////////////////서준호 만듦
 	
 	//과목 코드 중복 체크
@@ -207,38 +229,32 @@ public class CheckAll {
 	}
 	
 	
-	public void chkcid(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr4) {//arr-선택한거 arr2-전체 리스트
+	public boolean chkcid(ArrayList<Jun_VO> arr,ArrayList<Jun_VO> arr2) {//arr-선택한거 arr2-전체 리스트
 		
-		System.out.println("checkID 진입@@ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-/*		boolean chk = true;*/
+		System.out.println("checkID 진입@@!#@$@$*&!($&!@*(&!@(*#&!@#*(@&#*(");
+		boolean chk = true;
 		
-/*		if(arr4.isEmpty()) {
+		if(arr2.isEmpty()) {
 			chk = false;
-		}*/
-		for (Jun_VO vo : arr4) {
-			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		}
+		for (Jun_VO vo : arr2) {
+			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@1111111111");
 			
 			
-			System.out.println("vo==arr4 vo.getAid()      :"+vo.getAid());
-			System.out.println("vo==arr4 vo.getAname()      :"+vo.getAname());
-			System.out.println("vo vo vo vo : "+ vo);
+			System.out.println(vo.getCid());
 			System.out.println("여기 왜안나오는데 1111222222222");
 			for(Jun_VO vo2 : arr) {
-				System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+				System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@222222222222");
 
-				if(vo2.getCol().equals(vo.getAid())) {
-					System.out.println("@@@@@@@@@@@@@@@@같은아이디 찾았다@@!!!! 바꿈 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
-					vo2.setCname(vo.getAname());
-				}
-				System.out.println("===============================================");
-				System.out.println("vo2==arr vo2            :"+vo2);
-				System.out.println("===============================================");
+				System.out.println("vo2.getCid()        :"+vo2.getCol());
+				System.out.println("vo2            :"+vo2);
+				System.out.println("===========================");
+				System.out.println("vo.getCid()        :"+vo.getCid());
+				System.out.println("vo            :    "+vo);
 				
-				System.out.println(" vo==arr  vo            :    "+vo);
-				System.out.println("===============================================");
 				
 
-/*				if(vo.getCid().equals(vo2.getCol())) {//선택한것과 내 수강친청 목록에서 코드 겹치는것 체크
+				if(vo.getCid().equals(vo2.getCol())) {//선택한것과 내 수강친청 목록에서 코드 겹치는것 체크
 					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@");
 					
 					System.out.println(vo.getCid());
@@ -255,11 +271,11 @@ public class CheckAll {
 						System.out.println("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
 					}
 					
-				}*/
+				}
 			}
 		}
 		
-		return;
+		return chk;
 	}
 	
 }

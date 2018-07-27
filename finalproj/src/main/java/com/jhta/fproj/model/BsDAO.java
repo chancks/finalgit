@@ -68,11 +68,6 @@ public class BsDAO {
 		return sessionTemplate.update("bsm.bsChkPayment", vo);
 	}
 	
-	public Object tot() {//수강신청 미결제 인원
-		
-		 return sessionTemplate.selectOne("bsm.bsTotNoPay");
-	}
-	
 	public Object rlist() {//수강신청목록
 		
 		return sessionTemplate.selectList("bsm.bsRegistList");
@@ -83,9 +78,19 @@ public class BsDAO {
 		return sessionTemplate.selectList("bsm.bsCourseList");
 	}
 	
-	public Object cplist() {//결제목록
+	public Object cplist(BsVO vo) {//결제목록
 		
-		return sessionTemplate.selectList("bsm.bsCpList");
+		return sessionTemplate.selectList("bsm.bsCpList",vo);
+	}
+	
+	public Object ccplist() {//결제목록(과목별)
+	
+	return sessionTemplate.selectList("bsm.bsCCpList");
+	}
+	
+	public Object totlist() {//과목별 수강신청 인원 목록
+		
+		 return sessionTemplate.selectList("bsm.bsTotListRegist");
 	}
 	
 	public Object list() {//회원리스트
@@ -98,11 +103,11 @@ public class BsDAO {
 		return sessionTemplate.selectOne("bsm.memTot");
 	}
 	
-	public Object admininfo() {
+	public Object admininfo() {//관리자정보
 		return sessionTemplate.selectOne("bsm.adminInfo");
 	}
 	
-	public Object myinfo(String str) {
+	public Object myinfo(String str) {//내정보
 		return sessionTemplate.selectOne("bsm.myInfo",str);
 	}
 	

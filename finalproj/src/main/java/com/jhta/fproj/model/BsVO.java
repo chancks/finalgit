@@ -8,7 +8,7 @@ import org.apache.ibatis.type.Alias;
 @Alias("bsVo")
 public class BsVO {
 
-	String ccode,ctitle,cname,ccontent,cday,ctime,cinfo,cpid,rid,rtitle,rname,rcode,rpay;
+	String ccode,ctitle,cname,ccontent,cday,ctime,cinfo,cpid,rid,rtitle,rname,rcode,rpay,name,schYear;
 	Integer ctotal,cpnum,cpprice,tot;
 	Date cstart, cfinish,cpdate,rdate;
     
@@ -16,6 +16,18 @@ public class BsVO {
     Integer [] timearr;
     
  
+	public String getSchYear() {
+		return schYear;
+	}
+	public void setSchYear(String schYear) {
+		this.schYear = schYear;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getCinfo() {
 		return cinfo;
 	}

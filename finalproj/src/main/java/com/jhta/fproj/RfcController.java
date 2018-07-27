@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.annotation.Resource;
+import javax.mail.search.IntegerComparisonTerm;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,7 +37,7 @@ public class RfcController {
 				||main.equals("payReg")) {
 			
 			return "Bs/alert";
-		}
+		} 
 		
 		return "home";
 	}
@@ -48,6 +50,7 @@ public class RfcController {
 		vo.setRid((String)session.getAttribute("id"));
 		String grade = (String)session.getAttribute("grade");
 		ConPayMail cpm = new ConPayMail(dao, muvo);
+		
 	
 		System.out.println(vo);
 		
@@ -132,7 +135,7 @@ public class RfcController {
 				
 			case "payReg":
 				
-				model.addAttribute("msg", "결제 완료");
+				model.addAttribute("msg", "결제 성공! 결제내역은 이메일에서 확인 가능");
 				model.addAttribute("url", "registerfc?mypage=true");
 				
 				if(vo.getCpprice()==0) {
@@ -154,11 +157,40 @@ public class RfcController {
 			
 				break;
 				
-			case "totpay"://결제인원
+			case "totpay"://정산
 				
-				res = dao.rlist();
-				model.addAttribute("tot", dao.tot());
-				model.addAttribute("card", dao.cplist());
+				String name = vo.getName();
+				System.out.println("페이지이름:"+name);
+				
+				if(name == null) {
+					
+					res = dao.cplist(vo);
+					
+				} else {
+					
+					switch(name){
+					
+					case "course"://과목별
+						
+						res= dao.ccplist();
+						
+						model.addAttribute("data2", dao.totlist());
+						
+						break;
+						
+					case "date"://연별,월별
+						
+						arr =(ArrayList<BsVO>)dao.cplist(vo);
+						if(vo.getSchYear()!=null) {
+							System.out.println("year:"+vo.getSchYear());
+						
+							res = ca.cal(arr);
+						}
+						
+						break;
+					}
+				}
+			
 				break;
 				
 			case "courseinfo"://과목소개

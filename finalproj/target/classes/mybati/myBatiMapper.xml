@@ -25,21 +25,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) as tot from astudent order by agrade 
 	</select>
 
-	<!-- 수강료 미지급 인원 -->
-	<select id="bsTotNoPay" resultType="java.lang.Integer">
-		select count(*) as tot from regist where rpay is null
-	</select>
-	
 	<!-- 수강신청 수 -->
 	<select id="bsRegistList" resultType="bsVo">
 		select * from regist order by rdate desc
 	</select>
 	
 	<!-- 결제 내역 -->
+	<sql id="schYyyy">
+	<where>
+		<if test="schYear !=null">
+		TO_CHAR(cpdate, 'YYYY') = #{schYear} 
+		</if>
+	</where>
+	</sql>
+	
 	<select id="bsCpList" resultType="bsVo">
-		select * from cardpay
+		select * from cardpay <include refid="schYyyy"/>  order by cpdate desc
 	</select>
-
+	
+	<!-- 결제 내역(과목) -->
+	<select id="bsCCpList" resultType="bsVo">
+		select rtitle,rcode,count(rpay) as tot from regist,
+		(select distinct ccode,ctitle from course where <![CDATA[ cfinish>sysdate]]>)tt 
+		where regist.rcode = tt.ccode
+		group by rcode,rtitle
+	</select>
+	
+	<!-- 수강신청 인원 리스트 -->
+	<select id="bsTotListRegist" resultType="bsVo">
+		select rtitle,rcode,count(rname) as tot from regist
+		group by rcode,rtitle
+	</select>
+	
 	<!-- 수강신청 인원 -->
 	<select id="bsTotRegist" resultType="java.lang.Integer">
 		select count(rcode) as tot from regist where rcode = #{ccode}

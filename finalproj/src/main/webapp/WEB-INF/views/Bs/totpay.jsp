@@ -94,69 +94,94 @@
 <title>정산</title>
 </head>
 <body>
+<div>
+<jsp:useBean id="sysdate" class="java.util.Date"/>
+<fmt:formatDate value="${sysdate }" pattern="yyyy" var="sysdate"/>
+<c:choose>
+	<c:when test="${param.name eq 'course' }">
+		<a href = "/mvc/Bs/totpay?mypage=true">전체</a>
+		<a href = "/mvc/Bs/totpay?mypage=true&name=date&schYear=${sysdate }">연별,월별</a>
+	</c:when>
+	<c:when test="${param.name eq 'date' }">
+		<a href = "/mvc/Bs/totpay?mypage=true">전체</a>
+		<a href = "/mvc/Bs/totpay?mypage=true&name=course">과목별</a>
+	</c:when>
+	<c:otherwise>
+		<a href = "/mvc/Bs/totpay?mypage=true&name=course">과목별</a>
+		<a href = "/mvc/Bs/totpay?mypage=true&name=date&schYear=${sysdate }">연별,월별</a>
+	</c:otherwise>
+</c:choose>
 
-
-	<div id="legend">
-	<legend>결재 내역</legend>
 </div>
-<div id="wrap">
-
-<div class="container" style="width: 100%">
-	<div class="row">
-		<table class="points_table table-hover" style="width: 100%">
-			<thead>
-				<tr>
-					<th class="col-xs-1">학생 id</th>
-					<th class="col-xs-2">과목명</th>
-					<th class="col-xs-1">강사</th>
-					<th class="col-xs-2">과목코드</th>
-					<th class="col-xs-2">수강신청일</th>
-					<th class="col-xs-1">결제</th>
-					<th class="col-xs-2">결제일</th>
-				</tr>
-			</thead>
-		<tbody class="points_table_scrollbar">
-		<c:forEach var="cc" items="${card }"  >
-		<c:forEach var="pay" items="${data }" varStatus="no">
-			<c:choose>
-				<c:when test="${status.index%2==0}">
-					<tr class="odd" style="text-align: center">
-				</c:when>
-				<c:otherwise>
-					<tr class="even" style="text-align: center">
-				</c:otherwise>
-			</c:choose>
-				
-					<td class="col-xs-1">
-						<a href="/mvc/manager/myinfo?aid=${pay.rid }&mypage=true">${pay.rid }</a>
-					</td>
-					<td class="col-xs-2">${pay.rtitle }</td>
-					<td class="col-xs-1">${pay.rname }</td>
-					<td class="col-xs-2">${pay.rcode }</td>
-					<td class="col-xs-2">
-					<fmt:formatDate value="${pay.rdate }" pattern="yyyy-MM-dd" />
-					</td>
-					<td class="col-xs-1">${pay.rpay }</td>
-					
-						<c:if test="${pay.rpay eq '결제' and pay.rid eq cc.cpid and pay.no.index eq 0}">
-						<td class="col-xs-2">
-							<fmt:formatDate value="${cc.cpdate }" pattern="yyyy-MM-dd" />
-						</td>
-						</c:if>
-					</c:forEach>
-				</tr>
+<div>
+<table border="">
+<c:choose>
+	<c:when test="${param.name eq 'course' }">
+		<tr>
+			<td>과정명</td>
+			<td>과목코드</td>
+			<td>수강신청인원</td>
+			<td>결제인원</td>
+			<td>결제금액</td>
+		</tr>
+		<c:forEach var="pay" items="${data }" >
+		<tr>		
+			<td class="col-xs-1">${pay.rtitle }</td>
+			<td class="col-xs-1">
+			<a href="/mvc/jun_List/p_Astudent_List?rcode=${pay.rcode }&mypage=true">${pay.rcode }</a>
+			</td>
+		<c:forEach var="pay2" items="${data2 }">
+		<c:if test="${pay.rcode eq pay2.rcode }">
+			<td class="col-xs-1">${pay2.tot }명</td>
+		</c:if>
 		</c:forEach>
-				<tr>
-				<td class="col-xs-6">
-				</td>	
-					<td class="col-xs-6">
-						총 수강신청 수: ${data.size() }&nbsp;&nbsp;&nbsp;미 결제 수: ${tot }
-					</td>
-				</tr>
-		</tbody>
-	</table>
-</div>
-</div>
+			<td class="col-xs-2">${pay.tot }명</td>
+			<td class="col-xs-2">${pay.tot*30 }만원</td>
+		</tr>
+	</c:forEach>
+</c:when>
+<c:when test="${param.name eq 'date' }">
+	<form action="?">
+		<input type="hidden" value='true' name="mypage"/>
+		<input type="hidden" value='date' name="name"/>
+	<tr>
+		<td>
+			<select name="schYear"  >
+				<c:forEach var="yy" begin="${sysdate-10 }" end="${sysdate-1 }">
+					<option value="${yy }">${yy }</option>
+					<c:if test="${sysdate eq yy+1 }">
+						<option value="${yy+1 }" selected="selected">${yy+1 }</option>
+					</c:if>
+				</c:forEach>
+			</select>
+		</td>
+		<td>
+			<input class="btn btn-default" type="submit" value="검색">
+		</td>
+	</tr>
+	</form>
+	<c:forEach var="mm" items="${data }" begin="0" end="11" varStatus="no">
+	<tr>
+	<td>${no.index+1 }월</td>
+	<td>${mm }만원</td>
+	</tr>
+	</c:forEach>
+</c:when>
+<c:otherwise>
+	<c:forEach var="pay" items="${data }" >
+		<tr>		
+			<td class="col-xs-1">
+				<a href="/mvc/jun_List/astudent_Course_List?rid=${pay.cpid }&mypage=true">${pay.cpid }</a>
+			</td>
+			<td class="col-xs-2">${pay.cpprice }</td>
+			<td class="col-xs-2">
+				<fmt:formatDate value="${pay.cpdate }" pattern="yyyy-MM-dd" />
+			</td>
+		</tr>
+	</c:forEach>
+</c:otherwise>
+</c:choose>
+</table>
 </div>
 </body>
 </html>
