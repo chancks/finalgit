@@ -37,16 +37,15 @@
 			and <![CDATA[ seq >= #{seq}]]>
 		</if> 
 	</sql> 
-	 
-	 
+	
+	
 	<!-- qna -->
 	
 	<select id="qnaListSch" resultType="boardVo" parameterType="boardVo">
-		select ff.* from (select * from (select rownum rnum, tt.* from 
+		select * from (select rownum rnum, tt.* from 
 		(select * from qna <include refid="whereSch"/>
-			order by gid desc , id asc)tt)
-		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
-			
+		order by gid desc , id asc)tt)
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>
 	</select>
 
 	<update id="qnaReadCnt" parameterType="boardVo">
@@ -109,17 +108,17 @@
 	</update>
 	
 	<select id="qnaTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
-		select count(*) as count from qna
+		select count(*) as count from qna  <include refid="whereSch"/>
 	</select>
 	
 	
 	<!-- notice -->
 	
 	<select id="noticeListSch" resultType="boardVo" parameterType="boardVo">
-		select ff.* from (select * from (select rownum rnum, tt.* from 
+		select * from (select rownum rnum, tt.* from 
 		(select * from notice <include refid="whereSch"/>
 			order by gid desc , id asc)tt)
-		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]> 
 			
 	</select>
 	
@@ -170,7 +169,7 @@
 	</update>
 	
 	<select id="noticeTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
-		select count(*) from notice
+		select count(*) as count from notice <include refid="whereSch"/>
 	</select>
 	
 	
@@ -178,10 +177,10 @@
 	<!-- review -->
 	
 	<select id="reviewListSch" resultType="boardVo" parameterType="boardVo">
-		select ff.* from (select * from (select rownum rnum, tt.* from 
+		select * from (select rownum rnum, tt.* from 
 		(select * from review <include refid="whereSch"/>
 			order by gid desc , id asc)tt)
-		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>)ff 
+		where <![CDATA[ #{start2}<=rnum and rnum<=#{end2} ]]>
 			
 	</select>
 	
@@ -233,7 +232,7 @@
 	</update>
 	
 	<select id="reviewTotalCount" resultType="java.lang.Integer" parameterType="java.lang.Integer">
-		select count(*) from review
+		select count(*) as count from review  <include refid="whereSch"/>
 	</select>
 	
 	
